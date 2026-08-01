@@ -115,6 +115,55 @@ Do these as coordinated book-wide passes, not per-chapter, to avoid inconsistenc
 
 ---
 
+## Command reference — new & deprecated commands
+
+Commands that arrived **after the 2nd edition** (published Nov 2014, ~Git 2.1) or are
+**deprecated/removed** by 3.0. Both lists drive edits to the running text _and_ to the
+command index in `C-git-commands.asc`. Version numbers are the release that introduced or
+changed each command; "experimental" means the man page still carries a
+behavior-may-change warning.
+
+### New commands (add coverage)
+
+| Command | Since | Status | Where it belongs |
+|---------|-------|--------|------------------|
+| `git worktree` | 2.5 (2015) | stable | Ch 7 — multiple working trees from one repo |
+| `git commit-graph` | 2.18 (2018) | stable | Ch 10 internals + performance story |
+| `git range-diff` | 2.19 (2018) | stable | Ch 5 / Ch 7 — compare two versions of a patch series |
+| `git multi-pack-index` (`git midx`) | 2.20 (2018) | stable | Ch 10 packfiles |
+| `git switch` | 2.23 (2019) | stable (was experimental) | Ch 3 — the modern branch-switching verb; teach before `checkout` |
+| `git restore` | 2.23 (2019) | stable (was experimental) | Ch 2 — the modern file-restore verb; teach before `checkout`/`reset` |
+| `git sparse-checkout` | 2.25 (2020) | stable | Ch 7 + new monorepo-scale material |
+| `git bugreport` | 2.27 (2020) | stable | Ch 7 debugging / Appendix |
+| `git maintenance` | 2.30 (2020) | stable | Ch 10 maintenance + performance story |
+| `git for-each-repo` | 2.31 (2021) | stable | Ch 8 / scripting |
+| `scalar` | 2.38 (2022) | stable | New monorepo-scale material (bundled tool) |
+| `git diagnose` | 2.39 (2022) | stable | Ch 7 debugging / Appendix |
+| `git replay` | 2.44 (2024) | **experimental** | Ch 7 — server-side/bare history replay (no worktree touched) |
+| `git backfill` | 2.49 (2025) | **experimental** | New partial-clone material — batch-download missing blobs |
+| `git history` | 2.54 (2026); `fixup` 2.55 | **experimental** | Ch 7 — see rewriting-history entry above |
+
+### Deprecated / removed by 3.0 (rewrite or excise)
+
+| Command / feature | Status in 3.0 | Replacement | Book action |
+|-------------------|---------------|-------------|-------------|
+| `git whatchanged` | Removal planned; already needs `--i-still-use-this` | `git log` (with `--raw` for the old output) | Remove any use; note the retirement |
+| `git pack-redundant` | Removal planned ("unusably slow"); needs `--i-still-use-this` | `git repack` / `git gc` | Not currently taught — leave out; mention in the removals note |
+| **grafts** (`.git/info/grafts`) | **Removed** | `git replace` (incl. `--graft`) | Ch 7 `replace.asc` — rework, mark grafts removed (see Ch 7 above) |
+| Legacy `$GIT_COMMON_DIR/branches/` & `/remotes/` | **Removed** | config-based remotes (`git remote` / `remote.*`) | Ch 10 refs / Ch 2 remotes — verify no examples rely on them |
+| `git name-rev --stdin` | Option removed | `git name-rev --annotate-stdin` | Ch 7/10 — check for the old flag |
+| `git filter-branch` | Deprecated (emits warning on use) | `git filter-repo` (external), `git replay` | Ch 7 `rewriting-history.asc` — lead with `filter-repo` (see Ch 7 above) |
+| `git checkout` (overloaded modes) | Supported, but soft-superseded | `git switch` + `git restore` | Ch 2/3 — teach switch/restore first; keep `checkout` as the legacy all-in-one |
+
+> Also removed as config (not commands, but adjacent): `core.commentString=auto` and
+> `core.preferSymlinkRefs=true`. Note in Ch 8 config.
+>
+> Not scheduled for removal (still supported, don't cut): `git svn`, `git cvsimport`/
+> `git cvsserver`/`git cvsexportcommit`, `git request-pull`, `git format-patch`/`git am`.
+> The CVS/SVN bridges are staleness-driven trims (Ch 9), not 3.0 removals.
+
+---
+
 ## Recommended new material for the 3rd edition
 
 1. **A dedicated "Git 3.0 / migrating to SHA-256" section** — the marquee topic; consolidate the transition (interop repos, `--object-format`, forge readiness) rather than scattering it.
