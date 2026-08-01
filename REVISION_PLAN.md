@@ -87,6 +87,7 @@ Do these as coordinated book-wide passes, not per-chapter, to avoid inconsistenc
 ### Ch 7 — Git Tools
 - ⚡ `signing.asc`: **GPG-only** today. Add **SSH commit/tag signing** (`gpg.format=ssh`, since 2.34) — now the mainstream choice — and `gpgsm` (X.509). Significant content addition.
 - ⚡ `replace.asc`: contains the book's only **grafts** discussion (17 `master` refs too) — grafts are **removed in 3.0**. Rework around `replace`/`commit-graph`; mark grafts removed.
+- ⚡ `rewriting-history.asc`: add the new **`git history`** command (experimental, introduced Git 2.54 / April 2026; `fixup` added 2.55). It rewrites history by modifying specific commits and **automatically rebases descendant branches** — a much simpler mental model than interactive rebase. Cover its four subcommands: **`reword`** (change a commit message in place), **`split`** (interactively carve one commit into two by hunk), **`fixup`** (fold staged changes into an older commit via three-way merge), **`drop`** (remove a commit, replaying descendants onto its parent). Note the current limitations: experimental/behavior-may-change, no merge commits, no operations that would produce conflicts, cannot drop root/merge commits. Position it alongside interactive rebase as the recommended everyday tool for the common cases.
 - 🕰 `credentials.asc`: **Git Credential Manager (GCM / `manager`)** is now the cross-platform standard — update legacy `wincred`/naming. macOS `osxkeychain` still fine.
 - 🕰 `rewriting-history.asc`: `filter-branch` is deprecated and warns on use; lead with **`git filter-repo`** (note BFG). `reset`/`revision-selection`/`debugging (bisect)` durable.
 - 🕰 Highest total `master` count of any chapter (147 renames): `submodules` (35), `revision-selection` (20), `advanced-merging` (17), `bundling` (14), `stashing-cleaning` (14), `subtree-merges` (13).
@@ -122,6 +123,7 @@ Do these as coordinated book-wide passes, not per-chapter, to avoid inconsistenc
 4. **Security defaults** (`safe.*`) — didn't exist when the 2nd edition was written.
 5. **Sparse-checkout / partial clone / scalar** — monorepo-scale features absent from the current text.
 6. **`git maintenance` + commit-graph** as a first-class performance story.
+7. **The `git history` command** (2.54+) — a simpler, branch-aware alternative to interactive rebase for rewording, splitting, fixing up, and dropping commits. Likely stabilized by 3.0; a strong candidate to teach as the default before diving into `rebase -i`. (Detailed under Ch 7 above.)
 
 ---
 
