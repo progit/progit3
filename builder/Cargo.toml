@@ -1,0 +1,13 @@
+[package]
+name = "progit-build"
+version = "1.0.0"
+edition = "2021"
+description = "Build system for the Pro Git book: generate PDF, EPUB, Mobi, or serve HTML locally"
+license = "CC-BY-NC-SA-3.0"
+
+[[bin]]
+name = "progit"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 2
