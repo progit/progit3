@@ -16,14 +16,14 @@ authors:
     email: ben@straub.cc
 identifiers:
   - type: url
-    value: 'https://git-scm.com/book/en/v2'
+    value: 'https://git-scm.com/book/en/v3'
     description: Pro Git website
 repository-code: 'https://github.com/progit/progit2'
-url: 'https://git-scm.com/book/en/v2'
+url: 'https://git-scm.com/book/en/v3'
 keywords:
   - git
   - book
   - asciidoc
   - pro-git
 license: CC-BY-NC-SA-3.0
-version: '2'
+version: '3'
