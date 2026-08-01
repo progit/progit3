@@ -1,4 +1,4 @@
-# Contributing to Pro Git (2nd Edition)
+# Contributing to Pro Git (3rd Edition)
 
 ## Licensing your work to us
 
