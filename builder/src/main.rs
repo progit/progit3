@@ -8,6 +8,7 @@ mod cli;
 mod context;
 mod error;
 mod serve;
+mod site;
 mod tasks;
 mod ui;
 

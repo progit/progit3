@@ -1,8 +1,9 @@
 # `progit` — Pro Git build system
 
 A small, self-contained Rust binary that builds the Pro Git book in every
-supported format and can serve the HTML edition on a local web server for
-offline reading.
+supported format and can serve it as a multi-page reader on a local web server
+for offline reading — one page per section, with a sidebar table of contents
+and prev/next navigation, like the online book at <https://git-scm.com/book>.
 
 It is a modern, single-command replacement for the `rake` tasks. Under the hood
 it drives the same [Asciidoctor](https://asciidoctor.org) toolchain, so the
@@ -48,7 +49,7 @@ progit pdf             # progit.pdf
 progit epub            # progit.epub
 progit mobi            # progit.mobi (KF8)
 progit all             # build every format
-progit serve           # build HTML and serve it at http://127.0.0.1:8080/
+progit serve           # multi-page reader at http://127.0.0.1:8080/
 progit contributors    # regenerate book/contributors.txt if stale
 progit clean           # remove all generated files
 ```
@@ -56,14 +57,24 @@ progit clean           # remove all generated files
 ### Reading the book locally
 
 ```sh
-progit serve --open            # build, serve, and open your browser
+progit serve                   # build and serve the reader
+progit serve --open            # …and open it in your browser
 progit serve --port 3000       # choose a port
-progit serve --no-build        # serve an already-built progit.html
+progit serve --no-build        # split an already-built progit.html instead
 ```
 
-The server is a minimal, read-only static file server bound to `127.0.0.1`.
-`/` redirects to the book; paths are sandboxed to the repository directory.
-Press `Ctrl-C` to stop.
+`serve` renders the book, splits it into one HTML page per section and serves
+them from a minimal, read-only web server bound to `127.0.0.1`:
+
+- `/` — the cover and full table of contents.
+- `/r/<section>` — a single section, with a sidebar TOC (current section
+  highlighted) and previous/next links.
+- Cross-references between chapters are rewritten to point at the right page,
+  and images are served from the repository's `images/` directory.
+
+The generated pages live in memory; nothing is written to the repository. On-disk
+paths (images, the cover) are sandboxed to the project directory. Press `Ctrl-C`
+to stop.
 
 ### Options
 
@@ -72,7 +83,7 @@ Press `Ctrl-C` to stop.
 | `--no-bundle`   | Call the `asciidoctor*` executables directly, not `bundle exec`. |
 | `-p, --port N`  | Port for `serve` (default `8080`).                             |
 | `--open`        | Open the book in a browser once `serve` is ready.             |
-| `--no-build`    | For `serve`: skip rebuilding and serve the existing HTML.     |
+| `--no-build`    | For `serve`: split an existing `progit.html` instead of rebuilding. |
 | `-V, --version` | Print the tool version.                                        |
 | `-h, --help`    | Show usage.                                                    |
 

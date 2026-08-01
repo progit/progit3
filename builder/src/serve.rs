@@ -1,8 +1,10 @@
-//! A tiny, dependency-free static HTTP server for reading the book locally.
+//! A tiny, dependency-free HTTP server for reading the book locally as a
+//! multi-page site — one page per section, like <https://git-scm.com/book>.
 //!
-//! It serves the project directory so that the generated `progit.html` and any
-//! relative assets resolve, with `/` redirecting to the book. Only `GET`/`HEAD`
-//! are supported and paths are sandboxed to the project root.
+//! Generated pages (the reader, its stylesheet, the index) are held in memory
+//! by [`Site`]; anything else — images, the cover — is served from disk. Only
+//! `GET`/`HEAD` are supported and on-disk paths are sandboxed to the project
+//! root.
 
 use std::fs;
 use std::io::{BufRead, BufReader, Read, Write};
@@ -13,6 +15,7 @@ use std::thread;
 
 use crate::context::Context;
 use crate::error::{BuildError, Result};
+use crate::site::Site;
 use crate::tasks;
 use crate::ui;
 
@@ -22,20 +25,46 @@ pub struct ServeOptions {
     pub open: bool,
 }
 
-/// Build (optionally) then serve the HTML book until interrupted.
-pub fn serve(ctx: &Context, opts: ServeOptions) -> Result<()> {
-    let index = ctx.path("progit.html");
+/// Shared state handed to every connection thread.
+struct Server {
+    root: PathBuf,
+    site: Site,
+}
 
-    if opts.build_first {
+/// Build the multi-page reader and serve it until interrupted.
+pub fn serve(ctx: &Context, opts: ServeOptions) -> Result<()> {
+    // Obtain the full single-file HTML, then split it into pages. By default we
+    // render fresh to a scratch file (non-data-uri, so image references stay as
+    // `images/…` paths served from disk — far lighter than embedding every
+    // image on every page). With --no-build we reuse an existing progit.html
+    // instead, avoiding the Asciidoctor round-trip entirely.
+    let full = if opts.build_first {
+        let scratch = std::env::temp_dir().join("progit-serve-full.html");
         tasks::ensure_contributors(ctx)?;
-        ui::step("Building HTML for local reading …");
-        tasks::build_html(ctx, true)?;
-        ui::done("HTML ready");
-    } else if !index.exists() {
-        return Err(BuildError::new(
-            "progit.html does not exist yet; run without --no-build or run `progit html` first.",
-        ));
-    }
+        ui::step("Building the book for local reading …");
+        tasks::build_html_to(ctx, &scratch, false)?;
+        let html = fs::read_to_string(&scratch).map_err(|e| {
+            BuildError::new(format!(
+                "could not read generated HTML at {}: {e}",
+                scratch.display()
+            ))
+        })?;
+        let _ = fs::remove_file(&scratch);
+        html
+    } else {
+        let existing = ctx.path("progit.html");
+        if !existing.exists() {
+            return Err(BuildError::new(
+                "progit.html does not exist yet; run without --no-build, or run `progit html` first.",
+            ));
+        }
+        ui::info("Reusing existing progit.html (--no-build) …");
+        fs::read_to_string(&existing)?
+    };
+
+    ui::info("Splitting into per-section pages …");
+    let site = Site::build(&full)?;
+    ui::done(&format!("{} reader pages ready", site.page_count));
 
     let listener = TcpListener::bind(("127.0.0.1", opts.port)).map_err(|e| {
         BuildError::new(format!(
@@ -53,13 +82,16 @@ pub fn serve(ctx: &Context, opts: ServeOptions) -> Result<()> {
         open_browser(&url);
     }
 
-    let root = Arc::new(ctx.root.clone());
+    let server = Arc::new(Server {
+        root: ctx.root.clone(),
+        site,
+    });
     for stream in listener.incoming() {
         match stream {
             Ok(stream) => {
-                let root = Arc::clone(&root);
+                let server = Arc::clone(&server);
                 thread::spawn(move || {
-                    if let Err(e) = handle(stream, &root) {
+                    if let Err(e) = handle(stream, &server) {
                         // A broken pipe just means the browser moved on.
                         if e.kind() != std::io::ErrorKind::BrokenPipe {
                             ui::warn(&format!("connection error: {e}"));
@@ -73,7 +105,7 @@ pub fn serve(ctx: &Context, opts: ServeOptions) -> Result<()> {
     Ok(())
 }
 
-fn handle(stream: TcpStream, root: &Path) -> std::io::Result<()> {
+fn handle(stream: TcpStream, server: &Server) -> std::io::Result<()> {
     let peer_read = stream.try_clone()?;
     let mut reader = BufReader::new(peer_read);
     let mut writer = stream;
@@ -103,18 +135,12 @@ fn handle(stream: TcpStream, root: &Path) -> std::io::Result<()> {
     let target = raw_target.split(['?', '#']).next().unwrap_or("/");
     let head_only = method == "HEAD";
 
-    if target == "/" {
-        return respond(
-            &mut writer,
-            302,
-            "Found\r\nLocation: /progit.html",
-            b"",
-            "text/plain",
-            head_only,
-        );
+    // Generated reader pages first, then static assets from disk.
+    if let Some((ctype, body)) = server.site.get(target) {
+        return respond(&mut writer, 200, "OK", body, ctype, head_only);
     }
 
-    match resolve(root, target) {
+    match resolve(&server.root, target) {
         Some(path) => serve_file(&mut writer, &path, head_only),
         None => respond(
             &mut writer,

@@ -122,14 +122,21 @@ pub fn build(ctx: &Context, format: Format) -> Result<()> {
     Ok(())
 }
 
-/// Build the single-file HTML. `data_uri` embeds images/CSS for a fully
-/// self-contained document (used by `serve` and the default `html` command).
+/// Build the single-file HTML at the default location (`progit.html`).
+/// `data_uri` embeds images/CSS for a fully self-contained document.
 pub fn build_html(ctx: &Context, data_uri: bool) -> Result<()> {
+    build_html_to(ctx, &ctx.path("progit.html"), data_uri)
+}
+
+/// Build the single-file HTML to a specific output path. Used by `serve`, which
+/// renders to a scratch file it then splits into a multi-page site.
+pub fn build_html_to(ctx: &Context, out: &std::path::Path, data_uri: bool) -> Result<()> {
     let mut cmd = ctx.tool("asciidoctor");
     cmd.args(ctx.doc_attrs());
     if data_uri {
         cmd.args(["-a", "data-uri"]);
     }
+    cmd.arg("-o").arg(out);
     cmd.arg(crate::context::MASTER_DOC);
     run(cmd, "asciidoctor")
 }
