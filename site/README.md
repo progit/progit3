@@ -72,8 +72,8 @@ agent-generated posts.**
 publishes `site/dist/` to the `gh-pages` branch with
 [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
 Point GitHub Pages at the `gh-pages` branch (Settings → Pages → Deploy from a
-branch) and the site is served at <https://progit.github.io/progit3/>.
+branch) and the site is served at <https://progit3.com/>.
 
-The canonical URL and base path default to `https://progit.github.io` and
-`/progit3`; override them with the `SITE_URL` and `BASE_PATH` environment
-variables (e.g. for a fork or a custom domain).
+The canonical URL and base path default to `https://progit3.com` and
+`/`; override them with the `SITE_URL` and `BASE_PATH` environment
+variables (e.g. for a fork served at `https://<user>.github.io/progit3/`).

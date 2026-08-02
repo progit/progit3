@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const repoRoot = path.resolve(siteRoot, '..');
-const base = (process.env.BASE_PATH ?? '/progit3').replace(/\/+$/, '');
+const base = (process.env.BASE_PATH ?? '/').replace(/\/+$/, '');
 
 // ---------------------------------------------------------------------------
 // 1. Make sure book/contributors.txt exists (mirrors the Rakefile task).

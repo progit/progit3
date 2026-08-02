@@ -2,10 +2,10 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 
-// GitHub Pages project site: https://progit.github.io/progit3/
-// Override SITE_URL / BASE_PATH for forks or a custom domain.
-const site = process.env.SITE_URL ?? 'https://progit.github.io';
-const base = process.env.BASE_PATH ?? '/progit3';
+// GitHub Pages with a custom domain: https://progit3.com/
+// Override SITE_URL / BASE_PATH for forks (e.g. https://<user>.github.io and /progit3).
+const site = process.env.SITE_URL ?? 'https://progit3.com';
+const base = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
   site,
