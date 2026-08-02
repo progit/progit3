@@ -16,5 +16,9 @@
     "asciidoctor": "^4.0.7",
     "astro": "^7.1.6",
     "pagefind": "^1.5.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true
   }
 }
