@@ -1,0 +1,187 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+import { progress, renderInline } from '../../lib/progress';
+
+const sourceUrl = 'https://github.com/progit/progit3/blob/main/progress.asc';
+---
+
+<Base
+  title="Progress · Pro Git"
+  description="Task-by-task progress on the third edition of Pro Git, rendered live from progress.asc."
+>
+  <main class="container narrow" data-pagefind-body data-pagefind-meta="title:Progress">
+    <h1 class="page-title">Progress</h1>
+    <p class="page-lede">
+      Everything the third edition needs, task by task — rendered from
+      <a href={sourceUrl} rel="noopener"><code>progress.asc</code></a> in the repository.
+    </p>
+
+    <section class="card overall" aria-label="Overall progress">
+      <div class="overall-numbers">
+        <span class="percent">{progress.percent}%</span>
+        <span class="counts">{progress.done} of {progress.total} tasks done</span>
+      </div>
+      <div
+        class="bar"
+        role="progressbar"
+        aria-valuenow={progress.done}
+        aria-valuemin="0"
+        aria-valuemax={progress.total}
+      >
+        <div class="bar-fill" style={`width: ${progress.percent}%`}></div>
+      </div>
+    </section>
+
+    {progress.sections.map((section) => (
+      <section class="card section" class:list={[{ complete: section.done === section.total }]}>
+        <header>
+          <h2>{section.title}</h2>
+          <span class="count">{section.done} / {section.total}</span>
+        </header>
+        <div class="bar thin">
+          <div class="bar-fill" style={`width: ${(section.done / section.total) * 100}%`}></div>
+        </div>
+        <ul class="tasks">
+          {section.tasks.map((task) => (
+            <li class:list={[task.done ? 'done' : 'todo']} style={`--depth: ${task.depth}`}>
+              <span class="box" aria-hidden="true">{task.done ? '✓' : ''}</span>
+              <span class="text" set:html={renderInline(task.text)} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <p class="edit-note">
+      Spotted something missing? Tasks live in
+      <a href={sourceUrl} rel="noopener"><code>progress.asc</code></a> — a plain
+      AsciiDoc checklist that anyone can edit.
+    </p>
+
+    <p class="back"><a href={url('/blog/')}>← All posts</a></p>
+  </main>
+</Base>
+
+<style>
+  .overall {
+    margin-bottom: 2rem;
+    padding: 1.6rem 1.8rem;
+  }
+
+  .overall-numbers {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .percent {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .counts {
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .bar {
+    background: var(--bg-inset);
+    border-radius: 999px;
+    height: 0.85rem;
+    overflow: hidden;
+  }
+
+  .bar.thin {
+    height: 0.4rem;
+  }
+
+  .bar-fill {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 999px;
+    min-width: 0;
+  }
+
+  .section {
+    margin-bottom: 1.2rem;
+  }
+
+  .section header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .section .count {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .section.complete .count {
+    color: var(--accent);
+  }
+
+  .tasks {
+    list-style: none;
+    margin: 0.9rem 0 0;
+    padding: 0;
+  }
+
+  .tasks li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.28rem 0;
+    padding-left: calc(var(--depth, 0) * 1.4rem);
+    font-size: 0.97rem;
+  }
+
+  .box {
+    flex: 0 0 auto;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 4px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.05rem;
+    text-align: center;
+    transform: translateY(0.15rem);
+  }
+
+  li.done .box {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  li.done .text {
+    color: var(--muted);
+  }
+
+  .edit-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 2rem;
+  }
+
+  .back {
+    margin-top: 2.5rem;
+  }
+</style>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { url } from '../../lib/url';
+import { progress } from '../../lib/progress';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -14,6 +15,17 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
   <main class="container narrow">
     <h1 class="page-title">Blog</h1>
     <p class="page-lede">Updates and progress on the third edition of <em>Pro Git</em>.</p>
+
+    <a class="card progress-card" href={url('/blog/progress/')}>
+      <div class="progress-head">
+        <span class="progress-title">Third edition progress</span>
+        <span class="progress-counts">{progress.done} of {progress.total} tasks · {progress.percent}%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" style={`width: ${progress.percent}%`}></div>
+      </div>
+      <span class="progress-cta">See every task →</span>
+    </a>
 
     <ul class="post-list">
       {posts.map((post) => (
@@ -30,6 +42,60 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
 </Base>
 
 <style>
+  .progress-card {
+    display: block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .progress-card:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .progress-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .progress-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .progress-counts {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .progress-bar {
+    background: var(--bg-inset);
+    border-radius: 999px;
+    height: 0.55rem;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 999px;
+  }
+
+  .progress-cta {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
   .post-list {
     list-style: none;
     margin: 0;
