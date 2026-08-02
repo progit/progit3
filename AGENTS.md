@@ -49,7 +49,9 @@ Two hard requirements:
  write a post without loading it first.
 2. **Set `automated: true` in the frontmatter of every agent-written post.** That
  renders the "written by AI" disclosure banner; unlabeled machine writing is never
- published.
+ published. Before committing, re-read the post's frontmatter and confirm the flag
+ is there — every time, for new posts and for edits to existing agent-written
+ posts alike. If you find an agent-written post missing the flag, add it.
 
 ## Cursor Cloud specific instructions
 
