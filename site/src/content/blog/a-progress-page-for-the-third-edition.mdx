@@ -1,0 +1,30 @@
+---
+title: 'A progress page for the third edition'
+description: 'Every task the third edition needs, tracked in one hand-edited file and rendered as a live progress page on this site.'
+date: 2026-08-02
+---
+
+The third edition now has a **[progress page](../../blog/progress/)** — one place
+to see everything the revision needs and how much of it is done, section by
+section, with progress bars to match.
+
+Behind it is a single file:
+[`progress.asc`](https://github.com/progit/progit3/blob/main/progress.asc), a
+plain AsciiDoc checklist at the root of the repository. It distills the
+chapter-by-chapter inventory from
+[`REVISION_PLAN.md`](https://github.com/progit/progit3/blob/main/REVISION_PLAN.md)
+into concrete tasks: the policy decisions that gate everything else, the
+book-wide sweeps like `master` → `main` and SHA-256, a section for every chapter
+and appendix, and the brand-new material Git 3.0 calls for.
+
+The file is the source of truth, and it is edited by hand. Checking a task off
+means changing `[ ]` to `[x]`; adding a task means adding a line. When new work
+turns up — and it will — it gets a new line or a new section, and the page picks
+it up on the next build. Because it is standard AsciiDoc checklist syntax, the
+same file renders as tick-boxes right in the repository on GitHub.
+
+At the time of writing the counter sits at **5 of 75 tasks** — the project
+scaffolding is done, and the writing is about to begin. Watch the bars fill in
+on the [progress page](../../blog/progress/), and if you spot work that belongs
+on the list, [`progress.asc`](https://github.com/progit/progit3/blob/main/progress.asc)
+is one pull request away.
