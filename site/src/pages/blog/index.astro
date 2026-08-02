@@ -20,6 +20,9 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
         <li>
           <article>
             <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
+            {post.data.automated && (
+              <a class="ai-tag" href={url('/authorship/')}>Written by AI</a>
+            )}
             <h2><a href={url(`/blog/${post.id}/`)}>{post.data.title}</a></h2>
             <p>{post.data.description}</p>
           </article>
@@ -46,6 +49,27 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+
+  .ai-tag {
+    display: inline-block;
+    margin-left: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    padding: 0.05rem 0.4rem;
+    text-decoration: none;
+    vertical-align: 0.08em;
+  }
+
+  .ai-tag:hover {
+    color: #fff;
+    background: var(--accent);
   }
 
   .post-list h2 {

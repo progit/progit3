@@ -38,6 +38,19 @@ researching, or planning around prose that a human wrote, that's fair game.
 
 When in doubt, treat it as prose and hand it to a human.
 
+## Blog posts are the exception — but read the style guide first
+
+The site's blog (`site/src/content/blog/`) is not the book. Agents may write and edit
+blog posts when asked — automated posts exist precisely to communicate project updates.
+Two hard requirements:
+
+1. **Before writing or editing any blog post, read `site/BLOG_STYLE.md` and follow
+ it.** The blog is written in the book's voice, and that guide defines it. Do not
+ write a post without loading it first.
+2. **Set `automated: true` in the frontmatter of every agent-written post.** That
+ renders the "written by AI" disclosure banner; unlabeled machine writing is never
+ published.
+
 ## Cursor Cloud specific instructions
 
 This repo is the **Pro Git** book (source in AsciiDoc). "Building" means converting

@@ -17,6 +17,21 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
   <main class="container narrow">
     <article data-pagefind-body>
       <header class="post-header">
+        {post.data.automated ? (
+          <a class="authorship authorship-ai" href={url('/authorship/')}>
+            <span class="authorship-badge" aria-hidden="true">AI</span>
+            <span>
+              <strong>This post was written by AI.</strong> Automated posts keep you updated on
+              the project — the book itself is written entirely by humans. Learn more →
+            </span>
+          </a>
+        ) : (
+          <a class="authorship authorship-human" href={url('/authorship/')}>
+            <span>
+              <strong>Written by a human.</strong> How we use AI on this project →
+            </span>
+          </a>
+        )}
         <p class="meta">
           <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
           · {post.data.author}
@@ -34,6 +49,53 @@ const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
 <style>
   .post-header {
     margin: 2.5rem 0 1.8rem;
+  }
+
+  .authorship {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    margin: 0 0 1.4rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .authorship strong {
+    font-weight: 700;
+  }
+
+  .authorship-ai {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+  }
+
+  .authorship-ai:hover {
+    color: var(--accent-strong);
+  }
+
+  .authorship-badge {
+    flex: 0 0 auto;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 5px;
+  }
+
+  .authorship-human {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .authorship-human:hover {
+    color: var(--accent);
   }
 
   .post-header .meta {
