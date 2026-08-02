@@ -44,3 +44,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: site/dist
           force_orphan: true
+          # Keep the custom-domain CNAME file on gh-pages; without this,
+          # force_orphan would delete it on every deploy and detach the domain.
+          cname: progit3.com
