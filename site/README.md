@@ -41,6 +41,9 @@ because Pagefind indexes the generated HTML.
 
 ## Writing a blog post
 
+**Read [`BLOG_STYLE.md`](./BLOG_STYLE.md) first** — posts are written in the book's
+voice, and that guide defines it.
+
 Add an `.mdx` file to `src/content/blog/` with this frontmatter:
 
 ```mdx
