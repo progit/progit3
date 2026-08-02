@@ -1,0 +1,316 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+import book from '../generated/book.json';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const chapters = book.chapters.filter((c) => c.sections.length > 0);
+const sectionCount = book.pages.length;
+
+const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
+---
+
+<Base title="Pro Git — the book about Git, free and open source">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text" data-pagefind-body>
+        <p class="kicker">Third edition · in progress</p>
+        <h1>Everything you need to know about Git.</h1>
+        <p class="byline">by Scott Chacon and Ben Straub</p>
+        <p class="pitch">
+          <em>Pro Git</em> takes you from your first <code>git init</code> to the internals of
+          Git's object model. It's free to read, open source, and — with Git 3.0 on the
+          horizon — being revised in the open for its third edition.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href={url('/book/')}>Read the book</a>
+          <a class="btn btn-ghost" href={url('/search/')}>Search it</a>
+          <a class="btn btn-ghost" href="https://github.com/progit/progit3/releases" rel="noopener">Download</a>
+        </div>
+        <p class="hero-fine">
+          Licensed <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener">CC BY-NC-SA 3.0</a>
+          · {chapters.length - 3} chapters, 3 appendices, {sectionCount} readable sections
+        </p>
+      </div>
+      <div class="hero-cover">
+        <a href={url('/book/')}>
+          <img src={url('/book-cover.png')} alt="Pro Git book cover" width="320" loading="eager" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container edition">
+    <div class="card edition-card">
+      <h2>The Git 3.0 edition</h2>
+      <p>
+        Git 3.0 changes the defaults the book has taught for a decade: <code>main</code> as
+        the default branch, SHA-256 object hashes, <code>reftable</code> ref storage, and a
+        Rust build toolchain. The third edition revises every chapter to match — and the work
+        happens in public.
+      </p>
+      <p>
+        <a href={url('/blog/')}>Follow progress on the blog →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="container toc">
+    <h2 class="section-title">What's inside</h2>
+    <ol class="chapter-grid">
+      {chapters.map((chapter) => (
+        <li>
+          <a href={url(`/book/${chapter.landing}/`)}>
+            <span class="chapter-name">{chapter.title}</span>
+            <span class="chapter-count">{chapter.sections.length} sections</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container news">
+    <h2 class="section-title">Latest from the blog</h2>
+    <div class="post-grid">
+      {posts.map((post) => (
+        <a class="card post-card" href={url(`/blog/${post.id}/`)}>
+          <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container story">
+    <div class="card edition-card">
+      <h2>Sixteen years in print, and counting</h2>
+      <p>
+        First published in 2009 and rewritten in 2014, <em>Pro Git</em> has been the
+        book behind <a href="https://git-scm.com/book" rel="noopener">git-scm.com/book</a> and has
+        been translated by volunteers into dozens of languages.
+      </p>
+      <p>
+        <a href={url('/history/')}>Read the history of the book →</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    background:
+      radial-gradient(60rem 30rem at 85% -10%, var(--accent-soft), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-text {
+    flex: 1 1 30rem;
+  }
+
+  .kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    margin: 0 0 0.3rem;
+  }
+
+  .byline {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 1.2rem;
+  }
+
+  .pitch {
+    font-size: 1.12rem;
+    max-width: 34rem;
+  }
+
+  .cta {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 1.6rem 0 1rem;
+  }
+
+  .hero-fine {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .hero-cover {
+    flex: 0 0 auto;
+  }
+
+  .hero-cover img {
+    display: block;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    transform: rotate(1.5deg);
+    transition: transform 0.2s ease;
+  }
+
+  .hero-cover img:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    margin: 3rem 0 1.2rem;
+  }
+
+  .edition {
+    margin-top: 2.5rem;
+  }
+
+  .edition-card {
+    border-left: 4px solid var(--accent);
+  }
+
+  .edition-card h2 {
+    margin-top: 0.2rem;
+    font-size: 1.4rem;
+  }
+
+  .edition-card p:last-child {
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+
+  .chapter-grid {
+    list-style: none;
+    counter-reset: chapter;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 0.8rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .chapter-grid li {
+    counter-increment: chapter;
+  }
+
+  .chapter-grid a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem 0.9rem 3.2rem;
+    text-decoration: none;
+    color: var(--text);
+    position: relative;
+    transition: border-color 0.12s ease, transform 0.12s ease;
+  }
+
+  .chapter-grid a::before {
+    content: counter(chapter, decimal-leading-zero);
+    position: absolute;
+    left: 1rem;
+    top: 0.95rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .chapter-grid a:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .chapter-name {
+    font-weight: 600;
+    font-family: var(--serif);
+    font-size: 1.02rem;
+  }
+
+  .chapter-count {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1rem;
+  }
+
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.12s ease, transform 0.12s ease;
+  }
+
+  .post-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    color: var(--text);
+  }
+
+  .post-card time {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .post-card h3 {
+    margin: 0.4rem 0;
+    font-size: 1.2rem;
+  }
+
+  .post-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .story {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner {
+      flex-direction: column-reverse;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .pitch {
+      margin-inline: auto;
+    }
+
+    .cta {
+      justify-content: center;
+    }
+
+    .hero-cover img {
+      width: 220px;
+    }
+  }
+</style>

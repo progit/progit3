@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="Search · Pro Git" description="Full-text search across the Pro Git book and blog.">
+  <main class="container narrow">
+    <h1 class="page-title">Search</h1>
+    <p class="page-lede">Search the full text of the book and the blog.</p>
+
+    <link rel="stylesheet" href={url('/pagefind/pagefind-ui.css')} />
+    <script is:inline src={url('/pagefind/pagefind-ui.js')}></script>
+    <div id="search"></div>
+    <script is:inline define:vars={{ bundlePath: url('/pagefind/') }}>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (typeof PagefindUI === 'undefined') {
+          document.getElementById('search').innerHTML =
+            '<p class="search-unavailable">Search is only available on the built site — run <code>npm run build</code> and <code>npm run preview</code>.</p>';
+          return;
+        }
+        new PagefindUI({
+          element: '#search',
+          bundlePath,
+          showSubResults: true,
+          showImages: false,
+          autofocus: true,
+        });
+      });
+    </script>
+  </main>
+</Base>
+
+<style is:global>
+  #search {
+    margin-bottom: 3rem;
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--bg-raised);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--bg-inset);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-font: var(--sans);
+  }
+
+  #search .search-unavailable {
+    color: var(--muted);
+  }
+</style>

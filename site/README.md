@@ -1,0 +1,69 @@
+# Pro Git project site
+
+The source for the project website, built with [Astro](https://astro.build). It has:
+
+- a **homepage** introducing the book,
+- the **full book, readable online** — one page per section, rendered from the
+  AsciiDoc sources in this repository with
+  [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js),
+- **full-text search** over the book and blog, powered by
+  [Pagefind](https://pagefind.app),
+- a **blog** (MDX, in `src/content/blog/`) for updates and progress on the
+  third edition,
+- a **history of the book** page.
+
+## How the book gets onto the site
+
+`scripts/build-book.mjs` runs before every dev/build. It converts `../progit.asc`
+(including all chapter includes) to HTML, splits the result into one page per
+section — the same strategy as `builder/src/site.rs` — rewrites cross-references
+and image paths, and writes:
+
+- `src/generated/book.json` — consumed by `src/pages/book/[slug].astro`,
+- `public/images/`, `public/book-cover.png`, `public/favicon.ico` — copied from
+  the repository.
+
+All of those outputs are git-ignored; the book is never duplicated in the repo.
+
+## Commands
+
+Run these from the `site/` directory:
+
+| Command           | Action                                                       |
+| ----------------- | ------------------------------------------------------------ |
+| `npm install`     | Install dependencies                                         |
+| `npm run dev`     | Regenerate the book, then start the dev server               |
+| `npm run build`   | Regenerate the book, build to `dist/`, index it with Pagefind |
+| `npm run preview` | Serve the built `dist/` locally                              |
+
+Note: search only works on the *built* site (`npm run build` + `npm run preview`),
+because Pagefind indexes the generated HTML.
+
+## Writing a blog post
+
+Add an `.mdx` file to `src/content/blog/` with this frontmatter:
+
+```mdx
+---
+title: 'Post title'
+description: 'One-sentence summary shown in lists and search results.'
+date: 2026-08-02
+author: 'Your Name'   # optional
+---
+
+Post body in MDX…
+```
+
+The file name (without `.mdx`) becomes the URL: `/blog/<file-name>/`.
+
+## Deployment
+
+`.github/workflows/deploy-site.yml` builds the site on every push to `main` and
+publishes `site/dist/` to the `gh-pages` branch with
+[peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
+Point GitHub Pages at the `gh-pages` branch (Settings → Pages → Deploy from a
+branch) and the site is served at <https://progit.github.io/progit3/>.
+
+The canonical URL and base path default to `https://progit.github.io` and
+`/progit3`; override them with the `SITE_URL` and `BASE_PATH` environment
+variables (e.g. for a fork or a custom domain).

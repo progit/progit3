@@ -1,0 +1,40 @@
+---
+title: 'Planning the third edition'
+description: 'Git 3.0 is coming, and Pro Git is getting its first full revision since 2014. Here is what is changing and why.'
+date: 2026-08-02
+---
+
+Work has started on the third edition of _Pro Git_ — the first full revision of
+the book since the second edition shipped in 2014.
+
+The trigger is **Git 3.0**. After more than a decade of careful backward
+compatibility, Git's maintainers have queued up a set of genuine breaking
+changes, and several of them cut straight through material the book teaches
+today:
+
+- **`main` becomes the real default branch name.** The book currently teaches
+  `master` first and treats `main` as an opt-in override. That flips: the
+  inventory counts roughly **600 renames** across the text, plus the diagrams
+  and screenshots that show branch names.
+- **SHA-256 becomes the default object hash** for new repositories. The famous
+  "40-character SHA-1 string" passage — and every example hash in the book —
+  needs a rethink.
+- **`reftable` replaces the `files` backend** as the default ref storage, which
+  reshapes parts of the Git Internals chapter.
+- **Rust becomes a mandatory build dependency**, so "installing from source"
+  gets a new prerequisite.
+- **New security defaults** like `safe.bareRepository` and `safe.directory`
+  aren't covered by the current text at all.
+
+Beyond the 3.0-specific work there is a decade of general staleness to clear
+out: version framing ("this book was written using Git version 2"), long-stable
+features still described as new, and forge screenshots from another era.
+
+The full chapter-by-chapter inventory lives in
+[`REVISION_PLAN.md`](https://github.com/progit/progit3/blob/main/REVISION_PLAN.md)
+in the repository, with the `master` → `main` breakdown in
+[`book_master_to_main_inventory.md`](https://github.com/progit/progit3/blob/main/book_master_to_main_inventory.md).
+
+Progress will be posted here as chapters get revised. As always, the book is
+being written in the open — follow along or pitch in at
+[github.com/progit/progit3](https://github.com/progit/progit3).

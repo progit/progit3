@@ -1,0 +1,186 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+
+const timeline = [
+  {
+    year: '2005',
+    title: 'Git is born',
+    body:
+      'Linus Torvalds writes Git to manage Linux kernel development after the ' +
+      'kernel community loses access to BitKeeper. Within a few years it becomes ' +
+      'the dominant version control system in open source — and a tool badly in ' +
+      'need of a good book.',
+  },
+  {
+    year: '2009',
+    title: 'The first edition',
+    body:
+      'Scott Chacon writes Pro Git, published by Apress in August 2009. ' +
+      'Unusually for a print book, the full text is released as open source under ' +
+      'a Creative Commons BY-NC-SA license, and it becomes the official book of ' +
+      'the Git project, hosted at git-scm.com.',
+  },
+  {
+    year: '2009–2014',
+    title: 'The community takes over',
+    body:
+      'Because the source is open, readers fix errata, contribute improvements, ' +
+      'and translate the book. Volunteer translations appear in dozens of ' +
+      'languages, making Pro Git one of the most widely translated technical ' +
+      'books ever published.',
+  },
+  {
+    year: '2014',
+    title: 'The second edition',
+    body:
+      'Scott Chacon and Ben Straub rewrite the book for the modern Git era: new ' +
+      'chapters on GitHub and distributed workflows, refreshed tooling coverage, ' +
+      'and a move from Markdown to AsciiDoc sources. Published by Apress in ' +
+      'November 2014, with the source in the progit/progit2 repository.',
+  },
+  {
+    year: '2014–2025',
+    title: 'A living book',
+    body:
+      'For over a decade the second edition is continuously maintained on ' +
+      'GitHub — hundreds of contributors keep commands, screenshots, and ' +
+      'behavior notes current as Git evolves through its 2.x series. Translation ' +
+      'teams maintain parallel repositories for their languages.',
+  },
+  {
+    year: '2026',
+    title: 'The third edition begins',
+    body:
+      'Git 3.0 changes defaults the book has taught since the beginning: main ' +
+      'as the default branch, SHA-256 object hashes, reftable ref storage, and ' +
+      'a Rust build toolchain. The third edition — this repository — revises ' +
+      'the book to match, once again in the open.',
+  },
+];
+---
+
+<Base
+  title="History of the Book · Pro Git"
+  description="How Pro Git went from a 2009 Apress title to one of the most widely read and translated open source books."
+>
+  <main class="container narrow" data-pagefind-body data-pagefind-meta="title:History of the Book">
+    <h1 class="page-title">History of the book</h1>
+    <p class="page-lede">
+      Sixteen years, two editions, dozens of translations — and a third edition on the way.
+    </p>
+
+    <ol class="timeline">
+      {timeline.map((item) => (
+        <li>
+          <div class="year">{item.year}</div>
+          <div class="entry">
+            <h2>{item.title}</h2>
+            <p>{item.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="card next">
+      <p>
+        The revision work is inventoried chapter by chapter in
+        <a href="https://github.com/progit/progit3/blob/main/REVISION_PLAN.md" rel="noopener"><code>REVISION_PLAN.md</code></a>,
+        and progress is posted on <a href={url('/blog/')}>the blog</a>.
+      </p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5.4rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline li {
+    display: flex;
+    gap: 2rem;
+    padding: 0 0 2.2rem;
+    position: relative;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: 5.12rem;
+    top: 0.5rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  .year {
+    flex: 0 0 4rem;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 0.35rem;
+  }
+
+  .entry {
+    padding-left: 1rem;
+  }
+
+  .entry h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.3rem;
+  }
+
+  .entry p {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.02rem;
+  }
+
+  .next {
+    margin-top: 1rem;
+  }
+
+  .next p {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .timeline::before,
+    .timeline li::before {
+      display: none;
+    }
+
+    .timeline li {
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .year {
+      text-align: left;
+      flex-basis: auto;
+    }
+
+    .entry {
+      padding-left: 0;
+    }
+  }
+</style>

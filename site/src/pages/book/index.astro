@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+import book from '../../generated/book.json';
+---
+
+<Base title="Read Pro Git online — Table of Contents" description="The complete Pro Git book, one page per section. Free to read.">
+  <main class="container book-index">
+    <div class="index-head">
+      <img src={url('/book-cover.png')} alt="Pro Git book cover" width="190" />
+      <div>
+        <h1>Pro Git</h1>
+        <p class="lede">
+          Read the whole book right here, one section at a time — or
+          <a href={url('/search/')}>search it</a> for what you need.
+        </p>
+        <p class="rev">Built from the sources · rev {book.revnumber} · {book.revdate}</p>
+      </div>
+    </div>
+
+    <ul class="toc-index">
+      {book.chapters.map((chapter) => (
+        <li>
+          <a class="chap" href={url(`/book/${chapter.landing}/`)}>{chapter.title}</a>
+          {chapter.sections.length > 0 && (
+            <ul>
+              {chapter.sections.map((section) => (
+                <li><a href={url(`/book/${section.slug}/`)}>{section.title}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </main>
+</Base>
+
+<style>
+  .book-index {
+    max-width: 52rem;
+  }
+
+  .index-head {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    margin: 2.8rem 0 2.2rem;
+  }
+
+  .index-head img {
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+
+  .index-head h1 {
+    font-size: 2.6rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .lede {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .rev {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .toc-index {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem;
+  }
+
+  .toc-index > li {
+    margin: 0.7rem 0;
+  }
+
+  .toc-index a.chap {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .toc-index a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .toc-index a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .toc-index ul {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 0.3rem 0 0.9rem;
+  }
+
+  .toc-index ul li {
+    margin: 0.14rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .index-head {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+    }
+  }
+</style>
