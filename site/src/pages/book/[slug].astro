@@ -1,0 +1,165 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookSidebar from '../../components/BookSidebar.astro';
+import { url } from '../../lib/url';
+import book from '../../generated/book.json';
+
+export function getStaticPaths() {
+  return book.pages.map((page, i) => ({
+    params: { slug: page.slug },
+    props: {
+      page,
+      prev: i > 0 ? book.pages[i - 1] : null,
+      next: i + 1 < book.pages.length ? book.pages[i + 1] : null,
+    },
+  }));
+}
+
+interface PageInfo {
+  slug: string;
+  title: string;
+  chapterTitle: string;
+  chapterLanding: string;
+  body: string;
+}
+
+interface Props {
+  page: PageInfo;
+  prev: PageInfo | null;
+  next: PageInfo | null;
+}
+
+const { page, prev, next } = Astro.props;
+const isChapterStart = page.chapterLanding === page.slug;
+---
+
+<Base title={`${page.title} · Pro Git`} description={`Pro Git — ${page.chapterTitle}: ${page.title}`}>
+  <div class="book-layout">
+    <BookSidebar currentSlug={page.slug} />
+    <main class="book-main">
+      <div class="pager top">
+        {prev ? <a class="prev" href={url(`/book/${prev.slug}/`)}>← {prev.title}</a> : <span class="spacer"></span>}
+        <a class="home" href={url('/book/')}>Contents</a>
+        <a class="home" href={url('/search/')}>Search</a>
+        {next ? <a class="next" href={url(`/book/${next.slug}/`)}>{next.title} →</a> : <span class="spacer"></span>}
+      </div>
+
+      {!isChapterStart && (
+        <div class="breadcrumb">
+          <a href={url(`/book/${page.chapterLanding}/`)}>{page.chapterTitle}</a>
+        </div>
+      )}
+
+      <article
+        class="book-content"
+        data-pagefind-body
+        data-pagefind-meta={`title:${page.title}`}
+        data-pagefind-filter={`chapter:${page.chapterTitle}`}
+        set:html={page.body}
+      />
+
+      <div class="pager bottom">
+        {prev ? <a class="prev" href={url(`/book/${prev.slug}/`)}>← {prev.title}</a> : <span class="spacer"></span>}
+        <a class="home" href={url('/book/')}>Contents</a>
+        {next ? <a class="next" href={url(`/book/${next.slug}/`)}>{next.title} →</a> : <span class="spacer"></span>}
+      </div>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .book-layout {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .book-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 47rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 4rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0.6rem 0;
+  }
+
+  .breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .pager {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .pager .prev {
+    margin-right: auto;
+  }
+
+  .pager .next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .pager .home {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .pager .home:hover {
+    color: var(--accent);
+  }
+
+  .pager a.prev,
+  .pager a.next {
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    max-width: 42%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: var(--bg-raised);
+  }
+
+  .pager a.prev:hover,
+  .pager a.next:hover {
+    border-color: var(--accent);
+  }
+
+  .pager .spacer {
+    flex: 0 0 auto;
+  }
+
+  .pager.top {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .pager.bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .book-layout {
+      flex-direction: column;
+    }
+
+    .book-main {
+      padding: 1rem 1.2rem 3rem;
+    }
+  }
+</style>

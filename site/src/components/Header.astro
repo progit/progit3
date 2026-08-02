@@ -1,0 +1,104 @@
+---
+import { url } from '../lib/url';
+
+const nav = [
+  { href: url('/book/'), label: 'The Book' },
+  { href: url('/blog/'), label: 'Blog' },
+  { href: url('/history/'), label: 'History' },
+  { href: url('/search/'), label: 'Search' },
+];
+const current = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="wordmark" href={url('/')}>
+      <span class="wordmark-pro">Pro</span> Git
+      <span class="wordmark-ed">3rd&nbsp;edition</span>
+    </a>
+    <nav aria-label="Site">
+      {nav.map((item) => (
+        <a href={item.href} class:list={[{ active: current.startsWith(item.href) }]}>
+          {item.label}
+        </a>
+      ))}
+      <a href="https://github.com/progit/progit3" rel="noopener" class="gh">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    border-bottom: 3px solid var(--accent);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--header-text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .wordmark-pro {
+    color: var(--accent);
+  }
+
+  .wordmark-ed {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--header-text);
+    opacity: 0.65;
+    margin-left: 0.4rem;
+    vertical-align: 0.25em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--header-text);
+    opacity: 0.85;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+  }
+
+  nav a:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--header-text);
+  }
+
+  nav a.active {
+    opacity: 1;
+    color: var(--accent);
+  }
+
+  nav a.gh {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-left: 0.4rem;
+  }
+</style>

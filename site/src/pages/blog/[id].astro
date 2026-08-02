@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
+---
+
+<Base title={`${post.data.title} · Pro Git Blog`} description={post.data.description}>
+  <main class="container narrow">
+    <article data-pagefind-body>
+      <header class="post-header">
+        <p class="meta">
+          <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
+          · {post.data.author}
+        </p>
+        <h1>{post.data.title}</h1>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+    <p class="back"><a href={url('/blog/')}>← All posts</a></p>
+  </main>
+</Base>
+
+<style>
+  .post-header {
+    margin: 2.5rem 0 1.8rem;
+  }
+
+  .post-header .meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.4rem;
+  }
+
+  .post-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+
+  .back {
+    margin-top: 3rem;
+  }
+</style>

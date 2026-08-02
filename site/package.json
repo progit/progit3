@@ -1,0 +1,20 @@
+{
+  "name": "progit-site",
+  "version": "1.0.0",
+  "description": "Project website for the Pro Git book (3rd edition) — homepage, blog, history, and a readable, searchable rendering of the book.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:book": "node scripts/build-book.mjs",
+    "dev": "npm run build:book && astro dev",
+    "build": "npm run build:book && astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.5",
+    "asciidoctor": "^4.0.7",
+    "astro": "^7.1.6",
+    "pagefind": "^1.5.2"
+  }
+}

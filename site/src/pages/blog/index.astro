@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const dateFmt = new Intl.DateTimeFormat('en', { dateStyle: 'long' });
+---
+
+<Base title="Blog · Pro Git" description="Updates and progress reports from the Pro Git third edition.">
+  <main class="container narrow">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-lede">Updates and progress on the third edition of <em>Pro Git</em>.</p>
+
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li>
+          <article>
+            <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
+            <h2><a href={url(`/blog/${post.id}/`)}>{post.data.title}</a></h2>
+            <p>{post.data.description}</p>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Base>
+
+<style>
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-list li {
+    border-bottom: 1px solid var(--border);
+    padding: 1.4rem 0;
+  }
+
+  .post-list time {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .post-list h2 {
+    margin: 0.3rem 0 0.4rem;
+    font-size: 1.5rem;
+  }
+
+  .post-list h2 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .post-list h2 a:hover {
+    color: var(--accent);
+  }
+
+  .post-list p {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

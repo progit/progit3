@@ -1,0 +1,137 @@
+---
+import { url } from '../lib/url';
+import book from '../generated/book.json';
+
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+function chapterContains(chapter: (typeof book.chapters)[number], slug: string): boolean {
+  return chapter.landing === slug || chapter.sections.some((s) => s.slug === slug);
+}
+---
+
+<nav class="book-toc" aria-label="Table of contents">
+  <a class="book-toc-title" href={url('/book/')}>Pro Git</a>
+  <ul>
+    {book.chapters.map((chapter) => {
+      const open = chapterContains(chapter, currentSlug);
+      return (
+        <li class:list={[{ open }]}>
+          <a
+            class:list={['chap', { current: chapter.sections.length === 0 && chapter.landing === currentSlug }]}
+            href={url(`/book/${chapter.landing}/`)}
+          >
+            {chapter.title}
+          </a>
+          {chapter.sections.length > 0 && open && (
+            <ul>
+              {chapter.sections.map((section) => (
+                <li>
+                  <a
+                    class:list={['sec', { current: section.slug === currentSlug }]}
+                    href={url(`/book/${section.slug}/`)}
+                  >
+                    {section.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<style>
+  .book-toc {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: 19rem;
+    min-width: 19rem;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1.2rem 1rem 3rem;
+    background: var(--bg-inset);
+    border-right: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .book-toc-title {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+  }
+
+  .book-toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .book-toc > ul > li {
+    margin: 0.15rem 0;
+  }
+
+  .book-toc ul ul {
+    margin: 0.1rem 0 0.5rem 0.2rem;
+    padding-left: 0.6rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .book-toc a {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    padding: 0.18rem 0.4rem;
+    border-radius: 5px;
+  }
+
+  .book-toc a.chap {
+    font-weight: 600;
+  }
+
+  .book-toc a.sec {
+    color: var(--muted);
+  }
+
+  .book-toc a:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  .book-toc li.open > a.chap {
+    color: var(--accent);
+  }
+
+  .book-toc a.current {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .book-toc a.current:hover {
+    background: var(--accent-strong);
+    color: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .book-toc {
+      position: static;
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: 45vh;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+</style>

@@ -1,0 +1,404 @@
+/* ---------------------------------------------------------------------------
+   Pro Git site — global design system
+   --------------------------------------------------------------------------- */
+
+:root {
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --bg: #faf7f2;
+  --bg-raised: #ffffff;
+  --bg-inset: #f1ece3;
+  --text: #2b2620;
+  --muted: #6f6659;
+  --accent: #cc4d17;
+  --accent-strong: #a83c0e;
+  --accent-soft: #f8e8de;
+  --border: #e4dcce;
+  --code-bg: #2b2620;
+  --code-text: #efe8db;
+  --header-bg: #221d18;
+  --header-text: #f3ede2;
+  --shadow: 0 10px 40px rgba(43, 38, 32, 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d1915;
+    --bg-raised: #262019;
+    --bg-inset: #2e2720;
+    --text: #ece5d8;
+    --muted: #a99e8c;
+    --accent: #f0763d;
+    --accent-strong: #f78d5c;
+    --accent-soft: #3a2a1e;
+    --border: #3a332a;
+    --code-bg: #14110e;
+    --code-text: #e8e0d1;
+    --header-bg: #14110e;
+    --header-text: #f3ede2;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code, pre, kbd {
+  font-family: var(--mono);
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.narrow {
+  max-width: 46rem;
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.btn-ghost {
+  border-color: var(--border);
+  color: var(--text);
+  background: var(--bg-raised);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Cards -------------------------------------------------------------------- */
+
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+}
+
+/* Page headers -------------------------------------------------------------- */
+
+.page-title {
+  font-size: 2.4rem;
+  margin: 2.5rem 0 0.4rem;
+}
+
+.page-lede {
+  color: var(--muted);
+  font-size: 1.12rem;
+  margin: 0 0 2.2rem;
+}
+
+/* Prose (blog posts, history) ------------------------------------------------ */
+
+.prose {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+}
+
+.prose h2 {
+  margin-top: 2.2rem;
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  margin-top: 1.6rem;
+  font-size: 1.2rem;
+}
+
+.prose pre {
+  font-size: 0.85rem;
+}
+
+.prose blockquote {
+  margin: 1.2rem 0;
+  padding: 0.2rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Code blocks (site-wide) ----------------------------------------------------- */
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+:not(pre) > code {
+  background: var(--bg-inset);
+  border-radius: 5px;
+  padding: 0.12em 0.35em;
+  font-size: 0.88em;
+}
+
+/* ---------------------------------------------------------------------------
+   Book reader — styles for the Asciidoctor-generated content
+   --------------------------------------------------------------------------- */
+
+.book-content {
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  overflow-wrap: break-word;
+}
+
+.book-content h2 {
+  font-size: 2rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.book-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.book-content h4 {
+  font-size: 1.18rem;
+  margin-top: 1.8rem;
+}
+
+.book-content .title {
+  font-family: var(--sans);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: normal;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.book-content .imageblock {
+  margin: 1.6rem 0;
+  text-align: center;
+}
+
+.book-content .imageblock img {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+
+.book-content .imageblock .title {
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.book-content .listingblock,
+.book-content .literalblock {
+  margin: 1.2rem 0;
+}
+
+.book-content pre {
+  font-size: 0.85rem;
+}
+
+.book-content table {
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.book-content table th,
+.book-content table td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.7rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.book-content table th {
+  background: var(--bg-inset);
+}
+
+/* Admonitions (Note / Tip / Warning …) — rendered as tables by Asciidoctor */
+
+.book-content .admonitionblock {
+  margin: 1.4rem 0;
+}
+
+.book-content .admonitionblock > table,
+.book-content .admonitionblock > table td {
+  border: 0;
+}
+
+.book-content .admonitionblock > table {
+  width: 100%;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+}
+
+.book-content .admonitionblock td.icon {
+  width: 5rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-strong);
+  vertical-align: top;
+  padding: 0.9rem 0 0.9rem 1rem;
+}
+
+.book-content .admonitionblock td.content {
+  padding: 0.9rem 1.2rem 0.9rem 0.6rem;
+  font-size: 0.98rem;
+}
+
+.book-content .admonitionblock td.content > :first-child {
+  margin-top: 0;
+}
+
+.book-content .admonitionblock td.content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebars, quotes, callouts */
+
+.book-content .sidebarblock {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  margin: 1.4rem 0;
+}
+
+.book-content .sidebarblock > .content > .title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.book-content .quoteblock {
+  margin: 1.4rem 0;
+  padding: 0.2rem 1.4rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+.book-content .quoteblock .attribution {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+}
+
+.book-content .colist {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.book-content .conum[data-value] {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  text-align: center;
+  font-family: var(--sans);
+  font-style: normal;
+}
+
+.book-content .conum[data-value]::after {
+  content: attr(data-value);
+}
+
+.book-content .conum[data-value] * {
+  display: none;
+}
+
+.book-content dt {
+  font-weight: 700;
+}
+
+.book-content dd {
+  margin: 0.2rem 0 0.9rem 1.4rem;
+}
+
+.book-content .footnote {
+  font-size: 0.9rem;
+}
+
+.book-content hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
