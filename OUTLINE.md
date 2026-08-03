@@ -39,7 +39,7 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 2 — Git Basics
 
-*From `book/ch02/`; 2.7 expands `aliases.asc` to deliver the "basic config" promise.*
+*From `book/ch02/`; 2.7 expands `ch02/aliases.asc` to deliver the "basic config" promise.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 ## Chapter 3 — Git Branching
 
 *From `book/ch03/` plus one net-new section (3.5 Worktrees — zero existing coverage
-anywhere in the book).*
+anywhere in the book; placeholder at `ch03/worktrees.asc`).*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -70,9 +70,10 @@ anywhere in the book).*
 
 ## Chapter 4 — Distributed Git
 
-*From `book/ch05/` plus material rescued from the dropped GitHub chapter into 4.3.
-Rescued prose (from `ch06/2-contributing.asc` and `ch06/3-maintaining.asc`) needs human
-rewriting to be forge-neutral, not just moving.*
+*Was `book/ch05/`, now `book/ch04/`, plus material rescued from the dropped GitHub
+chapter into 4.3 (placeholder at `ch04/pull-requests.asc`). Rescued prose (from the
+removed `ch06/2-contributing.asc` and `ch06/3-maintaining.asc`; recover via git
+history) needs human rewriting to be forge-neutral, not just moving.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -84,8 +85,9 @@ rewriting to be forge-neutral, not just moving.*
 
 ## Chapter 5 — Git Toolkit
 
-*From `book/ch07/`, renamed from "Git Tools." (`ch07/subtree-merges.asc` exists on disk
-but is not included in the current build; it stays out.)*
+*Was `book/ch07/`, now `book/ch05/`, renamed from "Git Tools."
+(`subtree-merges.asc` has no section row of its own: it is included from within
+`advanced-merging.asc` as a subsection and stays there.)*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -107,8 +109,9 @@ but is not included in the current build; it stays out.)*
 
 ## Chapter 6 — Customizing Git
 
-*From `book/ch08/`; 6.2 is assembled from `ch02/recording-changes.asc` (`_ignoring`)
-and `config.asc` excludes material.*
+*Was `book/ch08/`, now `book/ch06/`; 6.2 (placeholder at `ch06/ignoring.asc`) is
+assembled from `ch02/recording-changes.asc` (`_ignoring`) and `config.asc` excludes
+material.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -121,8 +124,9 @@ and `config.asc` excludes material.*
 
 ## Chapter 7 — Git and Agents
 
-*Entirely new chapter; 7.3 is a condensed reflow of the dropped Appendix B
-(`book/B/`) plus gitoxide and per-library SHA-256 notes.*
+*Entirely new chapter (placeholders at `book/ch07-git-and-agents.asc` + `book/ch07/`);
+7.3 is a condensed reflow of the dropped Appendix B (`book/B/`, removed — recover via
+git history) plus gitoxide and per-library SHA-256 notes.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -135,8 +139,9 @@ and `config.asc` excludes material.*
 
 ## Chapter 8 — Git Servers
 
-*From `book/ch04/`; 8.8 is reworked from `gitlab.asc`, 8.9 from `hosted.asc` (currently
-a GitHub/Bitbucket-era stub that defers to the dropped GitHub chapter).*
+*Was `book/ch04/`, now `book/ch08/`; 8.8 is reworked from `gitlab.asc`, 8.9 from
+`hosted.asc` (currently a GitHub/Bitbucket-era stub that deferred to the dropped
+GitHub chapter).*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -153,9 +158,10 @@ a GitHub/Bitbucket-era stub that defers to the dropped GitHub chapter).*
 
 ## Chapter 9 — Git at Scale
 
-*Entirely new chapter — no existing coverage of shallow/partial clones, sparse
-checkout, Scalar, LFS, or monorepos anywhere in the current book. 9.5 keeps the
-ops-level performance story; on-disk format detail stays in Chapter 10.*
+*Entirely new chapter (placeholders at `book/ch09-git-at-scale.asc` + `book/ch09/`) —
+no existing coverage of shallow/partial clones, sparse checkout, Scalar, LFS, or
+monorepos anywhere in the current book. 9.5 keeps the ops-level performance story;
+on-disk format detail stays in Chapter 10.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -186,7 +192,7 @@ ops-level performance story; on-disk format detail stays in Chapter 10.*
 
 ## Appendix A — Git Commands
 
-*From `C-git-commands.asc` — the only appendix kept.*
+*Was `C-git-commands.asc`, now `A-git-commands.asc` — the only appendix kept.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -219,6 +225,6 @@ Numbering below is the *2nd edition's*; section numbers in the right column are 
 | X1 | master → main sweep | ~602 renames book-wide per `book_master_to_main_inventory.md`; coordinate with diagram regeneration | Large | not started |
 | X2 | SHA-256 example hashes | Regenerate example hashes/transcripts book-wide at 64 chars; settle the legacy-SHA-1-example policy | Large | not started |
 | X3 | Version reframing | "Written for Git 2" → 3.x; normalize "since 2.x" framing to baseline behavior | Medium | not started |
-| X4 | Restructure plumbing | New include map in `progit.asc`; wrapper files for Ch 7 and Ch 9; delete `ch06/`, `ch09/`, `A/`, `B/` and their images; renumber chapter dirs | Medium | not started |
-| X5 | Cross-reference repair | Retarget xrefs into dropped chapters (`refspec.asc`, `C-git-commands.asc`, `contributing.asc`, `hosted.asc`); re-home Ch 2's `_ignoring` anchor | Small | not started |
+| X4 | Restructure plumbing | New include map in `progit.asc`; wrapper files for Ch 7 and Ch 9; delete `ch06/`, `ch09/`, `A/`, `B/` and their images; renumber chapter dirs | Medium | done |
+| X5 | Cross-reference repair | Retarget xrefs into dropped chapters (`refspec.asc`, `A-git-commands.asc`, `contributing.asc`, `hosted.asc`) — done via anchors preserved in the 4.3 placeholder; Ch 2's `_ignoring` anchor moves with the 6.2 content work | Small | done |
 | X6 | Diagram regeneration | `diagram-source/` regenerated for `main`; new diagrams for 3.5 (worktrees), Ch 7, and Ch 9 | Large | not started |
