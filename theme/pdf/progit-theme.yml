@@ -1,0 +1,21 @@
+# PDF theme for Pro Git: the default Asciidoctor PDF theme with
+# JetBrains Mono (bundled in theme/pdf/fonts, OFL licensed) as the
+# monospace font for inline code, code blocks, and kbd macros.
+#
+# Callout numbers (conum) intentionally keep the default M+ 1mn font,
+# which provides the circled-number glyphs.
+extends: default
+font:
+  catalog:
+    merge: true
+    JetBrains Mono:
+      normal: JetBrainsMono-Regular.ttf
+      bold: JetBrainsMono-Bold.ttf
+      italic: JetBrainsMono-Italic.ttf
+      bold_italic: JetBrainsMono-BoldItalic.ttf
+codespan:
+  font-family: JetBrains Mono
+code:
+  font-family: JetBrains Mono
+kbd:
+  font-family: JetBrains Mono

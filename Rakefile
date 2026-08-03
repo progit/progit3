@@ -103,7 +103,7 @@ namespace :book do
       check_contrib()
 
       puts 'Converting to PDF... (this one takes a while)'
-      sh "bundle exec asciidoctor-pdf #{params} progit.asc 2>/dev/null"
+      sh "bundle exec asciidoctor-pdf #{params} -a pdf-theme=theme/pdf/progit-theme.yml -a 'pdf-fontsdir=theme/pdf/fonts;GEM_FONTS_DIR' progit.asc 2>/dev/null"
       puts ' -- PDF output at progit.pdf'
   end
 

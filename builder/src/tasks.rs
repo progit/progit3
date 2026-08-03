@@ -145,6 +145,12 @@ fn build_pdf(ctx: &Context) -> Result<()> {
     ui::info("(the PDF takes a while)");
     let mut cmd = ctx.tool("asciidoctor-pdf");
     cmd.args(ctx.doc_attrs());
+    cmd.args([
+        "-a",
+        "pdf-theme=theme/pdf/progit-theme.yml",
+        "-a",
+        "pdf-fontsdir=theme/pdf/fonts;GEM_FONTS_DIR",
+    ]);
     cmd.arg(crate::context::MASTER_DOC);
     run(cmd, "asciidoctor-pdf")
 }
