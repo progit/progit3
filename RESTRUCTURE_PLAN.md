@@ -5,6 +5,11 @@ Full chapter/section outline for the 3rd-edition restructure. Companion to
 Git 3.0 changes; this document tracks the new *shape* of the book. For each section:
 what it covers, and how much of it is new versus carried over.
 
+> **Note:** the execution punch list lives in [`OUTLINE.md`](OUTLINE.md), which is
+> canonical for chapter order and numbering. Since this document was drafted, **Git at
+> Scale moved to second-to-last (Chapter 9, before Internals)**, shifting Toolkit → 5,
+> Customizing → 6, Agents → 7, Servers → 8. Section content below is unchanged.
+
 **Status legend:**
 
 - **new** — section does not exist today; written from scratch.
