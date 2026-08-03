@@ -2,6 +2,16 @@
 import Base from '../../layouts/Base.astro';
 import { url } from '../../lib/url';
 import book from '../../generated/book.json';
+
+// Ebook files are attached to a GitHub release on every merge to main
+// (see .github/workflows/release-on-merge.yml); "latest" always points there.
+const downloadBase = 'https://github.com/progit/progit3/releases/latest/download';
+const downloads = [
+  { label: 'PDF', file: 'progit.pdf' },
+  { label: 'EPUB', file: 'progit.epub' },
+  { label: 'FB2', file: 'progit.fb2.zip' },
+  { label: 'HTML', file: 'progit.html' },
+];
 ---
 
 <Base title="Read Pro Git online — Table of Contents" description="The complete Pro Git book, one page per section. Free to read.">
@@ -13,6 +23,12 @@ import book from '../../generated/book.json';
         <p class="lede">
           Read the whole book right here, one section at a time — or
           <a href={url('/search/')}>search it</a> for what you need.
+        </p>
+        <p class="downloads">
+          Download:
+          {downloads.map((d) => (
+            <a href={`${downloadBase}/${d.file}`}>{d.label}</a>
+          ))}
         </p>
         <p class="rev">Built from the sources · rev {book.revnumber} · {book.revdate}</p>
       </div>
@@ -61,6 +77,29 @@ import book from '../../generated/book.json';
     color: var(--muted);
     font-size: 1.1rem;
     margin: 0 0 0.6rem;
+  }
+
+  .downloads {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .downloads a {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.1rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .downloads a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
   }
 
   .rev {
