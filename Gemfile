@@ -6,7 +6,7 @@ gem 'asciidoctor', '2.0.26'
 gem 'json', '2.21.1'
 gem 'awesome_print', '1.9.2'
 
-gem 'asciidoctor-fb2', '0.7.0'
+gem 'asciidoctor-fb2', '0.8.0'
 gem 'asciidoctor-epub3', '2.3.0'
 gem 'asciidoctor-pdf', '2.3.24'
 
