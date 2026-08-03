@@ -1,8 +1,9 @@
 # Pro Git, 3rd Edition — Outline & Punch List
 
-The canonical section-by-section punch list for the 3rd-edition restructure. Background
-and rationale live in [`RESTRUCTURE_PLAN.md`](RESTRUCTURE_PLAN.md) and
-[`REVISION_PLAN.md`](REVISION_PLAN.md); this file tracks execution.
+The canonical section-by-section punch list for the 3rd-edition restructure.
+Content-level staleness and Git 3.0 details live in
+[`REVISION_PLAN.md`](REVISION_PLAN.md); this file tracks the new shape of the book and
+execution. Each chapter heading notes which current files the chapter is built from.
 
 Chapter order (Git at Scale is second-to-last, before Internals):
 
@@ -23,6 +24,8 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 1 — Getting Started
 
+*From `book/ch01/`, all seven sections retained.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 1.0 | Chapter intro & Summary | Wrapper prose and chapter summary refresh | Minimal | not started |
@@ -35,6 +38,8 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 | 1.7 | Getting Help | `git help`/`-h`; community channels refreshed (Stack Overflow, Discussions, Discord; IRC demoted) | Small | not started |
 
 ## Chapter 2 — Git Basics
+
+*From `book/ch02/`; 2.7 expands `aliases.asc` to deliver the "basic config" promise.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -49,6 +54,9 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 3 — Git Branching
 
+*From `book/ch03/` plus one net-new section (3.5 Worktrees — zero existing coverage
+anywhere in the book).*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 3.0 | Chapter intro & Summary | Wrapper prose; summary gains worktrees | Small | not started |
@@ -62,6 +70,10 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 4 — Distributed Git
 
+*From `book/ch05/` plus material rescued from the dropped GitHub chapter into 4.3.
+Rescued prose (from `ch06/2-contributing.asc` and `ch06/3-maintaining.asc`) needs human
+rewriting to be forge-neutral, not just moving.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 4.0 | Chapter intro & Summary | Wrapper prose; the "next chapter: GitHub" handoff rewritten | Small | not started |
@@ -71,6 +83,9 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 | 4.4 | Maintaining a Project | `apply`/`am`, contributor branches, determining what's introduced, integrating, tagging releases; adds PR-based maintenance counterpart | Medium | not started |
 
 ## Chapter 5 — Git Toolkit
+
+*From `book/ch07/`, renamed from "Git Tools." (`ch07/subtree-merges.asc` exists on disk
+but is not included in the current build; it stays out.)*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -92,6 +107,9 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 6 — Customizing Git
 
+*From `book/ch08/`; 6.2 is assembled from `ch02/recording-changes.asc` (`_ignoring`)
+and `config.asc` excludes material.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 6.0 | Chapter intro & Summary | Wrapper prose and chapter summary refresh | Minimal | not started |
@@ -103,6 +121,9 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 7 — Git and Agents
 
+*Entirely new chapter; 7.3 is a condensed reflow of the dropped Appendix B
+(`book/B/`) plus gitoxide and per-library SHA-256 notes.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 7.0 | Chapter intro & Summary | New chapter: why AI coding agents change repo usage — many actors, high commit volume, review as bottleneck | Medium | not started |
@@ -113,6 +134,9 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 | 7.5 | Tips and Pitfalls | Reviewing agent-authored history, attribution trailers, safety rails (protected branches, force-push, `safe.*`), secrets hygiene | Medium | not started |
 
 ## Chapter 8 — Git Servers
+
+*From `book/ch04/`; 8.8 is reworked from `gitlab.asc`, 8.9 from `hosted.asc` (currently
+a GitHub/Bitbucket-era stub that defers to the dropped GitHub chapter).*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -129,6 +153,10 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Chapter 9 — Git at Scale
 
+*Entirely new chapter — no existing coverage of shallow/partial clones, sparse
+checkout, Scalar, LFS, or monorepos anywhere in the current book. 9.5 keeps the
+ops-level performance story; on-disk format detail stays in Chapter 10.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | 9.0 | Chapter intro & Summary | New chapter: why big repos and teams strain Git; map of the scaling toolbox | Medium | not started |
@@ -141,6 +169,8 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 | 9.7 | Monorepos | Putting it together: trade-offs, layout/ownership practices, real-world Scalar deployments, forge constraints | Large | not started |
 
 ## Chapter 10 — Git Internals
+
+*From `book/ch10/`, all eight sections retained.*
 
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
@@ -156,9 +186,31 @@ Large = new or mostly-new material). Update **Status** as work proceeds
 
 ## Appendix A — Git Commands
 
+*From `C-git-commands.asc` — the only appendix kept.*
+
 | Section | Title | Description | Effort | Status |
 |---|---|---|---|---|
 | A | Git Commands | Command index retargeted to the new chapter map; adds `switch`, `restore`, `worktree`, `sparse-checkout`, `scalar`, `maintenance`, `range-diff`, `history`; notes 3.0 removals; External Systems category trimmed; broken xrefs fixed | Medium | not started |
+
+## Dropped outright
+
+Numbering below is the *2nd edition's*; section numbers in the right column are the new outline's.
+
+| Dropped (2nd ed.) | Where its survivors go |
+|---|---|
+| Ch 6 GitHub (`book/ch06/`) | PR flow, fork syncing, PR refs → **4.3/4.4**; account setup, org management, Markdown, scripting/API → cut |
+| Ch 9 Git and Other Systems (`book/ch09/`) | Cut entirely (SVN/Hg/P4 bridges, importers); command-index entries trimmed to match |
+| Appendix A Git in Other Environments (`book/A/`) | Cut entirely (GUIs, IDEs, shell prompts) |
+| Appendix B Embedding Git (`book/B/`) | Library survey reflows, condensed, into **7.3** |
+| `introduction.asc` | Open decision: fold into the Preface or Ch 1 opener; recommend folding into the Preface |
+
+## Open decisions
+
+1. `policy.asc` (6.5) — keep (recommended) or cut.
+2. GitWeb (8.7) — cut to a sidebar mention (recommended) or keep trimmed.
+3. `introduction.asc` — fold into the Preface (recommended) or keep as a standalone opener.
+4. Large Files (9.6) — lives in Git at Scale (recommended) vs. Git Servers.
+5. Performance split — ops story in 9.5, format detail in 10.4/10.7 (recommended), or consolidate in one place.
 
 ## Cross-cutting & mechanical
 
