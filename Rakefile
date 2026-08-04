@@ -136,3 +136,148 @@ namespace :book do
 end
 
 task :default => "book:build"
+
+# ---------------------------------------------------------------------------
+# figures: namespace — JSON source → SVG/PNG figure pipeline
+# ---------------------------------------------------------------------------
+
+namespace :figures do
+  FIGURES_DIR = File.join(__dir__, 'figures')
+  IMAGES_DIR  = File.join(__dir__, 'images')
+  RENDERER    = File.join(__dir__, 'bin', 'render-figures.rb')
+
+  FIGURE_SOURCES = FileList["#{FIGURES_DIR}/*.json"].exclude("#{FIGURES_DIR}/_*.json")
+
+  desc 'Validate all figures/*.json against figures/_schema.json'
+  task :validate do
+    require 'json'
+    schema_path = File.join(FIGURES_DIR, '_schema.json')
+    unless File.exist?(schema_path)
+      abort "Missing #{schema_path}"
+    end
+    errors = []
+    FIGURE_SOURCES.each do |f|
+      begin
+        JSON.parse(File.read(f))
+      rescue JSON::ParserError => e
+        errors << "#{f}: #{e.message}"
+      end
+    end
+    if errors.any?
+      errors.each { |e| puts "  INVALID: #{e}" }
+      abort "#{errors.size} invalid figure(s)"
+    end
+    puts "  #{FIGURE_SOURCES.size} figure(s) valid JSON"
+  end
+
+  desc 'Render figures/*.json to images/*.svg'
+  task :build => :validate do
+    sh "ruby #{RENDERER}"
+  end
+
+  desc 'Render a single figure by name (e.g. rake figures:render[basic-branching-1])'
+  task :render, [:name] => :validate do |_t, args|
+    name = args[:name] or abort "Usage: rake figures:render[name]"
+    src  = File.join(FIGURES_DIR, "#{name}.json")
+    abort "No such figure: #{src}" unless File.exist?(src)
+    sh "ruby #{RENDERER} #{src}"
+  end
+
+  desc 'Rasterize images/*.svg (from figures/) to images/*.png at 3x via rsvg-convert'
+  task :raster => :build do
+    rsvg = `which rsvg-convert`.strip
+    abort "rsvg-convert not found — install librsvg (brew install librsvg)" if rsvg.empty?
+
+    # Font check: verify rsvg-convert resolves JetBrains Mono via fontconfig
+    font_check = `fc-match 'JetBrains Mono' 2>/dev/null`.strip
+    unless font_check.downcase.include?('jetbrainsmono')
+      abort "JetBrains Mono not found by fontconfig.\n" \
+            "Locally: install the font. CI: set XDG_DATA_HOME or FONTCONFIG_FILE " \
+            "to expose theme/pdf/fonts/."
+    end
+
+    FIGURE_SOURCES.each do |json_path|
+      base     = File.basename(json_path, '.json')
+      svg_path = File.join(IMAGES_DIR, "#{base}.svg")
+      png_path = File.join(IMAGES_DIR, "#{base}.png")
+      next unless File.exist?(svg_path)
+
+      # Read the viewBox to compute a 3x width
+      vb = File.read(svg_path)[/viewBox="0 0 ([\d.]+) ([\d.]+)"/, 1]
+      if vb
+        width = (vb.to_f * 3).round
+        sh "rsvg-convert -w #{width} #{svg_path} -o #{png_path}"
+      else
+        sh "rsvg-convert #{svg_path} -o #{png_path}"
+      end
+    end
+  end
+
+  desc 'Fail if committed images/ is stale relative to figures/ (run on CI after figures:build)'
+  task :check => :validate do
+    require 'tmpdir'
+    require 'json'
+    Dir.mktmpdir('figures-check') do |tmpdir|
+      # Render all figures into a temp dir and compare with committed images/
+      renderer_env = "FIGURES_DIR=#{FIGURES_DIR} IMAGES_DIR=#{tmpdir}"
+      sh "#{renderer_env} ruby #{RENDERER}", :verbose => false do |ok, _|
+        abort "Renderer failed" unless ok
+      end
+      stale = []
+      FIGURE_SOURCES.each do |json_path|
+        base      = File.basename(json_path, '.json')
+        committed = File.join(IMAGES_DIR, "#{base}.svg")
+        rendered  = File.join(tmpdir, "#{base}.svg")
+        if File.exist?(committed) && File.exist?(rendered)
+          stale << base if File.read(rendered) != File.read(committed)
+        else
+          stale << base
+        end
+      end
+      if stale.any?
+        stale.each { |b| puts "  STALE: #{b}.svg" }
+        abort "#{stale.size} stale figure(s) — run: rake figures:build && git add images/"
+      end
+      puts "  All #{FIGURE_SOURCES.size} figure(s) up to date"
+    end
+  end
+
+  desc 'Build a side-by-side review HTML page at tmp/figure-review.html'
+  task :review => :build do
+    require 'fileutils'
+    FileUtils.mkdir_p File.join(__dir__, 'tmp')
+    out = File.join(__dir__, 'tmp', 'figure-review.html')
+
+    rows = FIGURE_SOURCES.sort.map do |json_path|
+      base     = File.basename(json_path, '.json')
+      old_png  = "../../images/#{base}.png"
+      new_svg  = "../../images/#{base}.svg"
+      master_flag = File.read(json_path).include?('"master"') ? '<b style="color:red">contains master</b>' : ''
+      <<~ROW
+        <tr>
+          <td style="font-family:monospace;padding:4px 8px;vertical-align:top">#{base}</td>
+          <td style="padding:4px">#{master_flag}</td>
+          <td style="padding:4px"><img src="#{old_png}" style="max-width:400px;border:1px solid #ccc"/></td>
+          <td style="padding:4px"><img src="#{new_svg}" style="max-width:400px;border:1px solid #ccc"/></td>
+        </tr>
+      ROW
+    end.join
+
+    File.write(out, <<~HTML)
+      <!DOCTYPE html>
+      <html><head><meta charset="utf-8">
+      <title>Figure review</title>
+      <style>body{font-family:sans-serif;font-size:13px} th{text-align:left;padding:4px 8px;background:#eee}</style>
+      </head><body>
+      <h1>Figure review — #{FIGURE_SOURCES.size} figures</h1>
+      <p>Left: committed PNG &nbsp;|&nbsp; Right: new SVG render</p>
+      <table cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+        <tr><th>Name</th><th>Flags</th><th>Old PNG</th><th>New SVG</th></tr>
+        #{rows}
+      </table>
+      </body></html>
+    HTML
+    puts "  Review page: #{out}"
+    puts "  Open with: open tmp/figure-review.html"
+  end
+end
