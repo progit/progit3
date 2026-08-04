@@ -1,0 +1,62 @@
+---
+title: 'A new table of contents'
+description: "The third edition's restructure has landed: two new chapters, a long-overdue worktrees section, and a few goodbyes. Here's the new shape of the book."
+date: 2026-08-04
+automated: true
+---
+
+The third edition has a new shape.
+The restructure just landed in the repository: chapters renumbered and retitled, two chapters that didn't exist before, and several that won't be coming back.
+Let's walk through it.
+
+Here's the new table of contents:
+
+1. Getting Started
+2. Git Basics
+3. Git Branching
+4. Distributed Git
+5. Git Toolkit
+6. Customizing Git
+7. Git and Agents
+8. Git Servers
+9. Git at Scale
+10. Git Internals
+
+…plus a single appendix, the Git command reference.
+
+## What's new
+
+Two chapters are brand new.
+
+**Git at Scale** (Chapter 9) is about what happens when your repository stops being small: shallow and partial clones, sparse checkout, Scalar, large files, and monorepo practice.
+The second edition predates every one of those features, so this chapter starts from a blank page.
+It sits second-to-last on purpose — it leans on the internals that Chapter 10 explains.
+
+**Git and Agents** (Chapter 7) is about using Git when some of your contributors are AI coding agents: workflows like branch-per-agent and worktree-per-agent, the tools and libraries agents drive Git with, and how to guide machine contributors in a repository you maintain.
+
+There are smaller additions too:
+
+- Git Branching finally gets a **Worktrees** section. `git worktree` has been in Git since 2.5, and the book has never mentioned it.
+- Distributed Git gains a forge-neutral **Pull Requests and Forges** section — the fork-branch-PR loop, keeping a fork in sync, and what `refs/pull/*` actually is.
+- Ignoring files grows from a passing subsection into a full section of Customizing Git.
+
+## What's gone
+
+The GitHub chapter is retired.
+It was the fastest-aging part of the book — most of its screenshots stopped matching reality years ago — and its durable material (pull requests, forks, notifications) is exactly what the new forge-neutral section in Distributed Git now covers.
+Account setup, organization management, and the API tour don't make the cut.
+
+Git and Other Systems is retired as well.
+The Subversion, Mercurial, and Perforce bridges mattered when teams were migrating _to_ Git; that era is behind us, and the pages can go to material you'll actually use.
+
+Two of the three appendices go with them: the editor-and-GUI survey, and the embedding appendix — though the library survey from the latter resurfaces inside Git and Agents, updated with gitoxide and per-library SHA-256 notes.
+
+Two chapters change names along the way.
+Git Tools is now **Git Toolkit**, and Git on the Server is now **Git Servers** — and it moves toward the back of the book, since most readers meet a hosted forge long before they run a server of their own.
+
+One thing to be clear about: what landed is the structure, not the writing.
+The new chapters and sections are outline placeholders — notes on what each one will cover — and the prose will be [written by the book's human authors](../../authorship/), as all of it is.
+The full section-by-section punch list is [`OUTLINE.md`](https://github.com/progit/progit3/blob/main/OUTLINE.md), and you can watch the boxes get ticked on the [progress page](../../blog/progress/).
+
+If you think the new shape is missing something, now is the time to say so — the outline is much easier to change than a finished chapter.
+Open an issue at [github.com/progit/progit3](https://github.com/progit/progit3) and make the case.
