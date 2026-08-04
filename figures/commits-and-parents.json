@@ -56,5 +56,11 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "fixed-bug-1328-stack-overflow", "to": "the-initial-commit-of-my-project", "arrow": "back" },
+    { "from": "add-feature-32-ability-to-add-new", "to": "fixed-bug-1328-stack-overflow", "arrow": "back" },
+    { "from": "the-initial-commit-of-my-project", "to": "snapshot-a", "arrow": "forward" },
+    { "from": "fixed-bug-1328-stack-overflow", "to": "snapshot-b", "arrow": "forward" },
+    { "from": "add-feature-32-ability-to-add-new", "to": "snapshot-c", "arrow": "forward" }
+  ]
 }

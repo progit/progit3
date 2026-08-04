@@ -73,5 +73,13 @@
       "row": 3
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c1", "to": "c0" },
+    { "from": "c2", "to": "c1" },
+    { "from": "c3", "to": "c2" },
+    { "from": "c4", "to": "c2", "route": "diagonal" },
+    { "from": "c5", "to": "c4", "route": "diagonal" },
+    { "from": "experiment", "to": "c5", "arrow": "forward" },
+    { "from": "master", "to": "c4", "arrow": "forward" }
+  ]
 }

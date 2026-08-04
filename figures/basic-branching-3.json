@@ -49,5 +49,11 @@
       "row": 2
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c1", "to": "c0" },
+    { "from": "c2", "to": "c1" },
+    { "from": "c3", "to": "c2" },
+    { "from": "master", "to": "c2", "arrow": "forward" },
+    { "from": "iss53", "to": "c3", "arrow": "forward" }
+  ]
 }

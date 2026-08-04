@@ -42,5 +42,10 @@
       "row": 2
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "the-initial-commit-of-my-project", "to": "node_92ec2", "arrow": "forward" },
+    { "from": "node_92ec2", "to": "node_5b1d3", "arrow": "forward" },
+    { "from": "node_92ec2", "to": "node_911e7", "arrow": "forward" },
+    { "from": "node_92ec2", "to": "cba0a", "route": "diagonal" }
+  ]
 }
