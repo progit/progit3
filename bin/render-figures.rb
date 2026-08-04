@@ -358,19 +358,37 @@ module Edges
           d = SVG.arrow_h(fp[:x], tp[:x] + tp[:w], cy - 0.5)
         end
       else
-        # Vertical
+        # Vertical — determine actual direction from box positions
+        going_down = tp[:y] > fp[:y]
         if arrow == 'forward'
-          # from box bottom → to box top, pointing down
-          y1 = fp[:y] + fp[:h]
-          y2 = tp[:y]
-          d = SVG.arrow_v_down_fwd(from_cx, y1, y2)
+          if going_down
+            # from-box bottom → to-box top, arrowhead points down
+            y1 = fp[:y] + fp[:h]
+            y2 = tp[:y]
+            d = SVG.arrow_v_down_fwd(from_cx, y1, y2)
+          else
+            # from-box top → to-box bottom, arrowhead points up
+            # m{cx} {from_top}v-{shaft}h1v{shaft}h4l-4.5-9-4.5 9z  — but upward
+            y1 = fp[:y]          # top of from-box (shaft start)
+            y2 = tp[:y] + tp[:h] # bottom of to-box (arrowhead tip)
+            shaft = SVG.round(y1 - y2 - 9)
+            d = "m#{SVG.round(from_cx)} #{SVG.round(y2)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+          end
         else
-          # back: ref above commit — tip at ref bottom, pointing up from commit top
-          # existing idiom: tip at top of commit pointing upward to ref
-          y1 = fp[:y]          # top of from (commit)
-          y2 = tp[:y] + tp[:h] # bottom of to (ref)
-          shaft = SVG.round(y1 - y2 - 9)
-          d = "m#{SVG.round(from_cx)} #{SVG.round(y2)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+          # back arrow: arrowhead at 'to' node, pointing away from 'from'
+          if going_down
+            # to is below from: tip at top of to-box, pointing down from from-bottom
+            y1 = fp[:y] + fp[:h]  # bottom of from
+            y2 = tp[:y]           # top of to
+            shaft = SVG.round(y2 - y1 - 9)
+            d = "m#{SVG.round(from_cx)} #{SVG.round(y1)}v#{shaft}h1v-#{shaft}h4l-4.5 9-4.5-9z"
+          else
+            # to is above from: tip at bottom of to-box, pointing up
+            y1 = fp[:y]           # top of from
+            y2 = tp[:y] + tp[:h]  # bottom of to
+            shaft = SVG.round(y1 - y2 - 9)
+            d = "m#{SVG.round(from_cx)} #{SVG.round(y2)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+          end
         end
       end
 
@@ -432,10 +450,12 @@ def render(spec)
   vw = SVG.round(cw); vh = SVG.round(ch)
   body = parts.map { |p| p.each_line.map { |l| "  #{l}" }.join }.join("\n")
 
-  # Deterministic, minimal SVG — no generator comment, no timestamps, no random ids
+  # Deterministic, minimal SVG — no generator comment, no timestamps, no random ids.
+  # width/height at 2x for crisp browser rendering; CSS can override to scale.
+  w2x = SVG.round(cw * 2); h2x = SVG.round(ch * 2)
   <<~SVG
     <?xml version="1.0" encoding="UTF-8"?>
-    <svg version="1.1" viewBox="0 0 #{vw} #{vh}" xmlns="http://www.w3.org/2000/svg">
+    <svg version="1.1" width="#{w2x}" height="#{h2x}" viewBox="0 0 #{vw} #{vh}" xmlns="http://www.w3.org/2000/svg">
       <title>#{SVG.esc(title)}</title>
     #{body}
     </svg>

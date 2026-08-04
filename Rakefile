@@ -250,15 +250,15 @@ namespace :figures do
 
     rows = FIGURE_SOURCES.sort.map do |json_path|
       base     = File.basename(json_path, '.json')
-      old_png  = "../../images/#{base}.png"
-      new_svg  = "../../images/#{base}.svg"
+      old_png  = "file://#{IMAGES_DIR}/#{base}.png"
+      new_svg  = "file://#{IMAGES_DIR}/#{base}.svg"
       master_flag = File.read(json_path).include?('"master"') ? '<b style="color:red">contains master</b>' : ''
       <<~ROW
         <tr>
           <td style="font-family:monospace;padding:4px 8px;vertical-align:top">#{base}</td>
           <td style="padding:4px">#{master_flag}</td>
-          <td style="padding:4px"><img src="#{old_png}" style="max-width:400px;border:1px solid #ccc"/></td>
-          <td style="padding:4px"><img src="#{new_svg}" style="max-width:400px;border:1px solid #ccc"/></td>
+          <td style="padding:4px"><img src="#{old_png}" style="max-width:600px;border:1px solid #ccc"/></td>
+          <td style="padding:4px"><img src="#{new_svg}" style="max-width:600px;border:1px solid #ccc"/></td>
         </tr>
       ROW
     end.join
