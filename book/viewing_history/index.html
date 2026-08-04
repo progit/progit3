@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Basics: Viewing the Commit History"><meta property="og:title" content="Viewing the Commit History · Pro Git"><meta property="og:description" content="Pro Git — Git Basics: Viewing the Commit History"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Viewing the Commit History · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Getting a Git Repository</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/recording_changes_to_the_repository/" data-astro-cid-kqdwmlpp>Recording Changes to the Repository</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/viewing_history/" data-astro-cid-kqdwmlpp>Viewing the Commit History</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/undoing/" data-astro-cid-kqdwmlpp>Undoing Things</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/remote_repos/" data-astro-cid-kqdwmlpp>Working with Remotes</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_tagging/" data-astro-cid-kqdwmlpp>Tagging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_aliases/" data-astro-cid-kqdwmlpp>Git Aliases</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_2/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/recording_changes_to_the_repository/" data-astro-cid-kgypjjoh>← Recording Changes to the Repository</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/undoing/" data-astro-cid-kgypjjoh>Undoing Things →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/getting_a_repo/" data-astro-cid-kgypjjoh>Git Basics</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Viewing the Commit History" data-pagefind-filter="chapter:Git Basics" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_viewing_history">Viewing the Commit History</h3>
+<div class="paragraph">
+<p>After you have created several commits, or if you have cloned a repository with an existing commit history, you&#8217;ll probably want to look back to see what has happened.
+The most basic and powerful tool to do this is the <code>git log</code> command.</p>
+</div>
+<div class="paragraph">
+<p>These examples use a very simple project called &#8220;simplegit&#8221;.
+To get the project, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone https://github.com/schacon/simplegit-progit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you run <code>git log</code> in this project, you should get output that looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    Change version number
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    Remove unnecessary test
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    Initial commit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, with no arguments, <code>git log</code> lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first.
+As you can see, this command lists each commit with its SHA-1 checksum, the author&#8217;s name and email, the date written, and the commit message.</p>
+</div>
+<div class="paragraph">
+<p>A huge number and variety of options to the <code>git log</code> command are available to show you exactly what you&#8217;re looking for.
+Here, we&#8217;ll show you some of the most popular.</p>
+</div>
+<div class="paragraph">
+<p>One of the more helpful options is <code>-p</code> or <code>--patch</code>, which shows the difference (the <em>patch</em> output) introduced in each commit.
+You can also limit the number of log entries displayed, such as using <code>-2</code> to show only the last two entries.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -p -2
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    Change version number
+
+diff --git a/Rakefile b/Rakefile
+index a874b73..8f94139 100644
+--- a/Rakefile
++++ b/Rakefile
+@@ -5,7 +5,7 @@ require 'rake/gempackagetask'
+ spec = Gem::Specification.new do |s|
+     s.platform  =   Gem::Platform::RUBY
+     s.name      =   "simplegit"
+-    s.version   =   "0.1.0"
++    s.version   =   "0.1.1"
+     s.author    =   "Scott Chacon"
+     s.email     =   "schacon@gee-mail.com"
+     s.summary   =   "A simple gem for using Git in Ruby code."
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    Remove unnecessary test
+
+diff --git a/lib/simplegit.rb b/lib/simplegit.rb
+index a0a60ae..47c6340 100644
+--- a/lib/simplegit.rb
++++ b/lib/simplegit.rb
+@@ -18,8 +18,3 @@ class SimpleGit
+     end
+
+ end
+-
+-if $0 == __FILE__
+-  git = SimpleGit.new
+-  puts git.show
+-end</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This option displays the same information but with a diff directly following each entry.
+This is very helpful for code review or to quickly browse what happened during a series of commits that a collaborator has added.
+You can also use a series of summarizing options with <code>git log</code>.
+For example, if you want to see some abbreviated stats for each commit, you can use the <code>--stat</code> option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --stat
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    Change version number
+
+ Rakefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    Remove unnecessary test
+
+ lib/simplegit.rb | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    Initial commit
+
+ README           |  6 ++++++
+ Rakefile         | 23 +++++++++++++++++++++++
+ lib/simplegit.rb | 25 +++++++++++++++++++++++++
+ 3 files changed, 54 insertions(+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, the <code>--stat</code> option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed.
+It also puts a summary of the information at the end.</p>
+</div>
+<div class="paragraph">
+<p>Another really useful option is <code>--pretty</code>.
+This option changes the log output to formats other than the default.
+A few prebuilt option values are available for you to use.
+The <code>oneline</code> value for this option prints each commit on a single line, which is useful if you&#8217;re looking at a lot of commits.
+In addition, the <code>short</code>, <code>full</code>, and <code>fuller</code> values show the output in roughly the same format but with less or more information, respectively:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty=oneline
+ca82a6dff817ec66f44342007202690a93763949 Change version number
+085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 Remove unnecessary test
+a11bef06a3f659402fe7563abf99ad00de2209e6 Initial commit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The most interesting option value is <code>format</code>, which allows you to specify your own log output format.
+This is especially useful when you&#8217;re generating output for machine parsing&#8201;&#8212;&#8201;because you specify the format explicitly, you know it won&#8217;t change with updates to Git:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty=format:"%h - %an, %ar : %s"
+ca82a6d - Scott Chacon, 6 years ago : Change version number
+085bb3b - Scott Chacon, 6 years ago : Remove unnecessary test
+a11bef0 - Scott Chacon, 6 years ago : Initial commit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="/book/viewing_history/#pretty_format">Useful specifiers for <code>git log --pretty=format</code></a> lists some of the more useful specifiers that <code>format</code> takes.</p>
+</div>
+<table id="pretty_format" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Useful specifiers for <code>git log --pretty=format</code></caption>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Specifier</th>
+<th class="tableblock halign-left valign-top">Description of Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%H</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Commit hash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abbreviated commit hash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%T</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tree hash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%t</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abbreviated tree hash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%P</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parent hashes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abbreviated parent hashes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%an</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Author name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%ae</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Author email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%ad</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Author date (format respects the <code>--date=option</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%ar</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Author date, relative</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%cn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Committer name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%ce</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Committer email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%cd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Committer date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%cr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Committer date, relative</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You may be wondering what the difference is between <em>author</em> and <em>committer</em>.
+The author is the person who originally wrote the work, whereas the committer is the person who last applied the work.
+So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit&#8201;&#8212;&#8201;you as the author, and the core member as the committer.
+We&#8217;ll cover this distinction a bit more in <a href="/book/distributed_workflows/#ch04-distributed-git">Ch 4, Distributed Git</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>oneline</code> and <code>format</code> option values are particularly useful with another <code>log</code> option called <code>--graph</code>.
+This option adds a nice little ASCII graph showing your branch and merge history:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty=format:"%h %s" --graph
+* 2d3acf9 Ignore errors from SIGCHLD on trap
+*  5e3ee11 Merge branch 'master' of https://github.com/dustin/grit.git
+|\
+| * 420eac9 Add method for getting the current branch
+* | 30e367c Timeout code and tests
+* | 5a09431 Add timeout protection to grit
+* | e1193f8 Support for heads with slashes in them
+|/
+* d6016bc Require time for xmlschema
+*  11d191e Merge branch 'defunkt' into local</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This type of output will become more interesting as we go through branching and merging in the next chapter.</p>
+</div>
+<div class="paragraph">
+<p>Those are only some simple output-formatting options to <code>git log</code>&#8201;&#8212;&#8201;there are many more.
+<a href="/book/viewing_history/#log_options">Common options to <code>git log</code></a> lists the options we&#8217;ve covered so far, as well as some other common formatting options that may be useful, along with how they change the output of the <code>log</code> command.</p>
+</div>
+<table id="log_options" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Common options to <code>git log</code></caption>
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the patch introduced with each commit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--stat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show statistics for files modified in each commit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--shortstat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display only the changed/insertions/deletions line from the <code>--stat</code> command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--name-only</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the list of files modified after the commit information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--name-status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the list of files affected with added/modified/deleted information as well.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--abbrev-commit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show only the first few characters of the SHA-1 checksum instead of all 40.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--relative-date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display the date in a relative format (for example, &#8220;2 weeks ago&#8221;) instead of using the full date format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--graph</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display an ASCII graph of the branch and merge history beside the log output.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--pretty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show commits in an alternate format. Option values include <code>oneline</code>, <code>short</code>, <code>full</code>, <code>fuller</code>, and <code>format</code> (where you specify your own format).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--oneline</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shorthand for <code>--pretty=oneline --abbrev-commit</code> used together.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_limiting_log_output">Limiting Log Output</h4>
+<div class="paragraph">
+<p>In addition to output-formatting options, <code>git log</code> takes a number of useful limiting options; that is, options that let you show only a subset of commits.
+You&#8217;ve seen one such option already&#8201;&#8212;&#8201;the <code>-2</code> option, which displays only the last two commits.
+In fact, you can do <code>-&lt;n&gt;</code>, where <code>n</code> is any integer to show the last <code>n</code> commits.
+In reality, you&#8217;re unlikely to use that often, because Git by default pipes all output through a pager so you see only one page of log output at a time.</p>
+</div>
+<div class="paragraph">
+<p>However, the time-limiting options such as <code>--since</code> and <code>--until</code> are very useful.
+For example, this command gets the list of commits made in the last two weeks:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --since=2.weeks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command works with lots of formats&#8201;&#8212;&#8201;you can specify a specific date like <code>"2008-01-15"</code>, or a relative date such as <code>"2 years 1 day 3 minutes ago"</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can also filter the list to commits that match some search criteria.
+The <code>--author</code> option allows you to filter on a specific author, and the <code>--grep</code> option lets you search for keywords in the commit messages.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can specify more than one instance of both the <code>--author</code> and <code>--grep</code> search criteria, which will limit the commit output to commits that match <em>any</em> of the <code>--author</code> patterns and <em>any</em> of the <code>--grep</code> patterns; however, adding the <code>--all-match</code> option further limits the output to just those commits that match <em>all</em> <code>--grep</code> patterns.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Another really helpful filter is the <code>-S</code> option (colloquially referred to as Git&#8217;s &#8220;pickaxe&#8221; option), which takes a string and shows only those commits that changed the number of occurrences of that string.
+For instance, if you wanted to find the last commit that added or removed a reference to a specific function, you could call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -S function_name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The last really useful option to pass to <code>git log</code> as a filter is a path.
+If you specify a directory or file name, you can limit the log output to commits that introduced a change to those files.
+This is always the last option and is generally preceded by double dashes (<code>--</code>) to separate the paths from the options:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -- path/to/file</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/viewing_history/#limit_options">Options to limit the output of <code>git log</code></a> we&#8217;ll list these and a few other common options for your reference.</p>
+</div>
+<table id="limit_options" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Options to limit the output of <code>git log</code></caption>
+<colgroup>
+<col width="33.3333%">
+<col width="66.6667%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-&lt;n&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show only the last n commits.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--since</code>, <code>--after</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limit the commits to those made after the specified date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--until</code>, <code>--before</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limit the commits to those made before the specified date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--author</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show commits in which the author entry matches the specified string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--committer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show commits in which the committer entry matches the specified string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--grep</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show commits with a commit message containing the string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-S</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show commits adding or removing code matching the string.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and are not merge commits, you can run something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/
+5610e3b - Fix testcase failure when extended attributes are in use
+acd3b9e - Enhance hold_lock_file_for_{update,append}() API
+f563754 - demonstrate breakage of detached checkout with symbolic link HEAD
+d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
+51a94af - Fix "checkout --track -b newbranch" on detached HEAD
+b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unborn branch</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of the nearly 40,000 commits in the Git source code history, this command shows the 6 that match those criteria.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Preventing the display of merge commits</div>
+<div class="paragraph">
+<p>Depending on the workflow used in your repository, it&#8217;s possible that a sizable percentage of the commits in your log history are just merge commits, which typically aren&#8217;t very informative.
+To prevent the display of merge commits cluttering up your log history, simply add the <code>log</code> option <code>--no-merges</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/recording_changes_to_the_repository/" data-astro-cid-kgypjjoh>← Recording Changes to the Repository</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/undoing/" data-astro-cid-kgypjjoh>Undoing Things →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

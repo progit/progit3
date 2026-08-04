@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Appendix A: Git Commands: Branching and Merging"><meta property="og:title" content="Branching and Merging · Pro Git"><meta property="og:description" content="Pro Git — Appendix A: Git Commands: Branching and Merging"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Branching and Merging · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Setup and Config</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_and_creating_projects/" data-astro-cid-kqdwmlpp>Getting and Creating Projects</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/basic_snapshotting/" data-astro-cid-kqdwmlpp>Basic Snapshotting</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/branching_and_merging/" data-astro-cid-kqdwmlpp>Branching and Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/sharing_and_updating_projects/" data-astro-cid-kqdwmlpp>Sharing and Updating Projects</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/inspection_and_comparison/" data-astro-cid-kqdwmlpp>Inspection and Comparison</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/debugging_2/" data-astro-cid-kqdwmlpp>Debugging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/patching/" data-astro-cid-kqdwmlpp>Patching</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/email/" data-astro-cid-kqdwmlpp>Email</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/administration_2/" data-astro-cid-kqdwmlpp>Administration</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/plumbing_commands/" data-astro-cid-kqdwmlpp>Plumbing Commands</a></li></ul></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/basic_snapshotting/" data-astro-cid-kgypjjoh>← Basic Snapshotting</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/sharing_and_updating_projects/" data-astro-cid-kgypjjoh>Sharing and Updating Projects →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/setup_and_config/" data-astro-cid-kgypjjoh>Appendix A: Git Commands</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Branching and Merging" data-pagefind-filter="chapter:Appendix A: Git Commands" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_branching_and_merging">Branching and Merging</h3>
+<div class="paragraph">
+<p>There are just a handful of commands that implement most of the branching and merging functionality in Git.</p>
+</div>
+<div class="sect3">
+<h4 id="_git_branch">git branch</h4>
+<div class="paragraph">
+<p>The <code>git branch</code> command is actually something of a branch management tool.
+It can list the branches you have, create a new branch, delete branches and rename branches.</p>
+</div>
+<div class="paragraph">
+<p>Most of <a href="/book/git_branches_overview/#ch03-git-branching">Ch 3, Git Branching</a> is dedicated to the <code>branch</code> command and it&#8217;s used throughout the entire chapter.
+We first introduce it in <a href="/book/git_branches_overview/#_create_new_branch">Ch 3, Git Branching</a> and we go through most of its other features (listing and deleting) in <a href="/book/branch_management/#_branch_management">Ch 3, Git Branching</a>.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/remote_branches/#_tracking_branches">Ch 3, Git Branching</a> we use the <code>git branch -u</code> option to set up a tracking branch.</p>
+</div>
+<div class="paragraph">
+<p>Finally, we go through some of what it does in the background in <a href="/book/git_refs/#_git_refs">Ch 10, Git Internals</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_checkout">git checkout</h4>
+<div class="paragraph">
+<p>The <code>git checkout</code> command is used to switch branches and check content out into your working directory.</p>
+</div>
+<div class="paragraph">
+<p>We first encounter the command in <a href="/book/git_branches_overview/#_switching_branches">Ch 3, Git Branching</a> along with the <code>git branch</code> command.</p>
+</div>
+<div class="paragraph">
+<p>We see how to use it to start tracking branches with the <code>--track</code> flag in <a href="/book/remote_branches/#_tracking_branches">Ch 3, Git Branching</a>.</p>
+</div>
+<div class="paragraph">
+<p>We use it to reintroduce file conflicts with <code>--conflict=diff3</code> in <a href="/book/advanced_merging/#_checking_out_conflicts">Ch 5, Git Toolkit</a>.</p>
+</div>
+<div class="paragraph">
+<p>We go into closer detail on its relationship with <code>git reset</code> in <a href="/book/git_reset/#_git_reset">Ch 5, Git Toolkit</a>.</p>
+</div>
+<div class="paragraph">
+<p>Finally, we go into some implementation detail in <a href="/book/git_refs/#ref_the_ref">Ch 10, Git Internals</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_merge">git merge</h4>
+<div class="paragraph">
+<p>The <code>git merge</code> tool is used to merge one or more branches into the branch you have checked out.
+It will then advance the current branch to the result of the merge.</p>
+</div>
+<div class="paragraph">
+<p>The <code>git merge</code> command was first introduced in <a href="/book/basic_branching_and_merging/#_basic_branching">Ch 3, Git Branching</a>.
+Though it is used in various places in the book, there are very few variations of the <code>merge</code> command&#8201;&#8212;&#8201;generally just <code>git merge &lt;branch&gt;</code> with the name of the single branch you want to merge in.</p>
+</div>
+<div class="paragraph">
+<p>We covered how to do a squashed merge (where Git merges the work but pretends like it&#8217;s just a new commit without recording the history of the branch you&#8217;re merging in) at the very end of <a href="/book/contributing_project/#_public_project">Ch 4, Distributed Git</a>.</p>
+</div>
+<div class="paragraph">
+<p>We went over a lot about the merge process and command, including the <code>-Xignore-space-change</code> command and the <code>--abort</code> flag to abort a problem merge in <a href="/book/advanced_merging/#_advanced_merging">Ch 5, Git Toolkit</a>.</p>
+</div>
+<div class="paragraph">
+<p>We learned how to verify signatures before merging if your project is using GPG signing in <a href="/book/signing/#_signing_commits">Ch 5, Git Toolkit</a>.</p>
+</div>
+<div class="paragraph">
+<p>Finally, we learned about Subtree merging in <a href="/book/advanced_merging/#_subtree_merge">Ch 5, Git Toolkit</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_mergetool">git mergetool</h4>
+<div class="paragraph">
+<p>The <code>git mergetool</code> command simply launches an external merge helper in case you have issues with a merge in Git.</p>
+</div>
+<div class="paragraph">
+<p>We mention it quickly in <a href="/book/basic_branching_and_merging/#_basic_merge_conflicts">Ch 3, Git Branching</a> and go into detail on how to implement your own external merge tool in <a href="/book/git_config/#_external_merge_tools">Ch 6, Customizing Git</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_log">git log</h4>
+<div class="paragraph">
+<p>The <code>git log</code> command is used to show the reachable recorded history of a project from the most recent commit snapshot backwards.
+By default it will only show the history of the branch you&#8217;re currently on, but can be given different or even multiple heads or branches from which to traverse.
+It is also often used to show differences between two or more branches at the commit level.</p>
+</div>
+<div class="paragraph">
+<p>This command is used in nearly every chapter of the book to demonstrate the history of a project.</p>
+</div>
+<div class="paragraph">
+<p>We introduce the command and cover it in some depth in <a href="/book/viewing_history/#_viewing_history">Ch 2, Git Basics</a>.
+There we look at the <code>-p</code> and <code>--stat</code> option to get an idea of what was introduced in each commit and the <code>--pretty</code> and <code>--oneline</code> options to view the history more concisely, along with some simple date and author filtering options.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/git_branches_overview/#_create_new_branch">Ch 3, Git Branching</a> we use it with the <code>--decorate</code> option to easily visualize where our branch pointers are located and we also use the <code>--graph</code> option to see what divergent histories look like.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/contributing_project/#_private_team">Ch 4, Distributed Git</a> and <a href="/book/revision_selection/#_commit_ranges">Ch 5, Git Toolkit</a> we cover the <code>branchA..branchB</code> syntax to use the <code>git log</code> command to see what commits are unique to a branch relative to another branch.
+In <a href="/book/revision_selection/#_commit_ranges">Ch 5, Git Toolkit</a> we go through this fairly extensively.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/advanced_merging/#_merge_log">Ch 5, Git Toolkit</a> and <a href="/book/revision_selection/#_triple_dot">Ch 5, Git Toolkit</a> we cover using the <code>branchA&#8230;&#8203;branchB</code> format and the <code>--left-right</code> syntax to see what is in one branch or the other but not in both.
+In <a href="/book/advanced_merging/#_merge_log">Ch 5, Git Toolkit</a> we also look at how to use the <code>--merge</code> option to help with merge conflict debugging as well as using the <code>--cc</code> option to look at merge commit conflicts in your history.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/revision_selection/#_git_reflog">Ch 5, Git Toolkit</a> we use the <code>-g</code> option to view the Git reflog through this tool instead of doing branch traversal.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/searching/#_searching">Ch 5, Git Toolkit</a> we look at using the <code>-S</code> and <code>-L</code> options to do fairly sophisticated searches for something that happened historically in the code such as seeing the history of a function.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="/book/signing/#_signing_commits">Ch 5, Git Toolkit</a> we see how to use <code>--show-signature</code> to add a validation string to each commit in the <code>git log</code> output based on if it was validly signed or not.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_stash">git stash</h4>
+<div class="paragraph">
+<p>The <code>git stash</code> command is used to temporarily store uncommitted work in order to clean out your working directory without having to commit unfinished work on a branch.</p>
+</div>
+<div class="paragraph">
+<p>This is basically entirely covered in <a href="/book/git_stashing/#_git_stashing">Ch 5, Git Toolkit</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_tag">git tag</h4>
+<div class="paragraph">
+<p>The <code>git tag</code> command is used to give a permanent bookmark to a specific point in the code history.
+Generally this is used for things like releases.</p>
+</div>
+<div class="paragraph">
+<p>This command is introduced and covered in detail in <a href="/book/git_tagging/#_git_tagging">Ch 2, Git Basics</a> and we use it in practice in <a href="/book/maintaining_a_project/#_tagging_releases">Ch 4, Distributed Git</a>.</p>
+</div>
+<div class="paragraph">
+<p>We also cover how to create a GPG signed tag with the <code>-s</code> flag and verify one with the <code>-v</code> flag in <a href="/book/signing/#_signing">Ch 5, Git Toolkit</a>.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/basic_snapshotting/" data-astro-cid-kgypjjoh>← Basic Snapshotting</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/sharing_and_updating_projects/" data-astro-cid-kgypjjoh>Sharing and Updating Projects →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
