@@ -77,5 +77,15 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "c3", "to": "c2" },
+    { "from": "c4", "to": "c3" },
+    { "from": "c5", "to": "c4" },
+    { "from": "c6", "to": "c5" },
+    { "from": "c7", "to": "c6" },
+    { "from": "master", "to": "c1", "arrow": "forward" },
+    { "from": "develop", "to": "c5", "arrow": "forward" },
+    { "from": "topic", "to": "c7", "arrow": "forward" }
+  ]
 }

@@ -97,5 +97,17 @@
       "row": 5
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "c5", "to": "c2" },
+    { "from": "c6", "to": "c5" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "c10", "to": "c4" },
+    { "from": "c8", "to": "c3", "route": "diagonal" },
+    { "from": "c9", "to": "c8" },
+    { "from": "master", "to": "c6", "arrow": "forward" },
+    { "from": "server", "to": "c10", "arrow": "forward" },
+    { "from": "client", "to": "c9", "arrow": "forward" }
+  ]
 }
