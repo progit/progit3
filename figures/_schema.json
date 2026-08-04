@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/progit/progit3/figures/_schema.json",
+  "title": "Pro Git figure spec",
+  "description": "Source format for a Pro Git diagram figure. Rendered to SVG by bin/render-figures.rb.",
+  "type": "object",
+  "required": ["title"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "title": {
+      "description": "Figure title, emitted as SVG <title> for accessibility.",
+      "type": "string"
+    },
+    "layout": {
+      "description": "Positioning mode. 'grid' (default) places nodes by col/row on a regular grid. 'absolute' uses x/y coordinates directly.",
+      "type": "string",
+      "enum": ["grid", "absolute"],
+      "default": "grid"
+    },
+    "grid": {
+      "description": "Grid pitch in pixels. Overrides the default 127x58.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number", "exclusiveMinimum": 0 },
+        "y": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "margin": {
+      "description": "Canvas margin in pixels around all content. Default 4.",
+      "type": "number",
+      "default": 4
+    },
+    "canvas": {
+      "description": "Explicit canvas size. If omitted, computed from node extents + margin.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["w", "h"],
+      "properties": {
+        "w": { "type": "number", "exclusiveMinimum": 0 },
+        "h": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "id":    { "type": "string", "description": "Unique node identifier, referenced by edges." },
+          "kind":  {
+            "type": "string",
+            "enum": ["commit","tree","blob","jessica","john","josie","ref","symref","goldref","other"],
+            "description": "Symbol kind, mapped to geometry and colors in _palette.json."
+          },
+          "label": {
+            "description": "Text content. String for single line; array of strings for multi-line.",
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" }, "minItems": 2 }
+            ]
+          },
+          "col":   { "type": "number", "description": "Grid column (grid layout only)." },
+          "row":   { "type": "number", "description": "Grid row (grid layout only)." },
+          "x":     { "type": "number", "description": "Absolute x coordinate of top-left corner (absolute layout or override)." },
+          "y":     { "type": "number", "description": "Absolute y coordinate of top-left corner (absolute layout or override)." },
+          "dx":    { "type": "number", "description": "Horizontal nudge added to grid-computed x." },
+          "dy":    { "type": "number", "description": "Vertical nudge added to grid-computed y." },
+          "w":     { "type": "number", "description": "Width override (uses kind default if omitted)." },
+          "h":     { "type": "number", "description": "Height override (uses kind default if omitted)." },
+          "fill":  { "type": "string", "description": "Fill color override (named key from palette colors, or hex)." },
+          "text":  { "type": "string", "description": "Text color override (named key or hex)." },
+          "stroke":{ "type": "string", "description": "Stroke color override (named key or hex)." }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to"],
+        "additionalProperties": false,
+        "properties": {
+          "from":  { "type": "string", "description": "Source node id." },
+          "to":    { "type": "string", "description": "Target node id." },
+          "route": {
+            "type": "string",
+            "enum": ["straight", "diagonal", "elbow"],
+            "default": "straight",
+            "description": "Arrow routing. 'straight' is horizontal or vertical. 'diagonal' is a direct line. 'elbow' has one bend."
+          },
+          "arrow": {
+            "type": "string",
+            "enum": ["back", "forward", "both", "none"],
+            "default": "back",
+            "description": "Arrowhead placement. 'back' means the arrowhead is at the 'to' end pointing toward 'from' (the Git parent-pointing convention)."
+          },
+          "label": { "type": "string", "description": "Optional edge label." }
+        }
+      }
+    },
+    "banners": {
+      "description": "Wide block arrows with inset text, used in workflow diagrams (areas, lifecycle, etc.).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "from", "to"],
+        "additionalProperties": false,
+        "properties": {
+          "label":     { "type": "string" },
+          "from":      {
+            "type": "object",
+            "required": ["x","y"],
+            "additionalProperties": false,
+            "properties": { "x": {"type":"number"}, "y": {"type":"number"} }
+          },
+          "to":        {
+            "type": "object",
+            "required": ["x","y"],
+            "additionalProperties": false,
+            "properties": { "x": {"type":"number"}, "y": {"type":"number"} }
+          },
+          "thickness": { "type": "number", "description": "Arrow shaft height in pixels. Default 22." }
+        }
+      }
+    },
+    "rules": {
+      "description": "Vertical or horizontal divider lines.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "x":  { "type": "number", "description": "X position for a vertical rule." },
+          "y":  { "type": "number", "description": "Y position for a horizontal rule." },
+          "x1": { "type": "number" },
+          "x2": { "type": "number" },
+          "y1": { "type": "number" },
+          "y2": { "type": "number" }
+        }
+      }
+    },
+    "labels": {
+      "description": "Free-floating text labels.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "x", "y"],
+        "additionalProperties": false,
+        "properties": {
+          "text":   { "oneOf": [{"type":"string"}, {"type":"array","items":{"type":"string"}}] },
+          "x":      { "type": "number" },
+          "y":      { "type": "number" },
+          "anchor": { "type": "string", "enum": ["start","middle","end"], "default": "middle" },
+          "fill":   { "type": "string" },
+          "size":   { "type": "number" }
+        }
+      }
+    },
+    "groups": {
+      "description": "Labelled background boxes or swimlanes.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["x","y","w","h"],
+        "additionalProperties": false,
+        "properties": {
+          "x":      { "type": "number" },
+          "y":      { "type": "number" },
+          "w":      { "type": "number" },
+          "h":      { "type": "number" },
+          "label":  { "type": "string" },
+          "fill":   { "type": "string" },
+          "stroke": { "type": "string" }
+        }
+      }
+    }
+  }
+}
