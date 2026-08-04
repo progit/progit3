@@ -11,3 +11,6 @@ progit.fb2.zip
 progit-kf8.epub
 progit.mobi
 contributors.txt
+
+# AI tooling
+.claude/settings.local.json
