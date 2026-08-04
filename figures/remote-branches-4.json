@@ -146,5 +146,21 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "a6b4c", "to": "node_0b743" },
+    { "from": "f4265", "to": "a6b4c" },
+    { "from": "node_31b8e", "to": "f4265" },
+    { "from": "node_190a3", "to": "node_31b8e" },
+    { "from": "origin-master", "to": "node_190a3", "arrow": "forward" },
+    { "from": "a38de", "to": "node_190a3" },
+    { "from": "node_893cf", "to": "a38de" },
+    { "from": "master", "to": "node_893cf", "arrow": "forward" },
+    { "from": "f4265-2", "to": "a6b4c" },
+    { "from": "node_31b8e-2", "to": "f4265-2" },
+    { "from": "node_190a3-2", "to": "node_31b8e-2" },
+    { "from": "master-2", "to": "node_190a3-2", "arrow": "forward" },
+    { "from": "f4265-3", "to": "node_31b8e-2" },
+    { "from": "node_31b8e-3", "to": "f4265-3" },
+    { "from": "master-3", "to": "node_31b8e-3", "arrow": "forward" }
+  ]
 }

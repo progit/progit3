@@ -108,5 +108,21 @@
       "dx": -1.6
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "c5", "to": "c2" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "c6", "to": "c5" },
+    { "from": "m-2", "to": "c6" },
+    { "from": "m-2", "to": "c4", "route": "diagonal" },
+    { "from": "m-3", "to": "m-2" },
+    { "from": "c7", "to": "c4" },
+    { "from": "m", "to": "m-3" },
+    { "from": "m", "to": "c7", "route": "diagonal" },
+    { "from": "c8", "to": "m" },
+    { "from": "master", "to": "c8", "arrow": "forward" },
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "topic", "to": "c7", "arrow": "forward" }
+  ]
 }

@@ -87,5 +87,15 @@
       "dx": 2.91
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "e146b", "to": "master", "arrow": "forward" },
+    { "from": "ef989", "to": "e146b" },
+    { "from": "c6e1e", "to": "ef989" },
+    { "from": "node_9c68f", "to": "c6e1e" },
+    { "from": "node_94570", "to": "node_9c68f" },
+    { "from": "c1822", "to": "node_94570" },
+    { "from": "history", "to": "c6e1e", "arrow": "forward" },
+    { "from": "node_81a70", "to": "e146b", "route": "diagonal" },
+    { "from": "node_622e8", "to": "node_81a70" }
+  ]
 }

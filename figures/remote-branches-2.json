@@ -119,5 +119,17 @@
       "dy": -33.0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "a6b4c", "to": "node_0b743" },
+    { "from": "f4265", "to": "a6b4c" },
+    { "from": "node_31b8e", "to": "f4265" },
+    { "from": "node_190a3", "to": "node_31b8e" },
+    { "from": "master", "to": "node_190a3", "arrow": "forward" },
+    { "from": "a6b4c-2", "to": "node_0b743-2" },
+    { "from": "f4265-2", "to": "a6b4c-2" },
+    { "from": "a38de", "to": "f4265-2" },
+    { "from": "node_893cf", "to": "a38de" },
+    { "from": "origin-master", "to": "f4265-2", "arrow": "forward" },
+    { "from": "master-2", "to": "node_893cf", "arrow": "forward" }
+  ]
 }

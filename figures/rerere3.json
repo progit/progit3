@@ -102,5 +102,15 @@
       "dy": 3.99
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "hola-world", "to": "hello-world" },
+    { "from": "hola-mundo", "to": "hola-world" },
+    { "from": "master", "to": "hola-mundo", "arrow": "forward" },
+    { "from": "i18-world", "to": "hola-mundo", "arrow": "forward" },
+    { "from": "hola-world-2", "to": "hello-world-2" },
+    { "from": "hello-mundo", "to": "hola-world-2" },
+    { "from": "hola-mundo-2", "to": "hello-mundo" },
+    { "from": "master-2", "to": "hola-mundo-2", "arrow": "forward" },
+    { "from": "i18-world-2", "to": "hola-mundo-2", "arrow": "forward" }
+  ]
 }

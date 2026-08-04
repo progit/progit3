@@ -77,5 +77,13 @@
       "dy": -33.0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "a6b4c", "to": "node_0b743" },
+    { "from": "f4265", "to": "a6b4c" },
+    { "from": "master", "to": "f4265", "arrow": "forward" },
+    { "from": "a6b4c-2", "to": "node_0b743-2" },
+    { "from": "f4265-2", "to": "a6b4c-2" },
+    { "from": "origin-master", "to": "f4265-2", "arrow": "forward" },
+    { "from": "master-2", "to": "f4265-2", "arrow": "forward" }
+  ]
 }

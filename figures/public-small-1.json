@@ -86,5 +86,15 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_33009", "to": "node_1edee" },
+    { "from": "a2de3", "to": "node_33009", "route": "diagonal" },
+    { "from": "node_0d708", "to": "a2de3" },
+    { "from": "e5b0f", "to": "node_33009", "route": "diagonal" },
+    { "from": "master", "to": "node_33009", "arrow": "forward" },
+    { "from": "origin", "to": "node_33009", "arrow": "forward" },
+    { "from": "featurea", "to": "node_0d708", "arrow": "forward" },
+    { "from": "featureb", "to": "e5b0f", "arrow": "forward" }
+  ]
 }

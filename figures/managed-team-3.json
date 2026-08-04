@@ -155,5 +155,21 @@
       "dy": 12.29
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_33009", "to": "node_1edee" },
+    { "from": "aad88", "to": "node_33009" },
+    { "from": "node_774b3", "to": "aad88" },
+    { "from": "node_5399e", "to": "node_774b3" },
+    { "from": "e5b0f", "to": "node_33009", "route": "diagonal" },
+    { "from": "fba9a", "to": "e5b0f" },
+    { "from": "node_85127", "to": "e5b0f" },
+    { "from": "cd685", "to": "node_85127" },
+    { "from": "master", "to": "node_1edee", "arrow": "forward" },
+    { "from": "featurea", "to": "node_5399e", "arrow": "forward" },
+    { "from": "origin", "to": "cd685", "arrow": "forward" },
+    { "from": "origin-2", "to": "node_5399e", "arrow": "forward" },
+    { "from": "origin-3", "to": "node_5399e", "arrow": "forward" },
+    { "from": "featureb", "to": "cd685", "arrow": "forward" }
+  ]
 }

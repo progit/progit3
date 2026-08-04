@@ -57,5 +57,12 @@
       "dy": 1.0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c6e1e", "to": "ef989" },
+    { "from": "node_9c68f", "to": "c6e1e" },
+    { "from": "node_94570", "to": "node_9c68f" },
+    { "from": "c1822", "to": "node_94570" },
+    { "from": "master", "to": "ef989", "arrow": "forward" },
+    { "from": "history", "to": "c6e1e", "arrow": "forward" }
+  ]
 }

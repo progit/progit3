@@ -53,5 +53,11 @@
       "row": 3
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "hola-world", "to": "hello-world" },
+    { "from": "hola-mundo", "to": "hola-world" },
+    { "from": "hello-mundo", "to": "hola-world" },
+    { "from": "master", "to": "hola-mundo", "arrow": "forward" },
+    { "from": "i18-world", "to": "hello-mundo", "arrow": "forward" }
+  ]
 }

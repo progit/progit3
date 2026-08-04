@@ -68,5 +68,13 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_33009", "to": "node_1edee" },
+    { "from": "e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_85127", "to": "e5b0f" },
+    { "from": "master", "to": "node_1edee", "arrow": "forward" },
+    { "from": "featurea", "to": "node_33009", "arrow": "forward" },
+    { "from": "featureb", "to": "node_85127", "arrow": "forward" }
+  ]
 }
