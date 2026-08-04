@@ -1,0 +1,60 @@
+{
+  "$schema": "./_schema.json",
+  "title": "commits and parents",
+  "grid": {
+    "x": 284.5,
+    "y": 143.0
+  },
+  "nodes": [
+    {
+      "id": "snapshot-a",
+      "kind": "tree",
+      "label": "Snapshot A",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "snapshot-b",
+      "kind": "tree",
+      "label": "Snapshot B",
+      "col": 1,
+      "row": 1,
+      "dx": -0.75
+    },
+    {
+      "id": "snapshot-c",
+      "kind": "tree",
+      "label": "Snapshot C",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "fixed-bug-1328-stack-overflow",
+      "kind": "commit",
+      "label": [
+        "Fixed bug #1328 - stack overflow",
+        "under certain conditions"
+      ],
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "the-initial-commit-of-my-project",
+      "kind": "commit",
+      "label": "The initial commit of my project",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "add-feature-32-ability-to-add-new",
+      "kind": "commit",
+      "label": [
+        "add feature #32 - ability to add new",
+        "formats to the central interface"
+      ],
+      "col": 2,
+      "row": 0
+    }
+  ],
+  "edges": []
+}

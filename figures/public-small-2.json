@@ -1,0 +1,90 @@
+{
+  "$schema": "./_schema.json",
+  "title": "public small 2",
+  "grid": {
+    "x": 119.0,
+    "y": 51.3
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 1,
+      "dy": 4.72
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 1,
+      "dy": 4.72
+    },
+    {
+      "id": "node_33009",
+      "kind": "commit",
+      "label": "33009",
+      "col": 2,
+      "row": 1,
+      "dy": 4.72
+    },
+    {
+      "id": "node_5399e",
+      "kind": "commit",
+      "label": "5399e",
+      "col": 4,
+      "row": 2,
+      "dy": 1.42
+    },
+    {
+      "id": "e5b0f",
+      "kind": "commit",
+      "label": "e5b0f",
+      "col": 2,
+      "row": 3
+    },
+    {
+      "id": "dee6b",
+      "kind": "commit",
+      "label": "dee6b",
+      "col": 3,
+      "row": 2,
+      "dy": 1.42
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "featurea",
+      "kind": "ref",
+      "label": "featureA",
+      "col": 5,
+      "row": 2,
+      "dy": 1.42
+    },
+    {
+      "id": "featureb",
+      "kind": "ref",
+      "label": "featureB",
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "origin",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "master"
+      ],
+      "col": 2,
+      "row": 0
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "./_schema.json",
+  "title": "advance master",
+  "grid": {
+    "x": 144.9,
+    "y": 50.0
+  },
+  "nodes": [
+    {
+      "id": "f30ab",
+      "kind": "commit",
+      "label": "f30ab",
+      "col": 2,
+      "row": 3,
+      "dy": 5.0
+    },
+    {
+      "id": "node_34ac2",
+      "kind": "commit",
+      "label": "34ac2",
+      "col": 1,
+      "row": 3,
+      "dy": 5.0
+    },
+    {
+      "id": "node_98ca9",
+      "kind": "commit",
+      "label": "98ca9",
+      "col": 0,
+      "row": 3,
+      "dy": 5.0
+    },
+    {
+      "id": "node_87ab2",
+      "kind": "commit",
+      "label": "87ab2",
+      "col": 3,
+      "row": 4,
+      "dy": -12.0
+    },
+    {
+      "id": "c2b9e",
+      "kind": "commit",
+      "label": "c2b9e",
+      "col": 3,
+      "row": 2,
+      "dy": 22.0
+    },
+    {
+      "id": "testing",
+      "kind": "ref",
+      "label": "testing",
+      "col": 3,
+      "row": 5
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 1,
+      "dy": 11.0
+    },
+    {
+      "id": "head",
+      "kind": "blob",
+      "label": "HEAD",
+      "col": 3,
+      "row": 0
+    }
+  ],
+  "edges": []
+}

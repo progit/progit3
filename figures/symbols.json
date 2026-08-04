@@ -1,0 +1,197 @@
+{
+  "$schema": "./_schema.json",
+  "title": "symbols",
+  "grid": {
+    "x": 119.0,
+    "y": 89.2
+  },
+  "nodes": [
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 0,
+      "row": 0,
+      "dx": -6.7
+    },
+    {
+      "id": "v1-0",
+      "kind": "ref",
+      "label": "v1.0",
+      "col": 2,
+      "row": 0,
+      "dx": 18.8
+    },
+    {
+      "id": "head",
+      "kind": "symref",
+      "label": "HEAD",
+      "col": 4,
+      "row": 0,
+      "dx": 25.8
+    },
+    {
+      "id": "tree",
+      "kind": "tree",
+      "label": "tree",
+      "col": 6,
+      "row": 0,
+      "dx": 44.3
+    },
+    {
+      "id": "version-5",
+      "kind": "blob",
+      "label": "Version 5",
+      "col": 9,
+      "row": 0,
+      "dx": -57.7
+    },
+    {
+      "id": "integration",
+      "kind": "ref",
+      "label": [
+        "integration",
+        "manager"
+      ],
+      "col": 0,
+      "row": 2,
+      "dx": 4.09,
+      "dy": -27.9
+    },
+    {
+      "id": "developer",
+      "kind": "tree",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 2,
+      "row": 2,
+      "dx": 21.09,
+      "dy": -27.9
+    },
+    {
+      "id": "staging",
+      "kind": "commit",
+      "label": [
+        "Staging",
+        "Area"
+      ],
+      "col": 4,
+      "row": 2,
+      "dx": 32.3,
+      "dy": -27.9
+    },
+    {
+      "id": "node_9c68f",
+      "kind": "commit",
+      "label": "9c68f",
+      "col": 6,
+      "row": 2,
+      "dx": 55.09,
+      "dy": -18.4
+    },
+    {
+      "id": "c2b9e",
+      "kind": "commit",
+      "label": "c2b9e",
+      "col": 9,
+      "row": 2,
+      "dx": -59.2,
+      "dy": -30.4
+    },
+    {
+      "id": "head-2",
+      "kind": "goldref",
+      "label": "HEAD",
+      "col": 0,
+      "row": 3,
+      "dx": 2.8,
+      "dy": 28.4
+    },
+    {
+      "id": "working",
+      "kind": "blob",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 2,
+      "row": 3,
+      "dx": 21.09,
+      "dy": 30.9
+    },
+    {
+      "id": "size",
+      "kind": "commit",
+      "label": [
+        "size",
+        "92ec2",
+        "Scott",
+        "Scott"
+      ],
+      "col": 5,
+      "row": 4,
+      "dx": -33.7,
+      "dy": -28.3
+    },
+    {
+      "id": "size-2",
+      "kind": "tree",
+      "label": [
+        "size",
+        "5b1d3 README",
+        "911e7 LICENSE",
+        "cba0a test.rb"
+      ],
+      "col": 7,
+      "row": 4,
+      "dx": -16.7,
+      "dy": -28.3
+    },
+    {
+      "id": "size-3",
+      "kind": "blob",
+      "label": "size",
+      "col": 9,
+      "row": 4,
+      "dy": -28.3
+    },
+    {
+      "id": "hello-mundo",
+      "kind": "commit",
+      "label": "hello mundo",
+      "col": 0,
+      "row": 5,
+      "dy": 5.0
+    },
+    {
+      "id": "fbff5",
+      "kind": "jessica",
+      "label": "fbff5",
+      "col": 2,
+      "row": 5,
+      "dx": 10.3,
+      "dy": -2.0
+    },
+    {
+      "id": "node_738ee",
+      "kind": "john",
+      "label": "738ee",
+      "col": 4,
+      "row": 5,
+      "dx": 27.3,
+      "dy": -2.0
+    },
+    {
+      "id": "fba9a",
+      "kind": "josie",
+      "label": "fba9a",
+      "col": 6,
+      "row": 5,
+      "dx": 44.3,
+      "dy": -2.0
+    }
+  ],
+  "edges": []
+}

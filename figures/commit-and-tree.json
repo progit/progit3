@@ -1,0 +1,46 @@
+{
+  "$schema": "./_schema.json",
+  "title": "commit and tree",
+  "grid": {
+    "x": 268.0,
+    "y": 146.0
+  },
+  "nodes": [
+    {
+      "id": "node_92ec2",
+      "kind": "tree",
+      "label": "92ec2",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "the-initial-commit-of-my-project",
+      "kind": "commit",
+      "label": "The initial commit of my project",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "node_5b1d3",
+      "kind": "blob",
+      "label": "5b1d3",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "node_911e7",
+      "kind": "blob",
+      "label": "911e7",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "cba0a",
+      "kind": "blob",
+      "label": "cba0a",
+      "col": 2,
+      "row": 2
+    }
+  ],
+  "edges": []
+}

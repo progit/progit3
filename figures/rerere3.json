@@ -1,0 +1,106 @@
+{
+  "$schema": "./_schema.json",
+  "title": "rerere3",
+  "grid": {
+    "x": 79.5,
+    "y": 67.1
+  },
+  "nodes": [
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0,
+      "dx": 4.0,
+      "dy": -3.0
+    },
+    {
+      "id": "hello-world",
+      "kind": "commit",
+      "label": "hello world",
+      "col": 0,
+      "row": 1,
+      "dy": 4.9
+    },
+    {
+      "id": "hola-world",
+      "kind": "commit",
+      "label": "hola world",
+      "col": 2,
+      "row": 1,
+      "dx": -5.0,
+      "dy": 4.9
+    },
+    {
+      "id": "hola-mundo",
+      "kind": "commit",
+      "label": "hola mundo",
+      "col": 4,
+      "row": 1,
+      "dx": -12.0,
+      "dy": 4.9
+    },
+    {
+      "id": "i18-world",
+      "kind": "ref",
+      "label": "i18-world",
+      "col": 4,
+      "row": 0,
+      "dy": -5.0
+    },
+    {
+      "id": "hello-world-2",
+      "kind": "commit",
+      "label": "hello world",
+      "col": 0,
+      "row": 1,
+      "dy": 5.03
+    },
+    {
+      "id": "hola-world-2",
+      "kind": "commit",
+      "label": "hola world",
+      "col": 2,
+      "row": 1,
+      "dx": -6.13,
+      "dy": 5.02
+    },
+    {
+      "id": "master-2",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0,
+      "dx": -6.13,
+      "dy": 4.0
+    },
+    {
+      "id": "hello-mundo",
+      "kind": "commit",
+      "label": "hello mundo",
+      "col": 2,
+      "row": 2,
+      "dx": -6.1
+    },
+    {
+      "id": "hola-mundo-2",
+      "kind": "commit",
+      "label": "hola mundo",
+      "col": 4,
+      "row": 1,
+      "dx": -12.0,
+      "dy": 5.02
+    },
+    {
+      "id": "i18-world-2",
+      "kind": "ref",
+      "label": "i18-world",
+      "col": 4,
+      "row": 0,
+      "dx": -12.0,
+      "dy": 3.99
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,159 @@
+{
+  "$schema": "./_schema.json",
+  "title": "managed team 3",
+  "grid": {
+    "x": 99.2,
+    "y": 45.8
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 3,
+      "dy": -20.81
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 3,
+      "dx": 19.8,
+      "dy": -20.81
+    },
+    {
+      "id": "node_33009",
+      "kind": "jessica",
+      "label": "33009",
+      "col": 2,
+      "row": 3,
+      "dx": 39.6,
+      "dy": -20.81
+    },
+    {
+      "id": "aad88",
+      "kind": "john",
+      "label": "aad88",
+      "col": 4,
+      "row": 3,
+      "dx": -39.8,
+      "dy": -20.81
+    },
+    {
+      "id": "node_774b3",
+      "kind": "jessica",
+      "label": "774b3",
+      "col": 5,
+      "row": 3,
+      "dx": -20.0,
+      "dy": -20.81
+    },
+    {
+      "id": "node_5399e",
+      "kind": "commit",
+      "label": "5399e",
+      "col": 6,
+      "row": 3,
+      "dy": -20.81
+    },
+    {
+      "id": "node_85127",
+      "kind": "jessica",
+      "label": "85127",
+      "col": 4,
+      "row": 4,
+      "dx": -39.8,
+      "dy": -18.61
+    },
+    {
+      "id": "cd685",
+      "kind": "jessica",
+      "label": "cd685",
+      "col": 5,
+      "row": 4,
+      "dx": -20.0,
+      "dy": -18.61
+    },
+    {
+      "id": "fba9a",
+      "kind": "josie",
+      "label": "fba9a",
+      "col": 3,
+      "row": 5,
+      "dx": -9.6,
+      "dy": -16.41
+    },
+    {
+      "id": "e5b0f",
+      "kind": "jessica",
+      "label": "e5b0f",
+      "col": 2,
+      "row": 4,
+      "dx": 39.6,
+      "dy": -18.61
+    },
+    {
+      "id": "featureb",
+      "kind": "ref",
+      "label": "featureB",
+      "col": 5,
+      "row": 5,
+      "dx": -20.0,
+      "dy": -6.91
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 1,
+      "dx": 19.8,
+      "dy": 12.29
+    },
+    {
+      "id": "featurea",
+      "kind": "ref",
+      "label": "featureA",
+      "col": 5,
+      "row": 1,
+      "dx": -20.0,
+      "dy": 12.29
+    },
+    {
+      "id": "origin",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "featureBee"
+      ],
+      "col": 5,
+      "row": 6,
+      "dx": -20.0
+    },
+    {
+      "id": "origin-2",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "featureA"
+      ],
+      "col": 5,
+      "row": 0,
+      "dx": -20.0
+    },
+    {
+      "id": "origin-3",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "master"
+      ],
+      "col": 6,
+      "row": 1,
+      "dy": 12.29
+    }
+  ],
+  "edges": []
+}

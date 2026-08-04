@@ -1,0 +1,66 @@
+{
+  "$schema": "./_schema.json",
+  "title": "perils of rebasing 1",
+  "grid": {
+    "x": 91.2,
+    "y": 97.5
+  },
+  "nodes": [
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 0,
+      "dx": 44.15
+    },
+    {
+      "id": "c1-2",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 1,
+      "dy": 46.5
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 2,
+      "dx": 23.85
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 3,
+      "row": 2,
+      "dx": -41.55
+    },
+    {
+      "id": "master-2",
+      "kind": "ref",
+      "label": "master",
+      "col": 4,
+      "row": 2
+    },
+    {
+      "id": "teamone-master",
+      "kind": "ref",
+      "label": "teamone/master",
+      "col": 1,
+      "row": 1,
+      "dx": 44.35,
+      "dy": 46.5
+    }
+  ],
+  "edges": []
+}

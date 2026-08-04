@@ -1,0 +1,44 @@
+{
+  "$schema": "./_schema.json",
+  "title": "centralized_workflow",
+  "grid": {
+    "x": 106.8,
+    "y": 81.5
+  },
+  "nodes": [
+    {
+      "id": "developer",
+      "kind": "ref",
+      "label": "developer",
+      "col": 1,
+      "row": 1,
+      "dx": -0.8
+    },
+    {
+      "id": "developer-2",
+      "kind": "ref",
+      "label": "developer",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "developer-3",
+      "kind": "ref",
+      "label": "developer",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "shared",
+      "kind": "blob",
+      "label": [
+        "shared",
+        "repository"
+      ],
+      "col": 1,
+      "row": 0,
+      "dx": -0.8
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,169 @@
+{
+  "$schema": "./_schema.json",
+  "title": "snapshots",
+  "grid": {
+    "x": 116.0,
+    "y": 52.3
+  },
+  "nodes": [
+    {
+      "id": "version-1",
+      "kind": "blob",
+      "label": "Version 1",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "version-2",
+      "kind": "blob",
+      "label": "Version 2",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "version-3",
+      "kind": "blob",
+      "label": "Version 3",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "version-4",
+      "kind": "blob",
+      "label": "Version 4",
+      "col": 3,
+      "row": 0
+    },
+    {
+      "id": "version-5",
+      "kind": "blob",
+      "label": "Version 5",
+      "col": 4,
+      "row": 0
+    },
+    {
+      "id": "file-a",
+      "kind": "commit",
+      "label": "File A",
+      "col": 0,
+      "row": 1,
+      "dy": 6.7
+    },
+    {
+      "id": "file-a-2",
+      "kind": "commit",
+      "label": "File A",
+      "col": 0,
+      "row": 1,
+      "dy": 6.7
+    },
+    {
+      "id": "a1",
+      "kind": "commit",
+      "label": "A1",
+      "col": 1,
+      "row": 1,
+      "dy": 6.7
+    },
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 1,
+      "row": 3
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 2,
+      "row": 3
+    },
+    {
+      "id": "b1",
+      "kind": "commit",
+      "label": "B1",
+      "col": 3,
+      "row": 2,
+      "dy": 3.4
+    },
+    {
+      "id": "a2",
+      "kind": "commit",
+      "label": "A2",
+      "col": 3,
+      "row": 1,
+      "dy": 6.7
+    },
+    {
+      "id": "a2-2",
+      "kind": "commit",
+      "label": "A2",
+      "col": 4,
+      "row": 1,
+      "dy": 6.71
+    },
+    {
+      "id": "b2",
+      "kind": "commit",
+      "label": "B2",
+      "col": 4,
+      "row": 2,
+      "dy": 3.4
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 4,
+      "row": 3
+    },
+    {
+      "id": "file-b",
+      "kind": "commit",
+      "label": "File B",
+      "col": 0,
+      "row": 2,
+      "dy": 3.4
+    },
+    {
+      "id": "file-c",
+      "kind": "commit",
+      "label": "File C",
+      "col": 0,
+      "row": 3
+    },
+    {
+      "id": "b",
+      "kind": "commit",
+      "label": "B",
+      "col": 2,
+      "row": 2,
+      "dy": 3.4
+    },
+    {
+      "id": "a1-2",
+      "kind": "commit",
+      "label": "A1",
+      "col": 2,
+      "row": 1,
+      "dy": 6.71
+    },
+    {
+      "id": "c2-2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "b-2",
+      "kind": "commit",
+      "label": "B",
+      "col": 1,
+      "row": 2,
+      "dy": 3.4
+    }
+  ],
+  "edges": []
+}

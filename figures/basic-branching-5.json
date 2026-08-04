@@ -1,0 +1,69 @@
+{
+  "$schema": "./_schema.json",
+  "title": "basic branching 5",
+  "grid": {
+    "x": 127.0,
+    "y": 60.0
+  },
+  "nodes": [
+    {
+      "id": "c0",
+      "kind": "commit",
+      "label": "C0",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 1,
+      "row": 2
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 2,
+      "row": 2
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 0
+    },
+    {
+      "id": "hotfix",
+      "kind": "ref",
+      "label": "hotfix",
+      "col": 3,
+      "row": 1,
+      "dy": -2.0
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 2
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 3,
+      "row": 3,
+      "dy": -2.0
+    },
+    {
+      "id": "iss53",
+      "kind": "ref",
+      "label": "iss53",
+      "col": 3,
+      "row": 4
+    }
+  ],
+  "edges": []
+}

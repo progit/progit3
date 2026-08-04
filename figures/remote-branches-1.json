@@ -1,0 +1,81 @@
+{
+  "$schema": "./_schema.json",
+  "title": "remote branches 1",
+  "grid": {
+    "x": 117.0,
+    "y": 73.0
+  },
+  "nodes": [
+    {
+      "id": "node_0b743",
+      "kind": "commit",
+      "label": "0b743",
+      "col": 0,
+      "row": 1,
+      "dy": -20.0
+    },
+    {
+      "id": "a6b4c",
+      "kind": "commit",
+      "label": "a6b4c",
+      "col": 1,
+      "row": 1,
+      "dy": -20.0
+    },
+    {
+      "id": "f4265",
+      "kind": "commit",
+      "label": "f4265",
+      "col": 2,
+      "row": 1,
+      "dy": -20.0
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "node_0b743-2",
+      "kind": "commit",
+      "label": "0b743",
+      "col": 0,
+      "row": 3,
+      "dy": 20.0
+    },
+    {
+      "id": "a6b4c-2",
+      "kind": "commit",
+      "label": "a6b4c",
+      "col": 1,
+      "row": 3,
+      "dy": 20.0
+    },
+    {
+      "id": "f4265-2",
+      "kind": "commit",
+      "label": "f4265",
+      "col": 2,
+      "row": 3,
+      "dy": 20.0
+    },
+    {
+      "id": "master-2",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 4
+    },
+    {
+      "id": "origin-master",
+      "kind": "ref",
+      "label": "origin/master",
+      "col": 2,
+      "row": 3,
+      "dy": -33.0
+    }
+  ],
+  "edges": []
+}

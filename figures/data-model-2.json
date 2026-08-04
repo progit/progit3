@@ -1,0 +1,33 @@
+{
+  "$schema": "./_schema.json",
+  "title": "data model 2",
+  "grid": {
+    "x": 115.5,
+    "y": 88.8
+  },
+  "nodes": [
+    {
+      "id": "version-2",
+      "kind": "commit",
+      "label": "\"version 2\"",
+      "col": 1,
+      "row": 0,
+      "dx": -0.5
+    },
+    {
+      "id": "new-file",
+      "kind": "commit",
+      "label": "\"new file\"",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "version-1",
+      "kind": "commit",
+      "label": "\"version 1\"",
+      "col": 2,
+      "row": 1
+    }
+  ],
+  "edges": []
+}

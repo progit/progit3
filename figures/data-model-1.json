@@ -1,0 +1,33 @@
+{
+  "$schema": "./_schema.json",
+  "title": "data model 1",
+  "grid": {
+    "x": 113.5,
+    "y": 90.0
+  },
+  "nodes": [
+    {
+      "id": "blob",
+      "kind": "commit",
+      "label": "blob",
+      "col": 1,
+      "row": 0,
+      "dx": 1.5
+    },
+    {
+      "id": "blob-2",
+      "kind": "commit",
+      "label": "blob",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "blob-3",
+      "kind": "commit",
+      "label": "blob",
+      "col": 2,
+      "row": 1
+    }
+  ],
+  "edges": []
+}

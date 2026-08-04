@@ -1,0 +1,95 @@
+{
+  "$schema": "./_schema.json",
+  "title": "integration manager",
+  "grid": {
+    "x": 137.1,
+    "y": 84.0
+  },
+  "nodes": [
+    {
+      "id": "developer",
+      "kind": "tree",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 1,
+      "row": 0,
+      "dx": 5.11
+    },
+    {
+      "id": "developer-2",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "private"
+      ],
+      "col": 1,
+      "row": 1,
+      "dx": 4.9
+    },
+    {
+      "id": "developer-3",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "private"
+      ],
+      "col": 1,
+      "row": 1,
+      "dx": 4.9
+    },
+    {
+      "id": "developer-4",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "private"
+      ],
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "blessed",
+      "kind": "blob",
+      "label": [
+        "blessed",
+        "repository"
+      ],
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "integration",
+      "kind": "ref",
+      "label": [
+        "integration",
+        "manager"
+      ],
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "developer-5",
+      "kind": "tree",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "developer-6",
+      "kind": "tree",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 1,
+      "row": 0,
+      "dx": 5.11
+    }
+  ],
+  "edges": []
+}

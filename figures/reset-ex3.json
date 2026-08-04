@@ -1,0 +1,91 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset ex3",
+  "grid": {
+    "x": 140.9,
+    "y": 70.1
+  },
+  "nodes": [
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "master",
+      "kind": "blob",
+      "label": "master",
+      "col": 0,
+      "row": 1,
+      "dy": -25.1
+    },
+    {
+      "id": "file-txt",
+      "kind": "tree",
+      "label": [
+        "file.txt",
+        "v1"
+      ],
+      "col": 2,
+      "row": 4
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 2,
+      "row": 3,
+      "dy": 14.03
+    },
+    {
+      "id": "head-2",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 0,
+      "row": 3,
+      "dy": 14.2
+    },
+    {
+      "id": "eb43bf8",
+      "kind": "tree",
+      "label": "eb43bf8",
+      "col": 0,
+      "row": 4
+    },
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "col": 1,
+      "row": 3,
+      "dy": 14.2
+    },
+    {
+      "id": "file-txt-2",
+      "kind": "tree",
+      "label": [
+        "file.txt",
+        "v1"
+      ],
+      "col": 1,
+      "row": 4
+    },
+    {
+      "id": "file-txt-3",
+      "kind": "tree",
+      "label": [
+        "file.txt",
+        "v1"
+      ],
+      "col": 0,
+      "row": 2,
+      "dy": -17.35
+    }
+  ],
+  "edges": []
+}

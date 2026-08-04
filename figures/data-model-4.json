@@ -1,0 +1,72 @@
+{
+  "$schema": "./_schema.json",
+  "title": "data model 4",
+  "grid": {
+    "x": 252.0,
+    "y": 58.0
+  },
+  "nodes": [
+    {
+      "id": "version-2",
+      "kind": "commit",
+      "label": "\"version 2\"",
+      "col": 2,
+      "row": 1,
+      "dy": 15.0
+    },
+    {
+      "id": "new-file",
+      "kind": "commit",
+      "label": "\"new file\"",
+      "col": 2,
+      "row": 3,
+      "dy": -23.0
+    },
+    {
+      "id": "version-1",
+      "kind": "commit",
+      "label": "\"version 1\"",
+      "col": 2,
+      "row": 4
+    },
+    {
+      "id": "third-commit",
+      "kind": "blob",
+      "label": "third commit",
+      "col": 1,
+      "row": 0,
+      "dx": -77.5
+    },
+    {
+      "id": "second-commit",
+      "kind": "blob",
+      "label": "second commit",
+      "col": 1,
+      "row": 2,
+      "dx": -77.5
+    },
+    {
+      "id": "first-commit",
+      "kind": "blob",
+      "label": "first commit",
+      "col": 1,
+      "row": 4,
+      "dx": -77.49
+    },
+    {
+      "id": "refs-heads-test",
+      "kind": "ref",
+      "label": "refs/heads/test",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "refs-heads-master",
+      "kind": "ref",
+      "label": "refs/heads/master",
+      "col": 0,
+      "row": 0
+    }
+  ],
+  "edges": []
+}

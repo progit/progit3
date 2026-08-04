@@ -1,0 +1,114 @@
+{
+  "$schema": "./_schema.json",
+  "title": "interesting rebase 2",
+  "grid": {
+    "x": 127.2,
+    "y": 60.6
+  },
+  "nodes": [
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "c5",
+      "kind": "commit",
+      "label": "C5",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 0
+    },
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 3,
+      "row": 1
+    },
+    {
+      "id": "c8",
+      "kind": "commit",
+      "label": "C8'",
+      "col": 4,
+      "row": 1
+    },
+    {
+      "id": "c9",
+      "kind": "commit",
+      "label": "C9'",
+      "col": 5,
+      "row": 1
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 2,
+      "row": 2,
+      "dy": 3.3
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 2,
+      "dy": 3.3
+    },
+    {
+      "id": "c8-2",
+      "kind": "commit",
+      "label": "C8",
+      "col": 3,
+      "row": 4
+    },
+    {
+      "id": "c9-2",
+      "kind": "commit",
+      "label": "C9",
+      "col": 4,
+      "row": 4
+    },
+    {
+      "id": "c10",
+      "kind": "commit",
+      "label": "C10",
+      "col": 4,
+      "row": 2,
+      "dy": 3.3
+    },
+    {
+      "id": "server",
+      "kind": "ref",
+      "label": "server",
+      "col": 4,
+      "row": 3,
+      "dy": 4.7
+    },
+    {
+      "id": "client",
+      "kind": "ref",
+      "label": "client",
+      "col": 5,
+      "row": 2,
+      "dy": 1.3
+    }
+  ],
+  "edges": []
+}

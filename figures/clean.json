@@ -1,0 +1,67 @@
+{
+  "$schema": "./_schema.json",
+  "title": "clean",
+  "grid": {
+    "x": 150.0,
+    "y": 53.0
+  },
+  "nodes": [
+    {
+      "id": "filea-txt",
+      "kind": "commit",
+      "label": "fileA.txt",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "filea-txt-2",
+      "kind": "blob",
+      "label": "fileA.txt'",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "fileb-txt",
+      "kind": "blob",
+      "label": "fileB.txt'",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "fileb-txt-2",
+      "kind": "commit",
+      "label": "fileB.txt",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "filec-rb",
+      "kind": "commit",
+      "label": "fileC.rb",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "filec-rb-2",
+      "kind": "commit",
+      "label": "fileC.rb",
+      "col": 2,
+      "row": 2
+    },
+    {
+      "id": "smudge",
+      "kind": "ref",
+      "label": "smudge",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "clean",
+      "kind": "ref",
+      "label": "clean",
+      "col": 1,
+      "row": 1
+    }
+  ],
+  "edges": []
+}

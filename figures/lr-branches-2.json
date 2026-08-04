@@ -1,0 +1,69 @@
+{
+  "$schema": "./_schema.json",
+  "title": "lr branches 2",
+  "grid": {
+    "x": 138.4,
+    "y": 146.8
+  },
+  "nodes": [
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 1,
+      "dx": 14.0,
+      "dy": -7.33
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 2,
+      "row": 1,
+      "dx": 11.16,
+      "dy": -7.33
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 1,
+      "dx": 8.46,
+      "dy": -7.33
+    },
+    {
+      "id": "c5",
+      "kind": "commit",
+      "label": "C5",
+      "col": 4,
+      "row": 1,
+      "dx": 5.48,
+      "dy": -7.35
+    },
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 5,
+      "row": 2,
+      "dx": 2.68
+    },
+    {
+      "id": "c7",
+      "kind": "commit",
+      "label": "C7",
+      "col": 6,
+      "row": 2
+    }
+  ],
+  "edges": []
+}
