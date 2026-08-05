@@ -148,5 +148,9 @@
       "dy": -5.53
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "master", "to": "node_68aef35-2", "arrow": "forward" },
+    { "from": "file-a-txt-v1", "to": "node_68aef35", "route": "diagonal" }
+  ]
 }

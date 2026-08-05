@@ -62,5 +62,11 @@
       "dy": 46.5
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "master", "to": "c1", "arrow": "forward" },
+    { "from": "c2", "to": "c1-2", "route": "diagonal" },
+    { "from": "c3", "to": "c2" },
+    { "from": "master-2", "to": "c3", "arrow": "forward" },
+    { "from": "teamone-master", "to": "c2", "arrow": "forward" }
+  ]
 }

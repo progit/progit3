@@ -147,5 +147,21 @@
       "dy": -7.42
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c1", "to": "c0" },
+    { "from": "c3", "to": "c1" },
+    { "from": "c9", "to": "c3" },
+    { "from": "c10", "to": "c9" },
+    { "from": "c12", "to": "c10" },
+    { "from": "c13", "to": "c12" },
+    { "from": "c14", "to": "c13" },
+    { "from": "c2", "to": "c1", "route": "diagonal" },
+    { "from": "c4", "to": "c2" },
+    { "from": "c7", "to": "c4" },
+    { "from": "c8", "to": "c7" },
+    { "from": "c11", "to": "c8" },
+    { "from": "c14", "to": "c11", "route": "diagonal" },
+    { "from": "master", "to": "c14", "arrow": "forward" },
+    { "from": "iss91v2", "to": "c11", "arrow": "forward" }
+  ]
 }

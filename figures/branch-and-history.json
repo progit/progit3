@@ -80,5 +80,14 @@
       "dy": -8.7
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "node_34ac2", "to": "node_98ca9" },
+    { "from": "f30ab", "to": "node_34ac2" },
+    { "from": "f30ab", "to": "snapshot-c", "arrow": "forward" },
+    { "from": "node_34ac2", "to": "snapshot-b", "arrow": "forward" },
+    { "from": "node_98ca9", "to": "snapshot-a", "arrow": "forward" },
+    { "from": "master", "to": "f30ab", "arrow": "forward", "route": "diagonal" },
+    { "from": "v1-0", "to": "f30ab", "arrow": "forward", "route": "diagonal" },
+    { "from": "head", "to": "master", "arrow": "forward" }
+  ]
 }

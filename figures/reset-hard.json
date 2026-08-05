@@ -99,5 +99,9 @@
       "dy": -19.29
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-txt-4", "to": "file-txt-3" },
+    { "from": "master", "to": "node_9e5e6a4", "arrow": "forward" }
+  ]
 }

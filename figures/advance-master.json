@@ -69,5 +69,13 @@
       "row": 0
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "node_34ac2", "to": "node_98ca9" },
+    { "from": "f30ab", "to": "node_34ac2" },
+    { "from": "c2b9e", "to": "f30ab", "route": "diagonal" },
+    { "from": "node_87ab2", "to": "f30ab", "route": "diagonal" },
+    { "from": "master", "to": "c2b9e", "arrow": "forward" },
+    { "from": "testing", "to": "node_87ab2", "arrow": "forward" },
+    { "from": "head", "to": "master", "arrow": "forward" }
+  ]
 }

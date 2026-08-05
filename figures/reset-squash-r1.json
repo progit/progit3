@@ -134,5 +134,8 @@
       "row": 6
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-a-txt-v1", "to": "file-a-txt-v3" }
+  ]
 }

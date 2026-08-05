@@ -112,5 +112,17 @@
       "dy": 29.39
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c4-2", "to": "c1" },
+    { "from": "c5", "to": "c4-2", "route": "diagonal" },
+    { "from": "c6", "to": "c4-2", "route": "diagonal" },
+    { "from": "c4", "to": "c5", "route": "diagonal" },
+    { "from": "master", "to": "c4", "arrow": "forward" },
+    { "from": "c5-2", "to": "c1-2" },
+    { "from": "c4-3", "to": "c5-2", "route": "diagonal" },
+    { "from": "teamone-master", "to": "c4-3", "arrow": "forward" },
+    { "from": "c2", "to": "c4-3", "route": "diagonal" },
+    { "from": "c3", "to": "c2" },
+    { "from": "master-2", "to": "c3", "arrow": "forward" }
+  ]
 }

@@ -81,5 +81,9 @@
       "dy": 14.01
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-txt-2", "to": "file-txt" },
+    { "from": "master", "to": "node_9e5e6a4", "arrow": "forward" }
+  ]
 }

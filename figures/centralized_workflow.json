@@ -40,5 +40,9 @@
       "dx": -0.8
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "shared", "to": "developer", "arrow": "forward" },
+    { "from": "shared", "to": "developer-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "shared", "to": "developer-3", "arrow": "forward", "route": "diagonal" }
+  ]
 }

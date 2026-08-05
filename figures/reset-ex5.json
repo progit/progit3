@@ -87,5 +87,8 @@
       "dy": -25.2
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "head-2", "to": "master", "arrow": "forward" },
+    { "from": "head", "to": "eb43bf8", "arrow": "forward" }
+  ]
 }

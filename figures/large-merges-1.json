@@ -145,5 +145,23 @@
       "dx": -11.6
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "master", "to": "c2", "arrow": "forward" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "tv-rebase-stat", "to": "c4", "arrow": "forward" },
+    { "from": "c5", "to": "c2", "route": "diagonal" },
+    { "from": "c6", "to": "c5" },
+    { "from": "jk-clone-checkout", "to": "c6", "arrow": "forward" },
+    { "from": "c7", "to": "c2", "route": "diagonal" },
+    { "from": "c8", "to": "c7" },
+    { "from": "db-push-cleanup", "to": "c8", "arrow": "forward" },
+    { "from": "c9", "to": "c2", "route": "diagonal" },
+    { "from": "c10", "to": "c9" },
+    { "from": "js-notes", "to": "c10", "arrow": "forward" },
+    { "from": "c11", "to": "c2", "route": "diagonal" },
+    { "from": "c12", "to": "c11" },
+    { "from": "ps-blame", "to": "c12", "arrow": "forward" }
+  ]
 }

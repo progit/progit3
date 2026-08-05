@@ -136,5 +136,18 @@
       "dy": -1.21
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "commit-b", "to": "commit-a" },
+    { "from": "master", "to": "commit-a", "arrow": "forward" },
+    { "from": "develop", "to": "commit-b", "arrow": "forward" },
+    { "from": "head", "to": "develop", "arrow": "forward" },
+    { "from": "commit-b-2", "to": "commit-a-2" },
+    { "from": "master-2", "to": "commit-a-2", "arrow": "forward" },
+    { "from": "develop-2", "to": "commit-b-2", "arrow": "forward" },
+    { "from": "head-2", "to": "commit-b-2", "arrow": "forward" },
+    { "from": "commit-b-3", "to": "commit-a-3" },
+    { "from": "master-3", "to": "commit-a-3", "arrow": "forward" },
+    { "from": "develop-3", "to": "commit-b-3", "arrow": "forward" },
+    { "from": "head-3", "to": "master-3", "arrow": "forward" }
+  ]
 }
