@@ -7,27 +7,50 @@
   },
   "nodes": [
     {
-      "id": "blob",
-      "kind": "commit",
-      "label": "blob",
+      "id": "tree-1",
+      "kind": "tree",
+      "label": "tree",
       "col": 1,
       "row": 0,
-      "dx": 1.5
+      "dy": 12.5
+    },
+    {
+      "id": "tree-2",
+      "kind": "tree",
+      "label": "tree",
+      "col": 2,
+      "row": 1,
+      "dy": 18.5
+    },
+    {
+      "id": "blob-1",
+      "kind": "blob",
+      "label": "blob",
+      "col": 0,
+      "row": 1,
+      "dy": 21.5
     },
     {
       "id": "blob-2",
-      "kind": "commit",
+      "kind": "blob",
       "label": "blob",
-      "col": 0,
-      "row": 0
+      "col": 1,
+      "row": 1,
+      "dy": 21.5
     },
     {
       "id": "blob-3",
-      "kind": "commit",
+      "kind": "blob",
       "label": "blob",
       "col": 2,
-      "row": 1
+      "row": 2,
+      "dy": 21.5
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "tree-1", "to": "blob-1", "arrow": "forward", "route": "diagonal" },
+    { "from": "tree-1", "to": "blob-2", "arrow": "forward" },
+    { "from": "tree-1", "to": "tree-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "tree-2", "to": "blob-3", "arrow": "forward" }
+  ]
 }

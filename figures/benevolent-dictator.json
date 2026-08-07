@@ -72,5 +72,13 @@
       "dy": -1.25
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "developer", "to": "lieutenant", "arrow": "forward" },
+    { "from": "developer-2", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "developer-3", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "lieutenant", "to": "dictator", "arrow": "forward" },
+    { "from": "lieutenant-2", "to": "dictator", "arrow": "forward", "route": "diagonal" },
+    { "from": "dictator", "to": "blessed", "arrow": "forward" },
+    { "from": "blessed", "to": "developer-3", "arrow": "forward" }
+  ]
 }

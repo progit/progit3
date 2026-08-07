@@ -51,5 +51,11 @@
       "row": 4
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "third-commit", "to": "second-commit", "arrow": "back" },
+    { "from": "second-commit", "to": "first-commit", "arrow": "back" },
+    { "from": "third-commit", "to": "version-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "second-commit", "to": "new-file", "arrow": "forward", "route": "diagonal" },
+    { "from": "first-commit", "to": "version-1", "arrow": "forward" }
+  ]
 }

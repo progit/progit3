@@ -91,5 +91,11 @@
       "dx": 5.11
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "developer-2", "to": "developer", "arrow": "forward" },
+    { "from": "developer-4", "to": "developer-5", "arrow": "forward" },
+    { "from": "integration", "to": "blessed", "arrow": "forward" },
+    { "from": "integration", "to": "developer", "arrow": "forward", "route": "diagonal" },
+    { "from": "integration", "to": "developer-5", "arrow": "forward", "route": "diagonal" }
+  ]
 }

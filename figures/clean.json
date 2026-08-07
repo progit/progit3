@@ -63,5 +63,10 @@
       "row": 1
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "filea-txt", "to": "smudge", "arrow": "forward" },
+    { "from": "smudge", "to": "filea-txt-2", "arrow": "forward" },
+    { "from": "fileb-txt", "to": "fileb-txt-2", "arrow": "forward" },
+    { "from": "filec-rb-2", "to": "filec-rb" }
+  ]
 }
