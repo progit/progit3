@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="662" height="666" viewBox="0 0 331 333" xmlns="http://www.w3.org/2000/svg">
   <title>remote branches 1</title>
-  <path d="m93 73h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m210 73h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 73h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m219 73h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m282.5 48v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m93 259h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m210 259h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 259h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m219 259h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m282.5 234v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m282.5 285v11h1v-11h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="794.8" height="294" viewBox="0 0 397.4 147" xmlns="http://www.w3.org/2000/svg">
   <title>smudge</title>
-  <path d="m243.2 20h52.2v1h-52.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m93 20h52.2v1h-52.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m393.4 73h-398.4v1h--398.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m93 126h202.4v1h-202.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m252.2 20h52.2v1h-52.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 20h52.2v1h-52.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m402.4 73h-398.4v1h--398.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 126h202.4v1h-202.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="gray">fileA.txt</tspan></text>

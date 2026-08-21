@@ -111,13 +111,14 @@ module SVG
   end
 
   # Baked-arrowhead path, matching existing SVG idiom.
-  # Horizontal left-pointing arrow: shaft starts at (x1,y), tip at x2 < x1
-  # m{tip_x} {cy}h{shaft}v1h-{shaft}v4l-9-4.5 9-4.5z
+  # Horizontal left-pointing arrow: shaft starts at (x1,y), apex at to_cx < x1
+  # m{base_x} {cy}h{shaft}v1h-{shaft}v4l-9-4.5 9-4.5z
   def self.arrow_h(from_cx, to_cx, cy)
-    # Arrowhead at left (to_cx < from_cx): tip at to_cx, shaft extends right
-    tip   = round(to_cx)
+    # Arrowhead at left (to_cx < from_cx): apex at to_cx (box edge), base 9px
+    # further out so the triangle sits outside the target box, not under it.
+    base  = round(to_cx + 9)
     shaft = round(from_cx - to_cx - 9)  # 9px for arrowhead
-    "m#{tip} #{round(cy)}h#{shaft}v1h-#{shaft}v4l-9-4.5 9-4.5z"
+    "m#{base} #{round(cy)}h#{shaft}v1h-#{shaft}v4l-9-4.5 9-4.5z"
   end
 
   # Vertical downward-pointing arrow: tip at (cx, to_cy), shaft from (cx, from_cy)

@@ -2,7 +2,7 @@
 <svg version="1.1" width="757.6" height="642" viewBox="0 0 378.8 321" xmlns="http://www.w3.org/2000/svg">
   <title>reset ex6</title>
   <path d="m188.7 40v-3h1v3h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m93 140.99h42.9v1h-42.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 140.99h42.9v1h-42.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="285.8" y="284" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="330.3" y="298.165" fill="#f0f0f0">file.txt</tspan><tspan x="330.3" dy="13.07" fill="#f0f0f0">v2</tspan></text>

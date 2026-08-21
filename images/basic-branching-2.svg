@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="702" height="330" viewBox="0 0 351 165" xmlns="http://www.w3.org/2000/svg">
   <title>Creating a new branch pointer</title>
-  <path d="m93 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m302.5 57v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m302.5 108v20h1v-20h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>

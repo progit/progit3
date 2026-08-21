@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="956" height="562" viewBox="0 0 478 281" xmlns="http://www.w3.org/2000/svg">
   <title>basic branching 5</title>
-  <path d="m93 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m347 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m356 140h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="M393.578 181.545 L347.024 160.284 L348.685 156.645 L338.629 157 L344.947 164.832 L346.608 161.194 L393.163 182.455 Z" fill="#8f8981"/>
   <path d="m429.5 115v-78h1v78h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m429.5 115v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>

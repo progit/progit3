@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1332" height="368" viewBox="0 0 666 184" xmlns="http://www.w3.org/2000/svg">
   <title>commits and parents</title>
-  <path d="m93 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m377.5 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m386.5 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m48.5 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m333 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m617.5 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>

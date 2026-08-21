@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1132.4" height="780" viewBox="0 0 566.2 390" xmlns="http://www.w3.org/2000/svg">
   <title>remote branches 3</title>
-  <path d="m93 259h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m210.3 259h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m326.99 259h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m444.9 259h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 259h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m219.3 259h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m335.99 259h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m453.9 259h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m517.7 234v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m562.2 259h-215.3v1h--215.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m444.9 316h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m571.2 259h-215.3v1h--215.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m453.9 316h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m517.7 342v11h1v-11h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
-  <path d="m93 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m210.3 73h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m326.99 73h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m444.9 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m219.3 73h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m335.99 73h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m453.9 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m517.7 48v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="243" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>

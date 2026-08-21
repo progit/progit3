@@ -2,7 +2,7 @@
 <svg version="1.1" width="1043.86" height="688" viewBox="0 0 521.93 344" xmlns="http://www.w3.org/2000/svg">
   <title>reset squash r1</title>
   <path d="m473.43 39.79v-2.79h1v2.79h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m517.2 133.57h-380.8v1h--380.8v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m526.2 133.57h-380.8v1h--380.8v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="428.93" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="473.43" y="25" fill="gray">HEAD</tspan></text>

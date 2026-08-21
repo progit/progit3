@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1214" height="324.4" viewBox="0 0 607 162.2" xmlns="http://www.w3.org/2000/svg">
   <title>basic rebase 3</title>
-  <path d="m93 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m347 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m356 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="M393.88 37.795 L346.905 59.08 L345.254 55.437 L338.914 63.25 L348.969 63.634 L347.318 59.991 L394.293 38.705 Z" fill="#8f8981"/>
-  <path d="m475 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m484 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m558.5 54.25v-18.5h1v18.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m431 105.25v19.95h1v-19.95h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1214" height="327.2" viewBox="0 0 607 163.6" xmlns="http://www.w3.org/2000/svg">
   <title>basic rebase 4</title>
-  <path d="m93 80.5h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 80.5h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m347 80.5h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m475 80.5h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 80.5h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 80.5h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m356 80.5h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m484 80.5h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m558.5 55.5v-18.5h1v18.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m558.5 106.5v20.1h1v-20.1h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>

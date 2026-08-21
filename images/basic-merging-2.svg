@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1464" height="430" viewBox="0 0 732 215" xmlns="http://www.w3.org/2000/svg">
   <title>A merge commit</title>
-  <path d="m93 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m347 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m356 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="M393.578 119.545 L347.024 98.284 L348.685 94.645 L338.629 95 L344.947 102.832 L346.608 99.194 L393.163 120.455 Z" fill="#8f8981"/>
-  <path d="m474 136h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m474 78h156v1h-156v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m483 136h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m483 78h156v1h-156v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="M647.163 94.545 L600.608 115.806 L598.947 112.168 L592.629 120 L602.685 120.355 L601.024 116.716 L647.578 95.455 Z" fill="#8f8981"/>
   <path d="m683.5 53v-16h1v16h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m556.5 162v16h1v-16h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>

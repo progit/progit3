@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="702" height="198" viewBox="0 0 351 99" xmlns="http://www.w3.org/2000/svg">
   <title>A simple commit history</title>
-  <path d="m93 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 78h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m302.5 53v-16h1v16h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="62" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>

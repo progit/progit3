@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="956" height="446.2" viewBox="0 0 478 223.1" xmlns="http://www.w3.org/2000/svg">
   <title>basic branching 4</title>
-  <path d="m93 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m347 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m229 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m356 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="M393.578 123.545 L347.024 102.284 L348.685 98.645 L338.629 99 L344.947 106.832 L346.608 103.194 L393.163 124.455 Z" fill="#8f8981"/>
-  <path d="m376 82.5h-29v1h29v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m302.5 57v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m429.5 57v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m429.5 166v20.1h1v-20.1h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>

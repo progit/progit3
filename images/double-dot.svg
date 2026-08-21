@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1122.8" height="188" viewBox="0 0 561.4 94" xmlns="http://www.w3.org/2000/svg">
   <title>double dot</title>
-  <path d="m93 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m212 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m331 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m212 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m331 73h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m102 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m221 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m340 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m221 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m340 73h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m352 20.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <path d="m352 73.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
