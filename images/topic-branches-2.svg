@@ -14,8 +14,6 @@
   <path d="m284.52 196.98v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m284.52 143.98v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="M189.991 80.446 L233.295 97.199 L231.852 100.93 L241.869 99.98 L235.099 92.536 L233.656 96.266 L190.351 79.514 Z" fill="#8f8981"/>
-  <path d="m147.52 37.98v-0.98h1v0.98h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m231.02 116.48h--197.08v1h-197.08v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
     <rect x="103.02" y="417.6" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="147.52" y="438.6" fill="gray">C0</tspan></text>

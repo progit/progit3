@@ -33,7 +33,7 @@
       "dy": -20.81
     },
     {
-      "id": "aad88",
+      "id": "node_aad88",
       "kind": "john",
       "label": "aad88",
       "col": 4,
@@ -68,7 +68,7 @@
       "dy": -18.61
     },
     {
-      "id": "cd685",
+      "id": "node_cd685",
       "kind": "jessica",
       "label": "cd685",
       "col": 5,
@@ -77,16 +77,15 @@
       "dy": -18.61
     },
     {
-      "id": "fba9a",
+      "id": "node_fba9a",
       "kind": "josie",
       "label": "fba9a",
       "col": 3,
       "row": 5,
-      "dx": -9.6,
-      "dy": -16.41
+      "dy": 30
     },
     {
-      "id": "e5b0f",
+      "id": "node_e5b0f",
       "kind": "jessica",
       "label": "e5b0f",
       "col": 2,
@@ -122,7 +121,7 @@
       "dy": 12.29
     },
     {
-      "id": "origin",
+      "id": "origin-bee",
       "kind": "ref",
       "label": [
         "origin/",
@@ -133,7 +132,7 @@
       "dx": -20.0
     },
     {
-      "id": "origin-2",
+      "id": "origin-a",
       "kind": "ref",
       "label": [
         "origin/",
@@ -144,7 +143,7 @@
       "dx": -20.0
     },
     {
-      "id": "origin-3",
+      "id": "origin-master",
       "kind": "ref",
       "label": [
         "origin/",
@@ -158,18 +157,20 @@
   "edges": [
     { "from": "node_1edee", "to": "node_4b078" },
     { "from": "node_33009", "to": "node_1edee" },
-    { "from": "aad88", "to": "node_33009" },
-    { "from": "node_774b3", "to": "aad88" },
+    { "from": "node_aad88", "to": "node_33009" },
+    { "from": "node_774b3", "to": "node_aad88" },
     { "from": "node_5399e", "to": "node_774b3" },
-    { "from": "e5b0f", "to": "node_33009", "route": "diagonal" },
-    { "from": "fba9a", "to": "e5b0f" },
-    { "from": "node_85127", "to": "e5b0f" },
-    { "from": "cd685", "to": "node_85127" },
-    { "from": "master", "to": "node_1edee", "arrow": "forward" },
-    { "from": "featurea", "to": "node_5399e", "arrow": "forward" },
-    { "from": "origin", "to": "cd685", "arrow": "forward" },
-    { "from": "origin-2", "to": "node_5399e", "arrow": "forward" },
-    { "from": "origin-3", "to": "node_5399e", "arrow": "forward" },
-    { "from": "featureb", "to": "cd685", "arrow": "forward" }
+    { "from": "node_5399e", "to": "node_cd685", "route": "diagonal" },
+    { "from": "node_e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_fba9a", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_85127", "to": "node_e5b0f" },
+    { "from": "node_cd685", "to": "node_85127" },
+    { "from": "node_cd685", "to": "node_fba9a", "route": "diagonal" },
+
+    { "from": "featurea", "to": "node_774b3", "arrow": "forward" },
+    { "from": "origin-a", "to": "node_774b3", "arrow": "forward" },
+    { "from": "featureb", "to": "node_cd685", "arrow": "forward" },
+    { "from": "origin-bee", "to": "node_cd685", "arrow": "forward" },
+    { "from": "origin-master", "to": "node_5399e", "arrow": "forward" }
   ]
 }

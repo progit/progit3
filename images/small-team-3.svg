@@ -3,7 +3,9 @@
   <title>small team 3</title>
   <path d="m102 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m221 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M364.407 92.536 L335.566 104.17 L334.069 100.46 L327.406 108 L337.436 108.807 L335.94 105.097 L364.781 93.464 Z" fill="#8f8981"/>
   <path d="m340 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M245.781 107.536 L216.94 95.903 L218.436 92.193 L208.406 93 L215.069 100.54 L216.566 96.83 L245.407 108.464 Z" fill="#8f8981"/>
   <path d="m221 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m405.5 51v-14h1v14h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m405.5 102v13.9h1v-13.9h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
@@ -29,7 +31,7 @@
   </g>
   <g>
     <rect x="361" y="115.9" width="89" height="33" fill="#f44d27"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="136.9" fill="#f0f0f0">origin/master</tspan></text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="130.065" fill="#f0f0f0">origin/</tspan><tspan x="405.5" dy="13.07" fill="#f0f0f0">master</tspan></text>
   </g>
   <g>
     <rect x="361" y="4" width="89" height="33" fill="#f44d27"/>

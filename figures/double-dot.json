@@ -72,9 +72,9 @@
     { "from": "b", "to": "a" },
     { "from": "e", "to": "b" },
     { "from": "f", "to": "e" },
-    { "from": "c", "to": "b" },
+    { "from": "c", "to": "b", "route": "diagonal" },
     { "from": "d", "to": "c" },
-    { "from": "master", "to": "f", "arrow": "forward" },
-    { "from": "experiment", "to": "d", "arrow": "forward" }
+    { "from": "master", "to": "f" },
+    { "from": "experiment", "to": "d" }
   ]
 }

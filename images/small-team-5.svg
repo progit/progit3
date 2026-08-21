@@ -3,8 +3,9 @@
   <title>small team 5</title>
   <path d="m102 76.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m221 76.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m221 76.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M248.197 110.55 L214.469 96.096 L216.045 92.419 L206 93.01 L212.5 100.691 L214.075 97.015 L247.803 111.47 Z" fill="#8f8981"/>
   <path d="m340 127.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M367.197 110.55 L333.469 96.096 L335.045 92.419 L325 93.01 L331.5 100.691 L333.075 97.015 L366.803 111.47 Z" fill="#8f8981"/>
   <path d="m340 76.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m459 75.91h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m578 75.91h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
@@ -45,7 +46,7 @@
   </g>
   <g>
     <rect x="361" y="166.9" width="89" height="33" fill="#f44d27"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="187.9" fill="#f0f0f0">origin/master</tspan></text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="181.065" fill="#f0f0f0">origin/</tspan><tspan x="405.5" dy="13.07" fill="#f0f0f0">master</tspan></text>
   </g>
   <g>
     <rect x="242" y="4" width="89" height="33" fill="#f44d27"/>

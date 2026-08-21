@@ -89,8 +89,9 @@
     { "from": "c3", "to": "c2", "route": "diagonal" },
     { "from": "c4", "to": "c3" },
     { "from": "c6", "to": "c5" },
-    { "from": "master", "to": "c6", "arrow": "forward" },
-    { "from": "develop", "to": "c6", "arrow": "forward" },
+    { "from": "c6", "to": "c4", "route": "diagonal" },
+    { "from": "master", "to": "c6", "route": "diagonal" },
+    { "from": "develop", "to": "c6", "route": "diagonal" },
     { "from": "ruby-client", "to": "c4", "arrow": "forward" }
   ]
 }

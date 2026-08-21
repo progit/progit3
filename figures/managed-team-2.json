@@ -33,7 +33,7 @@
       "dy": -20.9
     },
     {
-      "id": "aad88",
+      "id": "node_aad88",
       "kind": "john",
       "label": "aad88",
       "col": 4,
@@ -59,7 +59,7 @@
       "dy": -18.7
     },
     {
-      "id": "cd685",
+      "id": "node_cd685",
       "kind": "jessica",
       "label": "cd685",
       "col": 5,
@@ -67,16 +67,15 @@
       "dy": -18.7
     },
     {
-      "id": "fba9a",
+      "id": "node_fba9a",
       "kind": "josie",
       "label": "fba9a",
       "col": 3,
       "row": 5,
-      "dx": 2.4,
-      "dy": -16.5
+      "dy": 30
     },
     {
-      "id": "e5b0f",
+      "id": "node_e5b0f",
       "kind": "jessica",
       "label": "e5b0f",
       "col": 3,
@@ -133,16 +132,16 @@
   "edges": [
     { "from": "node_1edee", "to": "node_4b078" },
     { "from": "node_33009", "to": "node_1edee" },
-    { "from": "aad88", "to": "node_33009" },
-    { "from": "node_774b3", "to": "aad88" },
-    { "from": "e5b0f", "to": "node_33009", "route": "diagonal" },
-    { "from": "fba9a", "to": "e5b0f" },
-    { "from": "node_85127", "to": "e5b0f" },
-    { "from": "cd685", "to": "node_85127" },
-    { "from": "master", "to": "node_1edee", "arrow": "forward" },
+    { "from": "node_aad88", "to": "node_33009" },
+    { "from": "node_774b3", "to": "node_aad88" },
+    { "from": "node_e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_fba9a", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_85127", "to": "node_e5b0f" },
+    { "from": "node_cd685", "to": "node_85127" },
+    { "from": "node_cd685", "to": "node_fba9a", "route": "diagonal" },
     { "from": "featurea", "to": "node_774b3", "arrow": "forward" },
     { "from": "origin", "to": "node_774b3", "arrow": "forward" },
-    { "from": "featureb", "to": "cd685", "arrow": "forward" },
-    { "from": "origin-2", "to": "cd685", "arrow": "forward" }
+    { "from": "featureb", "to": "node_cd685", "arrow": "forward" },
+    { "from": "origin-2", "to": "node_cd685", "arrow": "forward" }
   ]
 }

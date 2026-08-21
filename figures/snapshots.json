@@ -165,5 +165,11 @@
       "dy": 3.4
     }
   ],
-  "edges": []
+  "edges": [
+    { "from": "version-1", "to": "file-c", "arrow": "none" },
+    { "from": "version-2", "to": "c1", "arrow": "none" },
+    { "from": "version-3", "to": "c2", "arrow": "none" },
+    { "from": "version-4", "to": "c2-2", "arrow": "none" },
+    { "from": "version-5", "to": "c3", "arrow": "none" }
+  ]
 }

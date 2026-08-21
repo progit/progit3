@@ -47,14 +47,14 @@
       "dy": -2.92
     },
     {
-      "id": "e5b0f",
+      "id": "node_e5b0f",
       "kind": "commit",
       "label": "e5b0f",
       "col": 2,
       "row": 4
     },
     {
-      "id": "dee6b",
+      "id": "node_dee6b",
       "kind": "commit",
       "label": "dee6b",
       "col": 3,
@@ -106,13 +106,13 @@
     { "from": "node_1edee", "to": "node_4b078" },
     { "from": "node_33009", "to": "node_1edee" },
     { "from": "node_17f4d", "to": "node_33009", "route": "diagonal" },
-    { "from": "featurebv2", "to": "node_17f4d", "arrow": "forward" },
-    { "from": "dee6b", "to": "node_33009", "route": "diagonal" },
-    { "from": "node_5399e", "to": "dee6b" },
-    { "from": "e5b0f", "to": "node_33009", "route": "diagonal" },
-    { "from": "master", "to": "node_33009", "arrow": "forward" },
-    { "from": "origin", "to": "node_33009", "arrow": "forward" },
-    { "from": "featurea", "to": "node_5399e", "arrow": "forward" },
-    { "from": "featureb", "to": "e5b0f", "arrow": "forward" }
+    { "from": "featurebv2", "to": "node_17f4d" },
+    { "from": "node_dee6b", "to": "node_33009", "route": "diagonal" },
+    { "from": "node_5399e", "to": "node_dee6b" },
+    { "from": "node_e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "master", "to": "node_1edee" },
+    { "from": "origin", "to": "node_33009" },
+    { "from": "featurea", "to": "node_5399e" },
+    { "from": "featureb", "to": "node_e5b0f" }
   ]
 }

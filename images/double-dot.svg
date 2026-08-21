@@ -4,10 +4,10 @@
   <path d="m102 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m221 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m340 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m221 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M249.656 56.543 L212.972 40.205 L214.599 36.551 L204.547 37 L210.938 44.772 L212.565 41.118 L249.249 57.457 Z" fill="#8f8981"/>
   <path d="m340 73h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m352 20.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
-  <path d="m352 73.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m459 20h9.4v1h-9.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m459 73h9.4v1h-9.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="gray">A</tspan></text>

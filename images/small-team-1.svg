@@ -3,7 +3,7 @@
   <title>small team 1</title>
   <path d="m102 77.5h20.9v1h-20.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m220.9 77.5h20.9v1h-20.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m220.9 77.5h20.9v1h-20.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M245.615 109.036 L216.805 97.405 L218.302 93.696 L208.272 94.5 L214.933 102.042 L216.43 98.333 L245.241 109.964 Z" fill="#8f8981"/>
   <path d="m286.3 52.5v-15.5h1v15.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m286.3 151.5v15.4h1v-15.4h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
@@ -24,7 +24,7 @@
   </g>
   <g>
     <rect x="241.8" y="166.9" width="89" height="33" fill="#f44d27"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="286.3" y="187.9" fill="#f0f0f0">origin/master</tspan></text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="286.3" y="181.065" fill="#f0f0f0">origin/</tspan><tspan x="286.3" dy="13.07" fill="#f0f0f0">master</tspan></text>
   </g>
   <g>
     <rect x="241.8" y="4" width="89" height="33" fill="#f44d27"/>

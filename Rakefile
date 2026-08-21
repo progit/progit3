@@ -183,6 +183,41 @@ namespace :figures do
     sh "ruby #{RENDERER} #{src}"
   end
 
+  desc 'Watch figures/*.json and re-render the corresponding SVG on change'
+  task :watch do
+    require 'json'
+    puts "  Watching #{FIGURES_DIR} for changes (Ctrl-C to stop)..."
+    mtimes = {}
+    FIGURE_SOURCES.each { |f| mtimes[f] = File.mtime(f) }
+
+    loop do
+      Dir.glob("#{FIGURES_DIR}/*.json").each do |f|
+        next if File.basename(f).start_with?('_')
+        prev = mtimes[f]
+        cur  = File.mtime(f)
+        next if prev == cur
+
+        mtimes[f] = cur
+        base = File.basename(f, '.json')
+        if prev.nil?
+          puts "  + #{base}.json (new)"
+        else
+          puts "  ~ #{base}.json changed"
+        end
+
+        begin
+          JSON.parse(File.read(f))
+          sh "ruby #{RENDERER} #{f}"
+        rescue JSON::ParserError => e
+          puts "  ! #{base}.json: #{e.message}"
+        rescue => e
+          puts "  ! #{base}.json render failed: #{e.message}"
+        end
+      end
+      sleep 0.5
+    end
+  end
+
   desc 'Rasterize images/*.svg (from figures/) to images/*.png at 3x via rsvg-convert'
   task :raster => :build do
     rsvg = `which rsvg-convert`.strip

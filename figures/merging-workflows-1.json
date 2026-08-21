@@ -98,7 +98,7 @@
     { "from": "c5", "to": "c3", "route": "diagonal" },
     { "from": "c6", "to": "c5" },
     { "from": "master", "to": "c7", "arrow": "forward" },
-    { "from": "ruby-client", "to": "c4", "arrow": "forward" },
-    { "from": "php-client", "to": "c6", "arrow": "forward" }
+    { "from": "ruby-client", "to": "c4" },
+    { "from": "php-client", "to": "c6" }
   ]
 }

@@ -424,6 +424,7 @@ module Edges
     to_cx   = tp[:x] + tp[:w] / 2.0
     to_cy   = tp[:y] + tp[:h] / 2.0
 
+    return render_none(fp, tp) if arrow == 'none'
     return render_both(fp, tp, muted) if arrow == 'both'
 
     case route
@@ -514,6 +515,30 @@ module Edges
       d = SVG.diagonal_arrow(x1, y1, x2, y2)
       %(<path d="#{d}" fill="#{Palette.color('line')}"/>)
     end
+  end
+
+  # Plain connecting line between the facing edges of the two boxes, with no
+  # arrowhead at either end. Works for any relative position (horizontal,
+  # vertical, or diagonal) since it uses the same edge-intersection math as
+  # render_both.
+  def self.render_none(fp, tp)
+    from_cx = fp[:x] + fp[:w] / 2.0; from_cy = fp[:y] + fp[:h] / 2.0
+    to_cx   = tp[:x] + tp[:w] / 2.0; to_cy   = tp[:y] + tp[:h] / 2.0
+
+    dx = to_cx - from_cx; dy = to_cy - from_cy
+    len = Math.sqrt(dx*dx + dy*dy)
+    ux = dx / len; uy = dy / len
+
+    half_from_w = fp[:w] / 2.0; half_from_h = fp[:h] / 2.0
+    t_from = ux.zero? ? half_from_h / uy.abs : (uy.zero? ? half_from_w / ux.abs : [half_from_w / ux.abs, half_from_h / uy.abs].min)
+    x1 = from_cx + ux * t_from; y1 = from_cy + uy * t_from
+
+    half_to_w = tp[:w] / 2.0; half_to_h = tp[:h] / 2.0
+    t_to = ux.zero? ? half_to_h / uy.abs : (uy.zero? ? half_to_w / ux.abs : [half_to_w / ux.abs, half_to_h / uy.abs].min)
+    x2 = to_cx - ux * t_to; y2 = to_cy - uy * t_to
+
+    %(<line x1="#{SVG.round(x1)}" y1="#{SVG.round(y1)}" x2="#{SVG.round(x2)}" y2="#{SVG.round(y2)}" ) +
+      %(stroke="#{Palette.color('line')}" stroke-linecap="square"/>)
   end
 
   # Double-headed arrow between the facing edges of the two boxes. Works for

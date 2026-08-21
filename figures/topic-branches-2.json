@@ -160,8 +160,6 @@
     { "from": "c7", "to": "c4" },
     { "from": "c8", "to": "c7" },
     { "from": "c11", "to": "c8" },
-    { "from": "c14", "to": "c11", "route": "diagonal" },
-    { "from": "master", "to": "c14", "arrow": "forward" },
-    { "from": "iss91v2", "to": "c11", "arrow": "forward" }
+    { "from": "c14", "to": "c11", "route": "diagonal" }
   ]
 }

@@ -5,11 +5,11 @@
   <path d="m221 136.5h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m340 136.5h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m459 136.5h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M287 168.5 L287 162.5 L291 162.5 L286.5 153.5 L282 162.5 L286 162.5 L286 168.5 Z" fill="#8f8981"/>
-  <path d="m340 184.5h-48v1h--48v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M245.781 168.036 L216.94 156.403 L218.436 152.693 L208.406 153.5 L215.069 161.04 L216.566 157.33 L245.407 168.964 Z" fill="#8f8981"/>
+  <path d="M315.134 262.62 L193.955 158.97 L196.555 155.93 L186.791 153.5 L190.705 162.77 L193.305 159.73 L314.484 263.38 Z" fill="#8f8981"/>
   <path d="m340 184.5h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m459 184.5h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m167.4 111.5v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="M491.033 201.052 L375.184 258.551 L373.406 254.968 L367.344 263 L377.407 263.03 L375.628 259.447 L491.478 201.948 Z" fill="#8f8981"/>
   <path d="m524.5 111.5v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m524.5 111.5v-74.5h1v74.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m524.5 210.5v15.5h1v-15.5h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
@@ -43,8 +43,8 @@
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="524.5" y="189.5" fill="gray">cd685</tspan></text>
   </g>
   <g>
-    <rect x="292" y="216.5" width="89" height="33" rx="16.5" ry="16.5" fill="#deb9ff"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="336.5" y="237.5" fill="gray">fba9a</tspan></text>
+    <rect x="289.6" y="263" width="89" height="33" rx="16.5" ry="16.5" fill="#deb9ff"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="334.1" y="284" fill="gray">fba9a</tspan></text>
   </g>
   <g>
     <rect x="242" y="168.5" width="89" height="33" rx="16.5" ry="16.5" fill="#b8e986"/>

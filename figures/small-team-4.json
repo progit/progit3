@@ -51,7 +51,10 @@
     {
       "id": "origin-master",
       "kind": "ref",
-      "label": "origin/master",
+      "label": [
+        "origin/",
+        "master"
+      ],
       "col": 2,
       "row": 2
     },

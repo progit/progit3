@@ -6,16 +6,17 @@
   <path d="m340 136.59h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m459 136.59h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m578 136.59h21.2v1h-21.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M287 168.59 L287 162.59 L291 162.59 L286.5 153.59 L282 162.59 L286 162.59 L286 168.59 Z" fill="#8f8981"/>
-  <path d="m340 184.59h-48v1h--48v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M602.538 153.126 L573.637 164.764 L572.143 161.054 L565.475 168.59 L575.504 169.402 L574.01 165.692 L602.912 154.054 Z" fill="#8f8981"/>
+  <path d="M245.781 168.126 L216.94 156.493 L218.436 152.783 L208.406 153.59 L215.069 161.13 L216.566 157.42 L245.407 169.054 Z" fill="#8f8981"/>
+  <path d="M325.719 262.609 L195.542 158.81 L198.035 155.683 L188.193 153.59 L192.424 162.719 L194.918 159.592 L325.095 263.391 Z" fill="#8f8981"/>
   <path d="m340 184.59h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m459 184.59h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m167.5 111.59v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m590.2 137.09h-21.2v1h21.2v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
-  <path d="m524.5 210.59v68.21h1v-68.21h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
-  <path d="m590.2 137.09h-21.2v1h21.2v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
-  <path d="m643.7 111.59v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="M493.087 201.148 L385 258.348 L383.129 254.813 L377.279 263 L387.339 262.768 L385.468 259.232 L493.555 202.032 Z" fill="#8f8981"/>
+  <path d="m524.5 111.59v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m524.5 111.59v-74.59h1v74.59h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m524.5 210.59v15.5h1v-15.5h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m524.5 210.59v68.21h1v-68.21h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m643.7 111.59v-16.5h1v16.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="120.59" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="141.59" fill="gray">4b078</tspan></text>
@@ -49,8 +50,8 @@
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="524.5" y="189.59" fill="gray">cd685</tspan></text>
   </g>
   <g>
-    <rect x="292" y="216.59" width="89" height="33" rx="16.5" ry="16.5" fill="#deb9ff"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="336.5" y="237.59" fill="gray">fba9a</tspan></text>
+    <rect x="301.6" y="263" width="89" height="33" rx="16.5" ry="16.5" fill="#deb9ff"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="346.1" y="284" fill="gray">fba9a</tspan></text>
   </g>
   <g>
     <rect x="242" y="168.59" width="89" height="33" rx="16.5" ry="16.5" fill="#b8e986"/>

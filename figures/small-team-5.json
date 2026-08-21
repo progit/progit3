@@ -73,7 +73,10 @@
     {
       "id": "origin-master",
       "kind": "ref",
-      "label": "origin/master",
+      "label": [
+        "origin/",
+        "master"
+      ],
       "col": 3,
       "row": 3
     },
@@ -95,8 +98,9 @@
   "edges": [
     { "from": "node_1edee", "to": "node_4b078" },
     { "from": "fbff5", "to": "node_1edee" },
-    { "from": "node_738ee", "to": "node_1edee" },
+    { "from": "node_738ee", "to": "node_1edee", "route": "diagonal" },
     { "from": "node_72bbc", "to": "node_738ee" },
+    { "from": "node_72bbc", "to": "fbff5", "route": "diagonal" },
     { "from": "node_8149a", "to": "fbff5" },
     { "from": "node_23ac6", "to": "node_8149a" },
     { "from": "node_4af42", "to": "node_23ac6" },

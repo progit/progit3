@@ -3,13 +3,13 @@
   <title>public small 1</title>
   <path d="m102 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m221 76h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M287 108 L287 102 L291 102 L286.5 93 L282 102 L286 102 L286 108 Z" fill="#8f8981"/>
+  <path d="M245.781 107.536 L216.94 95.903 L218.436 92.193 L208.406 93 L215.069 100.54 L216.566 96.83 L245.407 108.464 Z" fill="#8f8981"/>
   <path d="m340 124h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M287 157.9 L287 102 L291 102 L286.5 93 L282 102 L286 102 L286 157.9 Z" fill="#8f8981"/>
-  <path d="m233 76.5h-21v1h21v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="M266.761 157.514 L194.824 98.332 L197.365 95.243 L187.556 93 L191.647 102.193 L194.189 99.104 L266.126 158.286 Z" fill="#8f8981"/>
+  <path d="m167.5 51v-14h1v14h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m286.5 51v-14h1v14h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="m352 124.5h--217v1h-217v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
-  <path d="m233 174.4h--217v1h-217v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m459 124h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m340 173.9h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="4" y="60" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="81" fill="gray">4b078</tspan></text>

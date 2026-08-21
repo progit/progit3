@@ -75,7 +75,7 @@
     { "from": "a6b4c", "to": "node_0b743" },
     { "from": "f42c5", "to": "a6b4c" },
     { "from": "a0a41", "to": "f42c5" },
-    { "from": "e43a6", "to": "f42c5", "route": "diagonal" },
+    { "from": "e43a6", "to": "a6b4c", "route": "diagonal" },
     { "from": "node_5ddae", "to": "e43a6" },
     { "from": "master", "to": "a0a41", "arrow": "forward" },
     { "from": "ruby-client", "to": "node_5ddae", "arrow": "forward" }
