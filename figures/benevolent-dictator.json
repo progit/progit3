@@ -79,6 +79,10 @@
     { "from": "lieutenant", "to": "dictator", "arrow": "forward" },
     { "from": "lieutenant-2", "to": "dictator", "arrow": "forward", "route": "diagonal" },
     { "from": "dictator", "to": "blessed", "arrow": "forward" },
-    { "from": "blessed", "to": "developer-3", "arrow": "forward" }
+    { "from": "blessed", "to": "developer-3", "arrow": "forward" },
+    { "from": "blessed", "to": "lieutenant", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "developer", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "developer-2", "arrow": "forward", "route": "diagonal", "style": "muted" }
   ]
 }

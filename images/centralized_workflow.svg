@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="621.2" height="245" viewBox="0 0 310.6 122.5" xmlns="http://www.w3.org/2000/svg">
   <title>centralized_workflow</title>
-  <path d="m154.5 76.5v-39.5h1v39.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
-  <path d="M132.735 36.604 L76.79 79.618 L74.352 76.447 L69.96 85.5 L79.838 83.582 L77.4 80.411 L133.345 37.396 Z" fill="#8f8981"/>
-  <path d="M175.982 37.399 L232.84 80.464 L230.425 83.653 L240.316 85.5 L235.859 76.479 L233.444 79.667 L176.586 36.601 Z" fill="#8f8981"/>
+  <path d="M154.5 37 L150 46 L154 46 L154 76.5 L150 76.5 L154.5 85.5 L159 76.5 L155 76.5 L155 46 L159 46 Z" fill="#8f8981"/>
+  <path d="M133.04 37 L123.162 38.918 L125.6 42.089 L76.79 79.618 L74.352 76.447 L69.96 85.5 L79.838 83.582 L77.4 80.411 L126.21 42.882 L128.648 46.053 Z" fill="#8f8981"/>
+  <path d="M176.284 37 L180.741 46.021 L183.156 42.833 L232.84 80.464 L230.425 83.653 L240.316 85.5 L235.859 76.479 L233.444 79.667 L183.76 42.036 L186.175 38.847 Z" fill="#8f8981"/>
   <g>
     <rect x="110" y="85.5" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="154.5" y="106.5" fill="#f0f0f0">developer</tspan></text>

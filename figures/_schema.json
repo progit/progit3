@@ -119,6 +119,12 @@
             "default": "back",
             "description": "Arrowhead placement. 'back' means the arrowhead is at the 'to' end pointing toward 'from' (the Git parent-pointing convention)."
           },
+          "style": {
+            "type": "string",
+            "enum": ["normal", "muted"],
+            "default": "normal",
+            "description": "'muted' renders a thinner, lower-opacity arrow for secondary/background relationships (e.g. pull lines fanning out from a shared remote)."
+          },
           "label": { "type": "string", "description": "Optional edge label." }
         }
       }

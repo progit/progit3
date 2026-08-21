@@ -149,15 +149,11 @@ module SVG
   # (x2,y2). Built from a unit direction vector and its perpendicular so the
   # shaft is an actual filled quad (not a zero-width line), matching the
   # orthogonal arrow idiom used elsewhere in this file.
-  def self.diagonal_arrow(x1, y1, x2, y2)
+  def self.diagonal_arrow(x1, y1, x2, y2, hsize: 9.0, wing: 4.5, half: 0.5)
     dx = x2 - x1; dy = y2 - y1
     len = Math.sqrt(dx*dx + dy*dy)
     ux = dx / len; uy = dy / len
     px = -uy; py = ux  # unit perpendicular
-
-    hsize = 9.0  # arrowhead length
-    wing  = 4.5  # arrowhead half-width
-    half  = 0.5  # shaft half-width
 
     base_x = x2 - hsize * ux
     base_y = y2 - hsize * uy
@@ -173,6 +169,34 @@ module SVG
       "L#{round(cx)} #{round(cy)} L#{round(x2)} #{round(y2)} " \
       "L#{round(ex)} #{round(ey)} L#{round(fx)} #{round(fy)} " \
       "L#{round(gx)} #{round(gy)} Z"
+  end
+
+  # Double-headed diagonal (or horizontal/vertical, since either dx or dy
+  # may be 0) arrow: a shaft between two points, each end trimmed by an
+  # arrowhead with its apex at (x1,y1) and (x2,y2) respectively.
+  def self.diagonal_arrow_both(x1, y1, x2, y2, hsize: 9.0, wing: 4.5, half: 0.5)
+    dx = x2 - x1; dy = y2 - y1
+    len = Math.sqrt(dx*dx + dy*dy)
+    ux = dx / len; uy = dy / len
+    px = -uy; py = ux  # unit perpendicular
+
+    base1_x = x1 + hsize * ux; base1_y = y1 + hsize * uy
+    base2_x = x2 - hsize * ux; base2_y = y2 - hsize * uy
+
+    pts = [
+      [x1, y1],
+      [base1_x + wing * px, base1_y + wing * py],
+      [base1_x + half * px, base1_y + half * py],
+      [base2_x + half * px, base2_y + half * py],
+      [base2_x + wing * px, base2_y + wing * py],
+      [x2, y2],
+      [base2_x - wing * px, base2_y - wing * py],
+      [base2_x - half * px, base2_y - half * py],
+      [base1_x - half * px, base1_y - half * py],
+      [base1_x - wing * px, base1_y - wing * py]
+    ]
+
+    "M#{pts.map { |px2, py2| "#{round(px2)} #{round(py2)}" }.join(' L')} Z"
   end
 
   # Render a node box (pill or rect) with optional stroke.
@@ -393,11 +417,14 @@ module Edges
     tp = positions.fetch(to_id)   { raise "Edge refers to unknown node: #{to_id.inspect}" }
     route = edge['route'] || 'straight'
     arrow = edge['arrow'] || 'back'
+    muted = edge['style'] == 'muted'
 
     from_cx = fp[:x] + fp[:w] / 2.0
     from_cy = fp[:y] + fp[:h] / 2.0
     to_cx   = tp[:x] + tp[:w] / 2.0
     to_cy   = tp[:y] + tp[:h] / 2.0
+
+    return render_both(fp, tp, muted) if arrow == 'both'
 
     case route
     when 'diagonal'
@@ -414,8 +441,13 @@ module Edges
       t_to = [half_to_w / ux.abs, half_to_h / uy.abs].min rescue half_to_w
       x2 = to_cx - ux * t_to; y2 = to_cy - uy * t_to
 
-      d = SVG.diagonal_arrow(x1, y1, x2, y2)
-      %(<path d="#{d}" fill="#{Palette.color('line')}"/>)
+      if muted
+        d = SVG.diagonal_arrow(x1, y1, x2, y2, hsize: 6.0, wing: 3.0, half: 0.35)
+        %(<path d="#{d}" fill="#{Palette.color('line')}" opacity="0.55"/>)
+      else
+        d = SVG.diagonal_arrow(x1, y1, x2, y2)
+        %(<path d="#{d}" fill="#{Palette.color('line')}"/>)
+      end
 
     when 'straight'
       # Determine primary direction: horizontal or vertical
@@ -480,6 +512,34 @@ module Edges
       x1 = fp[:x] + fp[:w]; y1 = from_cy
       x2 = tp[:x] + tp[:w] / 2.0; y2 = tp[:y]
       d = SVG.diagonal_arrow(x1, y1, x2, y2)
+      %(<path d="#{d}" fill="#{Palette.color('line')}"/>)
+    end
+  end
+
+  # Double-headed arrow between the facing edges of the two boxes. Works for
+  # any relative position (horizontal, vertical, or diagonal) since the
+  # underlying arrow shape is direction-agnostic.
+  def self.render_both(fp, tp, muted)
+    from_cx = fp[:x] + fp[:w] / 2.0; from_cy = fp[:y] + fp[:h] / 2.0
+    to_cx   = tp[:x] + tp[:w] / 2.0; to_cy   = tp[:y] + tp[:h] / 2.0
+
+    dx = to_cx - from_cx; dy = to_cy - from_cy
+    len = Math.sqrt(dx*dx + dy*dy)
+    ux = dx / len; uy = dy / len
+
+    half_from_w = fp[:w] / 2.0; half_from_h = fp[:h] / 2.0
+    t_from = ux.zero? ? half_from_h / uy.abs : (uy.zero? ? half_from_w / ux.abs : [half_from_w / ux.abs, half_from_h / uy.abs].min)
+    x1 = from_cx + ux * t_from; y1 = from_cy + uy * t_from
+
+    half_to_w = tp[:w] / 2.0; half_to_h = tp[:h] / 2.0
+    t_to = ux.zero? ? half_to_h / uy.abs : (uy.zero? ? half_to_w / ux.abs : [half_to_w / ux.abs, half_to_h / uy.abs].min)
+    x2 = to_cx - ux * t_to; y2 = to_cy - uy * t_to
+
+    if muted
+      d = SVG.diagonal_arrow_both(x1, y1, x2, y2, hsize: 6.0, wing: 3.0, half: 0.35)
+      %(<path d="#{d}" fill="#{Palette.color('line')}" opacity="0.55"/>)
+    else
+      d = SVG.diagonal_arrow_both(x1, y1, x2, y2)
       %(<path d="#{d}" fill="#{Palette.color('line')}"/>)
     end
   end
