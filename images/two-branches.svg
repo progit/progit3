@@ -3,8 +3,8 @@
   <title>Two branch pointers into the commit history</title>
   <path d="m93 81h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m238 81h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m338.5 37v19h1v-19h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m338.5 98v19h1v-19h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m338.5 56v-19h1v19h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m338.5 107v19h1v-19h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="65" width="89" height="33" fill="#efefe7" stroke="#979797"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="86" fill="gray">98ca9</tspan></text>

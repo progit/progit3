@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="923.6" height="472" viewBox="0 0 461.8 236" xmlns="http://www.w3.org/2000/svg">
   <title>perils of rebasing 1</title>
-  <path d="m228.35 20.5h-233.35v1h--233.35v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="M126.328 199 L93.95 184.647 L95.774 180.533 L85.722 181 L92.126 188.761 L93.95 184.647 Z" fill="#8f8981"/>
+  <path d="m-5 20.5h--233.35v1h-233.35v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="M126.531 198.543 L94.153 184.19 L95.774 180.533 L85.722 181 L92.126 188.761 L93.747 185.104 L126.125 199.457 Z" fill="#8f8981"/>
   <path d="m208.05 215h19v1h-19v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m457.8 215.5h-230.75v1h--230.75v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m184.05 181v9h1v-9h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m227.05 215.5h--230.75v1h-230.75v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m184.05 190v-9h1v9h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="gray">C1</tspan></text>

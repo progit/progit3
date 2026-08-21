@@ -4,9 +4,9 @@
   <path d="m93 142h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m238 142h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m383 142h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m338.5 98.3v18.7h1v-18.7h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m483.5 159v19.9h1v-19.9h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m338.5 37v19.3h1v-19.3h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m338.5 117v-18.7h1v18.7h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m483.5 168v19.9h1v-19.9h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m338.5 56.3v-19.3h1v19.3h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="294" y="65.3" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="338.5" y="86.3" fill="#f0f0f0">master</tspan></text>

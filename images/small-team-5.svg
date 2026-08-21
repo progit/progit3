@@ -8,9 +8,9 @@
   <path d="m331 76.01h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m450 75.91h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m569 75.91h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m286.5 37v14.01h1v-14.01h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m405.5 144.01v13.89h1v-13.89h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m643.5 37v13.91h1v-13.91h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m286.5 51.01v-14.01h1v14.01h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m405.5 153.01v13.89h1v-13.89h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m643.5 50.91v-13.91h1v13.91h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="60.01" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="81.01" fill="gray">4b078</tspan></text>

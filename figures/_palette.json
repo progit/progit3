@@ -10,12 +10,16 @@
     "josie":       "#deb9ff",
     "light-text":  "#f0f0f0",
     "line":        "#8f8981",
-    "rule":        "#979797"
+    "rule":        "#979797",
+    "hash":        "#413932"
   },
   "kinds": {
     "commit":  { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "commit", "text": "commit-text" },
     "tree":    { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "tree",   "text": "light-text" },
     "blob":    { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "blob",   "text": "light-text" },
+    "commit-full": { "shape": "rect", "w": 205, "h": 98, "fill": "commit", "text": "commit-text" },
+    "tree-full":   { "shape": "rect", "w": 205, "h": 98, "fill": "tree",   "text": "light-text" },
+    "blob-full":   { "shape": "rect", "w": 205, "h": 98, "fill": "blob",   "text": "light-text" },
     "jessica": { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "jessica","text": "commit-text" },
     "john":    { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "john",   "text": "commit-text" },
     "josie":   { "shape": "pill", "w": 89,  "h": 33, "rx": 16.5, "fill": "josie",  "text": "commit-text" },

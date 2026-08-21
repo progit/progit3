@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="1042.4" height="867.6" viewBox="0 0 521.2 433.8" xmlns="http://www.w3.org/2000/svg">
   <title>reset squash r3</title>
-  <path d="m472.7 37v2.79h1v-2.79h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m472.7 81.79v22.83h1v-22.83h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="M189.963 240.7 L190.403 355.81 L185.903 355.827 L190.437 364.81 L194.903 355.793 L190.403 355.81 Z" fill="#8f8981"/>
+  <path d="m472.7 39.79v-2.79h1v2.79h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m472.7 104.62v-22.83h1v22.83h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="M189.463 240.702 L189.903 355.812 L185.903 355.827 L190.437 364.81 L194.903 355.793 L190.903 355.808 L190.463 240.698 Z" fill="#8f8981"/>
   <g>
     <rect x="145.4" y="207.7" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="189.9" y="228.7" fill="#f0f0f0">file-a.txt v1</tspan></text>

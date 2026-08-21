@@ -46,21 +46,43 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "kind", "label"],
+        "required": ["id", "kind"],
         "additionalProperties": false,
         "properties": {
           "id":    { "type": "string", "description": "Unique node identifier, referenced by edges." },
           "kind":  {
             "type": "string",
-            "enum": ["commit","tree","blob","jessica","john","josie","ref","symref","goldref","other"],
-            "description": "Symbol kind, mapped to geometry and colors in _palette.json."
+            "enum": ["commit","tree","blob","jessica","john","josie","ref","symref","goldref","other","commit-full","tree-full","blob-full"],
+            "description": "Symbol kind, mapped to geometry and colors in _palette.json. The '-full' kinds render a large git-object content box (hash label above, key/value rows, optional body text) instead of a plain labeled symbol."
           },
           "label": {
-            "description": "Text content. String for single line; array of strings for multi-line.",
+            "description": "Text content. String for single line; array of strings for multi-line. Not used by '-full' kinds (use hash/rows/body instead).",
             "oneOf": [
               { "type": "string" },
               { "type": "array", "items": { "type": "string" }, "minItems": 2 }
             ]
+          },
+          "hash":  { "type": "string", "description": "('-full' kinds only) Object hash shown as a label above the box." },
+          "rows":  {
+            "type": "array",
+            "description": "('-full' kinds only) Key/value table rendered inside the box, monospace-aligned. First row's key is underlined (marks the object type line).",
+            "items": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "body":  {
+            "type": "array",
+            "description": "('-full' kinds only) Plain left-aligned lines rendered below rows, separated by a blank-line gap. Use an empty string for a blank line.",
+            "items": { "type": "string" }
+          },
+          "align": {
+            "type": "string",
+            "enum": ["left", "center"],
+            "default": "left",
+            "description": "('-full' kinds only) 'center' renders the single header row centered (used for blob boxes); 'left' renders a left-aligned key/value table (used for commit/tree boxes)."
           },
           "col":   { "type": "number", "description": "Grid column (grid layout only)." },
           "row":   { "type": "number", "description": "Grid row (grid layout only)." },

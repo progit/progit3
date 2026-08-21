@@ -3,9 +3,9 @@
   <title>head to master</title>
   <path d="m93 146h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m238 146h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m338.5 102v19h1v-19h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m338.5 163v18.9h1v-18.9h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m338.5 37v23h1v-23h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m338.5 121v-19h1v19h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m338.5 172v18.9h1v-18.9h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m338.5 60v-23h1v23h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="294" y="69" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="338.5" y="90" fill="#f0f0f0">master</tspan></text>

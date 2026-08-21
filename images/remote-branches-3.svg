@@ -5,15 +5,15 @@
   <path d="m210.3 259h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m326.99 259h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m444.9 259h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m517.7 223v11h1v-11h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m517.7 234v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m562.2 259h-215.3v1h--215.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m444.9 316h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m517.7 333v11h1v-11h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m517.7 342v11h1v-11h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <path d="m93 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m210.3 73h18.69v1h-18.69v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m326.99 73h19.91v1h-19.91v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m444.9 73h19.3v1h-19.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m517.7 37v11h1v-11h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m517.7 48v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="243" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="264" fill="gray">0b743</tspan></text>

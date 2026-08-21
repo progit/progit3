@@ -4,10 +4,10 @@
   <path d="m93 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m220 79.25h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m347 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M394.086 38.25 L347.111 59.535 L345.254 55.437 L338.914 63.25 L348.969 63.634 L347.111 59.535 Z" fill="#8f8981"/>
+  <path d="M393.88 37.795 L346.905 59.08 L345.254 55.437 L338.914 63.25 L348.969 63.634 L347.318 59.991 L394.293 38.705 Z" fill="#8f8981"/>
   <path d="m475 79.25h30v1h-30v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m558.5 35.75v18.5h1v-18.5h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m431 96.25v19.95h1v-19.95h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m558.5 54.25v-18.5h1v18.5h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m431 105.25v19.95h1v-19.95h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="63.25" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="84.25" fill="gray">C0</tspan></text>

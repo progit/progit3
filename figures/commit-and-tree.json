@@ -8,44 +8,87 @@
   "nodes": [
     {
       "id": "node_92ec2",
-      "kind": "tree",
-      "label": "92ec2",
+      "kind": "tree-full",
+      "hash": "92ec2",
+      "rows": [
+        ["tree", "size"],
+        ["blob", "5b1d3 README"],
+        ["blob", "911e7 LICENSE"],
+        ["blob", "cba0a test.rb"]
+      ],
       "col": 1,
       "row": 1
     },
     {
       "id": "the-initial-commit-of-my-project",
-      "kind": "commit",
-      "label": "The initial commit of my project",
+      "kind": "commit-full",
+      "hash": "98ca9",
+      "rows": [
+        ["commit", "size"],
+        ["tree", "92ec2"],
+        ["author", "Scott"],
+        ["committer", "Scott"]
+      ],
+      "body": [
+        "",
+        "The initial commit of my project"
+      ],
       "col": 0,
       "row": 1
     },
     {
       "id": "node_5b1d3",
-      "kind": "blob",
-      "label": "5b1d3",
+      "kind": "blob-full",
+      "hash": "5b1d3",
+      "rows": [["blob", "size"]],
+      "align": "center",
+      "body": [
+        "== Testing library",
+        "",
+        "This library is used to test",
+        "Ruby projects."
+      ],
       "col": 2,
       "row": 0
     },
     {
       "id": "node_911e7",
-      "kind": "blob",
-      "label": "911e7",
+      "kind": "blob-full",
+      "hash": "911e7",
+      "rows": [["blob", "size"]],
+      "align": "center",
+      "body": [
+        "The MIT License",
+        "",
+        "Copyright (c) 2008 Scott Chacon",
+        "",
+        "Permission is hereby granted,",
+        "free of charge, to any person"
+      ],
       "col": 2,
       "row": 1
     },
     {
       "id": "cba0a",
-      "kind": "blob",
-      "label": "cba0a",
+      "kind": "blob-full",
+      "hash": "cba0a",
+      "rows": [["blob", "size"]],
+      "align": "center",
+      "body": [
+        "require 'logger'",
+        "require 'test/unit'",
+        "",
+        "",
+        "class Test::Unit::TestCase"
+      ],
       "col": 2,
       "row": 2
     }
   ],
   "edges": [
     { "from": "the-initial-commit-of-my-project", "to": "node_92ec2", "arrow": "forward" },
-    { "from": "node_92ec2", "to": "node_5b1d3", "arrow": "forward" },
+    { "from": "node_92ec2", "to": "node_5b1d3", "arrow": "forward", "route": "diagonal" },
     { "from": "node_92ec2", "to": "node_911e7", "arrow": "forward" },
-    { "from": "node_92ec2", "to": "cba0a", "route": "diagonal" }
+    { "from": "node_92ec2", "to": "cba0a", "arrow": "forward", "route": "diagonal" }
   ]
 }

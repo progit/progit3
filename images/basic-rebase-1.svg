@@ -4,9 +4,9 @@
   <path d="m93 138.5h29.3v1h-29.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m220.3 138.5h28.7v1h-28.7v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m347 138.5h29.9v1h-29.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M394.202 97.2 L346.887 118.767 L345.021 114.672 L338.698 122.5 L348.754 122.862 L346.887 118.767 Z" fill="#8f8981"/>
-  <path d="m430.4 37v18.2h1v-18.2h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m430.4 155.5v20.1h1v-20.1h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="M393.995 96.745 L346.68 118.312 L345.021 114.672 L338.698 122.5 L348.754 122.862 L347.095 119.222 L394.409 97.655 Z" fill="#8f8981"/>
+  <path d="m430.4 55.2v-18.2h1v18.2h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m430.4 164.5v20.1h1v-20.1h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="122.5" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="143.5" fill="gray">C0</tspan></text>

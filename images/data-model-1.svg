@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="648" height="485" viewBox="0 0 324 242.5" xmlns="http://www.w3.org/2000/svg">
   <title>data model 1</title>
-  <path d="M143.083 49.5 L74.199 109.584 L71.241 106.193 L67.417 115.5 L77.157 112.975 L74.199 109.584 Z" fill="#8f8981"/>
-  <path d="m162 49.5v57h1v-57h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="M181.508 49.5 L249.121 106.688 L246.215 110.124 L255.992 112.5 L252.027 103.252 L249.121 106.688 Z" fill="#8f8981"/>
-  <path d="m275.5 145.5v51h1v-51h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="M142.755 49.123 L73.87 109.207 L71.241 106.193 L67.417 115.5 L77.157 112.975 L74.528 109.961 L143.412 49.877 Z" fill="#8f8981"/>
+  <path d="m162 106.5v-57h1v57h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="M181.185 49.882 L248.798 107.07 L246.215 110.124 L255.992 112.5 L252.027 103.252 L249.443 106.306 L181.831 49.118 Z" fill="#8f8981"/>
+  <path d="m275.5 196.5v-51h1v51h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="117.5" y="16.5" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="162" y="37.5" fill="#f0f0f0">tree</tspan></text>

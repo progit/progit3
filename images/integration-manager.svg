@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="742.4" height="250" viewBox="0 0 371.2 125" xmlns="http://www.w3.org/2000/svg">
   <title>integration manager</title>
-  <path d="m190.5 37v42h1v-42h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m322.7 37v42h1v-42h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m48.5 37v42h1v-42h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="M76.434 88 L155.027 41.577 L157.315 45.452 L162.776 37 L152.738 37.703 L155.027 41.577 Z" fill="#8f8981"/>
-  <path d="M93 90.868 L269.595 36.769 L270.913 41.071 L278.2 34.132 L268.277 32.466 L269.595 36.769 Z" fill="#8f8981"/>
+  <path d="m190.5 46v42h1v-42h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m322.7 46v42h1v-42h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m48.5 46v42h1v-42h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="M76.688 88.431 L155.281 42.008 L157.315 45.452 L162.776 37 L152.738 37.703 L154.772 41.147 L76.18 87.569 Z" fill="#8f8981"/>
+  <path d="M93.146 91.346 L269.741 37.247 L270.913 41.071 L278.2 34.132 L268.277 32.466 L269.448 36.291 L92.854 90.39 Z" fill="#8f8981"/>
   <g>
     <rect x="146.21" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="190.71" y="18.165" fill="#f0f0f0">developer</tspan><tspan x="190.71" dy="13.07" fill="#f0f0f0">public</tspan></text>

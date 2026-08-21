@@ -4,10 +4,10 @@
   <path d="m93 82h28.8v1h-28.8v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m219.8 82h28.8v1h-28.8v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m346.6 82h29.4v1h-29.4v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M393.257 124 L346.534 102.729 L348.399 98.634 L338.343 99 L344.67 106.825 L346.534 102.729 Z" fill="#8f8981"/>
+  <path d="M393.464 123.545 L346.741 102.274 L348.399 98.634 L338.343 99 L344.67 106.825 L346.327 103.184 L393.05 124.455 Z" fill="#8f8981"/>
   <path d="m474 140h28.2v1h-28.2v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m429.5 37v20h1v-20h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m555.7 157v20.1h1v-20.1h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m429.5 57v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m555.7 166v20.1h1v-20.1h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="66" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="87" fill="gray">C0</tspan></text>

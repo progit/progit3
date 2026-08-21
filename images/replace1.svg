@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="464.8" height="818" viewBox="0 0 232.4 409" xmlns="http://www.w3.org/2000/svg">
   <title>replace1</title>
-  <path d="m48.5 37v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m48.5 129v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m48.5 221v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m48.5 313v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m228.4 20.5h-234.2v1h--234.2v4l9-4.5-9-4.5z" fill="#8f8981"/>
+  <path d="m48.5 46v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m48.5 138v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m48.5 230v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m48.5 322v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m-5.8 20.5h--234.2v1h-234.2v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
     <rect x="3.2" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="47.7" y="25" fill="gray">ef989</tspan></text>

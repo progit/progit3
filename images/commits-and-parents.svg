@@ -3,9 +3,9 @@
   <title>commits and parents</title>
   <path d="m93 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m377.5 20h186.5v1h-186.5v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m48.5 37v101h1v-101h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m333 37v101h1v-101h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m617.5 37v101h1v-101h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m48.5 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m333 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m617.5 138v-101h1v101h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="147" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="168" fill="#f0f0f0">Snapshot A</tspan></text>

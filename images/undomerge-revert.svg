@@ -3,15 +3,15 @@
   <title>undomerge revert</title>
   <path d="m93 126h20.7v1h-20.7v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m211.7 126h21.3v1h-21.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M249.359 163 L212.565 146.654 L214.392 142.542 L204.341 143 L210.738 150.766 L212.565 146.654 Z" fill="#8f8981"/>
+  <path d="M249.562 162.543 L212.768 146.197 L214.392 142.542 L204.341 143 L210.738 150.766 L212.362 147.111 L249.156 163.457 Z" fill="#8f8981"/>
   <path d="m331 179h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m331 126h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m450 126h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M487.453 143 L450.769 159.338 L448.938 155.228 L442.547 163 L452.599 163.449 L450.769 159.338 Z" fill="#8f8981"/>
+  <path d="M487.249 142.543 L450.565 158.882 L448.938 155.228 L442.547 163 L452.599 163.449 L450.972 159.795 L487.656 143.457 Z" fill="#8f8981"/>
   <path d="m569 126h20v1h-20v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m642 90v11h1v-11h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m640.5 37v11h1v-11h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m404.6 196v11h1v-11h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m642 101v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m640.5 48v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m404.6 205v11h1v-11h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="131" fill="gray">C1</tspan></text>

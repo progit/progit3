@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="757.6" height="642" viewBox="0 0 378.8 321" xmlns="http://www.w3.org/2000/svg">
   <title>reset ex6</title>
-  <path d="m188.7 37v3h1v-3h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m188.7 40v-3h1v3h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m93 140.99h42.9v1h-42.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="285.8" y="284" width="89" height="33" fill="#f44d27"/>

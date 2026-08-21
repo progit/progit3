@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="762" height="818" viewBox="0 0 381 409" xmlns="http://www.w3.org/2000/svg">
   <title>replace3</title>
-  <path d="m195.47 37v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m195.47 129v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m195.47 221v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m195.47 313v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m377 20.5h-235.03v1h--235.03v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m377 112.5h-235.03v1h--235.03v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="M75.131 187.06 L161.189 133.74 L163.559 137.565 L168.839 129 L158.819 129.915 L161.189 133.74 Z" fill="#8f8981"/>
+  <path d="m195.47 46v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m195.47 138v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m195.47 230v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m195.47 322v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m141.97 20.5h--235.03v1h-235.03v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m141.97 112.5h--235.03v1h-235.03v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="M75.394 187.485 L161.452 134.165 L163.559 137.565 L168.839 129 L158.819 129.915 L160.925 133.315 L74.868 186.635 Z" fill="#8f8981"/>
   <g>
     <rect x="4" y="187.06" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="208.06" fill="gray">622e8</tspan></text>

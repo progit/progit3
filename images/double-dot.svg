@@ -6,8 +6,8 @@
   <path d="m331 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m212 20h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m331 73h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m557.4 20.5h-205.4v1h--205.4v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m557.4 73.5h-205.4v1h--205.4v4l9-4.5-9-4.5z" fill="#8f8981"/>
+  <path d="m352 20.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m352 73.5h--205.4v1h-205.4v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="gray">A</tspan></text>

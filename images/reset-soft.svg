@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="757.2" height="640.4" viewBox="0 0 378.6 320.2" xmlns="http://www.w3.org/2000/svg">
   <title>reset soft</title>
-  <path d="m190 37v2.79h1v-2.79h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m190 39.79v-2.79h1v2.79h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <path d="m93 140.71h42.3v1h-42.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m190 81.79v192.41h1v-192.41h4l-4.5 9-4.5-9z" fill="#8f8981"/>
+  <path d="m190 274.2v-192.41h1v192.41h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="124.71" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="138.875" fill="#f0f0f0">file.txt</tspan><tspan x="48.5" dy="13.07" fill="#f0f0f0">v1</tspan></text>

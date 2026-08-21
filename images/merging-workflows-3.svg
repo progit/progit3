@@ -3,11 +3,11 @@
   <title>merging workflows 3</title>
   <path d="m93 77h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m212 77h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="M248 112 L214.272 97.545 L216.045 93.409 L206 94 L212.5 101.681 L214.272 97.545 Z" fill="#8f8981"/>
+  <path d="M248.197 111.54 L214.469 97.086 L216.045 93.409 L206 94 L212.5 101.681 L214.075 98.005 L247.803 112.46 Z" fill="#8f8981"/>
   <path d="m331 128h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m167.5 37v15h1v-15h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m286.5 37v15h1v-15h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m405.5 145v15h1v-15h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m167.5 52v-15h1v15h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m286.5 52v-15h1v15h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m405.5 154v15h1v-15h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="61" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="82" fill="gray">C1</tspan></text>

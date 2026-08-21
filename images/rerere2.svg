@@ -3,9 +3,9 @@
   <title>rerere2</title>
   <path d="m93 88h54.9v1h-54.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m245.9 88h54.9v1h-54.9v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m201.4 105v20h1v-20h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m354.3 37v26h1v-26h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m201.4 167v26h1v-26h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m201.4 114v20h1v-20h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m354.3 63v-26h1v26h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m201.4 176v26h1v-26h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="72" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="93" fill="gray">hello world</tspan></text>

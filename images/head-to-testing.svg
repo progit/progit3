@@ -3,9 +3,9 @@
   <title>head to testing</title>
   <path d="m93 81h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m238 81h47v1h-47v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m338.5 37v19h1v-19h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m338.5 98v19h1v-19h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m338.5 159v19h1v-19h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m338.5 56v-19h1v19h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m338.5 107v19h1v-19h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m338.5 168v19h1v-19h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="294" y="4" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="338.5" y="25" fill="#f0f0f0">master</tspan></text>

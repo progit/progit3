@@ -120,40 +120,58 @@ module SVG
     "m#{tip} #{round(cy)}h#{shaft}v1h-#{shaft}v4l-9-4.5 9-4.5z"
   end
 
-  # Vertical downward-pointing arrow: tip at (cx, to_cy)
-  # m{cx} {from_cy}v-{shaft}h1v{shaft}h4l-4.5 9-4.5-9z
+  # Vertical downward-pointing arrow: tip at (cx, to_cy), shaft from (cx, from_cy)
   def self.arrow_v_down(cx, from_cy, to_cy)
-    tip   = round(to_cy)
-    shaft = round(from_cy - to_cy)
-    "m#{round(cx)} #{tip}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+    base_y = to_cy - 9
+    shaft  = round(base_y - from_cy)
+    "m#{round(cx)} #{round(base_y)}v-#{shaft}h1v#{shaft}h4l-4.5 9-4.5-9h4z"
   end
 
   # Forward (downward-pointing connector from ref to commit below):
   # tip at bottom of ref box, points down
   def self.arrow_v_down_fwd(cx, from_cy, to_cy)
     # from_cy = bottom of ref, to_cy = top of commit (arrowhead at to_cy)
-    shaft = round(to_cy - from_cy - 9)
-    "m#{round(cx)} #{round(from_cy)}v#{shaft}h1v-#{shaft}h4l-4.5 9-4.5-9z"
+    base_y = to_cy - 9
+    shaft  = round(base_y - from_cy)
+    "m#{round(cx)} #{round(base_y)}v-#{shaft}h1v#{shaft}h4l-4.5 9-4.5-9h4z"
   end
 
+  # Vertical upward-pointing arrow: tip at (cx, to_cy), shaft from (cx, from_cy)
+  def self.arrow_v_up(cx, from_cy, to_cy)
+    base_y = to_cy + 9
+    shaft  = round(from_cy - base_y)
+    "m#{round(cx)} #{round(base_y)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9h4z"
+  end
+
+  # Diagonal arrow: a thin (1px-wide) shaft from (x1,y1) to a point 9px short
+  # of (x2,y2), followed by a filled triangular arrowhead with its apex at
+  # (x2,y2). Built from a unit direction vector and its perpendicular so the
+  # shaft is an actual filled quad (not a zero-width line), matching the
+  # orthogonal arrow idiom used elsewhere in this file.
   def self.diagonal_arrow(x1, y1, x2, y2)
-    # Simple diagonal line with a small arrowhead drawn as a path
     dx = x2 - x1; dy = y2 - y1
     len = Math.sqrt(dx*dx + dy*dy)
     ux = dx / len; uy = dy / len
-    # Arrow tip at (x2,y2), head size 9
-    hsize = 9.0
-    wing  = 4.5
-    # Two wing points perpendicular to direction
-    px = -uy; py = ux  # perpendicular
-    ax = x2 - hsize * ux; ay = y2 - hsize * uy
-    w1x = ax + wing * px; w1y = ay + wing * py
-    w2x = ax - wing * px; w2y = ay - wing * py
-    shaft_end_x = x2 - hsize * ux
-    shaft_end_y = y2 - hsize * uy
-    "M#{round(x1)} #{round(y1)} L#{round(shaft_end_x)} #{round(shaft_end_y)} " \
-      "L#{round(w1x)} #{round(w1y)} L#{round(x2)} #{round(y2)} " \
-      "L#{round(w2x)} #{round(w2y)} L#{round(shaft_end_x)} #{round(shaft_end_y)} Z"
+    px = -uy; py = ux  # unit perpendicular
+
+    hsize = 9.0  # arrowhead length
+    wing  = 4.5  # arrowhead half-width
+    half  = 0.5  # shaft half-width
+
+    base_x = x2 - hsize * ux
+    base_y = y2 - hsize * uy
+
+    ax = x1 + half * px;     ay = y1 + half * py
+    bx = base_x + half * px; by = base_y + half * py
+    cx = base_x + wing * px; cy = base_y + wing * py
+    ex = base_x - wing * px; ey = base_y - wing * py
+    fx = base_x - half * px; fy = base_y - half * py
+    gx = x1 - half * px;     gy = y1 - half * py
+
+    "M#{round(ax)} #{round(ay)} L#{round(bx)} #{round(by)} " \
+      "L#{round(cx)} #{round(cy)} L#{round(x2)} #{round(y2)} " \
+      "L#{round(ex)} #{round(ey)} L#{round(fx)} #{round(fy)} " \
+      "L#{round(gx)} #{round(gy)} Z"
   end
 
   # Render a node box (pill or rect) with optional stroke.
@@ -198,6 +216,68 @@ module SVG
               %(font-family=#{FONT_FAMILY.inspect} text-anchor="middle">#{tspan}</text>)
 
     "<g>\n  #{inner}\n  #{text_el}\n</g>"
+  end
+
+  # Render a git-object "content" box: a large rect with a hash label above
+  # it, a monospace key/value table (rows), and optional plain body text
+  # below. Used for the handful of figures (e.g. commit-and-tree) that show
+  # actual object contents rather than the small labeled symbol used
+  # elsewhere for commit/tree/blob nodes.
+  def self.object_box(n, pos)
+    k    = Palette.kind(n['kind'])
+    x    = pos[:x]; y = pos[:y]; w = pos[:w]
+    fill      = Palette.color(n['fill'] || k['fill'])
+    text_fill = Palette.color(n['text'] || k['text'])
+    cx        = round(x + w / 2.0)
+    pad       = 16.0
+    align     = n['align'] || 'left'
+
+    parts = [%(<rect x="#{round(x)}" y="#{round(y)}" width="#{round(w)}" height="#{round(pos[:h])}" fill="#{fill}"/>)]
+
+    if n['hash']
+      parts << %(<text x="#{cx}" y="#{round(y - 6)}" font-size="#{FONT_SIZE}px" font-weight="#{FONT_WEIGHT}" ) +
+        %(font-family=#{FONT_FAMILY.inspect} text-anchor="middle" fill="#{Palette.color('hash')}">#{esc(n['hash'])}</text>)
+    end
+
+    rows = n['rows'] || []
+    tspans = []
+    if align == 'center'
+      row = rows.first
+      baseline_y = round(y + 23)
+      tspans << %(<tspan x="#{cx}" y="#{baseline_y}" text-decoration="underline">#{esc(row[0])}</tspan>) +
+        %(<tspan dx="16">#{esc(row[1])}</tspan>)
+    else
+      key_w = rows.map { |k2, _| k2.length }.max || 0
+      rows.each_with_index do |(key, value), i|
+        line_x = round(x + pad)
+        line_y = round(y + 23 + i * LINE_HEIGHT)
+        padded = ' ' * (key_w - key.length)
+        if i == 0
+          tspans << %(<tspan x="#{line_x}" y="#{line_y}" xml:space="preserve"><tspan text-decoration="underline">#{esc(key)}</tspan>#{esc(padded)} #{esc(value)}</tspan>)
+        else
+          tspans << %(<tspan x="#{line_x}" y="#{line_y}" xml:space="preserve">#{esc(key)}#{esc(padded)} #{esc(value)}</tspan>)
+        end
+      end
+    end
+
+    body = n['body'] || []
+    unless body.empty?
+      body_font_size = 9.33
+      body_line_height = 10.0
+      last_row_y = 23 + [rows.size - 1, 0].max * LINE_HEIGHT
+      body_start = last_row_y + 24
+      body.each_with_index do |line, i|
+        line_x = round(x + pad)
+        line_y = round(y + body_start + i * body_line_height)
+        tspans << %(<tspan x="#{line_x}" y="#{line_y}" font-size="#{body_font_size}px">#{esc(line)}</tspan>)
+      end
+    end
+
+    text_el = %(<text font-size="#{FONT_SIZE}px" font-weight="#{FONT_WEIGHT}" ) +
+      %(font-family=#{FONT_FAMILY.inspect} fill="#{text_fill}">#{tspans.join}</text>)
+    parts << text_el
+
+    "<g>\n  #{parts.join("\n  ")}\n</g>"
   end
 
   # Wide banner arrow with inset text.
@@ -346,9 +426,9 @@ module Edges
           x1 = fp[:x] + fp[:w]
           x2 = tp[:x]
           cy = to_cy
-          shaft = SVG.round(x2 - x1 - 9)
-          tip   = SVG.round(x2)
-          d = "m#{SVG.round(x1)} #{SVG.round(cy)}h#{shaft}v1h-#{shaft}v4l9-4.5-9-4.5z"
+          base_x = x2 - 9
+          shaft  = SVG.round(base_x - x1)
+          d = "m#{SVG.round(base_x)} #{SVG.round(cy)}h-#{shaft}v1h#{shaft}v4l9-4.5-9-4.5v4z"
         else
           # back arrow: tip at 'to' side, shaft from 'from' side
           # from.right → gap → to.right+arrowhead tip
@@ -368,11 +448,9 @@ module Edges
             d = SVG.arrow_v_down_fwd(from_cx, y1, y2)
           else
             # from-box top → to-box bottom, arrowhead points up
-            # m{cx} {from_top}v-{shaft}h1v{shaft}h4l-4.5-9-4.5 9z  — but upward
             y1 = fp[:y]          # top of from-box (shaft start)
             y2 = tp[:y] + tp[:h] # bottom of to-box (arrowhead tip)
-            shaft = SVG.round(y1 - y2 - 9)
-            d = "m#{SVG.round(from_cx)} #{SVG.round(y2)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+            d = SVG.arrow_v_up(from_cx, y1, y2)
           end
         else
           # back arrow: arrowhead at 'to' node, pointing away from 'from'
@@ -380,14 +458,12 @@ module Edges
             # to is below from: tip at top of to-box, pointing down from from-bottom
             y1 = fp[:y] + fp[:h]  # bottom of from
             y2 = tp[:y]           # top of to
-            shaft = SVG.round(y2 - y1 - 9)
-            d = "m#{SVG.round(from_cx)} #{SVG.round(y1)}v#{shaft}h1v-#{shaft}h4l-4.5 9-4.5-9z"
+            d = SVG.arrow_v_down(from_cx, y1, y2)
           else
             # to is above from: tip at bottom of to-box, pointing up
             y1 = fp[:y]           # top of from
             y2 = tp[:y] + tp[:h]  # bottom of to
-            shaft = SVG.round(y1 - y2 - 9)
-            d = "m#{SVG.round(from_cx)} #{SVG.round(y2)}v#{shaft}h1v-#{shaft}h4l-4.5-9-4.5 9z"
+            d = SVG.arrow_v_up(from_cx, y1, y2)
           end
         end
       end
@@ -441,7 +517,11 @@ def render(spec)
 
   # Nodes
   nodes.each do |n|
-    parts << SVG.node_box(n, positions[n['id']])
+    if n['kind'].end_with?('-full')
+      parts << SVG.object_box(n, positions[n['id']])
+    else
+      parts << SVG.node_box(n, positions[n['id']])
+    end
   end
 
   # Free-floating labels

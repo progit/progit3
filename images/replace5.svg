@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="866" height="836.8" viewBox="0 0 433 418.4" xmlns="http://www.w3.org/2000/svg">
   <title>replace5</title>
-  <path d="m229.28 20.5h-234.28v1h--234.28v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m184.76 37v49.95h1v-49.95h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m184.84 128.95v49.05h1v-49.05h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="M234.721 138.64 L203.016 179.866 L199.449 177.122 L197.529 187 L206.583 182.609 L203.016 179.866 Z" fill="#8f8981"/>
-  <path d="m247.41 138.64v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m247.41 230.64v50h1v-50h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m247.41 322.64v49.76h1v-49.76h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m429 122.14h-235.09v1h--235.09v4l9-4.5-9-4.5z" fill="#8f8981"/>
+  <path d="m-5 20.5h--234.28v1h-234.28v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m184.76 46v49.95h1v-49.95h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m184.84 137.95v49.05h1v-49.05h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="M234.324 138.335 L202.62 179.561 L199.449 177.122 L197.529 187 L206.583 182.609 L203.412 180.171 L235.117 138.945 Z" fill="#8f8981"/>
+  <path d="m247.41 147.64v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m247.41 239.64v50h1v-50h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m247.41 331.64v49.76h1v-49.76h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m193.91 122.14h--235.09v1h-235.09v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" fill="#f44d27"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="#f0f0f0">master</tspan></text>

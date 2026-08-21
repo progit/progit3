@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="524" height="302" viewBox="0 0 262 151" xmlns="http://www.w3.org/2000/svg">
   <title>local</title>
-  <path d="m258 20.5h-263v1h--263v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m213.5 37v13h1v-13h4l-4.5-9-4.5 9z" fill="#8f8981"/>
-  <path d="m213.5 92v13h1v-13h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m-5 20.5h--263v1h-263v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m213.5 46v13h1v-13h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <path d="m213.5 101v13h1v-13h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="25" fill="#f0f0f0">File</tspan></text>

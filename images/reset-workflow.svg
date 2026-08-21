@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="802" height="442" viewBox="0 0 401 221" xmlns="http://www.w3.org/2000/svg">
   <title>reset workflow</title>
-  <path d="m233.21 20.5h42.74v1h-42.74v4l9-4.5-9-4.5z" fill="#8f8981"/>
+  <path d="m275.95 20.5h-42.74v1h42.74v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <g>
     <rect x="144.21" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="188.71" y="25" fill="#f0f0f0">Index</tspan></text>

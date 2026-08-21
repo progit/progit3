@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" width="794" height="294" viewBox="0 0 397 147" xmlns="http://www.w3.org/2000/svg">
   <title>clean</title>
-  <path d="m93 20.5h52v1h-52v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m243 20.5h52v1h-52v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m393 73.5h-398v1h--398v4l9-4.5-9-4.5z" fill="#8f8981"/>
+  <path d="m145 20.5h-52v1h52v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m295 20.5h-52v1h52v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="m-5 73.5h--398v1h-398v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
   <path d="m93 126h202v1h-202v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <g>
     <rect x="4" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>

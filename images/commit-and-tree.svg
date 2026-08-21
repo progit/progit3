@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" width="1266" height="666" viewBox="0 0 633 333" xmlns="http://www.w3.org/2000/svg">
+<svg version="1.1" width="1498" height="796" viewBox="0 0 749 398" xmlns="http://www.w3.org/2000/svg">
   <title>commit and tree</title>
-  <path d="m93 166.5h170v1h-170v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m361 20.5h170v1h-170v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="m361 166.5h170v1h-170v4l9-4.5-9-4.5z" fill="#8f8981"/>
-  <path d="M346.788 183 L546.309 291.694 L544.156 295.646 L554.212 296 L548.462 287.743 L546.309 291.694 Z" fill="#8f8981"/>
+  <path d="m263 199h-54v1h54v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="M464.684 150.439 L544.891 106.745 L546.804 110.257 L552.555 102 L542.499 102.354 L544.412 105.866 L464.206 149.561 Z" fill="#8f8981"/>
+  <path d="m531 199h-54v1h54v4l9-4.5-9-4.5v4z" fill="#8f8981"/>
+  <path d="M464.206 248.439 L544.412 292.134 L542.499 295.646 L552.555 296 L546.804 287.743 L544.891 291.255 L464.684 247.561 Z" fill="#8f8981"/>
   <g>
-    <rect x="272" y="150" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="316.5" y="171" fill="#f0f0f0">92ec2</tspan></text>
+    <rect x="272" y="150" width="205" height="98" fill="#00909a"/>
+    <text x="374.5" y="144" font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle" fill="#413932">92ec2</text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" fill="#f0f0f0"><tspan x="288" y="173" xml:space="preserve"><tspan text-decoration="underline">tree</tspan> size</tspan><tspan x="288" y="186.07" xml:space="preserve">blob 5b1d3 README</tspan><tspan x="288" y="199.14" xml:space="preserve">blob 911e7 LICENSE</tspan><tspan x="288" y="212.21" xml:space="preserve">blob cba0a test.rb</tspan></text>
   </g>
   <g>
-    <rect x="4" y="150" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="171" fill="gray">The initial commit of my project</tspan></text>
+    <rect x="4" y="150" width="205" height="98" fill="#efefe7"/>
+    <text x="106.5" y="144" font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle" fill="#413932">98ca9</text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" fill="gray"><tspan x="20" y="173" xml:space="preserve"><tspan text-decoration="underline">commit</tspan>    size</tspan><tspan x="20" y="186.07" xml:space="preserve">tree      92ec2</tspan><tspan x="20" y="199.14" xml:space="preserve">author    Scott</tspan><tspan x="20" y="212.21" xml:space="preserve">committer Scott</tspan><tspan x="20" y="236.21" font-size="9.33px"></tspan><tspan x="20" y="246.21" font-size="9.33px">The initial commit of my project</tspan></text>
   </g>
   <g>
-    <rect x="540" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="584.5" y="25" fill="#f0f0f0">5b1d3</tspan></text>
+    <rect x="540" y="4" width="205" height="98" fill="#cd9f00"/>
+    <text x="642.5" y="-2" font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle" fill="#413932">5b1d3</text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" fill="#f0f0f0"><tspan x="642.5" y="27" text-decoration="underline">blob</tspan><tspan dx="16">size</tspan><tspan x="556" y="51" font-size="9.33px">== Testing library</tspan><tspan x="556" y="61" font-size="9.33px"></tspan><tspan x="556" y="71" font-size="9.33px">This library is used to test</tspan><tspan x="556" y="81" font-size="9.33px">Ruby projects.</tspan></text>
   </g>
   <g>
-    <rect x="540" y="150" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="584.5" y="171" fill="#f0f0f0">911e7</tspan></text>
+    <rect x="540" y="150" width="205" height="98" fill="#cd9f00"/>
+    <text x="642.5" y="144" font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle" fill="#413932">911e7</text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" fill="#f0f0f0"><tspan x="642.5" y="173" text-decoration="underline">blob</tspan><tspan dx="16">size</tspan><tspan x="556" y="197" font-size="9.33px">The MIT License</tspan><tspan x="556" y="207" font-size="9.33px"></tspan><tspan x="556" y="217" font-size="9.33px">Copyright (c) 2008 Scott Chacon</tspan><tspan x="556" y="227" font-size="9.33px"></tspan><tspan x="556" y="237" font-size="9.33px">Permission is hereby granted,</tspan><tspan x="556" y="247" font-size="9.33px">free of charge, to any person</tspan></text>
   </g>
   <g>
-    <rect x="540" y="296" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
-    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="584.5" y="317" fill="#f0f0f0">cba0a</tspan></text>
+    <rect x="540" y="296" width="205" height="98" fill="#cd9f00"/>
+    <text x="642.5" y="290" font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle" fill="#413932">cba0a</text>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" fill="#f0f0f0"><tspan x="642.5" y="319" text-decoration="underline">blob</tspan><tspan dx="16">size</tspan><tspan x="556" y="343" font-size="9.33px">require 'logger'</tspan><tspan x="556" y="353" font-size="9.33px">require 'test/unit'</tspan><tspan x="556" y="363" font-size="9.33px"></tspan><tspan x="556" y="373" font-size="9.33px"></tspan><tspan x="556" y="383" font-size="9.33px">class Test::Unit::TestCase</tspan></text>
   </g>
 </svg>

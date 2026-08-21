@@ -3,8 +3,8 @@
   <title>Creating a new branch pointer</title>
   <path d="m93 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
   <path d="m220 82h29v1h-29v4l-9-4.5 9-4.5z" fill="#8f8981"/>
-  <path d="m302.5 37v20h1v-20h4l-4.5 9-4.5-9z" fill="#8f8981"/>
-  <path d="m302.5 99v20h1v-20h4l-4.5-9-4.5 9z" fill="#8f8981"/>
+  <path d="m302.5 57v-20h1v20h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m302.5 108v20h1v-20h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
   <g>
     <rect x="4" y="66" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
     <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="87" fill="gray">C0</tspan></text>
