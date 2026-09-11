@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Getting Started: About Version Control"><meta property="og:title" content="About Version Control · Pro Git"><meta property="og:description" content="Pro Git — Getting Started: About Version Control"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>About Version Control · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>About Version Control</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/a_short_history_of_git/" data-astro-cid-kqdwmlpp>A Short History of Git</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/what_is_git_section/" data-astro-cid-kqdwmlpp>What is Git?</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/the_command_line/" data-astro-cid-kqdwmlpp>The Command Line</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/installing_git/" data-astro-cid-kqdwmlpp>Installing Git</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/first_time/" data-astro-cid-kqdwmlpp>First-Time Git Setup</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_help/" data-astro-cid-kqdwmlpp>Getting Help</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/introduction/" data-astro-cid-kgypjjoh>← Introduction</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/a_short_history_of_git/" data-astro-cid-kgypjjoh>A Short History of Git →</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:About Version Control" data-pagefind-filter="chapter:Getting Started" data-astro-cid-kgypjjoh><div class="sect1">
+<h2 id="ch01-getting-started">Getting Started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter will be about getting started with Git.
+We will begin by explaining some background on version control tools, then move on to how to get Git running on your system and finally how to get it set up to start working with.
+At the end of this chapter you should understand why Git is around, why you should use it and you should be all set up to do so.</p>
+</div>
+<div class="sect2">
+<h3 id="_about_version_control">About Version Control</h3>
+<div class="paragraph">
+<p>
+What is &#8220;version control&#8221;, and why should you care?
+Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+For the examples in this book, you will use software source code as the files being version controlled, though in reality you can do this with nearly any type of file on a computer.</p>
+</div>
+<div class="paragraph">
+<p>If you are a graphic or web designer and want to keep every version of an image or layout (which you would most certainly want to), a Version Control System (VCS) is a very wise thing to use.
+It allows you to revert selected files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more.
+Using a VCS also generally means that if you screw things up or lose files, you can easily recover.
+In addition, you get all this for very little overhead.</p>
+</div>
+<div class="sect3">
+<h4 id="_local_version_control_systems">Local Version Control Systems</h4>
+<div class="paragraph">
+<p>
+Many people&#8217;s version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they&#8217;re clever).
+This approach is very common because it is so simple, but it is also incredibly error prone.
+It is easy to forget which directory you&#8217;re in and accidentally write to the wrong file or copy over files you don&#8217;t mean to.</p>
+</div>
+<div class="paragraph">
+<p>To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/local.png" alt="Local version control diagram">
+</div>
+<div class="title">Figure 1. Local version control diagram</div>
+</div>
+<div class="paragraph">
+<p>One of the most popular VCS tools was a system called RCS, which is still distributed with many computers today.
+<a href="https://www.gnu.org/software/rcs/" target="_blank" rel="noopener">RCS</a> works by keeping patch sets (that is, the differences between files) in a special format on disk; it can then re-create what any file looked like at any point in time by adding up all the patches.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_centralized_version_control_systems">Centralized Version Control Systems</h4>
+<div class="paragraph">
+<p>
+The next major issue that people encounter is that they need to collaborate with developers on other systems.
+To deal with this problem, Centralized Version Control Systems (CVCSs) were developed.
+These systems (such as CVS, Subversion, and Perforce) have a single server that contains all the versioned files, and a number of clients that check out files from that central place.
+For many years, this has been the standard for version control.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/centralized.png" alt="Centralized version control diagram">
+</div>
+<div class="title">Figure 2. Centralized version control diagram</div>
+</div>
+<div class="paragraph">
+<p>This setup offers many advantages, especially over local VCSs.
+For example, everyone knows to a certain degree what everyone else on the project is doing.
+Administrators have fine-grained control over who can do what, and it&#8217;s far easier to administer a CVCS than it is to deal with local databases on every client.</p>
+</div>
+<div class="paragraph">
+<p>However, this setup also has some serious downsides.
+The most obvious is the single point of failure that the centralized server represents.
+If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they&#8217;re working on.
+If the hard disk the central database is on becomes corrupted, and proper backups haven&#8217;t been kept, you lose absolutely everything&#8201;&#8212;&#8201;the entire history of the project except whatever single snapshots people happen to have on their local machines.
+Local VCSs suffer from this same problem&#8201;&#8212;&#8201;whenever you have the entire history of the project in a single place, you risk losing everything.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_distributed_version_control_systems">Distributed Version Control Systems</h4>
+<div class="paragraph">
+<p>
+This is where Distributed Version Control Systems (DVCSs) step in.
+In a DVCS (such as Git, Mercurial or Darcs), clients don&#8217;t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its full history.
+Thus, if any server dies, and these systems were collaborating via that server, any of the client repositories can be copied back up to the server to restore it.
+Every clone is really a full backup of all the data.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/distributed.png" alt="Distributed version control diagram">
+</div>
+<div class="title">Figure 3. Distributed version control diagram</div>
+</div>
+<div class="paragraph">
+<p>Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project.
+This allows you to set up several types of workflows that aren&#8217;t possible in centralized systems, such as hierarchical models.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/introduction/" data-astro-cid-kgypjjoh>← Introduction</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/a_short_history_of_git/" data-astro-cid-kgypjjoh>A Short History of Git →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

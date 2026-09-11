@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Internals: Environment Variables"><meta property="og:title" content="Environment Variables · Pro Git"><meta property="og:description" content="Pro Git — Git Internals: Environment Variables"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Environment Variables · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Plumbing and Porcelain</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/objects/" data-astro-cid-kqdwmlpp>Git Objects</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_refs/" data-astro-cid-kqdwmlpp>Git References</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/packfiles/" data-astro-cid-kqdwmlpp>Packfiles</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/refspec/" data-astro-cid-kqdwmlpp>The Refspec</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/transfer_protocols/" data-astro-cid-kqdwmlpp>Transfer Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/maintenance_and_data_recovery/" data-astro-cid-kqdwmlpp>Maintenance and Data Recovery</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/environment_variables/" data-astro-cid-kqdwmlpp>Environment Variables</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_12/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/maintenance_and_data_recovery/" data-astro-cid-kgypjjoh>← Maintenance and Data Recovery</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/summary_12/" data-astro-cid-kgypjjoh>Summary →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/plumbing_porcelain/" data-astro-cid-kgypjjoh>Git Internals</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Environment Variables" data-pagefind-filter="chapter:Git Internals" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_environment_variables">Environment Variables</h3>
+<div class="paragraph">
+<p>Git always runs inside a <code>bash</code> shell, and uses a number of shell environment variables to determine how it behaves.
+Occasionally, it comes in handy to know what these are, and how they can be used to make Git behave the way you want it to.
+This isn&#8217;t an exhaustive list of all the environment variables Git pays attention to, but we&#8217;ll cover the most useful.</p>
+</div>
+<div class="sect3">
+<h4 id="_global_behavior">Global Behavior</h4>
+<div class="paragraph">
+<p>Some of Git&#8217;s general behavior as a computer program depends on environment variables.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_EXEC_PATH</code></strong> determines where Git looks for its sub-programs (like <code>git-commit</code>, <code>git-diff</code>, and others).
+You can check the current setting by running <code>git --exec-path</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>HOME</code></strong> isn&#8217;t usually considered customizable (too many other things depend on it), but it&#8217;s where Git looks for the global configuration file.
+If you want a truly portable Git installation, complete with global configuration, you can override <code>HOME</code> in the portable Git&#8217;s shell profile.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>PREFIX</code></strong> is similar, but for the system-wide configuration.
+Git looks for this file at <code>$PREFIX/etc/gitconfig</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_CONFIG_NOSYSTEM</code></strong>, if set, disables the use of the system-wide configuration file.
+This is useful if your system config is interfering with your commands, but you don&#8217;t have access to change or remove it.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_PAGER</code></strong> controls the program used to display multi-page output on the command line.
+If this is unset, <code>PAGER</code> will be used as a fallback.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_EDITOR</code></strong> is the editor Git will launch when the user needs to edit some text (a commit message, for example).
+If unset, <code>EDITOR</code> will be used.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_repository_locations">Repository Locations</h4>
+<div class="paragraph">
+<p>Git uses several environment variables to determine how it interfaces with the current repository.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_DIR</code></strong> is the location of the <code>.git</code> folder.
+If this isn&#8217;t specified, Git walks up the directory tree until it gets to <code>~</code> or <code>/</code>, looking for a <code>.git</code> directory at every step.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_CEILING_DIRECTORIES</code></strong> controls the behavior of searching for a <code>.git</code> directory.
+If you access directories that are slow to load (such as those on a tape drive, or across a slow network connection), you may want to have Git stop trying earlier than it might otherwise, especially if Git is invoked when building your shell prompt.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_WORK_TREE</code></strong> is the location of the root of the working directory for a non-bare repository.
+If <code>--git-dir</code> or <code>GIT_DIR</code> is specified but none of <code>--work-tree</code>, <code>GIT_WORK_TREE</code> or <code>core.worktree</code> is specified, the current working directory is regarded as the top level of your working tree.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_INDEX_FILE</code></strong> is the path to the index file (non-bare repositories only).</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_OBJECT_DIRECTORY</code></strong> can be used to specify the location of the directory that usually resides at <code>.git/objects</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_ALTERNATE_OBJECT_DIRECTORIES</code></strong> is a colon-separated list (formatted like <code>/dir/one:/dir/two:…</code>) which tells Git where to check for objects if they aren&#8217;t in <code>GIT_OBJECT_DIRECTORY</code>.
+If you happen to have a lot of projects with large files that have the exact same contents, this can be used to avoid storing too many copies of them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pathspecs">Pathspecs</h4>
+<div class="paragraph">
+<p>A &#8220;pathspec&#8221; refers to how you specify paths to things in Git, including the use of wildcards.
+These are used in the <code>.gitignore</code> file, but also on the command-line (<code>git add *.c</code>).</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_GLOB_PATHSPECS</code></strong> and <strong><code>GIT_NOGLOB_PATHSPECS</code></strong> control the default behavior of wildcards in pathspecs.
+If <code>GIT_GLOB_PATHSPECS</code> is set to 1, wildcard characters act as wildcards (which is the default); if <code>GIT_NOGLOB_PATHSPECS</code> is set to 1, wildcard characters only match themselves, meaning something like <code>*.c</code> would only match a file <em>named</em> &#8220;\*.c&#8221;, rather than any file whose name ends with <code>.c</code>.
+You can override this in individual cases by starting the pathspec with <code>:(glob)</code> or <code>:(literal)</code>, as in <code>:(glob)\*.c</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_LITERAL_PATHSPECS</code></strong> disables both of the above behaviors; no wildcard characters will work, and the override prefixes are disabled as well.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_ICASE_PATHSPECS</code></strong> sets all pathspecs to work in a case-insensitive manner.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_committing">Committing</h4>
+<div class="paragraph">
+<p>The final creation of a Git commit object is usually done by <code>git-commit-tree</code>, which uses these environment variables as its primary source of information, falling back to configuration values only if these aren&#8217;t present.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_AUTHOR_NAME</code></strong> is the human-readable name in the &#8220;author&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_AUTHOR_EMAIL</code></strong> is the email for the &#8220;author&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_AUTHOR_DATE</code></strong> is the timestamp used for the &#8220;author&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_COMMITTER_NAME</code></strong> sets the human name for the &#8220;committer&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_COMMITTER_EMAIL</code></strong> is the email address for the &#8220;committer&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_COMMITTER_DATE</code></strong> is used for the timestamp in the &#8220;committer&#8221; field.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>EMAIL</code></strong> is the fallback email address in case the <code>user.email</code> configuration value isn&#8217;t set.
+If <em>this</em> isn&#8217;t set, Git falls back to the system user and host names.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_networking">Networking</h4>
+<div class="paragraph">
+<p>Git uses the <code>curl</code> library to do network operations over HTTP, so <strong><code>GIT_CURL_VERBOSE</code></strong> tells Git to emit all the messages generated by that library.
+This is similar to doing <code>curl -v</code> on the command line.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_SSL_NO_VERIFY</code></strong> tells Git not to verify SSL certificates.
+This can sometimes be necessary if you&#8217;re using a self-signed certificate to serve Git repositories over HTTPS, or you&#8217;re in the middle of setting up a Git server but haven&#8217;t installed a full certificate yet.</p>
+</div>
+<div class="paragraph">
+<p>If the data rate of an HTTP operation is lower than <strong><code>GIT_HTTP_LOW_SPEED_LIMIT</code></strong> bytes per second for longer than <strong><code>GIT_HTTP_LOW_SPEED_TIME</code></strong> seconds, Git will abort that operation.
+These values override the <code>http.lowSpeedLimit</code> and <code>http.lowSpeedTime</code> configuration values.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_HTTP_USER_AGENT</code></strong> sets the user-agent string used by Git when communicating over HTTP.
+The default is a value like <code>git/2.0.0</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_diffing_and_merging">Diffing and Merging</h4>
+<div class="paragraph">
+<p><strong><code>GIT_DIFF_OPTS</code></strong> is a bit of a misnomer.
+The only valid values are <code>-u&lt;n&gt;</code> or <code>--unified=&lt;n&gt;</code>, which controls the number of context lines shown in a <code>git diff</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_EXTERNAL_DIFF</code></strong> is used as an override for the <code>diff.external</code> configuration value.
+If it&#8217;s set, Git will invoke this program when <code>git diff</code> is invoked.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_DIFF_PATH_COUNTER</code></strong> and <strong><code>GIT_DIFF_PATH_TOTAL</code></strong> are useful from inside the program specified by <code>GIT_EXTERNAL_DIFF</code> or <code>diff.external</code>.
+The former represents which file in a series is being diffed (starting with 1), and the latter is the total number of files in the batch.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_MERGE_VERBOSITY</code></strong> controls the output for the recursive merge strategy.
+The allowed values are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 outputs nothing, except possibly a single error message.</p>
+</li>
+<li>
+<p>1 shows only conflicts.</p>
+</li>
+<li>
+<p>2 also shows file changes.</p>
+</li>
+<li>
+<p>3 shows when files are skipped because they haven&#8217;t changed.</p>
+</li>
+<li>
+<p>4 shows all paths as they are processed.</p>
+</li>
+<li>
+<p>5 and above show detailed debugging information.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The default value is 2.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_debugging">Debugging</h4>
+<div class="paragraph">
+<p>Want to <em>really</em> know what Git is up to?
+Git has a fairly complete set of traces embedded, and all you need to do is turn them on.
+The possible values of these variables are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8220;true&#8221;, &#8220;1&#8221;, or &#8220;2&#8221; – the trace category is written to stderr.</p>
+</li>
+<li>
+<p>An absolute path starting with <code>/</code> – the trace output will be written to that file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_TRACE</code></strong> controls general traces, which don&#8217;t fit into any specific category.
+This includes the expansion of aliases, and delegation to other sub-programs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_TRACE=true git lga
+20:12:49.877982 git.c:554               trace: exec: 'git-lga'
+20:12:49.878369 run-command.c:341       trace: run_command: 'git-lga'
+20:12:49.879529 git.c:282               trace: alias expansion: lga =&gt; 'log' '--graph' '--pretty=oneline' '--abbrev-commit' '--decorate' '--all'
+20:12:49.879885 git.c:349               trace: built-in: git 'log' '--graph' '--pretty=oneline' '--abbrev-commit' '--decorate' '--all'
+20:12:49.899217 run-command.c:341       trace: run_command: 'less'
+20:12:49.899675 run-command.c:192       trace: exec: 'less'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_TRACE_PACK_ACCESS</code></strong> controls tracing of packfile access.
+The first field is the packfile being accessed, the second is the offset within that file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_TRACE_PACK_ACCESS=true git status
+20:10:12.081397 sha1_file.c:2088        .git/objects/pack/pack-c3fa...291e.pack 12
+20:10:12.081886 sha1_file.c:2088        .git/objects/pack/pack-c3fa...291e.pack 34662
+20:10:12.082115 sha1_file.c:2088        .git/objects/pack/pack-c3fa...291e.pack 35175
+# […]
+20:10:12.087398 sha1_file.c:2088        .git/objects/pack/pack-e80e...e3d2.pack 56914983
+20:10:12.087419 sha1_file.c:2088        .git/objects/pack/pack-e80e...e3d2.pack 14303666
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_TRACE_PACKET</code></strong> enables packet-level tracing for network operations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_TRACE_PACKET=true git ls-remote origin
+20:15:14.867043 pkt-line.c:46           packet:          git&lt; # service=git-upload-pack
+20:15:14.867071 pkt-line.c:46           packet:          git&lt; 0000
+20:15:14.867079 pkt-line.c:46           packet:          git&lt; 97b8860c071898d9e162678ea1035a8ced2f8b1f HEAD\0multi_ack thin-pack side-band side-band-64k ofs-delta shallow no-progress include-tag multi_ack_detailed no-done symref=HEAD:refs/heads/master agent=git/2.0.4
+20:15:14.867088 pkt-line.c:46           packet:          git&lt; 0f20ae29889d61f2e93ae00fd34f1cdb53285702 refs/heads/ab/add-interactive-show-diff-func-name
+20:15:14.867094 pkt-line.c:46           packet:          git&lt; 36dc827bc9d17f80ed4f326de21247a5d1341fbc refs/heads/ah/doc-gitk-config
+# […]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_TRACE_PERFORMANCE</code></strong> controls logging of performance data.
+The output shows how long each particular <code>git</code> invocation takes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_TRACE_PERFORMANCE=true git gc
+20:18:19.499676 trace.c:414             performance: 0.374835000 s: git command: 'git' 'pack-refs' '--all' '--prune'
+20:18:19.845585 trace.c:414             performance: 0.343020000 s: git command: 'git' 'reflog' 'expire' '--all'
+Counting objects: 170994, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (43413/43413), done.
+Writing objects: 100% (170994/170994), done.
+Total 170994 (delta 126176), reused 170524 (delta 125706)
+20:18:23.567927 trace.c:414             performance: 3.715349000 s: git command: 'git' 'pack-objects' '--keep-true-parents' '--honor-pack-keep' '--non-empty' '--all' '--reflog' '--unpack-unreachable=2.weeks.ago' '--local' '--delta-base-offset' '.git/objects/pack/.tmp-49190-pack'
+20:18:23.584728 trace.c:414             performance: 0.000910000 s: git command: 'git' 'prune-packed'
+20:18:23.605218 trace.c:414             performance: 0.017972000 s: git command: 'git' 'update-server-info'
+20:18:23.606342 trace.c:414             performance: 3.756312000 s: git command: 'git' 'repack' '-d' '-l' '-A' '--unpack-unreachable=2.weeks.ago'
+Checking connectivity: 170994, done.
+20:18:25.225424 trace.c:414             performance: 1.616423000 s: git command: 'git' 'prune' '--expire' '2.weeks.ago'
+20:18:25.232403 trace.c:414             performance: 0.001051000 s: git command: 'git' 'rerere' 'gc'
+20:18:25.233159 trace.c:414             performance: 6.112217000 s: git command: 'git' 'gc'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_TRACE_SETUP</code></strong> shows information about what Git is discovering about the repository and environment it&#8217;s interacting with.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_TRACE_SETUP=true git status
+20:19:47.086765 trace.c:315             setup: git_dir: .git
+20:19:47.087184 trace.c:316             setup: worktree: /Users/ben/src/git
+20:19:47.087191 trace.c:317             setup: cwd: /Users/ben/src/git
+20:19:47.087194 trace.c:318             setup: prefix: (null)
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_miscellaneous">Miscellaneous</h4>
+<div class="paragraph">
+<p><strong><code>GIT_SSH</code></strong>, if specified, is a program that is invoked instead of <code>ssh</code> when Git tries to connect to an SSH host.
+It is invoked like <code>$GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;</code>.
+Note that this isn&#8217;t the easiest way to customize how <code>ssh</code> is invoked; it won&#8217;t support extra command-line parameters.
+To support extra command-line parameters, you can use <strong><code>GIT_SSH_COMMAND</code></strong>, write a wrapper script and set <code>GIT_SSH</code> to point to it or use the <code>~/.ssh/config</code> file.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_SSH_COMMAND</code></strong> sets the SSH command used when Git tries to connect to an SSH host.
+The command is interpreted by the shell, and extra command-line arguments can be used with <code>ssh</code>, such as <code>GIT_SSH_COMMAND="ssh -i ~/.ssh/my_key" git clone <a href="mailto:git@example.com">git@example.com</a>:my/repo</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_ASKPASS</code></strong> is an override for the <code>core.askpass</code> configuration value.
+This is the program invoked whenever Git needs to ask the user for credentials, which can expect a text prompt as a command-line argument, and should return the answer on <code>stdout</code> (see <a href="/book/credential_caching/#_credential_caching">Ch 5, Git Toolkit</a> for more on this subsystem).</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_NAMESPACE</code></strong> controls access to namespaced refs, and is equivalent to the <code>--namespace</code> flag.
+This is mostly useful on the server side, where you may want to store multiple forks of a single repository in one repository, only keeping the refs separate.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_FLUSH</code></strong> can be used to force Git to use non-buffered I/O when writing incrementally to stdout.
+A value of 1 causes Git to flush more often, a value of 0 causes all output to be buffered.
+The default value (if this variable is not set) is to choose an appropriate buffering scheme depending on the activity and the output mode.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>GIT_REFLOG_ACTION</code></strong> lets you specify the descriptive text written to the reflog.
+Here&#8217;s an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ GIT_REFLOG_ACTION="my action" git commit --allow-empty -m 'My message'
+[master 9e3d55a] My message
+$ git reflog -1
+9e3d55a HEAD@{0}: my action: My message</code></pre>
+</div>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/maintenance_and_data_recovery/" data-astro-cid-kgypjjoh>← Maintenance and Data Recovery</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/summary_12/" data-astro-cid-kgypjjoh>Summary →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Agents help build this book, but they never write a sentence of it. Here is where the line is, why it is there, and how we enforce it."><meta property="og:title" content="Who writes Pro Git · Pro Git Blog"><meta property="og:description" content="Agents help build this book, but they never write a sentence of it. Here is where the line is, why it is there, and how we enforce it."><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Who writes Pro Git · Pro Git Blog</title><style>.post-header[data-astro-cid-ymihodss]{margin:2.5rem 0 1.8rem}.authorship[data-astro-cid-ymihodss]{color:var(--text);border-radius:10px;align-items:baseline;gap:.7rem;margin:0 0 1.4rem;padding:.7rem 1rem;font-size:.92rem;line-height:1.45;text-decoration:none;display:flex}.authorship[data-astro-cid-ymihodss] strong[data-astro-cid-ymihodss]{font-weight:700}.authorship-ai[data-astro-cid-ymihodss]{background:var(--accent-soft);border:1px solid var(--accent)}.authorship-ai[data-astro-cid-ymihodss]:hover{color:var(--accent-strong)}.authorship-badge[data-astro-cid-ymihodss]{background:var(--accent);color:#fff;letter-spacing:.08em;border-radius:5px;flex:none;padding:.15rem .45rem;font-size:.72rem;font-weight:700}.authorship-human[data-astro-cid-ymihodss]{background:var(--bg-raised);border:1px solid var(--border);color:var(--muted)}.authorship-human[data-astro-cid-ymihodss]:hover{color:var(--accent)}.post-header[data-astro-cid-ymihodss] .meta[data-astro-cid-ymihodss]{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 .4rem;font-size:.85rem}.post-header[data-astro-cid-ymihodss] h1[data-astro-cid-ymihodss]{margin:0;font-size:2.2rem}.back[data-astro-cid-ymihodss]{margin-top:3rem}
+</style><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" class="active" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><main class="container narrow" data-astro-cid-ymihodss><article data-pagefind-body data-astro-cid-ymihodss><header class="post-header" data-astro-cid-ymihodss><a class="authorship authorship-ai" href="/authorship/" data-astro-cid-ymihodss><span class="authorship-badge" aria-hidden="true" data-astro-cid-ymihodss>AI</span><span data-astro-cid-ymihodss><strong data-astro-cid-ymihodss>This post was written by AI.</strong> Automated posts keep you updated on the project — the book itself is written entirely by humans. Learn more →</span></a><p class="meta" data-astro-cid-ymihodss><time datetime="2026-08-02T00:00:00.000Z" data-astro-cid-ymihodss>August 2, 2026</time>· The Pro Git project</p><h1 data-astro-cid-ymihodss>Who writes Pro Git</h1></header><div class="prose" data-astro-cid-ymihodss><p>AI agents have a hand in building this edition of <em>Pro Git</em> — the tooling, the figures,
+the planning work — and they have not written one sentence of the book.
+That’s a firm rule, not a preference, and this post explains why it’s there and how it works.</p>
+<h2 id="the-book-is-written-by-humans">The book is written by humans</h2>
+<p><em>Pro Git</em> has named authors.
+When you read an explanation of the index, or a walkthrough of interactive rebase, you’re
+reading someone who decided what mattered and what to leave out — what order made sense,
+what analogy would land, what caveat was worth the interruption.
+That judgment is the work.
+A book isn’t a delivery mechanism for facts that could be regenerated from a prompt;
+it’s an argument, made in a particular voice, by people who’ve thought carefully about
+what a reader needs to know.</p>
+<p>That’s why the rule holds even when a machine-written change looks obviously helpful.
+It’s not weighed against convenience.
+If a task would have an agent compose, rewrite, paraphrase, or “polish” the book’s sentences,
+the agent stops and hands it back to a human — every time.</p>
+<h2 id="what-agents-actually-do">What agents actually do</h2>
+<p>There’s plenty of work around the book that agents handle well:</p>
+<ul>
+<li><strong>Mechanical search-and-replace</strong> — renaming <code>master</code> to <code>main</code> in examples,
+correcting a command flag, fixing a broken link. Substitutions, not rewrites.</li>
+<li><strong>Figures and diagrams</strong> — generating, placing, and wiring up images.</li>
+<li><strong>Planning and inventory</strong> — building the revision plan, the checklist in
+<a href="https://github.com/progit/progit3/blob/main/progress.asc"><code>progress.asc</code></a>,
+scope analyses.</li>
+<li><strong>Research</strong> — investigating Git’s release history and behavior changes,
+checking what a flag does across versions. Findings are reported for a human to write up.</li>
+<li><strong>Rearranging content</strong> — moving existing sections, reordering material, fixing
+cross-references — as long as the sentences aren’t rewritten.</li>
+<li><strong>Tooling and this site</strong> — the build pipeline, the Astro site, the scripts that
+get the book online.</li>
+</ul>
+<h2 id="the-test">The test</h2>
+<p>The rule has a one-line version: does the change put new or altered sentences in front
+of the reader?
+If yes, a human writes it.
+If the agent is moving, replacing, illustrating, researching, or planning around prose
+that a human wrote, that’s fair game.
+When in doubt, treat it as prose.</p>
+<h2 id="how-its-enforced">How it’s enforced</h2>
+<p>The rules live in
+<a href="https://github.com/progit/progit3/blob/main/AGENTS.md"><code>AGENTS.md</code></a> at the root of
+the repository — the file every agent reads before touching anything in this project.
+It’s checked in and public, so you can read the exact instructions the agents are given.</p>
+<p>Every change lands as a commit or pull request in the open, on the
+<a href="https://github.com/progit/progit3"><code>progit/progit3</code></a> repository.
+There’s no process that can’t be audited.</p>
+<p>The blog is the one exception: some posts exist to communicate project updates, and those
+are generated by agents working on the project.
+Every one of them carries a “This post was written by AI” banner — like the one at the
+top of this post.
+Human-written posts are labeled too.
+There’s no ambiguity, and no unlabeled machine writing anywhere on this site.
+The <a href="../../authorship/">authorship page</a> spells the full policy out if you want it in
+one place.</p>
+<p>This post is itself an example of how the exception works.
+If you want to argue with where we’ve drawn the line, <code>AGENTS.md</code> is one pull request away.</p></div></article><p class="back" data-astro-cid-ymihodss><a href="/blog/" data-astro-cid-ymihodss>← All posts</a></p></main><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Toolkit: Interactive Staging"><meta property="og:title" content="Interactive Staging · Pro Git"><meta property="og:description" content="Pro Git — Git Toolkit: Interactive Staging"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Interactive Staging · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Revision Selection</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/interactive_staging/" data-astro-cid-kqdwmlpp>Interactive Staging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_stashing/" data-astro-cid-kqdwmlpp>Stashing and Cleaning</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/signing/" data-astro-cid-kqdwmlpp>Signing Your Work</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/searching/" data-astro-cid-kqdwmlpp>Searching</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/rewriting_history/" data-astro-cid-kqdwmlpp>Rewriting History</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_reset/" data-astro-cid-kqdwmlpp>Reset Demystified</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/advanced_merging/" data-astro-cid-kqdwmlpp>Advanced Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/ref_rerere/" data-astro-cid-kqdwmlpp>Rerere</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/debugging_with_git/" data-astro-cid-kqdwmlpp>Debugging with Git</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_submodules/" data-astro-cid-kqdwmlpp>Submodules</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/bundling/" data-astro-cid-kqdwmlpp>Bundling</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/replace/" data-astro-cid-kqdwmlpp>Replace</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/credential_caching/" data-astro-cid-kqdwmlpp>Credential Storage</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_7/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/revision_selection/" data-astro-cid-kgypjjoh>← Revision Selection</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/git_stashing/" data-astro-cid-kgypjjoh>Stashing and Cleaning →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/revision_selection/" data-astro-cid-kgypjjoh>Git Toolkit</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Interactive Staging" data-pagefind-filter="chapter:Git Toolkit" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_interactive_staging">Interactive Staging</h3>
+<div class="paragraph">
+<p>In this section, you&#8217;ll look at a few interactive Git commands that can help you craft your commits to include only certain combinations and parts of files.
+These tools are helpful if you modify a number of files extensively, then decide that you want those changes to be partitioned into several focused commits rather than one big messy commit.
+This way, you can make sure your commits are logically separate changesets and can be reviewed easily by the developers working with you.</p>
+</div>
+<div class="paragraph">
+<p>If you run <code>git add</code> with the <code>-i</code> or <code>--interactive</code> option, Git enters an interactive shell mode, displaying something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git add -i
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+
+*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can see that this command shows you a much different view of your staging area than you&#8217;re probably used to&#8201;&#8212;&#8201;basically, the same information you get with <code>git status</code> but a bit more succinct and informative.
+It lists the changes you&#8217;ve staged on the left and unstaged changes on the right.</p>
+</div>
+<div class="paragraph">
+<p>After this comes a &#8220;Commands&#8221; section, which allows you to do a number of things like staging and unstaging files, staging parts of files, adding untracked files, and displaying diffs of what has been staged.</p>
+</div>
+<div class="sect3">
+<h4 id="_staging_and_unstaging_files">Staging and Unstaging Files</h4>
+<div class="paragraph">
+<p>If you type <code>u</code> or <code>2</code> (for update) at the <code>What now&gt;</code> prompt, you&#8217;re prompted for which files you want to stage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">What now&gt; u
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Update&gt;&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To stage the <code>TODO</code> and <code>index.html</code> files, you can type the numbers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">Update&gt;&gt; 1,2
+           staged     unstaged path
+* 1:    unchanged        +0/-1 TODO
+* 2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Update&gt;&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>*</code> next to each file means the file is selected to be staged.
+If you press Enter after typing nothing at the <code>Update&gt;&gt;</code> prompt, Git takes anything selected and stages it for you:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">Update&gt;&gt;
+updated 2 paths
+
+*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; s
+           staged     unstaged path
+  1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can see that the <code>TODO</code> and <code>index.html</code> files are staged and the <code>simplegit.rb</code> file is still unstaged.
+If you want to unstage the <code>TODO</code> file at this point, you use the <code>r</code> or <code>3</code> (for revert) option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; r
+           staged     unstaged path
+  1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Revert&gt;&gt; 1
+           staged     unstaged path
+* 1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Revert&gt;&gt; [enter]
+reverted one path</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Looking at your Git status again, you can see that you&#8217;ve unstaged the <code>TODO</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; s
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To see the diff of what you&#8217;ve staged, you can use the <code>d</code> or <code>6</code> (for diff) command.
+It shows you a list of your staged files, and you can select the ones for which you would like to see the staged diff.
+This is much like specifying <code>git diff --cached</code> on the command line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; d
+           staged     unstaged path
+  1:        +1/-1      nothing index.html
+Review diff&gt;&gt; 1
+diff --git a/index.html b/index.html
+index 4d07108..4335f49 100644
+--- a/index.html
++++ b/index.html
+@@ -16,7 +16,7 @@ Date Finder
+
+ &lt;p id="out"&gt;...&lt;/p&gt;
+
+-&lt;div id="footer"&gt;contact : support@github.com&lt;/div&gt;
++&lt;div id="footer"&gt;contact : email.support@github.com&lt;/div&gt;
+
+ &lt;script type="text/javascript"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With these basic commands, you can use the interactive add mode to deal with your staging area a little more easily.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_staging_patches">Staging Patches</h4>
+<div class="paragraph">
+<p>It&#8217;s also possible for Git to stage certain <em>parts</em> of files and not the rest.
+For example, if you make two changes to your <code>simplegit.rb</code> file and want to stage one of them and not the other, doing so is very easy in Git.
+From the same interactive prompt explained in the previous section, type <code>p</code> or <code>5</code> (for patch).
+Git will ask you which files you would like to partially stage; then, for each section of the selected files, it will display hunks of the file diff and ask if you would like to stage them, one by one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">diff --git a/lib/simplegit.rb b/lib/simplegit.rb
+index dd5ecc4..57399e0 100644
+--- a/lib/simplegit.rb
++++ b/lib/simplegit.rb
+@@ -22,7 +22,7 @@ class SimpleGit
+   end
+
+   def log(treeish = 'master')
+-    command("git log -n 25 #{treeish}")
++    command("git log -n 30 #{treeish}")
+   end
+
+   def blame(path)
+Stage this hunk [y,n,a,d,/,j,J,g,e,?]?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You have a lot of options at this point.
+Typing <code>?</code> shows a list of what you can do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">Stage this hunk [y,n,a,d,/,j,J,g,e,?]? ?
+y - stage this hunk
+n - do not stage this hunk
+a - stage this and all the remaining hunks in the file
+d - do not stage this hunk nor any of the remaining hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+? - print help</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generally, you&#8217;ll type <code>y</code> or <code>n</code> if you want to stage each hunk, but staging all of them in certain files or skipping a hunk decision until later can be helpful too.
+If you stage one part of the file and leave another part unstaged, your status output will look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">What now&gt; 1
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:        +1/-1      nothing index.html
+  3:        +1/-1        +4/-0 lib/simplegit.rb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The status of the <code>simplegit.rb</code> file is interesting.
+It shows you that a couple of lines are staged and a couple are unstaged.
+You&#8217;ve partially staged this file.
+At this point, you can exit the interactive adding script and run <code>git commit</code> to commit the partially staged files.</p>
+</div>
+<div class="paragraph">
+<p>You also don&#8217;t need to be in interactive add mode to do the partial-file staging&#8201;&#8212;&#8201;you can start the same script by using <code>git add -p</code> or <code>git add --patch</code> on the command line.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, you can use patch mode for partially resetting files with the <code>git reset --patch</code> command, for checking out parts of files with the <code>git checkout --patch</code> command and for stashing parts of files with the <code>git stash save --patch</code> command.
+We&#8217;ll go into more details on each of these as we get to more advanced usages of these commands.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/revision_selection/" data-astro-cid-kgypjjoh>← Revision Selection</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/git_stashing/" data-astro-cid-kgypjjoh>Stashing and Cleaning →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

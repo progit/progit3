@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Branching: Branches in a Nutshell"><meta property="og:title" content="Branches in a Nutshell · Pro Git"><meta property="og:description" content="Pro Git — Git Branching: Branches in a Nutshell"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Branches in a Nutshell · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Branches in a Nutshell</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/basic_branching_and_merging/" data-astro-cid-kqdwmlpp>Basic Branching and Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branch_management/" data-astro-cid-kqdwmlpp>Branch Management</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branching_workflows/" data-astro-cid-kqdwmlpp>Branching Workflows</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/worktrees/" data-astro-cid-kqdwmlpp>Worktrees</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/remote_branches/" data-astro-cid-kqdwmlpp>Remote Branches</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/rebasing/" data-astro-cid-kqdwmlpp>Rebasing</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_3/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_2/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/basic_branching_and_merging/" data-astro-cid-kgypjjoh>Basic Branching and Merging →</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Branches in a Nutshell" data-pagefind-filter="chapter:Git Branching" data-astro-cid-kgypjjoh><div class="sect1">
+<h2 id="ch03-git-branching">Git Branching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>
+Nearly every VCS has some form of branching support.
+Branching means you diverge from the main line of development and continue to do work without messing with that main line.
+In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects.</p>
+</div>
+<div class="paragraph">
+<p>Some people refer to Git&#8217;s branching model as its &#8220;killer feature,&#8221; and it certainly sets Git apart in the VCS community.
+Why is it so special?
+The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast.
+Unlike many other VCSs, Git encourages workflows that branch and merge often, even multiple times in a day.
+Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop.</p>
+</div>
+<div class="sect2">
+<h3 id="_git_branches_overview">Branches in a Nutshell</h3>
+<div class="paragraph">
+<p>To really understand the way Git does branching, we need to take a step back and examine how Git stores its data.</p>
+</div>
+<div class="paragraph">
+<p>As you may remember from <a href="/book/what_is_git_section/#what_is_git_section">Ch 1, Getting Started</a>, Git doesn&#8217;t store data as a series of changesets or differences, but instead as a series of <em>snapshots</em>.</p>
+</div>
+<div class="paragraph">
+<p>When you make a commit, Git stores a commit object that contains a pointer to the snapshot of the content you staged.
+This object also contains the author&#8217;s name and email address, the message that you typed, and pointers to the commit or commits that directly came before this commit (its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.</p>
+</div>
+<div class="paragraph">
+<p>To visualize this, let&#8217;s assume that you have a directory containing three files, and you stage them all and commit.
+Staging the files computes a checksum for each one (the SHA-1 hash we mentioned in <a href="/book/what_is_git_section/#what_is_git_section">Ch 1, Getting Started</a>), stores that version of the file in the Git repository (Git refers to them as <em>blobs</em>), and adds that checksum to the staging area:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git add README test.rb LICENSE
+$ git commit -m 'Initial commit'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you create the commit by running <code>git commit</code>, Git checksums each subdirectory (in this case, just the root project directory) and stores them as a tree object in the Git repository.
+Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed.</p>
+</div>
+<div class="paragraph">
+<p>Your Git repository now contains five objects: three <em>blobs</em> (each representing the contents of one of the three files), one <em>tree</em> that lists the contents of the directory and specifies which file names are stored as which blobs, and one <em>commit</em> with the pointer to that root tree and all the commit metadata.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/commit-and-tree.png" alt="A commit and its tree">
+</div>
+<div class="title">Figure 9. A commit and its tree</div>
+</div>
+<div class="paragraph">
+<p>If you make some changes and commit again, the next commit stores a pointer to the commit that came immediately before it.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/commits-and-parents.png" alt="Commits and their parents">
+</div>
+<div class="title">Figure 10. Commits and their parents</div>
+</div>
+<div class="paragraph">
+<p>A branch in Git is simply a lightweight movable pointer to one of these commits.
+The default branch name in Git is <code>master</code>.
+As you start making commits, you&#8217;re given a <code>master</code> branch that points to the last commit you made.
+Every time you commit, the <code>master</code> branch pointer moves forward automatically.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The &#8220;master&#8221; branch in Git is not a special branch.
+It is exactly like any other branch.
+The only reason nearly every repository has one is that the <code>git init</code> command creates it by default and most people don&#8217;t bother to change it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/branch-and-history.png" alt="A branch and its commit history">
+</div>
+<div class="title">Figure 11. A branch and its commit history</div>
+</div>
+<div class="sect3">
+<h4 id="_create_new_branch">Creating a New Branch</h4>
+<div class="paragraph">
+<p>
+What happens when you create a new branch?
+Well, doing so creates a new pointer for you to move around.
+Let&#8217;s say you want to create a new branch called <code>testing</code>.
+You do this with the <code>git branch</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git branch testing</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This creates a new pointer to the same commit you&#8217;re currently on.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/two-branches.png" alt="Two branches pointing into the same series of commits">
+</div>
+<div class="title">Figure 12. Two branches pointing into the same series of commits</div>
+</div>
+<div class="paragraph">
+<p>How does Git know what branch you&#8217;re currently on?
+It keeps a special pointer called <code>HEAD</code>.
+Note that this is a lot different than the concept of <code>HEAD</code> in other VCSs you may be used to, such as Subversion or CVS.
+In Git, this is a pointer to the local branch you&#8217;re currently on.
+In this case, you&#8217;re still on <code>master</code>.
+The <code>git branch</code> command only <em>created</em> a new branch&#8201;&#8212;&#8201;it didn&#8217;t switch to that branch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/head-to-master.png" alt="HEAD pointing to a branch">
+</div>
+<div class="title">Figure 13. HEAD pointing to a branch</div>
+</div>
+<div class="paragraph">
+<p>You can easily see this by running a simple <code>git log</code> command that shows you where the branch pointers are pointing.
+This option is called <code>--decorate</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --oneline --decorate
+f30ab (HEAD -&gt; master, testing) Add feature #32 - ability to add new formats to the central interface
+34ac2 Fix bug #1328 - stack overflow under certain conditions
+98ca9 Initial commit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can see the <code>master</code> and <code>testing</code> branches that are right there next to the <code>f30ab</code> commit.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switching_branches">Switching Branches</h4>
+<div class="paragraph">
+<p>
+To switch to an existing branch, you run the <code>git checkout</code> command.
+Let&#8217;s switch to the new <code>testing</code> branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout testing</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This moves <code>HEAD</code> to point to the <code>testing</code> branch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/head-to-testing.png" alt="HEAD points to the current branch">
+</div>
+<div class="title">Figure 14. HEAD points to the current branch</div>
+</div>
+<div class="paragraph">
+<p>What is the significance of that?
+Well, let&#8217;s do another commit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vim test.rb
+$ git commit -a -m 'Make a change'</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/advance-testing.png" alt="The HEAD branch moves forward when a commit is made">
+</div>
+<div class="title">Figure 15. The HEAD branch moves forward when a commit is made</div>
+</div>
+<div class="paragraph">
+<p>This is interesting, because now your <code>testing</code> branch has moved forward, but your <code>master</code> branch still points to the commit you were on when you ran <code>git checkout</code> to switch branches.
+Let&#8217;s switch back to the <code>master</code> branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title"><code>git log</code> doesn&#8217;t show <em>all</em> the branches <em>all</em> the time</div>
+<div class="paragraph">
+<p>If you were to run <code>git log</code> right now, you might wonder where the "testing" branch you just created went, as it would not appear in the output.</p>
+</div>
+<div class="paragraph">
+<p>The branch hasn&#8217;t disappeared; Git just doesn&#8217;t know that you&#8217;re interested in that branch and it is trying to show you what it thinks you&#8217;re interested in.
+In other words, by default, <code>git log</code> will only show commit history below the branch you&#8217;ve checked out.</p>
+</div>
+<div class="paragraph">
+<p>To show commit history for the desired branch you have to explicitly specify it: <code>git log testing</code>.
+To show all of the branches, add <code>--all</code> to your <code>git log</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/checkout-master.png" alt="HEAD moves when you checkout">
+</div>
+<div class="title">Figure 16. HEAD moves when you checkout</div>
+</div>
+<div class="paragraph">
+<p>That command did two things.
+It moved the HEAD pointer back to point to the <code>master</code> branch, and it reverted the files in your working directory back to the snapshot that <code>master</code> points to.
+This also means the changes you make from this point forward will diverge from an older version of the project.
+It essentially rewinds the work you&#8217;ve done in your <code>testing</code> branch so you can go in a different direction.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Switching branches changes files in your working directory</div>
+<div class="paragraph">
+<p>It&#8217;s important to note that when you switch branches in Git, files in your working directory will change.
+If you switch to an older branch, your working directory will be reverted to look like it did the last time you committed on that branch.
+If Git cannot do it cleanly, it will not let you switch at all.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s make a few changes and commit again:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vim test.rb
+$ git commit -a -m 'Make other changes'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now your project history has diverged (see <a href="/book/git_branches_overview/#divergent_history">Divergent history</a>).
+You created and switched to a branch, did some work on it, and then switched back to your main branch and did other work.
+Both of those changes are isolated in separate branches: you can switch back and forth between the branches and merge them together when you&#8217;re ready.
+And you did all that with simple <code>branch</code>, <code>checkout</code>, and <code>commit</code> commands.</p>
+</div>
+<div id="divergent_history" class="imageblock">
+<div class="content">
+<img src="/images/advance-master.png" alt="Divergent history">
+</div>
+<div class="title">Figure 17. Divergent history</div>
+</div>
+<div class="paragraph">
+<p>You can also see this easily with the <code>git log</code> command.
+If you run <code>git log --oneline --decorate --graph --all</code> it will print out the history of your commits, showing where your branch pointers are and how your history has diverged.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log --oneline --decorate --graph --all
+* c2b9e (HEAD, master) Make other changes
+| * 87ab2 (testing) Make a change
+|/
+* f30ab Add feature #32 - ability to add new formats to the central interface
+* 34ac2 Fix bug #1328 - stack overflow under certain conditions
+* 98ca9 Initial commit of my project</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because a branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to, branches are cheap to create and destroy.
+Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline).</p>
+</div>
+<div class="paragraph">
+<p>This is in sharp contrast to the way most older VCS tools branch, which involves copying all of the project&#8217;s files into a second directory.
+This can take several seconds or even minutes, depending on the size of the project, whereas in Git the process is always instantaneous.
+Also, because we&#8217;re recording the parents when we commit, finding a proper merge base for merging is automatically done for us and is generally very easy to do.
+These features help encourage developers to create and use branches often.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see why you should do so.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Creating a new branch and switching to it at the same time</div>
+<div class="paragraph">
+<p>It&#8217;s typical to create a new branch and want to switch to that new branch at the same time&#8201;&#8212;&#8201;this can be done in one operation with <code>git checkout -b &lt;newbranchname&gt;</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>From Git version 2.23 onwards you can use <code>git switch</code> instead of <code>git checkout</code> to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Switch to an existing branch: <code>git switch testing-branch</code>.</p>
+</li>
+<li>
+<p>Create a new branch and switch to it: <code>git switch -c new-branch</code>.
+The <code>-c</code> flag stands for create, you can also use the full flag: <code>--create</code>.</p>
+</li>
+<li>
+<p>Return to your previously checked out branch: <code>git switch -</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_2/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/basic_branching_and_merging/" data-astro-cid-kgypjjoh>Basic Branching and Merging →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

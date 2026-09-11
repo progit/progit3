@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Internals: Packfiles"><meta property="og:title" content="Packfiles · Pro Git"><meta property="og:description" content="Pro Git — Git Internals: Packfiles"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Packfiles · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Plumbing and Porcelain</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/objects/" data-astro-cid-kqdwmlpp>Git Objects</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_refs/" data-astro-cid-kqdwmlpp>Git References</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/packfiles/" data-astro-cid-kqdwmlpp>Packfiles</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/refspec/" data-astro-cid-kqdwmlpp>The Refspec</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/transfer_protocols/" data-astro-cid-kqdwmlpp>Transfer Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/maintenance_and_data_recovery/" data-astro-cid-kqdwmlpp>Maintenance and Data Recovery</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/environment_variables/" data-astro-cid-kqdwmlpp>Environment Variables</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_12/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/git_refs/" data-astro-cid-kgypjjoh>← Git References</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/refspec/" data-astro-cid-kgypjjoh>The Refspec →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/plumbing_porcelain/" data-astro-cid-kgypjjoh>Git Internals</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Packfiles" data-pagefind-filter="chapter:Git Internals" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_packfiles">Packfiles</h3>
+<div class="paragraph">
+<p>If you followed all of the instructions in the example from the previous section, you should now have a test Git repository with 11 objects&#8201;&#8212;&#8201;four blobs, three trees, three commits, and one tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ find .git/objects -type f
+.git/objects/01/55eb4229851634a0f03eb265b69f5a2d56f341 # tree 2
+.git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit 3
+.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a # test.txt v2
+.git/objects/3c/4e9cd789d88d8d89c1073707c3585e41b0e614 # tree 3
+.git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt v1
+.git/objects/95/85191f37f7b0fb9444f35a9bf50de191beadc2 # tag
+.git/objects/ca/c0cab538b970a37ea1e769cbbde608743bc96d # commit 2
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 # 'test content'
+.git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # tree 1
+.git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt
+.git/objects/fd/f4fc3344e67ab068f836878b6c4951e3b15f3d # commit 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Git compresses the contents of these files with zlib, and you&#8217;re not storing much, so all these files collectively take up only 925 bytes.
+Now you&#8217;ll add some more sizable content to the repository to demonstrate an interesting feature of Git.
+To demonstrate, we&#8217;ll add the <code>repo.rb</code> file from the Grit library&#8201;&#8212;&#8201;this is about a 22K source code file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ curl https://raw.githubusercontent.com/mojombo/grit/master/lib/grit/repo.rb &gt; repo.rb
+$ git checkout master
+$ git add repo.rb
+$ git commit -m 'Create repo.rb'
+[master 484a592] Create repo.rb
+ 3 files changed, 709 insertions(+), 2 deletions(-)
+ delete mode 100644 bak/test.txt
+ create mode 100644 repo.rb
+ rewrite test.txt (100%)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you look at the resulting tree, you can see the SHA-1 value that was calculated for your new <code>repo.rb</code> blob object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git cat-file -p master^{tree}
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92      new.txt
+100644 blob 033b4468fa6b2a9547a70d88d1bbe8bf3f9ed0d5      repo.rb
+100644 blob e3f094f522629ae358806b17daf78246c27c007b      test.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then use <code>git cat-file</code> to see how large that object is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git cat-file -s 033b4468fa6b2a9547a70d88d1bbe8bf3f9ed0d5
+22044</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, modify that file a little, and see what happens:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ echo '# testing' &gt;&gt; repo.rb
+$ git commit -am 'Modify repo.rb a bit'
+[master 2431da6] Modify repo.rb a bit
+ 1 file changed, 1 insertion(+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check the tree created by that last commit, and you see something interesting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git cat-file -p master^{tree}
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92      new.txt
+100644 blob b042a60ef7dff760008df33cee372b945b6e884e      repo.rb
+100644 blob e3f094f522629ae358806b17daf78246c27c007b      test.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The blob is now a different blob, which means that although you added only a single line to the end of a 400-line file, Git stored that new content as a completely new object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git cat-file -s b042a60ef7dff760008df33cee372b945b6e884e
+22054</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You have two nearly identical 22K objects on your disk (each compressed to approximately 7K).
+Wouldn&#8217;t it be nice if Git could store one of them in full but then the second object only as the delta between it and the first?</p>
+</div>
+<div class="paragraph">
+<p>It turns out that it can.
+The initial format in which Git saves objects on disk is called a &#8220;loose&#8221; object format.
+However, occasionally Git packs up several of these objects into a single binary file called a &#8220;packfile&#8221; in order to save space and be more efficient.
+Git does this if you have too many loose objects around, if you run the <code>git gc</code> command manually, or if you push to a remote server.
+To see what happens, you can manually ask Git to pack up the objects by calling the <code>git gc</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git gc
+Counting objects: 18, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (18/18), done.
+Total 18 (delta 3), reused 0 (delta 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you look in your <code>objects</code> directory, you&#8217;ll find that most of your objects are gone, and a new pair of files has appeared:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ find .git/objects -type f
+.git/objects/bd/9dbf5aae1a3862dd1526723246b20206e5fc37
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
+.git/objects/info/packs
+.git/objects/pack/pack-978e03944f5c581011e6998cd0e9e30000905586.idx
+.git/objects/pack/pack-978e03944f5c581011e6998cd0e9e30000905586.pack</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The objects that remain are the blobs that aren&#8217;t pointed to by any commit&#8201;&#8212;&#8201;in this case, the &#8220;what is up, doc?&#8221; example and the &#8220;test content&#8221; example blobs you created earlier.
+Because you never added them to any commits, they&#8217;re considered dangling and aren&#8217;t packed up in your new packfile.</p>
+</div>
+<div class="paragraph">
+<p>The other files are your new packfile and an index.
+The packfile is a single file containing the contents of all the objects that were removed from your filesystem.
+The index is a file that contains offsets into that packfile so you can quickly seek to a specific object.
+What is cool is that although the objects on disk before you ran the <code>gc</code> command were collectively about 15K in size, the new packfile is only 7K.
+You&#8217;ve cut your disk usage by half by packing your objects.</p>
+</div>
+<div class="paragraph">
+<p>How does Git do this?
+When Git packs objects, it looks for files that are named and sized similarly, and stores just the deltas from one version of the file to the next.
+You can look into the packfile and see what Git did to save space.
+The <code>git verify-pack</code> plumbing command allows you to see what was packed up:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git verify-pack -v .git/objects/pack/pack-978e03944f5c581011e6998cd0e9e30000905586.idx
+2431da676938450a4d72e260db3bf7b0f587bbc1 commit 223 155 12
+69bcdaff5328278ab1c0812ce0e07fa7d26a96d7 commit 214 152 167
+80d02664cb23ed55b226516648c7ad5d0a3deb90 commit 214 145 319
+43168a18b7613d1281e5560855a83eb8fde3d687 commit 213 146 464
+092917823486a802e94d727c820a9024e14a1fc2 commit 214 146 610
+702470739ce72005e2edff522fde85d52a65df9b commit 165 118 756
+d368d0ac0678cbe6cce505be58126d3526706e54 tag    130 122 874
+fe879577cb8cffcdf25441725141e310dd7d239b tree   136 136 996
+d8329fc1cc938780ffdd9f94e0d364e0ea74f579 tree   36 46 1132
+deef2e1b793907545e50a2ea2ddb5ba6c58c4506 tree   136 136 1178
+d982c7cb2c2a972ee391a85da481fc1f9127a01d tree   6 17 1314 1 \
+  deef2e1b793907545e50a2ea2ddb5ba6c58c4506
+3c4e9cd789d88d8d89c1073707c3585e41b0e614 tree   8 19 1331 1 \
+  deef2e1b793907545e50a2ea2ddb5ba6c58c4506
+0155eb4229851634a0f03eb265b69f5a2d56f341 tree   71 76 1350
+83baae61804e65cc73a7201a7252750c76066a30 blob   10 19 1426
+fa49b077972391ad58037050f2a75f74e3671e92 blob   9 18 1445
+b042a60ef7dff760008df33cee372b945b6e884e blob   22054 5799 1463
+033b4468fa6b2a9547a70d88d1bbe8bf3f9ed0d5 blob   9 20 7262 1 \
+  b042a60ef7dff760008df33cee372b945b6e884e
+1f7a7a472abf3dd9643fd615f6da379c4acb3e3a blob   10 19 7282
+non delta: 15 objects
+chain length = 1: 3 objects
+.git/objects/pack/pack-978e03944f5c581011e6998cd0e9e30000905586.pack: ok</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, the <code>033b4</code> blob, which if you remember was the first version of your <code>repo.rb</code> file, is referencing the <code>b042a</code> blob, which was the second version of the file.
+The third column in the output is the size of the object in the pack, so you can see that <code>b042a</code> takes up 22K of the file, but that <code>033b4</code> only takes up 9 bytes.
+What is also interesting is that the second version of the file is the one that is stored intact, whereas the original version is stored as a delta&#8201;&#8212;&#8201;this is because you&#8217;re most likely to need faster access to the most recent version of the file.</p>
+</div>
+<div class="paragraph">
+<p>The really nice thing about this is that it can be repacked at any time.
+Git will occasionally repack your database automatically, always trying to save more space, but you can also manually repack at any time by running <code>git gc</code> by hand.</p>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/git_refs/" data-astro-cid-kgypjjoh>← Git References</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/refspec/" data-astro-cid-kgypjjoh>The Refspec →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
