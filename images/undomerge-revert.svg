@@ -1,88 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="svg31651" version="1.1" viewBox="0 0 701 265" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <metadata id="metadata31657">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>images/undomerge-revert</dc:title>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
- <title id="title31542">images/undomerge-revert</title>
- <desc id="desc31544">Created with Sketch.</desc>
- <g id="07---Undo-Merge-(revert-1)" fill="none" fill-rule="evenodd">
-  <g id="brown" transform="translate(10 116)">
-   <rect id="Rectangle-1" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-   <text id="C6" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31547" x="44.5" y="21" fill="#808080">C1</tspan></text>
+<svg version="1.1" width="1382" height="506" viewBox="0 0 691 253" xmlns="http://www.w3.org/2000/svg">
+  <title>undomerge revert</title>
+  <path d="m102 126h20.7v1h-20.7v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m220.7 126h21.3v1h-21.3v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M249.562 162.543 L212.768 146.197 L214.392 142.542 L204.341 143 L210.738 150.766 L212.362 147.111 L249.156 163.457 Z" fill="#8f8981"/>
+  <path d="m340 179h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m340 126h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m459 126h21v1h-21v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="M487.249 142.543 L450.565 158.882 L448.938 155.228 L442.547 163 L452.599 163.449 L450.972 159.795 L487.656 143.457 Z" fill="#8f8981"/>
+  <path d="m578 126h20v1h-20v4l-9-4.5 9-4.5z" fill="#8f8981"/>
+  <path d="m642 101v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m640.5 48v-11h1v11h4l-4.5 9-4.5-9h4z" fill="#8f8981"/>
+  <path d="m404.6 205v11h1v-11h4l-4.5-9-4.5 9h4z" fill="#8f8981"/>
+  <g>
+    <rect x="4" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="131" fill="gray">C1</tspan></text>
   </g>
-  <path id="Line-2" d="m457.76 168.72 43.814-35.927.63408.77327-43.814 35.927 2.5363 3.0931-9.8128 2.227 4.1061-9.1864 2.5363 3.0931z" fill="#8F8981" fill-rule="nonzero"/>
-  <path id="Line-3" d="m219.38 149.52 44.825 36.914-.63571.77193-44.825-36.914-2.5428 3.0877-4.0867-9.1951 9.8081 2.2477-2.5428 3.0877z" fill="#8F8981" fill-rule="nonzero"/>
-  <g id="Line-+-brown-2" transform="translate(99 116)">
-   <path id="Line" d="m9 17h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-   <g id="g31560" transform="translate(30)">
-    <rect id="rect31554" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-    <text id="text31558" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31556" x="44.5" y="21" fill="#808080">C2</tspan></text>
-   </g>
+  <g>
+    <rect x="122.7" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="167.2" y="131" fill="gray">C2</tspan></text>
   </g>
-  <g id="Line-+-brown-3" transform="translate(218 116)">
-   <path id="path31563" d="m9 17h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-   <g id="g31571" transform="translate(30)">
-    <rect id="rect31565" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-    <text id="text31569" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31567" x="44.5" y="21" fill="#808080">C5</tspan></text>
-   </g>
+  <g>
+    <rect x="242" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="286.5" y="131" fill="gray">C5</tspan></text>
   </g>
-  <g id="g31580" transform="translate(248 169)">
-   <rect id="rect31574" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-   <text id="text31578" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31576" x="44.5" y="21" fill="#808080">C3</tspan></text>
+  <g>
+    <rect x="242" y="163" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="286.5" y="184" fill="gray">C3</tspan></text>
   </g>
-  <path id="Line-6" d="m346 186h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-  <g id="g31589" transform="translate(367 169)">
-   <rect id="rect31583" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-   <text id="text31587" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31585" x="44.5" y="21" fill="#808080">C4</tspan></text>
+  <g>
+    <rect x="361" y="163" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="184" fill="gray">C4</tspan></text>
   </g>
-  <g id="Line-+-brown-4" transform="translate(337 116)">
-   <path id="path31591" d="m9 17h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-   <g id="g31599" transform="translate(30)">
-    <rect id="rect31593" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-    <text id="text31597" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31595" x="44.5" y="21" fill="#808080">C6</tspan></text>
-   </g>
+  <g>
+    <rect x="361" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="405.5" y="131" fill="gray">C6</tspan></text>
   </g>
-  <g id="Line-7-+-brown-5" transform="translate(456 116)">
-   <path id="Line-7" d="m9 17h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-   <g id="g31609" transform="translate(30)">
-    <rect id="rect31603" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-    <text id="text31607" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31605" x="44.5" y="21" fill="#808080">M</tspan></text>
-   </g>
+  <g>
+    <rect x="480" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="524.5" y="131" fill="gray">M</tspan></text>
   </g>
-  <path id="path31612" d="m583 133h37v1h-37v4l-9-4.5 9-4.5v4z" fill="#8F8981" fill-rule="nonzero"/>
-  <g id="g31620" transform="translate(604 116)">
-   <rect id="rect31614" width="89" height="33" rx="16.5" fill="#EFEFE7" fill-rule="evenodd"/>
-   <text id="text31618" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31616" x="44.5" y="21" fill="#808080">^M</tspan></text>
+  <g>
+    <rect x="598" y="110" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="642.5" y="131" fill="gray">^M</tspan></text>
   </g>
-  <g id="Line-4-+-ref-+-Line-4-+-ref-2" transform="translate(605 10)">
-   <g id="Line-4-+-ref" transform="translate(0 53)">
-    <path id="Line-4" d="m43 44v-36h1v36h4l-4.5 9-4.5-9h4z" fill="#8F8981" fill-rule="nonzero"/>
-    <g id="ref">
-     <rect id="Rectangle-2" width="85.196" height="33" fill="#F44D27" fill-rule="evenodd"/>
-     <text id="master" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31624" x="42.59813085" y="20" fill="#f0f0f0">master</tspan></text>
-    </g>
-   </g>
-   <g id="Line-4-+-ref-2">
-    <path id="path31629" d="m43 44v-36h1v36h4l-4.5 9-4.5-9h4z" fill="#8F8981" fill-rule="nonzero"/>
-    <g id="symref">
-     <rect id="rect31631" width="86" height="33" fill="#00909A" fill-rule="evenodd"/>
-     <text id="text31635" fill="#979797" font-family="Source Code Pro" font-size="12px" font-weight="700" text-anchor="middle"><tspan id="tspan31633" x="43" y="20" fill="#f0f0f0">HEAD</tspan></text>
-    </g>
-   </g>
+  <g>
+    <rect x="597.5" y="57" width="89" height="33" fill="#f44d27"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="642" y="78" fill="#f0f0f0">master</tspan></text>
   </g>
-  <g id="Line-5-+-ref-2" transform="translate(368 202)">
-   <path id="Line-5" transform="matrix(1 0 0 -1 -.5 45)" d="m43 36v-36h1v36h4l-4.5 9-4.5-9z" style="fill-rule:nonzero;fill:#8f8981"/>
-   <g id="g31647" transform="translate(0 20)">
-    <rect id="rect31641" transform="scale(.81132 1)" width="106" height="33" style="fill-rule:evenodd;fill:#f44d27"/>
-    <text id="text31645" transform="translate(-9.9783 -.074)" font-size="12px" font-weight="700" style="fill:#979797;font-family:'Source Code Pro';font-size:12px;font-weight:700;text-anchor:middle"><tspan id="tspan31643" x="53" y="20" style="fill:#f0f0f0">topic</tspan></text>
-   </g>
+  <g>
+    <rect x="597.5" y="4" width="86" height="33" fill="#00909a"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="640.5" y="25" fill="#f0f0f0">HEAD</tspan></text>
   </g>
- </g>
+  <g>
+    <rect x="360.1" y="216" width="89" height="33" fill="#f44d27"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="404.6" y="237" fill="#f0f0f0">topic</tspan></text>
+  </g>
 </svg>

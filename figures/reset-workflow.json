@@ -1,0 +1,38 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset workflow",
+  "layout": "absolute",
+  "canvas": {
+    "w": 401.0,
+    "h": 221.0
+  },
+  "nodes": [
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "x": 144.21,
+      "y": 4.0
+    },
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "x": 284.95,
+      "y": 4.0
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "x": 3.47,
+      "y": 4.0
+    }
+  ],
+  "edges": [
+    { "from": "index", "to": "head", "arrow": "forward" }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "./_schema.json",
+  "title": "public small 1",
+  "grid": {
+    "x": 119.0,
+    "y": 51.3
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 1,
+      "dy": 4.7
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 1,
+      "dy": 4.7
+    },
+    {
+      "id": "node_33009",
+      "kind": "commit",
+      "label": "33009",
+      "col": 2,
+      "row": 1,
+      "dy": 4.7
+    },
+    {
+      "id": "node_0d708",
+      "kind": "commit",
+      "label": "0d708",
+      "col": 3,
+      "row": 2,
+      "dy": 1.4
+    },
+    {
+      "id": "node_e5b0f",
+      "kind": "commit",
+      "label": "e5b0f",
+      "col": 2,
+      "row": 3
+    },
+    {
+      "id": "node_a2de3",
+      "kind": "commit",
+      "label": "a2de3",
+      "col": 2,
+      "row": 2,
+      "dy": 1.4
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "featurea",
+      "kind": "ref",
+      "label": "featureA",
+      "col": 4,
+      "row": 2,
+      "dy": 1.4
+    },
+    {
+      "id": "featureb",
+      "kind": "ref",
+      "label": "featureB",
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "origin",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "master"
+      ],
+      "col": 2,
+      "row": 0
+    }
+  ],
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_33009", "to": "node_1edee" },
+    { "from": "node_a2de3", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_0d708", "to": "node_a2de3" },
+    { "from": "node_e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "master", "to": "node_1edee" },
+    { "from": "origin", "to": "node_33009" },
+    { "from": "featurea", "to": "node_0d708" },
+    { "from": "featureb", "to": "node_e5b0f" }
+  ]
+}

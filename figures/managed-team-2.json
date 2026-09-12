@@ -1,0 +1,147 @@
+{
+  "$schema": "./_schema.json",
+  "title": "managed team 2",
+  "grid": {
+    "x": 95.2,
+    "y": 45.8
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 3,
+      "dy": -20.9
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 3,
+      "dx": 23.8,
+      "dy": -20.9
+    },
+    {
+      "id": "node_33009",
+      "kind": "jessica",
+      "label": "33009",
+      "col": 3,
+      "row": 3,
+      "dx": -47.6,
+      "dy": -20.9
+    },
+    {
+      "id": "node_aad88",
+      "kind": "john",
+      "label": "aad88",
+      "col": 4,
+      "row": 3,
+      "dx": -23.8,
+      "dy": -20.9
+    },
+    {
+      "id": "node_774b3",
+      "kind": "jessica",
+      "label": "774b3",
+      "col": 5,
+      "row": 3,
+      "dy": -20.9
+    },
+    {
+      "id": "node_85127",
+      "kind": "jessica",
+      "label": "85127",
+      "col": 4,
+      "row": 4,
+      "dx": -23.8,
+      "dy": -18.7
+    },
+    {
+      "id": "node_cd685",
+      "kind": "jessica",
+      "label": "cd685",
+      "col": 5,
+      "row": 4,
+      "dy": -18.7
+    },
+    {
+      "id": "node_fba9a",
+      "kind": "josie",
+      "label": "fba9a",
+      "col": 3,
+      "row": 5,
+      "dy": 30
+    },
+    {
+      "id": "node_e5b0f",
+      "kind": "jessica",
+      "label": "e5b0f",
+      "col": 3,
+      "row": 4,
+      "dx": -47.6,
+      "dy": -18.7
+    },
+    {
+      "id": "featureb",
+      "kind": "ref",
+      "label": "featureB",
+      "col": 5,
+      "row": 5,
+      "dy": -7.0
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 1,
+      "dx": 23.7,
+      "dy": 12.2
+    },
+    {
+      "id": "featurea",
+      "kind": "ref",
+      "label": "featureA",
+      "col": 5,
+      "row": 1,
+      "dy": 12.2
+    },
+    {
+      "id": "origin",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "featureA"
+      ],
+      "col": 5,
+      "row": 0
+    },
+    {
+      "id": "origin-2",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "featureBee"
+      ],
+      "col": 5,
+      "row": 6
+    }
+  ],
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_33009", "to": "node_1edee" },
+    { "from": "node_aad88", "to": "node_33009" },
+    { "from": "node_774b3", "to": "node_aad88" },
+    { "from": "node_e5b0f", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_fba9a", "to": "node_1edee", "route": "diagonal" },
+    { "from": "node_85127", "to": "node_e5b0f" },
+    { "from": "node_cd685", "to": "node_85127" },
+    { "from": "node_cd685", "to": "node_fba9a", "route": "diagonal" },
+    { "from": "featurea", "to": "node_774b3", "arrow": "forward" },
+    { "from": "origin", "to": "node_774b3", "arrow": "forward" },
+    { "from": "featureb", "to": "node_cd685", "arrow": "forward" },
+    { "from": "origin-2", "to": "node_cd685", "arrow": "forward" }
+  ]
+}

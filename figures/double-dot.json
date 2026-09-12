@@ -1,0 +1,80 @@
+{
+  "$schema": "./_schema.json",
+  "title": "double dot",
+  "grid": {
+    "x": 116.1,
+    "y": 53.0
+  },
+  "nodes": [
+    {
+      "id": "a",
+      "kind": "commit",
+      "label": "A",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "b",
+      "kind": "commit",
+      "label": "B",
+      "col": 1,
+      "row": 0,
+      "dx": 2.9
+    },
+    {
+      "id": "e",
+      "kind": "commit",
+      "label": "E",
+      "col": 2,
+      "row": 0,
+      "dx": 5.8
+    },
+    {
+      "id": "f",
+      "kind": "commit",
+      "label": "F",
+      "col": 3,
+      "row": 0,
+      "dx": 8.7
+    },
+    {
+      "id": "c",
+      "kind": "commit",
+      "label": "C",
+      "col": 2,
+      "row": 1,
+      "dx": 5.8
+    },
+    {
+      "id": "d",
+      "kind": "commit",
+      "label": "D",
+      "col": 3,
+      "row": 1,
+      "dx": 8.7
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 4,
+      "row": 0
+    },
+    {
+      "id": "experiment",
+      "kind": "ref",
+      "label": "experiment",
+      "col": 4,
+      "row": 1
+    }
+  ],
+  "edges": [
+    { "from": "b", "to": "a" },
+    { "from": "e", "to": "b" },
+    { "from": "f", "to": "e" },
+    { "from": "c", "to": "b", "route": "diagonal" },
+    { "from": "d", "to": "c" },
+    { "from": "master", "to": "f" },
+    { "from": "experiment", "to": "d" }
+  ]
+}

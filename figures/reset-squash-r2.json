@@ -1,0 +1,157 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset squash r2",
+  "grid": {
+    "x": 224.9,
+    "y": 39.3
+  },
+  "nodes": [
+    {
+      "id": "node_38eb946",
+      "kind": "blob",
+      "label": "38eb946",
+      "col": 1,
+      "row": 7,
+      "dx": -82.9,
+      "dy": 7.25
+    },
+    {
+      "id": "file-b-txt-v1",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 0,
+      "row": 8
+    },
+    {
+      "id": "file-a-txt-v1",
+      "kind": "tree",
+      "label": "file-a.txt v1",
+      "col": 3,
+      "row": 3,
+      "dx": -57.45,
+      "dy": -4.54
+    },
+    {
+      "id": "file-b-txt-v1-2",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 3,
+      "row": 4,
+      "dx": 83.55,
+      "dy": -11.84
+    },
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 3,
+      "row": 0,
+      "dx": -57.46
+    },
+    {
+      "id": "master",
+      "kind": "blob",
+      "label": "master",
+      "col": 3,
+      "row": 1,
+      "dx": -57.46,
+      "dy": 5.49
+    },
+    {
+      "id": "file-a-txt-v3",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 4,
+      "row": 3,
+      "dx": 0.65,
+      "dy": -4.69
+    },
+    {
+      "id": "file-b-txt-v1-3",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 3,
+      "row": 4,
+      "dx": 83.55,
+      "dy": -11.84
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 4,
+      "row": 6,
+      "dy": -12.46
+    },
+    {
+      "id": "file-a-txt-v3-2",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 4,
+      "row": 7,
+      "dy": -4.87
+    },
+    {
+      "id": "file-b-txt-v1-4",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 3,
+      "row": 8,
+      "dx": 82.68,
+      "dy": -12.02
+    },
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "col": 3,
+      "row": 6,
+      "dx": 83.75,
+      "dy": -12.46
+    },
+    {
+      "id": "file-a-txt-v3-3",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 3,
+      "row": 7,
+      "dx": 83.76,
+      "dy": -4.87
+    },
+    {
+      "id": "file-b-txt-v1-5",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 3,
+      "row": 8,
+      "dx": -58.24,
+      "dy": -12.02
+    },
+    {
+      "id": "head-2",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 3,
+      "row": 6,
+      "dx": -57.2,
+      "dy": -12.46
+    },
+    {
+      "id": "eb43bf8",
+      "kind": "tree",
+      "label": "eb43bf8",
+      "col": 3,
+      "row": 7,
+      "dx": -57.2,
+      "dy": -4.74
+    }
+  ],
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-a-txt-v1", "to": "file-a-txt-v3" },
+    { "from": "master", "to": "node_38eb946", "arrow": "forward" }
+  ]
+}

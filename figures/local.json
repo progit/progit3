@@ -1,0 +1,43 @@
+{
+  "$schema": "./_schema.json",
+  "title": "local",
+  "grid": {
+    "x": 165.0,
+    "y": 55.0
+  },
+  "nodes": [
+    {
+      "id": "file",
+      "kind": "tree",
+      "label": "File",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "version-3",
+      "kind": "commit",
+      "label": "Version 3",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "version-2",
+      "kind": "commit",
+      "label": "Version 2",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "version-1",
+      "kind": "commit",
+      "label": "Version 1",
+      "col": 1,
+      "row": 2
+    }
+  ],
+  "edges": [
+    { "from": "version-3", "to": "file", "arrow": "forward" },
+    { "from": "version-2", "to": "version-3", "arrow": "forward" },
+    { "from": "version-1", "to": "version-2", "arrow": "forward" }
+  ]
+}

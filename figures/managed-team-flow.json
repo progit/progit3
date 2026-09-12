@@ -1,0 +1,77 @@
+{
+  "$schema": "./_schema.json",
+  "title": "managed team flow",
+  "grid": {
+    "x": 98.8,
+    "y": 595.0
+  },
+  "nodes": [
+    {
+      "id": "john",
+      "kind": "ref",
+      "label": "John",
+      "col": 1,
+      "row": 0,
+      "dx": -3.8
+    },
+    {
+      "id": "john-2",
+      "kind": "ref",
+      "label": "John",
+      "col": 1,
+      "row": 1,
+      "dx": -3.8
+    },
+    {
+      "id": "josie",
+      "kind": "ref",
+      "label": "Josie",
+      "col": 2,
+      "row": 0,
+      "dx": -7.6
+    },
+    {
+      "id": "josie-2",
+      "kind": "ref",
+      "label": "Josie",
+      "col": 2,
+      "row": 1,
+      "dx": -7.6
+    },
+    {
+      "id": "jessica",
+      "kind": "ref",
+      "label": "Jessica",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "jessica-2",
+      "kind": "ref",
+      "label": "Jessica",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "server",
+      "kind": "ref",
+      "label": [
+        "server:",
+        "featureA"
+      ],
+      "col": 3,
+      "row": 0
+    },
+    {
+      "id": "server-2",
+      "kind": "ref",
+      "label": [
+        "server:",
+        "featureA"
+      ],
+      "col": 3,
+      "row": 1
+    }
+  ],
+  "edges": []
+}

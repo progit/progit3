@@ -1,0 +1,18 @@
+{
+  "$schema": "./_schema.json",
+  "title": "Creating a new branch pointer",
+  "grid": { "x": 127, "y": 62 },
+  "nodes": [
+    { "id": "c0",    "kind": "commit", "label": "C0",    "col": 0, "row": 1 },
+    { "id": "c1",    "kind": "commit", "label": "C1",    "col": 1, "row": 1 },
+    { "id": "c2",    "kind": "commit", "label": "C2",    "col": 2, "row": 1 },
+    { "id": "main",  "kind": "ref",    "label": "main",  "col": 2, "row": 0 },
+    { "id": "iss53", "kind": "ref",    "label": "iss53", "col": 2, "row": 2 }
+  ],
+  "edges": [
+    { "from": "c1",   "to": "c0" },
+    { "from": "c2",   "to": "c1" },
+    { "from": "main", "to": "c2", "arrow": "forward" },
+    { "from": "iss53","to": "c2", "arrow": "forward" }
+  ]
+}

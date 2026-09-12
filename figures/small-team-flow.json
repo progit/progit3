@@ -1,0 +1,57 @@
+{
+  "$schema": "./_schema.json",
+  "title": "small team flow",
+  "grid": {
+    "x": 114.5,
+    "y": 505.0
+  },
+  "nodes": [
+    {
+      "id": "server",
+      "kind": "ref",
+      "label": "Server",
+      "col": 1,
+      "row": 0,
+      "dx": 0.5
+    },
+    {
+      "id": "john",
+      "kind": "ref",
+      "label": "John",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "jessica",
+      "kind": "ref",
+      "label": "Jessica",
+      "col": 0,
+      "row": 0,
+      "dx": -1.0
+    },
+    {
+      "id": "server-2",
+      "kind": "ref",
+      "label": "Server",
+      "col": 1,
+      "row": 1,
+      "dx": 0.5
+    },
+    {
+      "id": "john-2",
+      "kind": "ref",
+      "label": "John",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "jessica-2",
+      "kind": "ref",
+      "label": "Jessica",
+      "col": 0,
+      "row": 1,
+      "dx": 1.0
+    }
+  ],
+  "edges": []
+}

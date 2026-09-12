@@ -1,0 +1,107 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset hard",
+  "grid": {
+    "x": 140.9,
+    "y": 69.9
+  },
+  "nodes": [
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "master",
+      "kind": "blob",
+      "label": "master",
+      "col": 1,
+      "row": 1,
+      "dy": -25.11
+    },
+    {
+      "id": "file-txt",
+      "kind": "ref",
+      "label": [
+        "file.txt",
+        "v2"
+      ],
+      "col": 2,
+      "row": 4
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 2,
+      "row": 3,
+      "dy": 13.58
+    },
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "col": 1,
+      "row": 3,
+      "dy": 13.52
+    },
+    {
+      "id": "file-txt-2",
+      "kind": "ref",
+      "label": [
+        "file.txt",
+        "v2"
+      ],
+      "col": 1,
+      "row": 4
+    },
+    {
+      "id": "head-2",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 0,
+      "row": 3,
+      "dy": 13.52
+    },
+    {
+      "id": "node_9e5e6a4",
+      "kind": "ref",
+      "label": "9e5e6a4",
+      "col": 0,
+      "row": 4
+    },
+    {
+      "id": "file-txt-3",
+      "kind": "tree",
+      "label": [
+        "file.txt",
+        "v1"
+      ],
+      "col": 0,
+      "row": 2,
+      "dy": -19.28
+    },
+    {
+      "id": "file-txt-4",
+      "kind": "ref",
+      "label": [
+        "file.txt",
+        "v2"
+      ],
+      "col": 1,
+      "row": 2,
+      "dx": -0.76,
+      "dy": -19.29
+    }
+  ],
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-txt-4", "to": "file-txt-3" },
+    { "from": "master", "to": "node_9e5e6a4", "arrow": "forward" }
+  ]
+}
