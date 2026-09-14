@@ -1,0 +1,561 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Toolkit: Reset Demystified"><meta property="og:title" content="Reset Demystified · Pro Git"><meta property="og:description" content="Pro Git — Git Toolkit: Reset Demystified"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Reset Demystified · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Revision Selection</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/interactive_staging/" data-astro-cid-kqdwmlpp>Interactive Staging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_stashing/" data-astro-cid-kqdwmlpp>Stashing and Cleaning</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/signing/" data-astro-cid-kqdwmlpp>Signing Your Work</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/searching/" data-astro-cid-kqdwmlpp>Searching</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/rewriting_history/" data-astro-cid-kqdwmlpp>Rewriting History</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/git_reset/" data-astro-cid-kqdwmlpp>Reset Demystified</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/advanced_merging/" data-astro-cid-kqdwmlpp>Advanced Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/ref_rerere/" data-astro-cid-kqdwmlpp>Rerere</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/debugging_with_git/" data-astro-cid-kqdwmlpp>Debugging with Git</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_submodules/" data-astro-cid-kqdwmlpp>Submodules</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/bundling/" data-astro-cid-kqdwmlpp>Bundling</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/replace/" data-astro-cid-kqdwmlpp>Replace</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/credential_caching/" data-astro-cid-kqdwmlpp>Credential Storage</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_7/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/rewriting_history/" data-astro-cid-kgypjjoh>← Rewriting History</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/advanced_merging/" data-astro-cid-kgypjjoh>Advanced Merging →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/revision_selection/" data-astro-cid-kgypjjoh>Git Toolkit</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Reset Demystified" data-pagefind-filter="chapter:Git Toolkit" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_git_reset">Reset Demystified</h3>
+<div class="paragraph">
+<p>Before moving on to more specialized tools, let&#8217;s talk about the Git <code>reset</code> and <code>checkout</code> commands.
+These commands are two of the most confusing parts of Git when you first encounter them.
+They do so many things that it seems hopeless to actually understand them and employ them properly.
+For this, we recommend a simple metaphor.</p>
+</div>
+<div class="sect3">
+<h4 id="_the_three_trees">The Three Trees</h4>
+<div class="paragraph">
+<p>An easier way to think about <code>reset</code> and <code>checkout</code> is through the mental frame of Git being a content manager of three different trees.
+By &#8220;tree&#8221; here, we really mean &#8220;collection of files&#8221;, not specifically the data structure.
+There are a few cases where the index doesn&#8217;t exactly act like a tree, but for our purposes it is easier to think about it this way for now.</p>
+</div>
+<div class="paragraph">
+<p>Git as a system manages and manipulates three trees in its normal operation:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col width="33.3333%">
+<col width="66.6667%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tree</th>
+<th class="tableblock halign-left valign-top">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HEAD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last commit snapshot, next parent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposed next commit snapshot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Directory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sandbox</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_the_head">The HEAD</h5>
+<div class="paragraph">
+<p>HEAD is the pointer to the current branch reference, which is in turn a pointer to the last commit made on that branch.
+That means HEAD will be the parent of the next commit that is created.
+It&#8217;s generally simplest to think of HEAD as the snapshot of <strong>your last commit on that branch</strong>.</p>
+</div>
+<div class="paragraph">
+<p>In fact, it&#8217;s pretty easy to see what that snapshot looks like.
+Here is an example of getting the actual directory listing and SHA-1 checksums for each file in the HEAD snapshot:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git cat-file -p HEAD
+tree cfda3bf379e4f8dba8717dee55aab78aef7f4daf
+author Scott Chacon  1301511835 -0700
+committer Scott Chacon  1301511835 -0700
+
+initial commit
+
+$ git ls-tree -r HEAD
+100644 blob a906cb2a4a904a152...   README
+100644 blob 8f94139338f9404f2...   Rakefile
+040000 tree 99f1a6d12cb4b6f19...   lib</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Git <code>cat-file</code> and <code>ls-tree</code> commands are &#8220;plumbing&#8221; commands that are used for lower level things and not really used in day-to-day work, but they help us see what&#8217;s going on here.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_index">The Index</h5>
+<div class="paragraph">
+<p>The <em>index</em> is your <strong>proposed next commit</strong>.
+We&#8217;ve also been referring to this concept as Git&#8217;s &#8220;Staging Area&#8221; as this is what Git looks at when you run <code>git commit</code>.</p>
+</div>
+<div class="paragraph">
+<p>Git populates this index with a list of all the file contents that were last checked out into your working directory and what they looked like when they were originally checked out.
+You then replace some of those files with new versions of them, and <code>git commit</code> converts that into the tree for a new commit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git ls-files -s
+100644 a906cb2a4a904a152e80877d4088654daad0c859 0	README
+100644 8f94139338f9404f26296befa88755fc2598c289 0	Rakefile
+100644 47c6340d6459e05787f644c2447d2595f5d3a54b 0	lib/simplegit.rb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, here we&#8217;re using <code>git ls-files</code>, which is more of a behind the scenes command that shows you what your index currently looks like.</p>
+</div>
+<div class="paragraph">
+<p>The index is not technically a tree structure&#8201;&#8212;&#8201;it&#8217;s actually implemented as a flattened manifest&#8201;&#8212;&#8201;but for our purposes it&#8217;s close enough.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_working_directory">The Working Directory</h5>
+<div class="paragraph">
+<p>Finally, you have your <em>working directory</em> (also commonly referred to as the &#8220;working tree&#8221;).
+The other two trees store their content in an efficient but inconvenient manner, inside the <code>.git</code> folder.
+The working directory unpacks them into actual files, which makes it much easier for you to edit them.
+Think of the working directory as a <strong>sandbox</strong>, where you can try changes out before committing them to your staging area (index) and then to history.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ tree
+.
+├── README
+├── Rakefile
+└── lib
+    └── simplegit.rb
+
+1 directory, 3 files</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_workflow">The Workflow</h4>
+<div class="paragraph">
+<p>Git&#8217;s typical workflow is to record snapshots of your project in successively better states, by manipulating these three trees.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-workflow.png" alt="Git&#8217;s typical workflow">
+</div>
+<div class="title">Figure 78. Git&#8217;s typical workflow</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s visualize this process: say you go into a new directory with a single file in it.
+We&#8217;ll call this <strong>v1</strong> of the file, and we&#8217;ll indicate it in blue.
+Now we run <code>git init</code>, which will create a Git repository with a HEAD reference which points to the unborn <code>master</code> branch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex1.png" alt="Newly-initialized Git repository with unstaged file in the working directory">
+</div>
+<div class="title">Figure 79. Newly-initialized Git repository with unstaged file in the working directory</div>
+</div>
+<div class="paragraph">
+<p>At this point, only the working directory tree has any content.</p>
+</div>
+<div class="paragraph">
+<p>Now we want to commit this file, so we use <code>git add</code> to take content in the working directory and copy it to the index.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex2.png" alt="File is copied to index on `git add`">
+</div>
+<div class="title">Figure 80. File is copied to index on <code>git add</code></div>
+</div>
+<div class="paragraph">
+<p>Then we run <code>git commit</code>, which takes the contents of the index and saves it as a permanent snapshot, creates a commit object which points to that snapshot, and updates <code>master</code> to point to that commit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex3.png" alt="The `git commit` step">
+</div>
+<div class="title">Figure 81. The <code>git commit</code> step</div>
+</div>
+<div class="paragraph">
+<p>If we run <code>git status</code>, we&#8217;ll see no changes, because all three trees are the same.</p>
+</div>
+<div class="paragraph">
+<p>Now we want to make a change to that file and commit it.
+We&#8217;ll go through the same process; first, we change the file in our working directory.
+Let&#8217;s call this <strong>v2</strong> of the file, and indicate it in red.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex4.png" alt="Git repository with changed file in the working directory">
+</div>
+<div class="title">Figure 82. Git repository with changed file in the working directory</div>
+</div>
+<div class="paragraph">
+<p>If we run <code>git status</code> right now, we&#8217;ll see the file in red as &#8220;Changes not staged for commit&#8221;, because that entry differs between the index and the working directory.
+Next we run <code>git add</code> on it to stage it into our index.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex5.png" alt="Staging change to index">
+</div>
+<div class="title">Figure 83. Staging change to index</div>
+</div>
+<div class="paragraph">
+<p>At this point, if we run <code>git status</code>, we will see the file in green under &#8220;Changes to be committed&#8221; because the index and HEAD differ&#8201;&#8212;&#8201;that is, our proposed next commit is now different from our last commit.
+Finally, we run <code>git commit</code> to finalize the commit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-ex6.png" alt="The `git commit` step with changed file">
+</div>
+<div class="title">Figure 84. The <code>git commit</code> step with changed file</div>
+</div>
+<div class="paragraph">
+<p>Now <code>git status</code> will give us no output, because all three trees are the same again.</p>
+</div>
+<div class="paragraph">
+<p>Switching branches or cloning goes through a similar process.
+When you checkout a branch, it changes <strong>HEAD</strong> to point to the new branch ref, populates your <strong>index</strong> with the snapshot of that commit, then copies the contents of the <strong>index</strong> into your <strong>working directory</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_role_of_reset">The Role of Reset</h4>
+<div class="paragraph">
+<p>The <code>reset</code> command makes more sense when viewed in this context.</p>
+</div>
+<div class="paragraph">
+<p>For the purposes of these examples, let&#8217;s say that we&#8217;ve modified <code>file.txt</code> again and committed it a third time.
+So now our history looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-start.png" alt="Git repository with three commits">
+</div>
+<div class="title">Figure 85. Git repository with three commits</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s now walk through exactly what <code>reset</code> does when you call it.
+It directly manipulates these three trees in a simple and predictable way.
+It does up to three basic operations.</p>
+</div>
+<div class="sect4">
+<h5 id="_step_1_move_head">Step 1: Move HEAD</h5>
+<div class="paragraph">
+<p>The first thing <code>reset</code> will do is move what HEAD points to.
+This isn&#8217;t the same as changing HEAD itself (which is what <code>checkout</code> does); <code>reset</code> moves the branch that HEAD is pointing to.
+This means if HEAD is set to the <code>master</code> branch (i.e. you&#8217;re currently on the <code>master</code> branch), running <code>git reset 9e5e6a4</code> will start by making <code>master</code> point to <code>9e5e6a4</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-soft.png" alt="Soft reset">
+</div>
+<div class="title">Figure 86. Soft reset</div>
+</div>
+<div class="paragraph">
+<p>No matter what form of <code>reset</code> with a commit you invoke, this is the first thing it will always try to do.
+With <code>reset --soft</code>, it will simply stop there.</p>
+</div>
+<div class="paragraph">
+<p>Now take a second to look at that diagram and realize what happened: it essentially undid the last <code>git commit</code> command.
+When you run <code>git commit</code>, Git creates a new commit and moves the branch that HEAD points to up to it.
+When you <code>reset</code> back to <code>HEAD~</code> (the parent of HEAD), you are moving the branch back to where it was, without changing the index or working directory.
+You could now update the index and run <code>git commit</code> again to accomplish what <code>git commit --amend</code> would have done (see <a href="/book/rewriting_history/#_git_amend">Changing the Last Commit</a>).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_step_2_updating_the_index_mixed">Step 2: Updating the Index (<code>--mixed</code>)</h5>
+<div class="paragraph">
+<p>Note that if you run <code>git status</code> now you&#8217;ll see in green the difference between the index and what the new HEAD is.</p>
+</div>
+<div class="paragraph">
+<p>The next thing <code>reset</code> will do is to update the index with the contents of whatever snapshot HEAD now points to.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-mixed.png" alt="Mixed reset">
+</div>
+<div class="title">Figure 87. Mixed reset</div>
+</div>
+<div class="paragraph">
+<p>If you specify the <code>--mixed</code> option, <code>reset</code> will stop at this point.
+This is also the default, so if you specify no option at all (just <code>git reset HEAD~</code> in this case), this is where the command will stop.</p>
+</div>
+<div class="paragraph">
+<p>Now take another second to look at that diagram and realize what happened: it still undid your last <code>commit</code>, but also <em>unstaged</em> everything.
+You rolled back to before you ran all your <code>git add</code> and <code>git commit</code> commands.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_step_3_updating_the_working_directory_hard">Step 3: Updating the Working Directory (<code>--hard</code>)</h5>
+<div class="paragraph">
+<p>The third thing that <code>reset</code> will do is to make the working directory look like the index.
+If you use the <code>--hard</code> option, it will continue to this stage.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-hard.png" alt="Hard reset">
+</div>
+<div class="title">Figure 88. Hard reset</div>
+</div>
+<div class="paragraph">
+<p>So let&#8217;s think about what just happened.
+You undid your last commit, the <code>git add</code> and <code>git commit</code> commands, <strong>and</strong> all the work you did in your working directory.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important to note that this flag (<code>--hard</code>) is the only way to make the <code>reset</code> command dangerous, and one of the very few cases where Git will actually destroy data.
+Any other invocation of <code>reset</code> can be pretty easily undone, but the <code>--hard</code> option cannot, since it forcibly overwrites files in the working directory.
+In this particular case, we still have the <strong>v3</strong> version of our file in a commit in our Git DB, and we could get it back by looking at our <code>reflog</code>, but if we had not committed it, Git still would have overwritten the file and it would be unrecoverable.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_recap">Recap</h5>
+<div class="paragraph">
+<p>The <code>reset</code> command overwrites these three trees in a specific order, stopping when you tell it to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Move the branch HEAD points to <em>(stop here if <code>--soft</code>)</em>.</p>
+</li>
+<li>
+<p>Make the index look like HEAD <em>(stop here unless <code>--hard</code>)</em>.</p>
+</li>
+<li>
+<p>Make the working directory look like the index.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_reset_with_a_path">Reset With a Path</h4>
+<div class="paragraph">
+<p>That covers the behavior of <code>reset</code> in its basic form, but you can also provide it with a path to act upon.
+If you specify a path, <code>reset</code> will skip step 1, and limit the remainder of its actions to a specific file or set of files.
+This actually sort of makes sense&#8201;&#8212;&#8201;HEAD is just a pointer, and you can&#8217;t point to part of one commit and part of another.
+But the index and working directory <em>can</em> be partially updated, so reset proceeds with steps 2 and 3.</p>
+</div>
+<div class="paragraph">
+<p>So, assume we run <code>git reset file.txt</code>.
+This form (since you did not specify a commit SHA-1 or branch, and you didn&#8217;t specify <code>--soft</code> or <code>--hard</code>) is shorthand for <code>git reset --mixed HEAD file.txt</code>, which will:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Move the branch HEAD points to <em>(skipped)</em>.</p>
+</li>
+<li>
+<p>Make the index look like HEAD <em>(stop here)</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>So it essentially just copies <code>file.txt</code> from HEAD to the index.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-path1.png" alt="Mixed reset with a path">
+</div>
+<div class="title">Figure 89. Mixed reset with a path</div>
+</div>
+<div class="paragraph">
+<p>This has the practical effect of <em>unstaging</em> the file.
+If we look at the diagram for that command and think about what <code>git add</code> does, they are exact opposites.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-path2.png" alt="Staging file to index">
+</div>
+<div class="title">Figure 90. Staging file to index</div>
+</div>
+<div class="paragraph">
+<p>This is why the output of the <code>git status</code> command suggests that you run this to unstage a file (see <a href="/book/undoing/#_unstaging">Ch 2, Git Basics</a> for more on this).</p>
+</div>
+<div class="paragraph">
+<p>We could just as easily not let Git assume we meant &#8220;pull the data from HEAD&#8221; by specifying a specific commit to pull that file version from.
+We would just run something like <code>git reset eb43bf file.txt</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-path3.png" alt="Soft reset with a path to a specific commit">
+</div>
+<div class="title">Figure 91. Soft reset with a path to a specific commit</div>
+</div>
+<div class="paragraph">
+<p>This effectively does the same thing as if we had reverted the content of the file to <strong>v1</strong> in the working directory, ran <code>git add</code> on it, then reverted it back to <strong>v3</strong> again (without actually going through all those steps).
+If we run <code>git commit</code> now, it will record a change that reverts that file back to <strong>v1</strong>, even though we never actually had it in our working directory again.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also interesting to note that like <code>git add</code>, the <code>reset</code> command will accept a <code>--patch</code> option to unstage content on a hunk-by-hunk basis.
+So you can selectively unstage or revert content.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_squashing_2">Squashing</h4>
+<div class="paragraph">
+<p>Let&#8217;s look at how to do something interesting with this newfound power&#8201;&#8212;&#8201;squashing commits.</p>
+</div>
+<div class="paragraph">
+<p>Say you have a series of commits with messages like &#8220;oops.&#8221;, &#8220;WIP&#8221; and &#8220;forgot this file&#8221;.
+You can use <code>reset</code> to quickly and easily squash them into a single commit that makes you look really smart.
+<a href="/book/rewriting_history/#_squashing">Squashing Commits</a> shows another way to do this, but in this example it&#8217;s simpler to use <code>reset</code>.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you have a project where the first commit has one file, the second commit added a new file and changed the first, and the third commit changed the first file again.
+The second commit was a work in progress and you want to squash it down.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-squash-r1.png" alt="Git repository">
+</div>
+<div class="title">Figure 92. Git repository</div>
+</div>
+<div class="paragraph">
+<p>You can run <code>git reset --soft HEAD~2</code> to move the HEAD branch back to an older commit (the most recent commit you want to keep):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-squash-r2.png" alt="Moving HEAD with soft reset">
+</div>
+<div class="title">Figure 93. Moving HEAD with soft reset</div>
+</div>
+<div class="paragraph">
+<p>And then simply run <code>git commit</code> again:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-squash-r3.png" alt="Git repository with squashed commit">
+</div>
+<div class="title">Figure 94. Git repository with squashed commit</div>
+</div>
+<div class="paragraph">
+<p>Now you can see that your reachable history, the history you would push, now looks like you had one commit with <code>file-a.txt</code> <strong>v1</strong>, then a second that both modified <code>file-a.txt</code> to <strong>v3</strong> and added <code>file-b.txt</code>.
+The commit with the <strong>v2</strong> version of the file is no longer in the history.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_check_it_out">Check It Out</h4>
+<div class="paragraph">
+<p>Finally, you may wonder what the difference between <code>checkout</code> and <code>reset</code> is.
+Like <code>reset</code>, <code>checkout</code> manipulates the three trees, and it is a bit different depending on whether you give the command a file path or not.</p>
+</div>
+<div class="sect4">
+<h5 id="_without_paths">Without Paths</h5>
+<div class="paragraph">
+<p>Running <code>git checkout [branch]</code> is pretty similar to running <code>git reset --hard [branch]</code> in that it updates all three trees for you to look like <code>[branch]</code>, but there are two important differences.</p>
+</div>
+<div class="paragraph">
+<p>First, unlike <code>reset --hard</code>, <code>checkout</code> is working-directory safe; it will check to make sure it&#8217;s not blowing away files that have changes to them.
+Actually, it&#8217;s a bit smarter than that&#8201;&#8212;&#8201;it tries to do a trivial merge in the working directory, so all of the files you <em>haven&#8217;t</em> changed will be updated.
+<code>reset --hard</code>, on the other hand, will simply replace everything across the board without checking.</p>
+</div>
+<div class="paragraph">
+<p>The second important difference is how <code>checkout</code> updates HEAD.
+Whereas <code>reset</code> will move the branch that HEAD points to, <code>checkout</code> will move HEAD itself to point to another branch.</p>
+</div>
+<div class="paragraph">
+<p>For instance, say we have <code>master</code> and <code>develop</code> branches which point at different commits, and we&#8217;re currently on <code>develop</code> (so HEAD points to it).
+If we run <code>git reset master</code>, <code>develop</code> itself will now point to the same commit that <code>master</code> does.
+If we instead run <code>git checkout master</code>, <code>develop</code> does not move, HEAD itself does.
+HEAD will now point to <code>master</code>.</p>
+</div>
+<div class="paragraph">
+<p>So, in both cases we&#8217;re moving HEAD to point to commit A, but <em>how</em> we do so is very different.
+<code>reset</code> will move the branch HEAD points to, <code>checkout</code> moves HEAD itself.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/reset-checkout.png" alt="`git checkout` and `git reset`">
+</div>
+<div class="title">Figure 95. <code>git checkout</code> and <code>git reset</code></div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_with_paths">With Paths</h5>
+<div class="paragraph">
+<p>The other way to run <code>checkout</code> is with a file path, which, like <code>reset</code>, does not move HEAD.
+It is just like <code>git reset [branch] file</code> in that it updates the index with that file at that commit, but it also overwrites the file in the working directory.
+It would be exactly like <code>git reset --hard [branch] file</code> (if <code>reset</code> would let you run that)&#8201;&#8212;&#8201;it&#8217;s not working-directory safe, and it does not move HEAD.</p>
+</div>
+<div class="paragraph">
+<p>Also, like <code>git reset</code> and <code>git add</code>, <code>checkout</code> will accept a <code>--patch</code> option to allow you to selectively revert file contents on a hunk-by-hunk basis.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_summary_6">Summary</h4>
+<div class="paragraph">
+<p>Hopefully now you understand and feel more comfortable with the <code>reset</code> command, but are probably still a little confused about how exactly it differs from <code>checkout</code> and could not possibly remember all the rules of the different invocations.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a cheat-sheet for which commands affect which trees.
+The &#8220;HEAD&#8221; column reads &#8220;REF&#8221; if that command moves the reference (branch) that HEAD points to, and &#8220;HEAD&#8221; if it moves HEAD itself.
+Pay especial attention to the 'WD Safe?' column&#8201;&#8212;&#8201;if it says <strong>NO</strong>, take a second to think before running that command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col width="42.8571%">
+<col width="14.2857%">
+<col width="14.2857%">
+<col width="14.2857%">
+<col width="14.2858%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">HEAD</th>
+<th class="tableblock halign-left valign-top">Index</th>
+<th class="tableblock halign-left valign-top">Workdir</th>
+<th class="tableblock halign-left valign-top">WD Safe?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Commit Level</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reset --soft [commit]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reset [commit]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reset --hard [commit]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NO</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkout &lt;commit&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HEAD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>File Level</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reset [commit] &lt;paths&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>checkout [commit] &lt;paths&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NO</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/rewriting_history/" data-astro-cid-kgypjjoh>← Rewriting History</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/advanced_merging/" data-astro-cid-kgypjjoh>Advanced Merging →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

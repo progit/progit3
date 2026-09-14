@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Toolkit: Searching"><meta property="og:title" content="Searching · Pro Git"><meta property="og:description" content="Pro Git — Git Toolkit: Searching"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Searching · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Revision Selection</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/interactive_staging/" data-astro-cid-kqdwmlpp>Interactive Staging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_stashing/" data-astro-cid-kqdwmlpp>Stashing and Cleaning</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/signing/" data-astro-cid-kqdwmlpp>Signing Your Work</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/searching/" data-astro-cid-kqdwmlpp>Searching</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/rewriting_history/" data-astro-cid-kqdwmlpp>Rewriting History</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_reset/" data-astro-cid-kqdwmlpp>Reset Demystified</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/advanced_merging/" data-astro-cid-kqdwmlpp>Advanced Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/ref_rerere/" data-astro-cid-kqdwmlpp>Rerere</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/debugging_with_git/" data-astro-cid-kqdwmlpp>Debugging with Git</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_submodules/" data-astro-cid-kqdwmlpp>Submodules</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/bundling/" data-astro-cid-kqdwmlpp>Bundling</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/replace/" data-astro-cid-kqdwmlpp>Replace</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/credential_caching/" data-astro-cid-kqdwmlpp>Credential Storage</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_7/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/signing/" data-astro-cid-kgypjjoh>← Signing Your Work</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/rewriting_history/" data-astro-cid-kgypjjoh>Rewriting History →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/revision_selection/" data-astro-cid-kgypjjoh>Git Toolkit</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Searching" data-pagefind-filter="chapter:Git Toolkit" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_searching">Searching</h3>
+<div class="paragraph">
+<p>With just about any size codebase, you&#8217;ll often need to find where a function is called or defined, or display the history of a method.
+Git provides a couple of useful tools for looking through the code and commits stored in its database quickly and easily.
+We&#8217;ll go through a few of them.</p>
+</div>
+<div class="sect3">
+<h4 id="_git_grep">Git Grep</h4>
+<div class="paragraph">
+<p>Git ships with a command called <code>grep</code> that allows you to easily search through any committed tree, the working directory, or even the index for a string or regular expression.
+For the examples that follow, we&#8217;ll search through the source code for Git itself.</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>git grep</code> will look through the files in your working directory.
+As a first variation, you can use either of the <code>-n</code> or <code>--line-number</code> options to print out the line numbers where Git has found matches:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git grep -n gmtime_r
+compat/gmtime.c:3:#undef gmtime_r
+compat/gmtime.c:8:      return git_gmtime_r(timep, &amp;result);
+compat/gmtime.c:11:struct tm *git_gmtime_r(const time_t *timep, struct tm *result)
+compat/gmtime.c:16:     ret = gmtime_r(timep, result);
+compat/mingw.c:826:struct tm *gmtime_r(const time_t *timep, struct tm *result)
+compat/mingw.h:206:struct tm *gmtime_r(const time_t *timep, struct tm *result);
+date.c:482:             if (gmtime_r(&amp;now, &amp;now_tm))
+date.c:545:             if (gmtime_r(&amp;time, tm)) {
+date.c:758:             /* gmtime_r() in match_digit() may have clobbered it */
+git-compat-util.h:1138:struct tm *git_gmtime_r(const time_t *, struct tm *);
+git-compat-util.h:1140:#define gmtime_r git_gmtime_r</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to the basic search shown above, <code>git grep</code> supports a plethora of other interesting options.</p>
+</div>
+<div class="paragraph">
+<p>For instance, instead of printing all of the matches, you can ask <code>git grep</code> to summarize the output by showing you only which files contained the search string and how many matches there were in each file with the <code>-c</code> or <code>--count</code> option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git grep --count gmtime_r
+compat/gmtime.c:4
+compat/mingw.c:1
+compat/mingw.h:1
+date.c:3
+git-compat-util.h:2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re interested in the <em>context</em> of a search string, you can display the enclosing method or function for each matching string with either of the <code>-p</code> or <code>--show-function</code> options:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git grep -p gmtime_r *.c
+date.c=static int match_multi_number(timestamp_t num, char c, const char *date,
+date.c:         if (gmtime_r(&amp;now, &amp;now_tm))
+date.c=static int match_digit(const char *date, struct tm *tm, int *offset, int *tm_gmt)
+date.c:         if (gmtime_r(&amp;time, tm)) {
+date.c=int parse_date_basic(const char *date, timestamp_t *timestamp, int *offset)
+date.c:         /* gmtime_r() in match_digit() may have clobbered it */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, the <code>gmtime_r</code> routine is called from both the <code>match_multi_number</code> and <code>match_digit</code> functions in the <code>date.c</code> file (the third match displayed represents just the string appearing in a comment).</p>
+</div>
+<div class="paragraph">
+<p>You can also search for complex combinations of strings with the <code>--and</code> flag, which ensures that multiple matches must occur in the same line of text.
+For instance, let&#8217;s look for any lines that define a constant whose name contains <em>either</em> of the substrings &#8220;LINK&#8221; or &#8220;BUF_MAX&#8221;, specifically in an older version of the Git codebase represented by the tag <code>v1.8.0</code> (we&#8217;ll throw in the <code>--break</code> and <code>--heading</code> options which help split up the output into a more readable format):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git grep --break --heading \
+    -n -e '#define' --and \( -e LINK -e BUF_MAX \) v1.8.0
+v1.8.0:builtin/index-pack.c
+62:#define FLAG_LINK (1u&lt;&lt;20)
+
+v1.8.0:cache.h
+73:#define S_IFGITLINK  0160000
+74:#define S_ISGITLINK(m)       (((m) &amp; S_IFMT) == S_IFGITLINK)
+
+v1.8.0:environment.c
+54:#define OBJECT_CREATION_MODE OBJECT_CREATION_USES_HARDLINKS
+
+v1.8.0:strbuf.c
+326:#define STRBUF_MAXLINK (2*PATH_MAX)
+
+v1.8.0:symlinks.c
+53:#define FL_SYMLINK  (1 &lt;&lt; 2)
+
+v1.8.0:zlib.c
+30:/* #define ZLIB_BUF_MAX ((uInt)-1) */
+31:#define ZLIB_BUF_MAX ((uInt) 1024 * 1024 * 1024) /* 1GB */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>git grep</code> command has a few advantages over normal searching commands like <code>grep</code> and <code>ack</code>.
+The first is that it&#8217;s really fast, the second is that you can search through any tree in Git, not just the working directory.
+As we saw in the above example, we looked for terms in an older version of the Git source code, not the version that was currently checked out.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_log_searching">Git Log Searching</h4>
+<div class="paragraph">
+<p>Perhaps you&#8217;re looking not for <em>where</em> a term exists, but <em>when</em> it existed or was introduced.
+The <code>git log</code> command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce.</p>
+</div>
+<div class="paragraph">
+<p>If, for example, we want to find out when the <code>ZLIB_BUF_MAX</code> constant was originally introduced, we can use the <code>-S</code> option (colloquially referred to as the Git &#8220;pickaxe&#8221; option) to tell Git to show us only those commits that changed the number of occurrences of that string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -S ZLIB_BUF_MAX --oneline
+e01503b zlib: allow feeding more than 4GB in one go
+ef49a7a zlib: zlib can only process 4GB at a time</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we look at the diff of those commits, we can see that in <code>ef49a7a</code> the constant was introduced and in <code>e01503b</code> it was modified.</p>
+</div>
+<div class="paragraph">
+<p>If you need to be more specific, you can provide a regular expression to search for with the <code>-G</code> option.</p>
+</div>
+<div class="sect4">
+<h5 id="_line_log_search">Line Log Search</h5>
+<div class="paragraph">
+<p>Another fairly advanced log search that is insanely useful is the line history search.
+Simply run <code>git log</code> with the <code>-L</code> option, and it will show you the history of a function or line of code in your codebase.</p>
+</div>
+<div class="paragraph">
+<p>For example, if we wanted to see every change made to the function <code>git_deflate_bound</code> in the <code>zlib.c</code> file, we could run <code>git log -L :git_deflate_bound:zlib.c</code>.
+This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -L :git_deflate_bound:zlib.c
+commit ef49a7a0126d64359c974b4b3b71d7ad42ee3bca
+Author: Junio C Hamano &lt;gitster@pobox.com&gt;
+Date:   Fri Jun 10 11:52:15 2011 -0700
+
+    zlib: zlib can only process 4GB at a time
+
+diff --git a/zlib.c b/zlib.c
+--- a/zlib.c
++++ b/zlib.c
+@@ -85,5 +130,5 @@
+-unsigned long git_deflate_bound(z_streamp strm, unsigned long size)
++unsigned long git_deflate_bound(git_zstream *strm, unsigned long size)
+ {
+-       return deflateBound(strm, size);
++       return deflateBound(&amp;strm-&gt;z, size);
+ }
+
+
+commit 225a6f1068f71723a910e8565db4e252b3ca21fa
+Author: Junio C Hamano &lt;gitster@pobox.com&gt;
+Date:   Fri Jun 10 11:18:17 2011 -0700
+
+    zlib: wrap deflateBound() too
+
+diff --git a/zlib.c b/zlib.c
+--- a/zlib.c
++++ b/zlib.c
+@@ -81,0 +85,5 @@
++unsigned long git_deflate_bound(z_streamp strm, unsigned long size)
++{
++       return deflateBound(strm, size);
++}
++</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If Git can&#8217;t figure out how to match a function or method in your programming language, you can also provide it with a regular expression (or <em>regex</em>).
+For example, this would have done the same thing as the example above: <code>git log -L '/unsigned long git_deflate_bound/',/^}/:zlib.c</code>.
+You could also give it a range of lines or a single line number and you&#8217;ll get the same sort of output.</p>
+</div>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/signing/" data-astro-cid-kgypjjoh>← Signing Your Work</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/rewriting_history/" data-astro-cid-kgypjjoh>Rewriting History →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
