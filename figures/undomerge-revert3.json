@@ -1,0 +1,128 @@
+{
+  "$schema": "./_schema.json",
+  "title": "undomerge revert3",
+  "grid": {
+    "x": 118.9,
+    "y": 53.0
+  },
+  "nodes": [
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 2
+    },
+    {
+      "id": "c5",
+      "kind": "commit",
+      "label": "C5",
+      "col": 2,
+      "row": 2
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 2,
+      "row": 3
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 3,
+      "row": 2
+    },
+    {
+      "id": "c7",
+      "kind": "commit",
+      "label": "C7",
+      "col": 4,
+      "row": 3,
+      "dx": -1.6
+    },
+    {
+      "id": "m",
+      "kind": "commit",
+      "label": "^^M",
+      "col": 6,
+      "row": 2
+    },
+    {
+      "id": "c8",
+      "kind": "commit",
+      "label": "C8",
+      "col": 7,
+      "row": 2
+    },
+    {
+      "id": "m-2",
+      "kind": "commit",
+      "label": "M",
+      "col": 4,
+      "row": 2
+    },
+    {
+      "id": "m-3",
+      "kind": "commit",
+      "label": "^M",
+      "col": 5,
+      "row": 2,
+      "dx": -0.5
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 7,
+      "row": 1
+    },
+    {
+      "id": "head",
+      "kind": "symref",
+      "label": "HEAD",
+      "col": 7,
+      "row": 0
+    },
+    {
+      "id": "topic",
+      "kind": "ref",
+      "label": "topic",
+      "col": 4,
+      "row": 4,
+      "dx": -1.6
+    }
+  ],
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "c5", "to": "c2" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "c6", "to": "c5" },
+    { "from": "m-2", "to": "c6" },
+    { "from": "m-2", "to": "c4", "route": "diagonal" },
+    { "from": "m-3", "to": "m-2" },
+    { "from": "c7", "to": "c4" },
+    { "from": "m", "to": "m-3" },
+    { "from": "m", "to": "c7", "route": "diagonal" },
+    { "from": "c8", "to": "m" },
+    { "from": "master", "to": "c8", "arrow": "forward" },
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "topic", "to": "c7", "arrow": "forward" }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "./_schema.json",
+  "title": "centralized",
+  "grid": {
+    "x": 225.0,
+    "y": 42.5
+  },
+  "nodes": [
+    {
+      "id": "node0",
+      "kind": "tree",
+      "label": "node0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "node1",
+      "kind": "commit",
+      "label": "node1",
+      "col": 1,
+      "row": 1,
+      "dy": -9.0
+    },
+    {
+      "id": "node2",
+      "kind": "commit",
+      "label": "node2",
+      "col": 1,
+      "row": 2,
+      "dy": 8.5
+    },
+    {
+      "id": "node3",
+      "kind": "commit",
+      "label": "node3",
+      "col": 1,
+      "row": 4,
+      "dy": -16.5
+    },
+    {
+      "id": "file",
+      "kind": "tree",
+      "label": "File",
+      "col": 0,
+      "row": 4
+    }
+  ],
+  "edges": []
+}

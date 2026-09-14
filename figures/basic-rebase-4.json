@@ -1,0 +1,75 @@
+{
+  "$schema": "./_schema.json",
+  "title": "basic rebase 4",
+  "grid": {
+    "x": 127.5,
+    "y": 61.3
+  },
+  "nodes": [
+    {
+      "id": "c0",
+      "kind": "commit",
+      "label": "C0",
+      "col": 0,
+      "row": 1,
+      "dy": -0.8
+    },
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 1,
+      "row": 1,
+      "dx": -0.5,
+      "dy": -0.8
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 2,
+      "row": 1,
+      "dx": -1.0,
+      "dy": -0.8
+    },
+    {
+      "id": "experiment",
+      "kind": "ref",
+      "label": "experiment",
+      "col": 4,
+      "row": 0
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 3,
+      "row": 1,
+      "dx": -0.5,
+      "dy": -0.8
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4'",
+      "col": 4,
+      "row": 1,
+      "dy": -0.8
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 4,
+      "row": 2
+    }
+  ],
+  "edges": [
+    { "from": "c1", "to": "c0" },
+    { "from": "c2", "to": "c1" },
+    { "from": "c3", "to": "c2" },
+    { "from": "c4", "to": "c3" },
+    { "from": "experiment", "to": "c4", "arrow": "forward" },
+    { "from": "master", "to": "c4", "arrow": "forward" }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "./_schema.json",
+  "title": "small team 4",
+  "grid": {
+    "x": 119.0,
+    "y": 56.0
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "fbff5",
+      "kind": "jessica",
+      "label": "fbff5",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "node_8149a",
+      "kind": "jessica",
+      "label": "8149a",
+      "col": 3,
+      "row": 1
+    },
+    {
+      "id": "node_23ac6",
+      "kind": "jessica",
+      "label": "23ac6",
+      "col": 4,
+      "row": 1
+    },
+    {
+      "id": "node_4af42",
+      "kind": "jessica",
+      "label": "4af42",
+      "col": 5,
+      "row": 1
+    },
+    {
+      "id": "origin-master",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "master"
+      ],
+      "col": 2,
+      "row": 2
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "issue54",
+      "kind": "ref",
+      "label": "issue54",
+      "col": 5,
+      "row": 0
+    }
+  ],
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "fbff5", "to": "node_1edee" },
+    { "from": "node_8149a", "to": "fbff5" },
+    { "from": "node_23ac6", "to": "node_8149a" },
+    { "from": "node_4af42", "to": "node_23ac6" },
+    { "from": "master", "to": "fbff5", "arrow": "forward" },
+    { "from": "origin-master", "to": "fbff5", "arrow": "forward" },
+    { "from": "issue54", "to": "node_4af42", "arrow": "forward" }
+  ]
+}

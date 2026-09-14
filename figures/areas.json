@@ -1,0 +1,27 @@
+{
+  "$schema": "./_schema.json",
+  "title": "Working tree, staging area, and Git directory",
+  "layout": "absolute",
+  "canvas": { "w": 401, "h": 215 },
+  "nodes": [
+    { "id": "wt", "kind": "ref",   "label": ["Working", "Tree"],
+      "x": 4,       "y": 4, "w": 110.58, "h": 38 },
+    { "id": "sa", "kind": "tree",  "label": ["Staging", "Area"],
+      "x": 144.74, "y": 4, "w": 110.58, "h": 38 },
+    { "id": "gd", "kind": "other", "label": [".git directory", "(Repository)"],
+      "x": 285.48, "y": 4, "w": 110.58, "h": 38 }
+  ],
+  "rules": [
+    { "x": 60,  "y1": 26, "y2": 211 },
+    { "x": 200, "y1": 26, "y2": 211 },
+    { "x": 340, "y1": 26, "y2": 211 }
+  ],
+  "banners": [
+    { "label": "Checkout the project",
+      "from": { "x": 340, "y": 81 }, "to": { "x": 60, "y": 81 }, "thickness": 22 },
+    { "label": "Stage Fixes",
+      "from": { "x": 60,  "y": 133 }, "to": { "x": 200, "y": 133 }, "thickness": 22 },
+    { "label": "Commit",
+      "from": { "x": 200, "y": 180 }, "to": { "x": 340, "y": 180 }, "thickness": 22 }
+  ]
+}

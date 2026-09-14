@@ -1,0 +1,101 @@
+{
+  "$schema": "./_schema.json",
+  "title": "replace4",
+  "grid": {
+    "x": 140.2,
+    "y": 92.0
+  },
+  "nodes": [
+    {
+      "id": "ef989",
+      "kind": "commit",
+      "label": "ef989",
+      "col": 2,
+      "row": 0,
+      "dx": 2.91
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "e146b",
+      "kind": "commit",
+      "label": "e146b",
+      "col": 1,
+      "row": 0,
+      "dx": -3.92
+    },
+    {
+      "id": "c6e1e",
+      "kind": "commit",
+      "label": "c6e1e",
+      "col": 2,
+      "row": 1,
+      "dx": 2.91
+    },
+    {
+      "id": "history",
+      "kind": "ref",
+      "label": "history",
+      "col": 3,
+      "row": 1,
+      "dy": 0.99
+    },
+    {
+      "id": "node_81a70",
+      "kind": "commit",
+      "label": "81a70",
+      "col": 1,
+      "row": 1,
+      "dx": -3.94
+    },
+    {
+      "id": "node_622e8",
+      "kind": "commit",
+      "label": "622e8",
+      "col": 1,
+      "row": 2,
+      "dx": -3.86,
+      "dy": -1.0
+    },
+    {
+      "id": "node_9c68f",
+      "kind": "commit",
+      "label": "9c68f",
+      "col": 2,
+      "row": 2,
+      "dx": 2.91
+    },
+    {
+      "id": "node_94570",
+      "kind": "commit",
+      "label": "94570",
+      "col": 2,
+      "row": 3,
+      "dx": 2.91
+    },
+    {
+      "id": "c1822",
+      "kind": "commit",
+      "label": "c1822",
+      "col": 2,
+      "row": 4,
+      "dx": 2.91
+    }
+  ],
+  "edges": [
+    { "from": "e146b", "to": "master", "arrow": "forward" },
+    { "from": "ef989", "to": "e146b" },
+    { "from": "c6e1e", "to": "ef989" },
+    { "from": "node_9c68f", "to": "c6e1e" },
+    { "from": "node_94570", "to": "node_9c68f" },
+    { "from": "c1822", "to": "node_94570" },
+    { "from": "history", "to": "c6e1e", "arrow": "forward" },
+    { "from": "node_81a70", "to": "e146b", "route": "diagonal" },
+    { "from": "node_622e8", "to": "node_81a70" }
+  ]
+}

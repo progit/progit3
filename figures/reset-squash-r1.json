@@ -1,0 +1,141 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset squash r1",
+  "grid": {
+    "x": 141.4,
+    "y": 50.5
+  },
+  "nodes": [
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 3,
+      "row": 0,
+      "dx": 0.73
+    },
+    {
+      "id": "master",
+      "kind": "blob",
+      "label": "master",
+      "col": 3,
+      "row": 1,
+      "dx": 0.73,
+      "dy": -5.71
+    },
+    {
+      "id": "file-a-txt-v1",
+      "kind": "tree",
+      "label": "file-a.txt v1",
+      "col": 1,
+      "row": 2,
+      "dy": 12.72
+    },
+    {
+      "id": "file-b-txt-v1",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 2,
+      "row": 3,
+      "dy": -5.78
+    },
+    {
+      "id": "file-a-txt-v3",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 3,
+      "row": 2,
+      "dy": 12.57
+    },
+    {
+      "id": "file-b-txt-v1-2",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 2,
+      "row": 3,
+      "dy": -5.78
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 3,
+      "row": 4,
+      "dx": -0.78,
+      "dy": 21.67
+    },
+    {
+      "id": "file-a-txt-v3-2",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 3,
+      "row": 5,
+      "dx": -0.77,
+      "dy": 18.06
+    },
+    {
+      "id": "file-b-txt-v1-3",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 2,
+      "row": 6,
+      "dx": -1.37
+    },
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "col": 2,
+      "row": 4,
+      "dy": 21.67
+    },
+    {
+      "id": "file-a-txt-v3-3",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 2,
+      "row": 5,
+      "dy": 18.06
+    },
+    {
+      "id": "file-b-txt-v1-4",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 1,
+      "row": 6,
+      "dx": -0.58
+    },
+    {
+      "id": "head-2",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 1,
+      "row": 4,
+      "dx": 0.6,
+      "dy": 21.67
+    },
+    {
+      "id": "file-a-txt-v3-4",
+      "kind": "blob",
+      "label": "file-a.txt v3",
+      "col": 1,
+      "row": 5,
+      "dx": 0.6,
+      "dy": 18.06
+    },
+    {
+      "id": "file-b-txt-v1-5",
+      "kind": "commit",
+      "label": "file-b.txt v1",
+      "col": 0,
+      "row": 6
+    }
+  ],
+  "edges": [
+    { "from": "head", "to": "master", "arrow": "forward" },
+    { "from": "file-a-txt-v1", "to": "file-a-txt-v3" }
+  ]
+}

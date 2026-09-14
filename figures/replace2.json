@@ -1,0 +1,68 @@
+{
+  "$schema": "./_schema.json",
+  "title": "replace2",
+  "grid": {
+    "x": 137.2,
+    "y": 92.0
+  },
+  "nodes": [
+    {
+      "id": "ef989",
+      "kind": "commit",
+      "label": "ef989",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "c6e1e",
+      "kind": "commit",
+      "label": "c6e1e",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "node_9c68f",
+      "kind": "commit",
+      "label": "9c68f",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "node_94570",
+      "kind": "commit",
+      "label": "94570",
+      "col": 0,
+      "row": 3
+    },
+    {
+      "id": "c1822",
+      "kind": "commit",
+      "label": "c1822",
+      "col": 0,
+      "row": 4
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "history",
+      "kind": "ref",
+      "label": "history",
+      "col": 1,
+      "row": 1,
+      "dy": 1.0
+    }
+  ],
+  "edges": [
+    { "from": "c6e1e", "to": "ef989" },
+    { "from": "node_9c68f", "to": "c6e1e" },
+    { "from": "node_94570", "to": "node_9c68f" },
+    { "from": "c1822", "to": "node_94570" },
+    { "from": "master", "to": "ef989", "arrow": "forward" },
+    { "from": "history", "to": "c6e1e", "arrow": "forward" }
+  ]
+}

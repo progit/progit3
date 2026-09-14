@@ -1,0 +1,63 @@
+{
+  "$schema": "./_schema.json",
+  "title": "rerere2",
+  "grid": {
+    "x": 152.9,
+    "y": 66.0
+  },
+  "nodes": [
+    {
+      "id": "hello-world",
+      "kind": "commit",
+      "label": "hello world",
+      "col": 0,
+      "row": 1,
+      "dy": 2.0
+    },
+    {
+      "id": "hola-world",
+      "kind": "commit",
+      "label": "hola world",
+      "col": 1,
+      "row": 1,
+      "dy": 2.0
+    },
+    {
+      "id": "hola-mundo",
+      "kind": "commit",
+      "label": "hola mundo",
+      "col": 2,
+      "row": 1,
+      "dy": 2.0
+    },
+    {
+      "id": "hello-mundo",
+      "kind": "commit",
+      "label": "hello mundo",
+      "col": 1,
+      "row": 2,
+      "dy": -2.0
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "i18-world",
+      "kind": "ref",
+      "label": "i18-world",
+      "col": 1,
+      "row": 3
+    }
+  ],
+  "edges": [
+    { "from": "hola-world", "to": "hello-world" },
+    { "from": "hola-mundo", "to": "hola-world" },
+    { "from": "hello-mundo", "to": "hola-world" },
+    { "from": "master", "to": "hola-mundo", "arrow": "forward" },
+    { "from": "i18-world", "to": "hello-mundo", "arrow": "forward" }
+  ]
+}

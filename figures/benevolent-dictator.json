@@ -1,0 +1,88 @@
+{
+  "$schema": "./_schema.json",
+  "title": "benevolent dictator",
+  "grid": {
+    "x": 68.7,
+    "y": 77.9
+  },
+  "nodes": [
+    {
+      "id": "lieutenant",
+      "kind": "symref",
+      "label": "lieutenant",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "lieutenant-2",
+      "kind": "symref",
+      "label": "lieutenant",
+      "col": 1,
+      "row": 1,
+      "dx": 29.66
+    },
+    {
+      "id": "developer",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "dictator",
+      "kind": "ref",
+      "label": "dictator",
+      "col": 0,
+      "row": 0,
+      "dx": 11.36,
+      "dy": 1.25
+    },
+    {
+      "id": "developer-2",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 2,
+      "row": 2
+    },
+    {
+      "id": "developer-3",
+      "kind": "commit",
+      "label": [
+        "developer",
+        "public"
+      ],
+      "col": 4,
+      "row": 2
+    },
+    {
+      "id": "blessed",
+      "kind": "blob",
+      "label": [
+        "blessed",
+        "repository"
+      ],
+      "col": 4,
+      "row": 0,
+      "dy": -1.25
+    }
+  ],
+  "edges": [
+    { "from": "developer", "to": "lieutenant", "arrow": "forward" },
+    { "from": "developer-2", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "developer-3", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "lieutenant", "to": "dictator", "arrow": "forward" },
+    { "from": "lieutenant-2", "to": "dictator", "arrow": "forward", "route": "diagonal" },
+    { "from": "dictator", "to": "blessed", "arrow": "forward" },
+    { "from": "blessed", "to": "developer-3", "arrow": "forward" },
+    { "from": "blessed", "to": "lieutenant", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "lieutenant-2", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "developer", "arrow": "forward", "route": "diagonal", "style": "muted" },
+    { "from": "blessed", "to": "developer-2", "arrow": "forward", "route": "diagonal", "style": "muted" }
+  ]
+}

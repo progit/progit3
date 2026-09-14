@@ -1,0 +1,66 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset ex1",
+  "grid": {
+    "x": 141.0,
+    "y": 86.6
+  },
+  "nodes": [
+    {
+      "id": "index",
+      "kind": "tree",
+      "label": "Index",
+      "col": 1,
+      "row": 2,
+      "dy": 34.29
+    },
+    {
+      "id": "head",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 0,
+      "row": 2,
+      "dx": 0.57,
+      "dy": 34.29
+    },
+    {
+      "id": "file-txt",
+      "kind": "tree",
+      "label": [
+        "file.txt",
+        "v1"
+      ],
+      "col": 2,
+      "row": 3
+    },
+    {
+      "id": "working",
+      "kind": "ref",
+      "label": [
+        "Working",
+        "Directory"
+      ],
+      "col": 2,
+      "row": 2,
+      "dy": 34.25
+    },
+    {
+      "id": "head-2",
+      "kind": "commit",
+      "label": "HEAD",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "master",
+      "kind": "blob",
+      "label": "master",
+      "col": 0,
+      "row": 1,
+      "dy": -41.6
+    }
+  ],
+  "edges": [
+    { "from": "head-2", "to": "master", "arrow": "forward" }
+  ]
+}

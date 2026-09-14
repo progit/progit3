@@ -1,0 +1,71 @@
+{
+  "$schema": "./_schema.json",
+  "title": "checkout master",
+  "grid": {
+    "x": 145.0,
+    "y": 61.3
+  },
+  "nodes": [
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "f30ab",
+      "kind": "commit",
+      "label": "f30ab",
+      "col": 2,
+      "row": 2,
+      "dy": -0.6
+    },
+    {
+      "id": "node_87ab2",
+      "kind": "commit",
+      "label": "87ab2",
+      "col": 3,
+      "row": 2,
+      "dy": -0.6
+    },
+    {
+      "id": "node_34ac2",
+      "kind": "commit",
+      "label": "34ac2",
+      "col": 1,
+      "row": 2,
+      "dy": -0.6
+    },
+    {
+      "id": "node_98ca9",
+      "kind": "commit",
+      "label": "98ca9",
+      "col": 0,
+      "row": 2,
+      "dy": -0.6
+    },
+    {
+      "id": "testing",
+      "kind": "ref",
+      "label": "testing",
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "head",
+      "kind": "blob",
+      "label": "HEAD",
+      "col": 2,
+      "row": 0
+    }
+  ],
+  "edges": [
+    { "from": "node_34ac2", "to": "node_98ca9" },
+    { "from": "f30ab", "to": "node_34ac2" },
+    { "from": "node_87ab2", "to": "f30ab" },
+    { "from": "master", "to": "f30ab", "arrow": "forward" },
+    { "from": "testing", "to": "node_87ab2", "arrow": "forward" },
+    { "from": "head", "to": "master", "arrow": "forward" }
+  ]
+}
