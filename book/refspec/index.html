@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Internals: The Refspec"><meta property="og:title" content="The Refspec · Pro Git"><meta property="og:description" content="Pro Git — Git Internals: The Refspec"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>The Refspec · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Plumbing and Porcelain</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/objects/" data-astro-cid-kqdwmlpp>Git Objects</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_refs/" data-astro-cid-kqdwmlpp>Git References</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/packfiles/" data-astro-cid-kqdwmlpp>Packfiles</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/refspec/" data-astro-cid-kqdwmlpp>The Refspec</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/transfer_protocols/" data-astro-cid-kqdwmlpp>Transfer Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/maintenance_and_data_recovery/" data-astro-cid-kqdwmlpp>Maintenance and Data Recovery</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/environment_variables/" data-astro-cid-kqdwmlpp>Environment Variables</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_12/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/packfiles/" data-astro-cid-kgypjjoh>← Packfiles</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/transfer_protocols/" data-astro-cid-kgypjjoh>Transfer Protocols →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/plumbing_porcelain/" data-astro-cid-kgypjjoh>Git Internals</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:The Refspec" data-pagefind-filter="chapter:Git Internals" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_refspec">The Refspec</h3>
+<div class="paragraph">
+<p>Throughout this book, we&#8217;ve used simple mappings from remote branches to local references, but they can be more complex.
+Suppose you were following along with the last couple sections and had created a small local Git repository, and now wanted to add a <em>remote</em> to it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git remote add origin https://github.com/schacon/simplegit-progit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Running the command above adds a section to your repository&#8217;s <code>.git/config</code> file, specifying the name of the remote (<code>origin</code>), the URL of the remote repository, and the <em>refspec</em> to be used for fetching:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">[remote "origin"]
+	url = https://github.com/schacon/simplegit-progit
+	fetch = +refs/heads/*:refs/remotes/origin/*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The format of the refspec is, first, an optional <code>`, followed by `&lt;src&gt;:&lt;dst&gt;`, where `&lt;src&gt;` is the pattern for references on the remote side and `&lt;dst&gt;` is where those references will be tracked locally.
+The `</code> tells Git to update the reference even if it isn&#8217;t a fast-forward.</p>
+</div>
+<div class="paragraph">
+<p>In the default case that is automatically written by a <code>git remote add origin</code> command, Git fetches all the references under <code>refs/heads/</code> on the server and writes them to <code>refs/remotes/origin/</code> locally.
+So, if there is a <code>master</code> branch on the server, you can access the log of that branch locally via any of the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log origin/master
+$ git log remotes/origin/master
+$ git log refs/remotes/origin/master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>They&#8217;re all equivalent, because Git expands each of them to <code>refs/remotes/origin/master</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you want Git instead to pull down only the <code>master</code> branch each time, and not every other branch on the remote server, you can change the fetch line to refer to that branch only:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>fetch = +refs/heads/master:refs/remotes/origin/master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is just the default refspec for <code>git fetch</code> for that remote.
+If you want to do a one-time only fetch, you can specify the specific refspec on the command line, too.
+To pull the <code>master</code> branch on the remote down to <code>origin/mymaster</code> locally, you can run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git fetch origin master:refs/remotes/origin/mymaster</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also specify multiple refspecs.
+On the command line, you can pull down several branches like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git fetch origin master:refs/remotes/origin/mymaster \
+	 topic:refs/remotes/origin/topic
+From git@github.com:schacon/simplegit
+ ! [rejected]        master     -&gt; origin/mymaster  (non fast forward)
+ * [new branch]      topic      -&gt; origin/topic</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, the <code>master</code> branch pull was rejected because it wasn&#8217;t listed as a fast-forward reference.
+You can override that by specifying the <code>+</code> in front of the refspec.</p>
+</div>
+<div class="paragraph">
+<p>You can also specify multiple refspecs for fetching in your configuration file.
+If you want to always fetch the <code>master</code> and <code>experiment</code> branches from the <code>origin</code> remote, add two lines:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">[remote "origin"]
+	url = https://github.com/schacon/simplegit-progit
+	fetch = +refs/heads/master:refs/remotes/origin/master
+	fetch = +refs/heads/experiment:refs/remotes/origin/experiment</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since Git 2.6.0 you can use partial globs in the pattern to match multiple branches, so this works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">fetch = +refs/heads/qa*:refs/remotes/origin/qa*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Even better, you can use namespaces (or directories) to accomplish the same with more structure.
+If you have a QA team that pushes a series of branches, and you want to get the <code>master</code> branch and any of the QA team&#8217;s branches but nothing else, you can use a config section like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">[remote "origin"]
+	url = https://github.com/schacon/simplegit-progit
+	fetch = +refs/heads/master:refs/remotes/origin/master
+	fetch = +refs/heads/qa/*:refs/remotes/origin/qa/*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you have a complex workflow process that has a QA team pushing branches, developers pushing branches, and integration teams pushing and collaborating on remote branches, you can namespace them easily this way.</p>
+</div>
+<div class="sect3">
+<h4 id="_pushing_refspecs">Pushing Refspecs</h4>
+<div class="paragraph">
+<p>It&#8217;s nice that you can fetch namespaced references that way, but how does the QA team get their branches into a <code>qa/</code> namespace in the first place?
+You accomplish that by using refspecs to push.</p>
+</div>
+<div class="paragraph">
+<p>If the QA team wants to push their <code>master</code> branch to <code>qa/master</code> on the remote server, they can run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git push origin master:refs/heads/qa/master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If they want Git to do that automatically each time they run <code>git push origin</code>, they can add a <code>push</code> value to their config file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">[remote "origin"]
+	url = https://github.com/schacon/simplegit-progit
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	push = refs/heads/master:refs/heads/qa/master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, this will cause a <code>git push origin</code> to push the local <code>master</code> branch to the remote <code>qa/master</code> branch by default.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot use the refspec to fetch from one repository and push to another one.
+For an example to do so, refer to <a href="/book/pull_requests_and_forges/#_fetch_and_push_on_different_repositories">Ch 4, Distributed Git</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_references">Deleting References</h4>
+<div class="paragraph">
+<p>You can also use the refspec to delete references from the remote server by running something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git push origin :topic</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because the refspec is <code>&lt;src&gt;:&lt;dst&gt;</code>, by leaving off the <code>&lt;src&gt;</code> part, this basically says to make the <code>topic</code> branch on the remote nothing, which deletes it.</p>
+</div>
+<div class="paragraph">
+<p>Or you can use the newer syntax (available since Git v1.7.0):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git push origin --delete topic</code></pre>
+</div>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/packfiles/" data-astro-cid-kgypjjoh>← Packfiles</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/transfer_protocols/" data-astro-cid-kgypjjoh>Transfer Protocols →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

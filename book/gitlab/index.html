@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Servers: GitLab"><meta property="og:title" content="GitLab · Pro Git"><meta property="og:description" content="Pro Git — Git Servers: GitLab"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>GitLab · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>The Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_git_on_a_server/" data-astro-cid-kqdwmlpp>Getting Git on a Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/generate_ssh_key/" data-astro-cid-kqdwmlpp>Generating Your SSH Public Key</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/setting_up_server/" data-astro-cid-kqdwmlpp>Setting Up the Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_daemon/" data-astro-cid-kqdwmlpp>Git Daemon</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/smart_http_2/" data-astro-cid-kqdwmlpp>Smart HTTP</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitweb/" data-astro-cid-kqdwmlpp>GitWeb</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/gitlab/" data-astro-cid-kqdwmlpp>GitLab</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/third_party_hosted_options/" data-astro-cid-kqdwmlpp>Third Party Hosted Options</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_10/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/gitweb/" data-astro-cid-kgypjjoh>← GitWeb</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/third_party_hosted_options/" data-astro-cid-kgypjjoh>Third Party Hosted Options →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/the_protocols/" data-astro-cid-kgypjjoh>Git Servers</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:GitLab" data-pagefind-filter="chapter:Git Servers" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_gitlab">GitLab</h3>
+<div class="paragraph">
+<p>
+GitWeb is pretty simplistic though.
+If you&#8217;re looking for a modern, fully featured Git server, there are several open source solutions out there that you can install instead.
+As GitLab is one of the popular ones, we&#8217;ll cover installing and using it as an example.
+This is harder than the GitWeb option and will require more maintenance, but it is a fully featured option.</p>
+</div>
+<div class="sect3">
+<h4 id="_installation">Installation</h4>
+<div class="paragraph">
+<p>GitLab is a database-backed web application, so its installation is more involved than some other Git servers.
+Fortunately, this process is well-documented and supported.
+GitLab strongly recommends installing GitLab on your server via the official Omnibus GitLab package.</p>
+</div>
+<div class="paragraph">
+<p>The other installation options are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GitLab Helm chart, for use with Kubernetes.</p>
+</li>
+<li>
+<p>Dockerized GitLab packages for use with Docker.</p>
+</li>
+<li>
+<p>From the source files.</p>
+</li>
+<li>
+<p>Cloud providers such as AWS, Google Cloud Platform, Azure, OpenShift and Digital Ocean.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information read the <a href="https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/README.md" target="_blank" rel="noopener">GitLab Community Edition (CE) readme</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_administration">Administration</h4>
+<div class="paragraph">
+<p>GitLab&#8217;s administration interface is accessed over the web.
+Simply point your browser to the hostname or IP address where GitLab is installed, and log in as the <code>root</code> user.
+The password will depend on your installation type but by default, Omnibus GitLab automatically generates a password for and stores it to /etc/gitlab/initial_root_password for at least 24 hours.
+Follow the documentation for more details.
+After you&#8217;ve logged in, click the &#8220;Admin area&#8221; icon in the menu at the top right.</p>
+</div>
+<div id="gitlab_menu" class="imageblock">
+<div class="content">
+<img src="/images/gitlab-menu.png" alt="The “Admin area” item in the GitLab menu">
+</div>
+<div class="title">Figure 113. The &#8220;Admin area&#8221; item in the GitLab menu</div>
+</div>
+<div class="sect4">
+<h5 id="_users">Users</h5>
+<div class="paragraph">
+<p>Everybody using your GitLab server must have a user account.
+User accounts are quite simple, they mainly contain personal information attached to login data.
+Each user account has a <strong>namespace</strong>, which is a logical grouping of projects that belong to that user.
+If the user jane had a project named project, that project&#8217;s URL would be <code><a href="http://server/jane/project" class="bare">http://server/jane/project</a></code>.</p>
+</div>
+<div id="gitlab_users" class="imageblock">
+<div class="content">
+<img src="/images/gitlab-users.png" alt="The GitLab user administration screen">
+</div>
+<div class="title">Figure 114. The GitLab user administration screen</div>
+</div>
+<div class="paragraph">
+<p>You can remove a user account in two ways:
+&#8220;Blocking&#8221; a user prevents them from logging into the GitLab instance, but all of the data under that user&#8217;s namespace will be preserved, and commits signed with that user&#8217;s email address will still link back to their profile.</p>
+</div>
+<div class="paragraph">
+<p>&#8220;Destroying&#8221; a user, on the other hand, completely removes them from the database and filesystem.
+All projects and data in their namespace is removed, and any groups they own will also be removed.
+This is obviously a much more permanent and destructive action, and you will rarely need it.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_gitlab_groups_section">Groups</h5>
+<div class="paragraph">
+<p>A GitLab group is a collection of projects, along with data about how users can access those projects.
+Each group has a project namespace (the same way that users do), so if the group training has a project materials, its URL would be <code><a href="http://server/training/materials" class="bare">http://server/training/materials</a></code>.</p>
+</div>
+<div id="gitlab_groups" class="imageblock">
+<div class="content">
+<img src="/images/gitlab-groups.png" alt="The GitLab group administration screen">
+</div>
+<div class="title">Figure 115. The GitLab group administration screen</div>
+</div>
+<div class="paragraph">
+<p>Each group is associated with a number of users, each of which has a level of permissions for the group&#8217;s projects and the group itself.
+These range from &#8220;Guest&#8221; (issues and chat only) to &#8220;Owner&#8221; (full control of the group, its members, and its projects).
+The types of permissions are too numerous to list here, but GitLab has a helpful link on the administration screen.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_projects">Projects</h5>
+<div class="paragraph">
+<p>A GitLab project roughly corresponds to a single Git repository.
+Every project belongs to a single namespace, either a user or a group.
+If the project belongs to a user, the owner of the project has direct control over who has access to the project; if the project belongs to a group, the group&#8217;s user-level permissions will take effect.</p>
+</div>
+<div class="paragraph">
+<p>Every project has a visibility level, which controls who has read access to that project&#8217;s pages and repository.
+If a project is <em>Private</em>, the project&#8217;s owner must explicitly grant access to specific users.
+An <em>Internal</em> project is visible to any logged-in user, and a <em>Public</em> project is visible to anyone.
+Note that this controls both <code>git fetch</code> access as well as access to the web UI for that project.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_hooks">Hooks</h5>
+<div class="paragraph">
+<p>GitLab includes support for hooks, both at a project or system level.
+For either of these, the GitLab server will perform an HTTP POST with some descriptive JSON whenever relevant events occur.
+This is a great way to connect your Git repositories and GitLab instance to the rest of your development automation, such as CI servers, chat rooms, or deployment tools.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_usage">Basic Usage</h4>
+<div class="paragraph">
+<p>The first thing you&#8217;ll want to do with GitLab is create a new project.
+You can do this by clicking on the &#8220;+&#8221; icon on the toolbar.
+You&#8217;ll be asked for the project&#8217;s name, which namespace it should belong to, and what its visibility level should be.
+Most of what you specify here isn&#8217;t permanent, and can be changed later through the settings interface.
+Click &#8220;Create Project&#8221;, and you&#8217;re done.</p>
+</div>
+<div class="paragraph">
+<p>Once the project exists, you&#8217;ll probably want to connect it with a local Git repository.
+Each project is accessible over HTTPS or SSH, either of which can be used to configure a Git remote.
+The URLs are visible at the top of the project&#8217;s home page.
+For an existing local repository, this command will create a remote named <code>gitlab</code> to the hosted location:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git remote add gitlab https://server/namespace/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t have a local copy of the repository, you can simply do this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone https://server/namespace/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The web UI provides access to several useful views of the repository itself.
+Each project&#8217;s home page shows recent activity, and links along the top will lead you to views of the project&#8217;s files and commit log.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_working_together">Working Together</h4>
+<div class="paragraph">
+<p>The simplest way of working together on a GitLab project is by giving each user direct push access to the Git repository.
+You can add a user to a project by going to the &#8220;Members&#8221; section of that project&#8217;s settings, and associating the new user with an access level (the different access levels are discussed a bit in <a href="/book/gitlab/#_gitlab_groups_section">Groups</a>).
+By giving a user an access level of &#8220;Developer&#8221; or above, that user can push commits and branches directly to the repository.</p>
+</div>
+<div class="paragraph">
+<p>Another, more decoupled way of collaboration is by using merge requests.
+This feature enables any user that can see a project to contribute to it in a controlled way.
+Users with direct access can simply create a branch, push commits to it, and open a merge request from their branch back into <code>master</code> or any other branch.
+Users who don&#8217;t have push permissions for a repository can &#8220;fork&#8221; it to create their own copy, push commits to <em>their</em> copy, and open a merge request from their fork back to the main project.
+This model allows the owner to be in full control of what goes into the repository and when, while allowing contributions from untrusted users.</p>
+</div>
+<div class="paragraph">
+<p>Merge requests and issues are the main units of long-lived discussion in GitLab.
+Each merge request allows a line-by-line discussion of the proposed change (which supports a lightweight kind of code review), as well as a general overall discussion thread.
+Both can be assigned to users, or organized into milestones.</p>
+</div>
+<div class="paragraph">
+<p>This section is focused mainly on the Git-related features of GitLab, but as a mature project, it provides many other features to help your team work together, such as project wikis and system maintenance tools.
+One benefit to GitLab is that, once the server is set up and running, you&#8217;ll rarely need to tweak a configuration file or access the server via SSH; most administration and general usage can be done through the in-browser interface.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/gitweb/" data-astro-cid-kgypjjoh>← GitWeb</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/third_party_hosted_options/" data-astro-cid-kgypjjoh>Third Party Hosted Options →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
