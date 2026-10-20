@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Branching: Rebasing"><meta property="og:title" content="Rebasing · Pro Git"><meta property="og:description" content="Pro Git — Git Branching: Rebasing"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Rebasing · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Branches in a Nutshell</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/basic_branching_and_merging/" data-astro-cid-kqdwmlpp>Basic Branching and Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branch_management/" data-astro-cid-kqdwmlpp>Branch Management</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branching_workflows/" data-astro-cid-kqdwmlpp>Branching Workflows</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/worktrees/" data-astro-cid-kqdwmlpp>Worktrees</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/remote_branches/" data-astro-cid-kqdwmlpp>Remote Branches</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/rebasing/" data-astro-cid-kqdwmlpp>Rebasing</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_3/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/remote_branches/" data-astro-cid-kgypjjoh>← Remote Branches</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/summary_3/" data-astro-cid-kgypjjoh>Summary →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/git_branches_overview/" data-astro-cid-kgypjjoh>Git Branching</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Rebasing" data-pagefind-filter="chapter:Git Branching" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_rebasing">Rebasing</h3>
+<div class="paragraph">
+<p>
+In Git, there are two main ways to integrate changes from one branch into another: the <code>merge</code> and the <code>rebase</code>.
+In this section you&#8217;ll learn what rebasing is, how to do it, why it&#8217;s a pretty amazing tool, and in what cases you won&#8217;t want to use it.</p>
+</div>
+<div class="sect3">
+<h4 id="_the_basic_rebase">The Basic Rebase</h4>
+<div class="paragraph">
+<p>If you go back to an earlier example from <a href="/book/basic_branching_and_merging/#_basic_merging">Basic Merging</a>, you can see that you diverged your work and made commits on two different branches.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-rebase-1.png" alt="Simple divergent history">
+</div>
+<div class="title">Figure 35. Simple divergent history</div>
+</div>
+<div class="paragraph">
+<p>The easiest way to integrate the branches, as we&#8217;ve already covered, is the <code>merge</code> command.
+It performs a three-way merge between the two latest branch snapshots (<code>C3</code> and <code>C4</code>) and the most recent common ancestor of the two (<code>C2</code>), creating a new snapshot (and commit).</p>
+</div>
+<div id="rebasing-merging-example" class="imageblock">
+<div class="content">
+<img src="/images/basic-rebase-2.png" alt="Merging to integrate diverged work history">
+</div>
+<div class="title">Figure 36. Merging to integrate diverged work history</div>
+</div>
+<div class="paragraph">
+<p>However, there is another way: you can take the patch of the change that was introduced in <code>C4</code> and reapply it on top of <code>C3</code>.
+In Git, this is called <em>rebasing</em>.
+With the <code>rebase</code> command, you can take all the changes that were committed on one branch and replay them on a different branch.</p>
+</div>
+<div class="paragraph">
+<p>For this example, you would check out the <code>experiment</code> branch, and then rebase it onto the <code>master</code> branch as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This operation works by going to the common ancestor of the two branches (the one you&#8217;re on and the one you&#8217;re rebasing onto), getting the diff introduced by each commit of the branch you&#8217;re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-rebase-3.png" alt="Rebasing the change introduced in `C4` onto `C3`">
+</div>
+<div class="title">Figure 37. Rebasing the change introduced in <code>C4</code> onto <code>C3</code></div>
+</div>
+<div class="paragraph">
+<p>At this point, you can go back to the <code>master</code> branch and do a fast-forward merge.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+$ git merge experiment</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-rebase-4.png" alt="Fast-forwarding the `master` branch">
+</div>
+<div class="title">Figure 38. Fast-forwarding the <code>master</code> branch</div>
+</div>
+<div class="paragraph">
+<p>Now, the snapshot pointed to by <code>C4'</code> is exactly the same as the one that was pointed to by <code>C5</code> in <a href="/book/rebasing/#rebasing-merging-example">the merge example</a>.
+There is no difference in the end product of the integration, but rebasing makes for a cleaner history.
+If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.</p>
+</div>
+<div class="paragraph">
+<p>Often, you&#8217;ll do this to make sure your commits apply cleanly on a remote branch&#8201;&#8212;&#8201;perhaps in a project to which you&#8217;re trying to contribute but that you don&#8217;t maintain.
+In this case, you&#8217;d do your work in a branch and then rebase your work onto <code>origin/master</code> when you were ready to submit your patches to the main project.
+That way, the maintainer doesn&#8217;t have to do any integration work&#8201;&#8212;&#8201;just a fast-forward or a clean apply.</p>
+</div>
+<div class="paragraph">
+<p>Note that the snapshot pointed to by the final commit you end up with, whether it&#8217;s the last of the rebased commits for a rebase or the final merge commit after a merge, is the same snapshot&#8201;&#8212;&#8201;it&#8217;s only the history that is different.
+Rebasing replays changes from one line of work onto another in the order they were introduced, whereas merging takes the endpoints and merges them together.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_more_interesting_rebases">More Interesting Rebases</h4>
+<div class="paragraph">
+<p>You can also have your rebase replay on something other than the rebase target branch.
+Take a history like <a href="/book/rebasing/#rbdiag_e">A history with a topic branch off another topic branch</a>, for example.
+You branched a topic branch (<code>server</code>) to add some server-side functionality to your project, and made a commit.
+Then, you branched off that to make the client-side changes (<code>client</code>) and committed a few times.
+Finally, you went back to your <code>server</code> branch and did a few more commits.</p>
+</div>
+<div id="rbdiag_e" class="imageblock">
+<div class="content">
+<img src="/images/interesting-rebase-1.png" alt="A history with a topic branch off another topic branch">
+</div>
+<div class="title">Figure 39. A history with a topic branch off another topic branch</div>
+</div>
+<div class="paragraph">
+<p>Suppose you decide that you want to merge your client-side changes into your mainline for a release, but you want to hold off on the server-side changes until it&#8217;s tested further.
+You can take the changes on <code>client</code> that aren&#8217;t on <code>server</code> (<code>C8</code> and <code>C9</code>) and replay them on your <code>master</code> branch by using the <code>--onto</code> option of <code>git rebase</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git rebase --onto master server client</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This basically says, &#8220;Take the <code>client</code> branch, figure out the patches since it diverged from the <code>server</code> branch, and replay these patches in the <code>client</code> branch as if it was based directly off the <code>master</code> branch instead.&#8221;
+It&#8217;s a bit complex, but the result is pretty cool.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/interesting-rebase-2.png" alt="Rebasing a topic branch off another topic branch">
+</div>
+<div class="title">Figure 40. Rebasing a topic branch off another topic branch</div>
+</div>
+<div class="paragraph">
+<p>Now you can fast-forward your <code>master</code> branch (see <a href="/book/rebasing/#rbdiag_g">Fast-forwarding your <code>master</code> branch to include the <code>client</code> branch changes</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+$ git merge client</code></pre>
+</div>
+</div>
+<div id="rbdiag_g" class="imageblock">
+<div class="content">
+<img src="/images/interesting-rebase-3.png" alt="Fast-forwarding your `master` branch to include the `client` branch changes">
+</div>
+<div class="title">Figure 41. Fast-forwarding your <code>master</code> branch to include the <code>client</code> branch changes</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you decide to pull in your <code>server</code> branch as well.
+You can rebase the <code>server</code> branch onto the <code>master</code> branch without having to check it out first by running <code>git rebase &lt;basebranch&gt; &lt;topicbranch&gt;</code>&#8201;&#8212;&#8201;which checks out the topic branch (in this case, <code>server</code>) for you and replays it onto the base branch (<code>master</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git rebase master server</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This replays your <code>server</code> work on top of your <code>master</code> work, as shown in <a href="/book/rebasing/#rbdiag_h">Rebasing your <code>server</code> branch on top of your <code>master</code> branch</a>.</p>
+</div>
+<div id="rbdiag_h" class="imageblock">
+<div class="content">
+<img src="/images/interesting-rebase-4.png" alt="Rebasing your `server` branch on top of your `master` branch">
+</div>
+<div class="title">Figure 42. Rebasing your <code>server</code> branch on top of your <code>master</code> branch</div>
+</div>
+<div class="paragraph">
+<p>Then, you can fast-forward the base branch (<code>master</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+$ git merge server</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can remove the <code>client</code> and <code>server</code> branches because all the work is integrated and you don&#8217;t need them anymore, leaving your history for this entire process looking like <a href="/book/rebasing/#rbdiag_i">Final commit history</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git branch -d client
+$ git branch -d server</code></pre>
+</div>
+</div>
+<div id="rbdiag_i" class="imageblock">
+<div class="content">
+<img src="/images/interesting-rebase-5.png" alt="Final commit history">
+</div>
+<div class="title">Figure 43. Final commit history</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rebase_peril">The Perils of Rebasing</h4>
+<div class="paragraph">
+<p>
+Ahh, but the bliss of rebasing isn&#8217;t without its drawbacks, which can be summed up in a single line:</p>
+</div>
+<div class="paragraph">
+<p><strong>Do not rebase commits that exist outside your repository and that people may have based work on.</strong></p>
+</div>
+<div class="paragraph">
+<p>If you follow that guideline, you&#8217;ll be fine.
+If you don&#8217;t, people will hate you, and you&#8217;ll be scorned by friends and family.</p>
+</div>
+<div class="paragraph">
+<p>When you rebase stuff, you&#8217;re abandoning existing commits and creating new ones that are similar but different.
+If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with <code>git rebase</code> and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s look at an example of how rebasing work that you&#8217;ve made public can cause problems.
+Suppose you clone from a central server and then do some work off that.
+Your commit history looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/perils-of-rebasing-1.png" alt="Clone a repository, and base some work on it">
+</div>
+<div class="title">Figure 44. Clone a repository, and base some work on it</div>
+</div>
+<div class="paragraph">
+<p>Now, someone else does more work that includes a merge, and pushes that work to the central server.
+You fetch it and merge the new remote branch into your work, making your history look something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/perils-of-rebasing-2.png" alt="Fetch more commits, and merge them into your work">
+</div>
+<div class="title">Figure 45. Fetch more commits, and merge them into your work</div>
+</div>
+<div class="paragraph">
+<p>Next, the person who pushed the merged work decides to go back and rebase their work instead; they do a <code>git push --force</code> to overwrite the history on the server.
+You then fetch from that server, bringing down the new commits.</p>
+</div>
+<div id="_pre_merge_rebase_work" class="imageblock">
+<div class="content">
+<img src="/images/perils-of-rebasing-3.png" alt="Someone pushes rebased commits, abandoning commits you&#8217;ve based your work on">
+</div>
+<div class="title">Figure 46. Someone pushes rebased commits, abandoning commits you&#8217;ve based your work on</div>
+</div>
+<div class="paragraph">
+<p>Now you&#8217;re both in a pickle.
+If you do a <code>git pull</code>, you&#8217;ll create a merge commit which includes both lines of history, and your repository will look like this:</p>
+</div>
+<div id="_merge_rebase_work" class="imageblock">
+<div class="content">
+<img src="/images/perils-of-rebasing-4.png" alt="You merge in the same work again into a new merge commit">
+</div>
+<div class="title">Figure 47. You merge in the same work again into a new merge commit</div>
+</div>
+<div class="paragraph">
+<p>If you run a <code>git log</code> when your history looks like this, you&#8217;ll see two commits that have the same author, date, and message, which will be confusing.
+Furthermore, if you push this history back up to the server, you&#8217;ll reintroduce all those rebased commits to the central server, which can further confuse people.
+It&#8217;s pretty safe to assume that the other developer doesn&#8217;t want <code>C4</code> and <code>C6</code> to be in the history; that&#8217;s why they rebased in the first place.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rebase_rebase">Rebase When You Rebase</h4>
+<div class="paragraph">
+<p>If you <strong>do</strong> find yourself in a situation like this, Git has some further magic that might help you out.
+If someone on your team force pushes changes that overwrite work that you&#8217;ve based work on, your challenge is to figure out what is yours and what they&#8217;ve rewritten.</p>
+</div>
+<div class="paragraph">
+<p>It turns out that in addition to the commit SHA-1 checksum, Git also calculates a checksum that is based just on the patch introduced with the commit.
+This is called a &#8220;patch-id&#8221;.</p>
+</div>
+<div class="paragraph">
+<p>If you pull down work that was rewritten and rebase it on top of the new commits from your partner, Git can often successfully figure out what is uniquely yours and apply them back on top of the new branch.</p>
+</div>
+<div class="paragraph">
+<p>For instance, in the previous scenario, if instead of doing a merge when we&#8217;re at <a href="/book/rebasing/#_pre_merge_rebase_work">Someone pushes rebased commits, abandoning commits you&#8217;ve based your work on</a> we run <code>git rebase teamone/master</code>, Git will:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Determine what work is unique to our branch (<code>C2</code>, <code>C3</code>, <code>C4</code>, <code>C6</code>, <code>C7</code>)</p>
+</li>
+<li>
+<p>Determine which are not merge commits (<code>C2</code>, <code>C3</code>, <code>C4</code>)</p>
+</li>
+<li>
+<p>Determine which have not been rewritten into the target branch (just <code>C2</code> and <code>C3</code>, since <code>C4</code> is the same patch as <code>C4'</code>)</p>
+</li>
+<li>
+<p>Apply those commits to the top of <code>teamone/master</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So instead of the result we see in <a href="/book/rebasing/#_merge_rebase_work">You merge in the same work again into a new merge commit</a>, we would end up with something more like <a href="/book/rebasing/#_rebase_rebase_work">Rebase on top of force-pushed rebase work</a>.</p>
+</div>
+<div id="_rebase_rebase_work" class="imageblock">
+<div class="content">
+<img src="/images/perils-of-rebasing-5.png" alt="Rebase on top of force-pushed rebase work">
+</div>
+<div class="title">Figure 48. Rebase on top of force-pushed rebase work</div>
+</div>
+<div class="paragraph">
+<p>This only works if <code>C4</code> and <code>C4'</code> that your partner made are almost exactly the same patch.
+Otherwise the rebase won&#8217;t be able to tell that it&#8217;s a duplicate and will add another <code>C4</code>-like patch (which will probably fail to apply cleanly, since the changes would already be at least somewhat there).</p>
+</div>
+<div class="paragraph">
+<p>You can also simplify this by running a <code>git pull --rebase</code> instead of a normal <code>git pull</code>.
+Or you could do it manually with a <code>git fetch</code> followed by a <code>git rebase teamone/master</code> in this case.</p>
+</div>
+<div class="paragraph">
+<p>If you are using <code>git pull</code> and want to make <code>--rebase</code> the default, you can set the <code>pull.rebase</code> config value with something like <code>git config --global pull.rebase true</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you only ever rebase commits that have never left your own computer, you&#8217;ll be just fine.
+If you rebase commits that have been pushed, but that no one else has based commits from, you&#8217;ll also be fine.
+If you rebase commits that have already been pushed publicly, and people may have based work on those commits, then you may be in for some frustrating trouble, and the scorn of your teammates.</p>
+</div>
+<div class="paragraph">
+<p>If you or a partner does find it necessary at some point, make sure everyone knows to run <code>git pull --rebase</code> to try to make the pain after it happens a little bit simpler.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rebase_vs_merge">Rebase vs. Merge</h4>
+<div class="paragraph">
+<p>
+Now that you&#8217;ve seen rebasing and merging in action, you may be wondering which one is better.
+Before we can answer this, let&#8217;s step back a bit and talk about what history means.</p>
+</div>
+<div class="paragraph">
+<p>One point of view on this is that your repository&#8217;s commit history is a <strong>record of what actually happened.</strong>
+It&#8217;s a historical document, valuable in its own right, and shouldn&#8217;t be tampered with.
+From this angle, changing the commit history is almost blasphemous; you&#8217;re <em>lying</em> about what actually transpired.
+So what if there was a messy series of merge commits?
+That&#8217;s how it happened, and the repository should preserve that for posterity.</p>
+</div>
+<div class="paragraph">
+<p>The opposing point of view is that the commit history is the <strong>story of how your project was made.</strong>
+You wouldn&#8217;t publish the first draft of a book, so why show your messy work?
+When you&#8217;re working on a project, you may need a record of all your missteps and dead-end paths, but when it&#8217;s time to show your work to the world, you may want to tell a more coherent story of how to get from A to B.
+People in this camp use tools like <code>rebase</code> and <code>filter-branch</code> to rewrite their commits before they&#8217;re merged into the mainline branch.
+They use tools like <code>rebase</code> and <code>filter-branch</code>, to tell the story in the way that&#8217;s best for future readers.</p>
+</div>
+<div class="paragraph">
+<p>Now, to the question of whether merging or rebasing is better: hopefully you&#8217;ll see that it&#8217;s not that simple.
+Git is a powerful tool, and allows you to do many things to and with your history, but every team and every project is different.
+Now that you know how both of these things work, it&#8217;s up to you to decide which one is best for your particular situation.</p>
+</div>
+<div class="paragraph">
+<p>You can get the best of both worlds: rebase local changes before pushing to clean up your work, but never rebase anything that you&#8217;ve pushed somewhere.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/remote_branches/" data-astro-cid-kgypjjoh>← Remote Branches</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/summary_3/" data-astro-cid-kgypjjoh>Summary →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
