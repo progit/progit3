@@ -1,0 +1,153 @@
+{
+  "$schema": "./_schema.json",
+  "title": "reset checkout",
+  "grid": {
+    "x": 86.2,
+    "y": 53.3
+  },
+  "nodes": [
+    {
+      "id": "commit-a",
+      "kind": "commit",
+      "label": "commit A",
+      "col": 4,
+      "row": 2,
+      "dx": -30.9,
+      "dy": 1.4
+    },
+    {
+      "id": "commit-b",
+      "kind": "commit",
+      "label": "commit B",
+      "col": 5,
+      "row": 2,
+      "dy": 1.4
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 1,
+      "dx": 12.35,
+      "dy": 0.7
+    },
+    {
+      "id": "develop",
+      "kind": "ref",
+      "label": "develop",
+      "col": 5,
+      "row": 1,
+      "dx": -43.05,
+      "dy": 0.7
+    },
+    {
+      "id": "head",
+      "kind": "tree",
+      "label": "HEAD",
+      "col": 5,
+      "row": 0,
+      "dx": -43.04
+    },
+    {
+      "id": "commit-a-2",
+      "kind": "commit",
+      "label": "commit A",
+      "col": 0,
+      "row": 4,
+      "dy": -1.2
+    },
+    {
+      "id": "commit-b-2",
+      "kind": "commit",
+      "label": "commit B",
+      "col": 1,
+      "row": 4,
+      "dx": 30.8,
+      "dy": -1.2
+    },
+    {
+      "id": "head-2",
+      "kind": "tree",
+      "label": "HEAD",
+      "col": 1,
+      "row": 2,
+      "dx": 30.8,
+      "dy": -2.6
+    },
+    {
+      "id": "master-2",
+      "kind": "ref",
+      "label": "master",
+      "col": 0,
+      "row": 3,
+      "dy": -1.89
+    },
+    {
+      "id": "develop-2",
+      "kind": "ref",
+      "label": "develop",
+      "col": 1,
+      "row": 3,
+      "dx": 30.81,
+      "dy": -1.89
+    },
+    {
+      "id": "commit-a-3",
+      "kind": "commit",
+      "label": "commit A",
+      "col": 3,
+      "row": 6,
+      "dx": 12.36
+    },
+    {
+      "id": "commit-b-3",
+      "kind": "commit",
+      "label": "commit B",
+      "col": 5,
+      "row": 6,
+      "dx": -43.03
+    },
+    {
+      "id": "master-3",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 5,
+      "dx": 12.35,
+      "dy": -0.59
+    },
+    {
+      "id": "develop-3",
+      "kind": "ref",
+      "label": "develop",
+      "col": 5,
+      "row": 5,
+      "dx": -43.04,
+      "dy": -0.51
+    },
+    {
+      "id": "head-3",
+      "kind": "tree",
+      "label": "HEAD",
+      "col": 3,
+      "row": 4,
+      "dx": 12.35,
+      "dy": -1.21
+    }
+  ],
+  "edges": [
+    { "from": "commit-b", "to": "commit-a" },
+    { "from": "master", "to": "commit-a", "arrow": "forward" },
+    { "from": "develop", "to": "commit-b", "arrow": "forward" },
+    { "from": "head", "to": "develop", "arrow": "forward" },
+    { "from": "commit-b-2", "to": "commit-a-2" },
+    { "from": "master-2", "to": "commit-a-2", "arrow": "forward" },
+    { "from": "develop-2", "to": "commit-b-2", "arrow": "forward" },
+    { "from": "head-2", "to": "commit-b-2", "arrow": "forward" },
+    { "from": "commit-b-3", "to": "commit-a-3" },
+    { "from": "master-3", "to": "commit-a-3", "arrow": "forward" },
+    { "from": "develop-3", "to": "commit-b-3", "arrow": "forward" },
+    { "from": "head-3", "to": "master-3", "arrow": "forward" }
+  ]
+}

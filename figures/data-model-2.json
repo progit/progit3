@@ -1,0 +1,56 @@
+{
+  "$schema": "./_schema.json",
+  "title": "data model 2",
+  "grid": {
+    "x": 115.5,
+    "y": 88.8
+  },
+  "nodes": [
+    {
+      "id": "tree-3c4e9c",
+      "kind": "tree",
+      "label": "tree",
+      "col": 1,
+      "row": 0,
+      "dy": 12.5
+    },
+    {
+      "id": "tree-d8329f",
+      "kind": "tree",
+      "label": "tree",
+      "col": 2,
+      "row": 1,
+      "dy": 18.5
+    },
+    {
+      "id": "blob-fa49b0",
+      "kind": "blob",
+      "label": "\"new file\"",
+      "col": 0,
+      "row": 1,
+      "dy": 21.5
+    },
+    {
+      "id": "blob-1f7a7a",
+      "kind": "blob",
+      "label": "\"version 2\"",
+      "col": 1,
+      "row": 1,
+      "dy": 21.5
+    },
+    {
+      "id": "blob-83baae",
+      "kind": "blob",
+      "label": "\"version 1\"",
+      "col": 2,
+      "row": 2,
+      "dy": 21.5
+    }
+  ],
+  "edges": [
+    { "from": "tree-3c4e9c", "to": "blob-fa49b0", "arrow": "forward", "route": "diagonal" },
+    { "from": "tree-3c4e9c", "to": "blob-1f7a7a", "arrow": "forward" },
+    { "from": "tree-3c4e9c", "to": "tree-d8329f", "arrow": "forward", "route": "diagonal" },
+    { "from": "tree-d8329f", "to": "blob-83baae", "arrow": "forward" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "./_schema.json",
+  "title": "Two branch pointers into the commit history",
+  "grid": { "x": 145, "y": 61 },
+  "nodes": [
+    { "id": "c1",     "kind": "other",  "label": "98ca9", "col": 0, "row": 1 },
+    { "id": "c2",     "kind": "other",  "label": "34ac2", "col": 1, "row": 1 },
+    { "id": "c3",     "kind": "other",  "label": "f30ab", "col": 2, "row": 1 },
+    { "id": "main",   "kind": "ref",    "label": "main",   "col": 2, "row": 0 },
+    { "id": "testing","kind": "ref",    "label": "testing","col": 2, "row": 2 }
+  ],
+  "edges": [
+    { "from": "c2",      "to": "c1" },
+    { "from": "c3",      "to": "c2" },
+    { "from": "main",    "to": "c3", "arrow": "forward" },
+    { "from": "testing", "to": "c3", "arrow": "forward" }
+  ]
+}

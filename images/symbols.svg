@@ -1,158 +1,80 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1262px" height="558px" viewBox="0 0 1262 558" version="1.1">
-    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
-    <title>images/symbols</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="brown" transform="translate(15.000000, 40.000000)">
-            <rect id="Rectangle-1" fill="#EFEFE7" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="C6">
-                <tspan fill="#808080" x="44.5" y="21" fill-opacity="1">C6</tspan>
-            </text>
-        </g>
-        <g id="ref" transform="translate(270.000000, 40.000000)">
-            <rect id="Rectangle-2" fill="#F44D27" x="0" y="0" width="106" height="33"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#f0f0f0" x="53" y="20" fill-opacity="1">v1.0</tspan>
-            </text>
-        </g>
-        <g id="symref" transform="translate(525.000000, 40.000000)">
-            <rect id="Rectangle-2" fill="#00909A" x="0" y="0" width="86" height="33"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#f0f0f0" x="43" y="20" fill-opacity="1">HEAD</tspan>
-            </text>
-        </g>
-        <g id="blue" transform="translate(780.000000, 40.000000)">
-            <rect id="Rectangle-1" fill="#00909A" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="tree">
-                <tspan fill="#f0f0f0" x="44.5" y="20" fill-opacity="1">tree</tspan>
-            </text>
-        </g>
-        <g id="gold" transform="translate(1035.000000, 40.000000)">
-            <rect id="Rectangle-1" fill="#CD9F00" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="Version-5">
-                <tspan fill="#f0f0f0" x="44.5" y="20" fill-opacity="1">Version 5</tspan>
-            </text>
-        </g>
-        <g id="ref-(2-line)" transform="translate(15.000000, 188.000000)">
-            <rect id="Rectangle-2" fill="#F44D27" x="0" y="0" width="110.580108" height="38"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#f0f0f0" x="55.290054" y="15.53125" fill-opacity="1">integration</tspan>
-                <tspan fill="#f0f0f0" x="55.290054" y="28.53125" fill-opacity="1">manager</tspan>
-            </text>
-        </g>
-        <g id="symref-(2-line)" transform="translate(270.000000, 188.000000)">
-            <rect id="Rectangle-2" fill="#00909A" x="0" y="0" width="110.580108" height="38"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#f0f0f0" x="55.290054" y="15" fill-opacity="1">developer</tspan>
-                <tspan fill="#f0f0f0" x="55.290054" y="28" fill-opacity="1">public</tspan>
-            </text>
-        </g>
-        <g id="other-(2-line)-2" transform="translate(525.000000, 188.000000)">
-            <rect id="Rectangle-2" fill="#EFEFE7" x="0" y="0" width="99" height="38"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#808080" x="49.5" y="16" fill-opacity="1">Staging</tspan>
-                <tspan fill="#808080" x="49.5" y="30" fill-opacity="1">Area</tspan>
-            </text>
-        </g>
-        <g id="other-(2-line)" transform="translate(780.000000, 188.000000)" stroke="#979797">
-            <rect id="Rectangle-2" fill="#EFEFE7" x="0.5" y="0.5" width="109.580108" height="56"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master-4">
-                <tspan fill="#808080" x="54.790054" y="18.546875" fill-opacity="1">9c68f</tspan>
-            </text>
-        </g>
-        <g id="other" transform="translate(1035.000000, 188.000000)">
-            <rect id="Rectangle-2" fill="#EFEFE7" x="0" y="0" width="86" height="33"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#808080" x="43" y="21" fill-opacity="1">c2b9e</tspan>
-            </text>
-        </g>
-        <g id="goldref" transform="translate(15.000000, 336.000000)">
-            <rect id="Rectangle-3" fill="#CD9F00" x="0" y="0" width="108" height="33"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master-2">
-                <tspan fill="#f0f0f0" x="54" y="20" fill-opacity="1">HEAD</tspan>
-            </text>
-        </g>
-        <g id="goldref-(2-line)" transform="translate(270.000000, 336.000000)">
-            <rect id="Rectangle-4" fill="#CD9F00" x="0" y="0" width="110.580108" height="38"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master-3">
-                <tspan fill="#f0f0f0" x="55.290054" y="15.53125" fill-opacity="1">Working</tspan>
-                <tspan fill="#f0f0f0" x="55.290054" y="28.53125" fill-opacity="1">Directory</tspan>
-            </text>
-        </g>
-        <g id="commit-(v)" transform="translate(525.000000, 336.000000)">
-            <rect id="Rectangle-12" fill="#EFEFE7" x="0" y="0" width="205" height="98"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="size">
-                <tspan fill="#808080" x="102.5" y="23" fill-opacity="1">size</tspan>
-                <tspan fill="#808080" x="102.5" y="37" fill-opacity="1">92ec2</tspan>
-                <tspan fill="#808080" x="102.5" y="51" fill-opacity="1">Scott</tspan>
-                <tspan fill="#808080" x="102.5" y="65" fill-opacity="1">Scott</tspan>
-            </text>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="commit-tree-author-c">
-                <tspan fill="#808080" x="102.5" y="23" fill-opacity="1">commit</tspan>
-                <tspan fill="#808080" x="102.5" y="23" fill-opacity="1"/>
-                <tspan fill="#808080" x="102.5" y="37" fill-opacity="1">tree</tspan>
-                <tspan fill="#808080" x="102.5" y="51" fill-opacity="1">author</tspan>
-                <tspan fill="#808080" x="102.5" y="65" fill-opacity="1">committer</tspan>
-            </text>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="The-initial-commit-o">
-                <tspan fill="#808080" x="102.5" y="84" fill-opacity="1">The initial commit of my project</tspan>
-            </text>
-        </g>
-        <g id="tree-(v)" transform="translate(780.000000, 336.000000)">
-            <rect id="Rectangle-13" fill="#00909A" x="0" y="0" width="205" height="98"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="size">
-                <tspan fill="#f0f0f0" x="102.5" y="29" fill-opacity="1">size</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="43" fill-opacity="1">5b1d3 README</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="57" fill-opacity="1">911e7 LICENSE</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="71" fill-opacity="1">cba0a test.rb</tspan>
-            </text>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="tree-blob-blob-blob">
-                <tspan fill="#f0f0f0" x="102.5" y="29" fill-opacity="1">tree</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="29" fill-opacity="1"/>
-                <tspan fill="#f0f0f0" x="102.5" y="43" fill-opacity="1">blob</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="57" fill-opacity="1">blob</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="71" fill-opacity="1">blob</tspan>
-            </text>
-        </g>
-        <g id="blob-(v)" transform="translate(1035.000000, 336.000000)">
-            <rect id="Rectangle-14" fill="#CD9F00" x="0" y="0" width="205" height="98"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="size">
-                <tspan fill="#f0f0f0" x="102.5" y="23" fill-opacity="1">size</tspan>
-            </text>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="blob">
-                <tspan fill="#f0f0f0" x="102.5" y="23" fill-opacity="1">blob</tspan>
-            </text>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="==-Testing-library">
-                <tspan fill="#f0f0f0" x="102.5" y="47" fill-opacity="1">== Testing library</tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="57" fill-opacity="1"/>
-                <tspan fill="#f0f0f0" x="102.5" y="67" fill-opacity="1">This library is used to test </tspan>
-                <tspan fill="#f0f0f0" x="102.5" y="77" fill-opacity="1">Ruby projects.</tspan>
-            </text>
-        </g>
-        <g id="content" transform="translate(15.000000, 484.000000)">
-            <rect id="Rectangle-2" fill="#EFEFE7" x="0" y="0" width="102" height="47"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="master">
-                <tspan fill="#808080" x="51" y="28" fill-opacity="1">hello mundo</tspan>
-            </text>
-        </g>
-        <g id="jessica" transform="translate(270.000000, 484.000000)">
-            <rect id="Rectangle-1" fill="#B8E986" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="C3'">
-                <tspan fill="#808080" x="44.5" y="21" fill-opacity="1">fbff5</tspan>
-            </text>
-        </g>
-        <g id="john" transform="translate(525.000000, 484.000000)">
-            <rect id="Rectangle-1" fill="#FCC161" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="C3'">
-                <tspan fill="#808080" x="44.5" y="21" fill-opacity="1">738ee</tspan>
-            </text>
-        </g>
-        <g id="josie" transform="translate(780.000000, 484.000000)">
-            <rect id="Rectangle-1" fill="#DEB9FF" x="0" y="0" width="89" height="33" rx="16.5"/>
-            <text stroke="none" font-family="Source Code Pro" font-size="12px" font-weight="700" fill="#979797" fill-opacity="1" text-anchor="middle" id="C3'">
-                <tspan fill="#808080" x="44.5" y="21" fill-opacity="1">fba9a</tspan>
-            </text>
-        </g>
-    </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" width="2336" height="984" viewBox="0 0 1168 492" xmlns="http://www.w3.org/2000/svg">
+  <title>symbols</title>
+  <g>
+    <rect x="-2.7" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="41.8" y="25" fill="gray">C6</tspan></text>
+  </g>
+  <g>
+    <rect x="260.8" y="4" width="89" height="33" fill="#f44d27"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="305.3" y="25" fill="#f0f0f0">v1.0</tspan></text>
+  </g>
+  <g>
+    <rect x="505.8" y="4" width="86" height="33" fill="#00909a"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="548.8" y="25" fill="#f0f0f0">HEAD</tspan></text>
+  </g>
+  <g>
+    <rect x="762.3" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="806.8" y="25" fill="#f0f0f0">tree</tspan></text>
+  </g>
+  <g>
+    <rect x="1017.3" y="4" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="1061.8" y="25" fill="#f0f0f0">Version 5</tspan></text>
+  </g>
+  <g>
+    <rect x="8.09" y="154.5" width="89" height="33" fill="#f44d27"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="52.59" y="168.665" fill="#f0f0f0">integration</tspan><tspan x="52.59" dy="13.07" fill="#f0f0f0">manager</tspan></text>
+  </g>
+  <g>
+    <rect x="263.09" y="154.5" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="307.59" y="168.665" fill="#f0f0f0">developer</tspan><tspan x="307.59" dy="13.07" fill="#f0f0f0">public</tspan></text>
+  </g>
+  <g>
+    <rect x="512.3" y="154.5" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="556.8" y="168.665" fill="gray">Staging</tspan><tspan x="556.8" dy="13.07" fill="gray">Area</tspan></text>
+  </g>
+  <g>
+    <rect x="773.09" y="164" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="817.59" y="185" fill="gray">9c68f</tspan></text>
+  </g>
+  <g>
+    <rect x="1015.8" y="152" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="1060.3" y="173" fill="gray">c2b9e</tspan></text>
+  </g>
+  <g>
+    <rect x="6.8" y="300" width="108" height="33" fill="#cd9f00"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="60.8" y="321" fill="#f0f0f0">HEAD</tspan></text>
+  </g>
+  <g>
+    <rect x="263.09" y="302.5" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="307.59" y="316.665" fill="#f0f0f0">Working</tspan><tspan x="307.59" dy="13.07" fill="#f0f0f0">Directory</tspan></text>
+  </g>
+  <g>
+    <rect x="565.3" y="332.5" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="609.8" y="333.595" fill="gray">size</tspan><tspan x="609.8" dy="13.07" fill="gray">92ec2</tspan><tspan x="609.8" dy="13.07" fill="gray">Scott</tspan><tspan x="609.8" dy="13.07" fill="gray">Scott</tspan></text>
+  </g>
+  <g>
+    <rect x="820.3" y="332.5" width="89" height="33" rx="16.5" ry="16.5" fill="#00909a"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="864.8" y="333.595" fill="#f0f0f0">size</tspan><tspan x="864.8" dy="13.07" fill="#f0f0f0">5b1d3 README</tspan><tspan x="864.8" dy="13.07" fill="#f0f0f0">911e7 LICENSE</tspan><tspan x="864.8" dy="13.07" fill="#f0f0f0">cba0a test.rb</tspan></text>
+  </g>
+  <g>
+    <rect x="1075" y="332.5" width="89" height="33" rx="16.5" ry="16.5" fill="#cd9f00"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="1119.5" y="353.5" fill="#f0f0f0">size</tspan></text>
+  </g>
+  <g>
+    <rect x="4" y="455" width="89" height="33" rx="16.5" ry="16.5" fill="#efefe7"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="48.5" y="476" fill="gray">hello mundo</tspan></text>
+  </g>
+  <g>
+    <rect x="252.3" y="448" width="89" height="33" rx="16.5" ry="16.5" fill="#b8e986"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="296.8" y="469" fill="gray">fbff5</tspan></text>
+  </g>
+  <g>
+    <rect x="507.3" y="448" width="89" height="33" rx="16.5" ry="16.5" fill="#fcc161"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="551.8" y="469" fill="gray">738ee</tspan></text>
+  </g>
+  <g>
+    <rect x="762.3" y="448" width="89" height="33" rx="16.5" ry="16.5" fill="#deb9ff"/>
+    <text font-size="12px" font-weight="700" font-family="'JetBrains Mono', 'Source Code Pro', monospace" text-anchor="middle"><tspan x="806.8" y="469" fill="gray">fba9a</tspan></text>
+  </g>
 </svg>

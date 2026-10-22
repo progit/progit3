@@ -1,0 +1,104 @@
+{
+  "$schema": "./_schema.json",
+  "title": "merging workflows 1",
+  "grid": {
+    "x": 118.0,
+    "y": 53.7
+  },
+  "nodes": [
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 1,
+      "dy": 3.3
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 1,
+      "dx": 1.0,
+      "dy": 3.3
+    },
+    {
+      "id": "c7",
+      "kind": "commit",
+      "label": "C7",
+      "col": 2,
+      "row": 1,
+      "dx": 2.0,
+      "dy": 3.3
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 2,
+      "row": 2,
+      "dx": 2.0,
+      "dy": 0.6
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 2,
+      "dx": 3.0,
+      "dy": 0.6
+    },
+    {
+      "id": "c5",
+      "kind": "commit",
+      "label": "C5",
+      "col": 2,
+      "row": 3,
+      "dx": 2.0
+    },
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 3,
+      "row": 3,
+      "dx": 3.0
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 2,
+      "row": 0,
+      "dx": 2.1
+    },
+    {
+      "id": "ruby-client",
+      "kind": "ref",
+      "label": "ruby_client",
+      "col": 4,
+      "row": 2,
+      "dy": 0.6
+    },
+    {
+      "id": "php-client",
+      "kind": "ref",
+      "label": "php_client",
+      "col": 4,
+      "row": 3
+    }
+  ],
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "c7", "to": "c2" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "c5", "to": "c3", "route": "diagonal" },
+    { "from": "c6", "to": "c5" },
+    { "from": "master", "to": "c7", "arrow": "forward" },
+    { "from": "ruby-client", "to": "c4" },
+    { "from": "php-client", "to": "c6" }
+  ]
+}

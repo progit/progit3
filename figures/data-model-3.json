@@ -1,0 +1,61 @@
+{
+  "$schema": "./_schema.json",
+  "title": "data model 3",
+  "grid": {
+    "x": 329.5,
+    "y": 58.0
+  },
+  "nodes": [
+    {
+      "id": "version-2",
+      "kind": "commit",
+      "label": "\"version 2\"",
+      "col": 1,
+      "row": 1,
+      "dy": 15.0
+    },
+    {
+      "id": "new-file",
+      "kind": "commit",
+      "label": "\"new file\"",
+      "col": 1,
+      "row": 3,
+      "dy": -23.0
+    },
+    {
+      "id": "version-1",
+      "kind": "commit",
+      "label": "\"version 1\"",
+      "col": 1,
+      "row": 4
+    },
+    {
+      "id": "third-commit",
+      "kind": "blob",
+      "label": "third commit",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "second-commit",
+      "kind": "blob",
+      "label": "second commit",
+      "col": 0,
+      "row": 2
+    },
+    {
+      "id": "first-commit",
+      "kind": "blob",
+      "label": "first commit",
+      "col": 0,
+      "row": 4
+    }
+  ],
+  "edges": [
+    { "from": "third-commit", "to": "second-commit", "arrow": "back" },
+    { "from": "second-commit", "to": "first-commit", "arrow": "back" },
+    { "from": "third-commit", "to": "version-2", "arrow": "forward", "route": "diagonal" },
+    { "from": "second-commit", "to": "new-file", "arrow": "forward", "route": "diagonal" },
+    { "from": "first-commit", "to": "version-1", "arrow": "forward" }
+  ]
+}

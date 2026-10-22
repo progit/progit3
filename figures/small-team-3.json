@@ -1,0 +1,77 @@
+{
+  "$schema": "./_schema.json",
+  "title": "small team 3",
+  "grid": {
+    "x": 119.0,
+    "y": 37.3
+  },
+  "nodes": [
+    {
+      "id": "node_4b078",
+      "kind": "commit",
+      "label": "4b078",
+      "col": 0,
+      "row": 2,
+      "dy": -18.6
+    },
+    {
+      "id": "node_1edee",
+      "kind": "commit",
+      "label": "1edee",
+      "col": 1,
+      "row": 2,
+      "dy": -18.6
+    },
+    {
+      "id": "node_738ee",
+      "kind": "john",
+      "label": "738ee",
+      "col": 2,
+      "row": 2,
+      "dy": -18.6
+    },
+    {
+      "id": "node_72bbc",
+      "kind": "john",
+      "label": "72bbc",
+      "col": 3,
+      "row": 2,
+      "dy": -18.6
+    },
+    {
+      "id": "fbff5",
+      "kind": "jessica",
+      "label": "fbff5",
+      "col": 2,
+      "row": 3,
+      "dy": -7.9
+    },
+    {
+      "id": "origin-master",
+      "kind": "ref",
+      "label": [
+        "origin/",
+        "master"
+      ],
+      "col": 3,
+      "row": 3
+    },
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 3,
+      "row": 0
+    }
+  ],
+  "edges": [
+    { "from": "node_1edee", "to": "node_4b078" },
+    { "from": "node_738ee", "to": "node_1edee" },
+    { "from": "node_72bbc", "to": "fbff5", "route": "diagonal" },
+    { "from": "node_72bbc", "to": "node_738ee" },
+    { "from": "fbff5", "to": "node_1edee", "route": "diagonal" },
+    { "from": "fbff5", "to": "node_1edee" },
+    { "from": "master", "to": "node_72bbc", "arrow": "forward" },
+    { "from": "origin-master", "to": "node_72bbc", "arrow": "forward" }
+  ]
+}

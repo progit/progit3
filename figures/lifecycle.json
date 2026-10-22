@@ -1,0 +1,40 @@
+{
+  "$schema": "./_schema.json",
+  "title": "lifecycle",
+  "layout": "absolute",
+  "canvas": {
+    "w": 516.0,
+    "h": 227.0
+  },
+  "nodes": [
+    {
+      "id": "modified",
+      "kind": "goldref",
+      "label": "Modified",
+      "x": 271.4,
+      "y": 0.0
+    },
+    {
+      "id": "untracked",
+      "kind": "commit",
+      "label": "Untracked",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "unmodified",
+      "kind": "tree",
+      "label": "Unmodified",
+      "x": 135.61,
+      "y": 0.0
+    },
+    {
+      "id": "staged",
+      "kind": "ref",
+      "label": "Staged",
+      "x": 407.05,
+      "y": 0.0
+    }
+  ],
+  "edges": []
+}

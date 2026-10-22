@@ -1,0 +1,167 @@
+{
+  "$schema": "./_schema.json",
+  "title": "large merges 1",
+  "grid": {
+    "x": 123.2,
+    "y": 53.0
+  },
+  "nodes": [
+    {
+      "id": "master",
+      "kind": "ref",
+      "label": "master",
+      "col": 1,
+      "row": 0,
+      "dx": -4.2
+    },
+    {
+      "id": "tv-rebase-stat",
+      "kind": "ref",
+      "label": "tv/rebase-stat",
+      "col": 4,
+      "row": 2
+    },
+    {
+      "id": "jk-clone-checkout",
+      "kind": "ref",
+      "label": "jk/clone-checkout",
+      "col": 4,
+      "row": 3
+    },
+    {
+      "id": "db-push-cleanup",
+      "kind": "ref",
+      "label": "db/push-cleanup",
+      "col": 4,
+      "row": 4
+    },
+    {
+      "id": "js-notes",
+      "kind": "ref",
+      "label": "js/notes",
+      "col": 4,
+      "row": 5
+    },
+    {
+      "id": "ps-blame",
+      "kind": "ref",
+      "label": "ps/blame",
+      "col": 4,
+      "row": 6
+    },
+    {
+      "id": "c1",
+      "kind": "commit",
+      "label": "C1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "c2",
+      "kind": "commit",
+      "label": "C2",
+      "col": 1,
+      "row": 1,
+      "dx": -4.2
+    },
+    {
+      "id": "c3",
+      "kind": "commit",
+      "label": "C3",
+      "col": 2,
+      "row": 2,
+      "dx": -8.4
+    },
+    {
+      "id": "c5",
+      "kind": "commit",
+      "label": "C5",
+      "col": 2,
+      "row": 3,
+      "dx": -8.4
+    },
+    {
+      "id": "c7",
+      "kind": "commit",
+      "label": "C7",
+      "col": 2,
+      "row": 4,
+      "dx": -8.4
+    },
+    {
+      "id": "c9",
+      "kind": "commit",
+      "label": "C9",
+      "col": 2,
+      "row": 5,
+      "dx": -8.4
+    },
+    {
+      "id": "c11",
+      "kind": "commit",
+      "label": "C11",
+      "col": 2,
+      "row": 6,
+      "dx": -8.4
+    },
+    {
+      "id": "c4",
+      "kind": "commit",
+      "label": "C4",
+      "col": 3,
+      "row": 2,
+      "dx": -11.6
+    },
+    {
+      "id": "c6",
+      "kind": "commit",
+      "label": "C6",
+      "col": 3,
+      "row": 3,
+      "dx": -11.6
+    },
+    {
+      "id": "c8",
+      "kind": "commit",
+      "label": "C8",
+      "col": 3,
+      "row": 4,
+      "dx": -11.6
+    },
+    {
+      "id": "c10",
+      "kind": "commit",
+      "label": "C10",
+      "col": 3,
+      "row": 5,
+      "dx": -11.6
+    },
+    {
+      "id": "c12",
+      "kind": "commit",
+      "label": "C12",
+      "col": 3,
+      "row": 6,
+      "dx": -11.6
+    }
+  ],
+  "edges": [
+    { "from": "c2", "to": "c1" },
+    { "from": "master", "to": "c2", "arrow": "forward" },
+    { "from": "c3", "to": "c2", "route": "diagonal" },
+    { "from": "c4", "to": "c3" },
+    { "from": "tv-rebase-stat", "to": "c4", "arrow": "forward" },
+    { "from": "c5", "to": "c2", "route": "diagonal" },
+    { "from": "c6", "to": "c5" },
+    { "from": "jk-clone-checkout", "to": "c6", "arrow": "forward" },
+    { "from": "c7", "to": "c2", "route": "diagonal" },
+    { "from": "c8", "to": "c7" },
+    { "from": "db-push-cleanup", "to": "c8", "arrow": "forward" },
+    { "from": "c9", "to": "c2", "route": "diagonal" },
+    { "from": "c10", "to": "c9" },
+    { "from": "js-notes", "to": "c10", "arrow": "forward" },
+    { "from": "c11", "to": "c2", "route": "diagonal" },
+    { "from": "c12", "to": "c11" },
+    { "from": "ps-blame", "to": "c12", "arrow": "forward" }
+  ]
+}
