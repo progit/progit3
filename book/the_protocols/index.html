@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Servers: The Protocols"><meta property="og:title" content="The Protocols · Pro Git"><meta property="og:description" content="Pro Git — Git Servers: The Protocols"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>The Protocols · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>The Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_git_on_a_server/" data-astro-cid-kqdwmlpp>Getting Git on a Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/generate_ssh_key/" data-astro-cid-kqdwmlpp>Generating Your SSH Public Key</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/setting_up_server/" data-astro-cid-kqdwmlpp>Setting Up the Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_daemon/" data-astro-cid-kqdwmlpp>Git Daemon</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/smart_http_2/" data-astro-cid-kqdwmlpp>Smart HTTP</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitweb/" data-astro-cid-kqdwmlpp>GitWeb</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitlab/" data-astro-cid-kqdwmlpp>GitLab</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/third_party_hosted_options/" data-astro-cid-kqdwmlpp>Third Party Hosted Options</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_10/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_9/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/getting_git_on_a_server/" data-astro-cid-kgypjjoh>Getting Git on a Server →</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:The Protocols" data-pagefind-filter="chapter:Git Servers" data-astro-cid-kgypjjoh><div class="sect1">
+<h2 id="ch08-git-servers">Git Servers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>
+At this point, you should be able to do most of the day-to-day tasks for which you&#8217;ll be using Git.
+However, in order to do any collaboration in Git, you&#8217;ll need to have a remote Git repository.
+Although you can technically push changes to and pull changes from individuals' repositories, doing so is discouraged because you can fairly easily confuse what they&#8217;re working on if you&#8217;re not careful.
+Furthermore, you want your collaborators to be able to access the repository even if your computer is offline&#8201;&#8212;&#8201;having a more reliable common repository is often useful.
+Therefore, the preferred method for collaborating with someone is to set up an intermediate repository that you both have access to, and push to and pull from that.</p>
+</div>
+<div class="paragraph">
+<p>Running a Git server is fairly straightforward.
+First, you choose which protocols you want your server to support.
+The first section of this chapter will cover the available protocols and the pros and cons of each.
+The next sections will explain some typical setups using those protocols and how to get your server running with them.
+Last, we&#8217;ll go over a few hosted options, if you don&#8217;t mind hosting your code on someone else&#8217;s server and don&#8217;t want to go through the hassle of setting up and maintaining your own server.</p>
+</div>
+<div class="paragraph">
+<p>If you have no interest in running your own server, you can skip to the last section of the chapter to see some options for setting up a hosted account and then move on to the next chapter, where we discuss the various ins and outs of working in a distributed source control environment.</p>
+</div>
+<div class="paragraph">
+<p>A remote repository is generally a <em>bare repository</em>&#8201;&#8212;&#8201;a Git repository that has no working directory.
+Because the repository is only used as a collaboration point, there is no reason to have a snapshot checked out on disk; it&#8217;s just the Git data.
+In the simplest terms, a bare repository is the contents of your project&#8217;s <code>.git</code> directory and nothing else.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_protocols">The Protocols</h3>
+<div class="paragraph">
+<p>Git can use four distinct protocols to transfer data: Local, HTTP, Secure Shell (SSH) and Git.
+Here we&#8217;ll discuss what they are and in what basic circumstances you would want (or not want) to use them.</p>
+</div>
+<div class="sect3">
+<h4 id="_local_protocol">Local Protocol</h4>
+<div class="paragraph">
+<p>
+The most basic is the <em>Local protocol</em>, in which the remote repository is in another directory on the same host.
+This is often used if everyone on your team has access to a shared filesystem such as an <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank" rel="noopener">NFS</a> mount, or in the less likely case that everyone logs in to the same computer.
+The latter wouldn&#8217;t be ideal, because all your code repository instances would reside on the same computer, making a catastrophic loss much more likely.</p>
+</div>
+<div class="paragraph">
+<p>If you have a shared mounted filesystem, then you can clone, push to, and pull from a local file-based repository.
+To clone a repository like this, or to add one as a remote to an existing project, use the path to the repository as the URL.
+For example, to clone a local repository, you can run something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone /srv/git/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or you can do this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone file:///srv/git/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Git operates slightly differently if you explicitly specify <code>file://</code> at the beginning of the URL.
+If you just specify the path, Git tries to use hardlinks or directly copy the files it needs.
+If you specify <code>file://</code>, Git fires up the processes that it normally uses to transfer data over a network, which is generally much less efficient.
+The main reason to specify the <code>file://</code> prefix is if you want a clean copy of the repository with extraneous references or objects left out&#8201;&#8212;&#8201;generally after an import from another VCS or something similar (see <a href="/book/plumbing_porcelain/#ch10-git-internals">Ch 10, Git Internals</a> for maintenance tasks).
+We&#8217;ll use the normal path here because doing so is almost always faster.</p>
+</div>
+<div class="paragraph">
+<p>To add a local repository to an existing Git project, you can run something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git remote add local_proj /srv/git/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, you can push to and pull from that remote via your new remote name <code>local_proj</code> as though you were doing so over a network.</p>
+</div>
+<div class="sect4">
+<h5 id="_the_pros">The Pros</h5>
+<div class="paragraph">
+<p>The pros of file-based repositories are that they&#8217;re simple and they use existing file permissions and network access.
+If you already have a shared filesystem to which your whole team has access, setting up a repository is very easy.
+You stick the bare repository copy somewhere everyone has shared access to and set the read/write permissions as you would for any other shared directory.
+We&#8217;ll discuss how to export a bare repository copy for this purpose in <a href="/book/getting_git_on_a_server/#_getting_git_on_a_server">Ch 8, Git Servers</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is also a nice option for quickly grabbing work from someone else&#8217;s working repository.
+If you and a co-worker are working on the same project and they want you to check something out, running a command like <code>git pull /home/john/project</code> is often easier than them pushing to a remote server and you subsequently fetching from it.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_cons">The Cons</h5>
+<div class="paragraph">
+<p>The cons of this method are that shared access is generally more difficult to set up and reach from multiple locations than basic network access.
+If you want to push from your laptop when you&#8217;re at home, you have to mount the remote disk, which can be difficult and slow compared to network-based access.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important to mention that this isn&#8217;t necessarily the fastest option if you&#8217;re using a shared mount of some kind.
+A local repository is fast only if you have fast access to the data.
+A repository on NFS is often slower than the repository over SSH on the same server, allowing Git to run off local disks on each system.</p>
+</div>
+<div class="paragraph">
+<p>Finally, this protocol does not protect the repository against accidental damage.
+Every user has full shell access to the &#8220;remote&#8221; directory, and there is nothing preventing them from changing or removing internal Git files and corrupting the repository.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_http_protocols">The HTTP Protocols</h4>
+<div class="paragraph">
+<p>Git can communicate over HTTP using two different modes.
+Prior to Git 1.6.6, there was only one way it could do this which was very simple and generally read-only.
+In version 1.6.6, a new, smarter protocol was introduced that involved Git being able to intelligently negotiate data transfer in a manner similar to how it does over SSH.
+In the last few years, this new HTTP protocol has become very popular since it&#8217;s simpler for the user and smarter about how it communicates.
+The newer version is often referred to as the <em>Smart</em> HTTP protocol and the older way as <em>Dumb</em> HTTP.
+We&#8217;ll cover the newer Smart HTTP protocol first.</p>
+</div>
+<div class="sect4">
+<h5 id="_smart_http">Smart HTTP</h5>
+<div class="paragraph">
+<p>
+Smart HTTP operates very similarly to the SSH or Git protocols but runs over standard HTTPS ports and can use various HTTP authentication mechanisms, meaning it&#8217;s often easier on the user than something like SSH, since you can use things like username/password authentication rather than having to set up SSH keys.</p>
+</div>
+<div class="paragraph">
+<p>It has probably become the most popular way to use Git now, since it can be set up to both serve anonymously like the <code>git://</code> protocol, and can also be pushed over with authentication and encryption like the SSH protocol.
+Instead of having to set up different URLs for these things, you can now use a single URL for both.
+If you try to push and the repository requires authentication (which it normally should), the server can prompt for a username and password.
+The same goes for read access.</p>
+</div>
+<div class="paragraph">
+<p>In fact, for services like GitHub, the URL you use to view the repository online (for example, <a href="https://github.com/schacon/simplegit" class="bare" target="_blank" rel="noopener">https://github.com/schacon/simplegit</a>) is the same URL you can use to clone and, if you have access, push over.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_dumb_http">Dumb HTTP</h5>
+<div class="paragraph">
+<p>
+If the server does not respond with a Git HTTP smart service, the Git client will try to fall back to the simpler <em>Dumb</em> HTTP protocol.
+The Dumb protocol expects the bare Git repository to be served like normal files from the web server.
+The beauty of Dumb HTTP is the simplicity of setting it up.
+Basically, all you have to do is put a bare Git repository under your HTTP document root and set up a specific <code>post-update</code> hook, and you&#8217;re done (see <a href="/book/git_hooks/#_git_hooks">Ch 6, Customizing Git</a>).
+At that point, anyone who can access the web server under which you put the repository can also clone your repository.
+To allow read access to your repository over HTTP, do something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cd /var/www/htdocs/
+$ git clone --bare /path/to/git_project gitproject.git
+$ cd gitproject.git
+$ mv hooks/post-update.sample hooks/post-update
+$ chmod a+x hooks/post-update</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s all.
+The <code>post-update</code> hook that comes with Git by default runs the appropriate command (<code>git update-server-info</code>) to make HTTP fetching and cloning work properly.
+This command is run when you push to this repository (over SSH perhaps); then, other people can clone via something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone https://example.com/gitproject.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this particular case, we&#8217;re using the <code>/var/www/htdocs</code> path that is common for Apache setups, but you can use any static web server&#8201;&#8212;&#8201;just put the bare repository in its path.
+The Git data is served as basic static files (see the <a href="/book/plumbing_porcelain/#ch10-git-internals">Ch 10, Git Internals</a> chapter for details about exactly how it&#8217;s served).</p>
+</div>
+<div class="paragraph">
+<p>Generally you would either choose to run a read/write Smart HTTP server or simply have the files accessible as read-only in the Dumb manner.
+It&#8217;s rare to run a mix of the two services.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_pros_2">The Pros</h5>
+<div class="paragraph">
+<p>We&#8217;ll concentrate on the pros of the Smart version of the HTTP protocol.</p>
+</div>
+<div class="paragraph">
+<p>The simplicity of having a single URL for all types of access and having the server prompt only when authentication is needed makes things very easy for the end user.
+Being able to authenticate with a username and password is also a big advantage over SSH, since users don&#8217;t have to generate SSH keys locally and upload their public key to the server before being able to interact with it.
+For less sophisticated users, or users on systems where SSH is less common, this is a major advantage in usability.
+It is also a very fast and efficient protocol, similar to the SSH one.</p>
+</div>
+<div class="paragraph">
+<p>You can also serve your repositories read-only over HTTPS, which means you can encrypt the content transfer; or you can go so far as to make the clients use specific signed SSL certificates.</p>
+</div>
+<div class="paragraph">
+<p>Another nice thing is that HTTP and HTTPS are such commonly used protocols that corporate firewalls are often set up to allow traffic through their ports.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_cons_2">The Cons</h5>
+<div class="paragraph">
+<p>Git over HTTPS can be a little more tricky to set up compared to SSH on some servers.
+Other than that, there is very little advantage that other protocols have over Smart HTTP for serving Git content.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re using HTTP for authenticated pushing, providing your credentials is sometimes more complicated than using keys over SSH.
+There are, however, several credential caching tools you can use, including Keychain access on macOS and Credential Manager on Windows, to make this pretty painless.
+Read <a href="/book/credential_caching/#_credential_caching">Ch 5, Git Toolkit</a> to see how to set up secure HTTP password caching on your system.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_ssh_protocol">The SSH Protocol</h4>
+<div class="paragraph">
+<p>
+A common transport protocol for Git when self-hosting is over SSH.
+This is because SSH access to servers is already set up in most places&#8201;&#8212;&#8201;and if it isn&#8217;t, it&#8217;s easy to do.
+SSH is also an authenticated network protocol and, because it&#8217;s ubiquitous, it&#8217;s generally easy to set up and use.</p>
+</div>
+<div class="paragraph">
+<p>To clone a Git repository over SSH, you can specify an <code>ssh://</code> URL like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone ssh://[user@]server/project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or you can use the shorter scp-like syntax for the SSH protocol:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone [user@]server:project.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In both cases above, if you don&#8217;t specify the optional username, Git assumes the user you&#8217;re currently logged in as.</p>
+</div>
+<div class="sect4">
+<h5 id="_the_pros_3">The Pros</h5>
+<div class="paragraph">
+<p>The pros of using SSH are many.
+First, SSH is relatively easy to set up&#8201;&#8212;&#8201;SSH daemons are commonplace, many network admins have experience with them, and many OS distributions are set up with them or have tools to manage them.
+Next, access over SSH is secure&#8201;&#8212;&#8201;all data transfer is encrypted and authenticated.
+Last, like the HTTPS, Git and Local protocols, SSH is efficient, making the data as compact as possible before transferring it.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_cons_3">The Cons</h5>
+<div class="paragraph">
+<p>The negative aspect of SSH is that it doesn&#8217;t support anonymous access to your Git repository.
+If you&#8217;re using SSH, people <em>must</em> have SSH access to your machine, even in a read-only capacity, which doesn&#8217;t make SSH conducive to open source projects for which people might simply want to clone your repository to examine it.
+If you&#8217;re using it only within your corporate network, SSH may be the only protocol you need to deal with.
+If you want to allow anonymous read-only access to your projects and also want to use SSH, you&#8217;ll have to set up SSH for you to push over but something else for others to fetch from.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_git_protocol">The Git Protocol</h4>
+<div class="paragraph">
+<p>
+Finally, we have the Git protocol.
+This is a special daemon that comes packaged with Git; it listens on a dedicated port (9418) that provides a service similar to the SSH protocol, but with absolutely no authentication or cryptography.
+In order for a repository to be served over the Git protocol, you must create a <code>git-daemon-export-ok</code> file&#8201;&#8212;&#8201;the daemon won&#8217;t serve a repository without that file in it&#8201;&#8212;&#8201;but, other than that, there is no security.
+Either the Git repository is available for everyone to clone, or it isn&#8217;t.
+This means that there is generally no pushing over this protocol.
+You can enable push access but, given the lack of authentication, anyone on the internet who finds your project&#8217;s URL could push to that project.
+Suffice it to say that this is rare.</p>
+</div>
+<div class="sect4">
+<h5 id="_the_pros_4">The Pros</h5>
+<div class="paragraph">
+<p>The Git protocol is often the fastest network transfer protocol available.
+If you&#8217;re serving a lot of traffic for a public project or serving a very large project that doesn&#8217;t require user authentication for read access, it&#8217;s likely that you&#8217;ll want to set up a Git daemon to serve your project.
+It uses the same data-transfer mechanism as the SSH protocol but without the encryption and authentication overhead.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_cons_4">The Cons</h5>
+<div class="paragraph">
+<p>Due to the lack of TLS or other cryptography, cloning over <code>git://</code> might lead to an arbitrary code execution vulnerability, and should therefore be avoided unless you know what you are doing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you run <code>git clone git://example.com/project.git</code>, an attacker who controls e.g your router can modify the repo you just cloned, inserting malicious code into it.
+If you then compile/run the code you just cloned, you will execute the malicious code.
+Running <code>git clone <a href="http://example.com/project.git" class="bare">http://example.com/project.git</a></code> should be avoided for the same reason.</p>
+</li>
+<li>
+<p>Running <code>git clone <a href="https://example.com/project.git" class="bare">https://example.com/project.git</a></code> does not suffer from the same problem (unless the attacker can provide a TLS certificate for example.com).
+Running <code>git clone <a href="mailto:git@example.com">git@example.com</a>:project.git</code> only suffers from this problem if you accept a wrong SSH key fingerprint.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It also has no authentication, i.e. anyone can clone the repo (although this is often exactly what you want).
+It&#8217;s also probably the most difficult protocol to set up.
+It must run its own daemon, which requires <code>xinetd</code> or <code>systemd</code> configuration or the like, which isn&#8217;t always a walk in the park.
+It also requires firewall access to port 9418, which isn&#8217;t a standard port that corporate firewalls always allow.
+Behind big corporate firewalls, this obscure port is commonly blocked.</p>
+</div>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_9/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/getting_git_on_a_server/" data-astro-cid-kgypjjoh>Getting Git on a Server →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

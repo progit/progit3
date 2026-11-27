@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Branching: Basic Branching and Merging"><meta property="og:title" content="Basic Branching and Merging · Pro Git"><meta property="og:description" content="Pro Git — Git Branching: Basic Branching and Merging"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Basic Branching and Merging · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Branches in a Nutshell</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/basic_branching_and_merging/" data-astro-cid-kqdwmlpp>Basic Branching and Merging</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branch_management/" data-astro-cid-kqdwmlpp>Branch Management</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/branching_workflows/" data-astro-cid-kqdwmlpp>Branching Workflows</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/worktrees/" data-astro-cid-kqdwmlpp>Worktrees</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/remote_branches/" data-astro-cid-kqdwmlpp>Remote Branches</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/rebasing/" data-astro-cid-kqdwmlpp>Rebasing</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_3/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/git_branches_overview/" data-astro-cid-kgypjjoh>← Branches in a Nutshell</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/branch_management/" data-astro-cid-kgypjjoh>Branch Management →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/git_branches_overview/" data-astro-cid-kgypjjoh>Git Branching</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Basic Branching and Merging" data-pagefind-filter="chapter:Git Branching" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_basic_branching_and_merging">Basic Branching and Merging</h3>
+<div class="paragraph">
+<p>Let&#8217;s go through a simple example of branching and merging with a workflow that you might use in the real world.
+You&#8217;ll follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Do some work on a website.</p>
+</li>
+<li>
+<p>Create a branch for a new user story you&#8217;re working on.</p>
+</li>
+<li>
+<p>Do some work in that branch.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>At this stage, you&#8217;ll receive a call that another issue is critical and you need a hotfix.
+You&#8217;ll do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Switch to your production branch.</p>
+</li>
+<li>
+<p>Create a branch to add the hotfix.</p>
+</li>
+<li>
+<p>After it&#8217;s tested, merge the hotfix branch, and push to production.</p>
+</li>
+<li>
+<p>Switch back to your original user story and continue working.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_basic_branching">Basic Branching</h4>
+<div class="paragraph">
+<p>
+First, let&#8217;s say you&#8217;re working on your project and have a couple of commits already on the <code>master</code> branch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-1.png" alt="A simple commit history">
+</div>
+<div class="title">Figure 18. A simple commit history</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ve decided that you&#8217;re going to work on issue #53 in whatever issue-tracking system your company uses.
+To create a new branch and switch to it at the same time, you can run the <code>git checkout</code> command with the <code>-b</code> switch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -b iss53
+Switched to a new branch "iss53"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is shorthand for:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git branch iss53
+$ git checkout iss53</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-2.png" alt="Creating a new branch pointer">
+</div>
+<div class="title">Figure 19. Creating a new branch pointer</div>
+</div>
+<div class="paragraph">
+<p>You work on your website and do some commits.
+Doing so moves the <code>iss53</code> branch forward, because you have it checked out (that is, your <code>HEAD</code> is pointing to it):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vim index.html
+$ git commit -a -m 'Create new footer [issue 53]'</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-3.png" alt="The `iss53` branch has moved forward with your work">
+</div>
+<div class="title">Figure 20. The <code>iss53</code> branch has moved forward with your work</div>
+</div>
+<div class="paragraph">
+<p>Now you get the call that there is an issue with the website, and you need to fix it immediately.
+With Git, you don&#8217;t have to deploy your fix along with the <code>iss53</code> changes you&#8217;ve made, and you don&#8217;t have to put a lot of effort into reverting those changes before you can work on applying your fix to what is in production.
+All you have to do is switch back to your <code>master</code> branch.</p>
+</div>
+<div class="paragraph">
+<p>However, before you do that, note that if your working directory or staging area has uncommitted changes that conflict with the branch you&#8217;re checking out, Git won&#8217;t let you switch branches.
+It&#8217;s best to have a clean working state when you switch branches.
+There are ways to get around this (namely, stashing and commit amending) that we&#8217;ll cover later on, in <a href="/book/git_stashing/#_git_stashing">Ch 5, Git Toolkit</a>.
+For now, let&#8217;s assume you&#8217;ve committed all your changes, so you can switch back to your <code>master</code> branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+Switched to branch 'master'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, your project working directory is exactly the way it was before you started working on issue #53, and you can concentrate on your hotfix.
+This is an important point to remember: when you switch branches, Git resets your working directory to look like it did the last time you committed on that branch.
+It adds, removes, and modifies files automatically to make sure your working copy is what the branch looked like on your last commit to it.</p>
+</div>
+<div class="paragraph">
+<p>Next, you have a hotfix to make.
+Let&#8217;s create a <code>hotfix</code> branch on which to work until it&#8217;s completed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+$ vim index.html
+$ git commit -a -m 'Fix broken email address'
+[hotfix 1fb7853] Fix broken email address
+ 1 file changed, 2 insertions(+)</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-4.png" alt="Hotfix branch based on `master`">
+</div>
+<div class="title">Figure 21. Hotfix branch based on <code>master</code></div>
+</div>
+<div class="paragraph">
+<p>You can run your tests, make sure the hotfix is what you want, and finally merge the <code>hotfix</code> branch back into your <code>master</code> branch to deploy to production.
+You do this with the <code>git merge</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll notice the phrase &#8220;fast-forward&#8221; in that merge.
+Because the commit <code>C4</code> pointed to by the branch <code>hotfix</code> you merged in was directly ahead of the commit <code>C2</code> you&#8217;re on, Git simply moves the pointer forward.
+To phrase that another way, when you try to merge one commit with a commit that can be reached by following the first commit&#8217;s history, Git simplifies things by moving the pointer forward because there is no divergent work to merge together&#8201;&#8212;&#8201;this is called a &#8220;fast-forward.&#8221;</p>
+</div>
+<div class="paragraph">
+<p>Your change is now in the snapshot of the commit pointed to by the <code>master</code> branch, and you can deploy the fix.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-5.png" alt="`master` is fast-forwarded to `hotfix`">
+</div>
+<div class="title">Figure 22. <code>master</code> is fast-forwarded to <code>hotfix</code></div>
+</div>
+<div class="paragraph">
+<p>After your super-important fix is deployed, you&#8217;re ready to switch back to the work you were doing before you were interrupted.
+However, first you&#8217;ll delete the <code>hotfix</code> branch, because you no longer need it&#8201;&#8212;&#8201;the <code>master</code> branch points at the same place.
+You can delete it with the <code>-d</code> option to <code>git branch</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git branch -d hotfix
+Deleted branch hotfix (3a0874c).</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can switch back to your work-in-progress branch on issue #53 and continue working on it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout iss53
+Switched to branch "iss53"
+$ vim index.html
+$ git commit -a -m 'Finish the new footer [issue 53]'
+[iss53 ad82d7a] Finish the new footer [issue 53]
+1 file changed, 1 insertion(+)</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-branching-6.png" alt="Work continues on `iss53`">
+</div>
+<div class="title">Figure 23. Work continues on <code>iss53</code></div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s worth noting here that the work you did in your <code>hotfix</code> branch is not contained in the files in your <code>iss53</code> branch.
+If you need to pull it in, you can merge your <code>master</code> branch into your <code>iss53</code> branch by running <code>git merge master</code>, or you can wait to integrate those changes until you decide to pull the <code>iss53</code> branch back into <code>master</code> later.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_merging">Basic Merging</h4>
+<div class="paragraph">
+<p>
+Suppose you&#8217;ve decided that your issue #53 work is complete and ready to be merged into your <code>master</code> branch.
+In order to do that, you&#8217;ll merge your <code>iss53</code> branch into <code>master</code>, much like you merged your <code>hotfix</code> branch earlier.
+All you have to do is check out the branch you wish to merge into and then run the <code>git merge</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+Merge made by the 'recursive' strategy.
+index.html |    1 +
+1 file changed, 1 insertion(+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This looks a bit different than the <code>hotfix</code> merge you did earlier.
+In this case, your development history has diverged from some older point.
+Because the commit on the branch you&#8217;re on isn&#8217;t a direct ancestor of the branch you&#8217;re merging in, Git has to do some work.
+In this case, Git does a simple three-way merge, using the two snapshots pointed to by the branch tips and the common ancestor of the two.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-merging-1.png" alt="Three snapshots used in a typical merge">
+</div>
+<div class="title">Figure 24. Three snapshots used in a typical merge</div>
+</div>
+<div class="paragraph">
+<p>Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this three-way merge and automatically creates a new commit that points to it.
+This is referred to as a merge commit, and is special in that it has more than one parent.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/basic-merging-2.png" alt="A merge commit">
+</div>
+<div class="title">Figure 25. A merge commit</div>
+</div>
+<div class="paragraph">
+<p>Now that your work is merged in, you have no further need for the <code>iss53</code> branch.
+You can close the issue in your issue-tracking system, and delete the branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git branch -d iss53</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_merge_conflicts">Basic Merge Conflicts</h4>
+<div class="paragraph">
+<p>
+Occasionally, this process doesn&#8217;t go smoothly.
+If you changed the same part of the same file differently in the two branches you&#8217;re merging, Git won&#8217;t be able to merge them cleanly.
+If your fix for issue #53 modified the same part of a file as the <code>hotfix</code> branch, you&#8217;ll get a merge conflict that looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Git hasn&#8217;t automatically created a new merge commit.
+It has paused the process while you resolve the conflict.
+If you want to see which files are unmerged at any point after a merge conflict, you can run <code>git status</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add &lt;file&gt;..." to mark resolution)
+
+    both modified:      index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Anything that has merge conflicts and hasn&#8217;t been resolved is listed as unmerged.
+Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
+Your file contains a section that looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html
+&lt;div id="footer"&gt;contact : email.support@github.com&lt;/div&gt;
+=======
+&lt;div id="footer"&gt;
+ please contact us at support@github.com
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53:index.html</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means the version in <code>HEAD</code> (your <code>master</code> branch, because that was what you had checked out when you ran your merge command) is the top part of that block (everything above the <code>=======</code>), while the version in your <code>iss53</code> branch looks like everything in the bottom part.
+In order to resolve the conflict, you have to either choose one side or the other or merge the contents yourself.
+For instance, you might resolve this conflict by replacing the entire block with this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div id="footer"&gt;
+please contact us at email.support@github.com
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This resolution has a little of each section, and the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> lines have been completely removed.
+After you&#8217;ve resolved each of these sections in each conflicted file, run <code>git add</code> on each file to mark it as resolved.
+Staging the file marks it as resolved in Git.</p>
+</div>
+<div class="paragraph">
+<p>If you want to use a graphical tool to resolve these issues, you can run <code>git mergetool</code>, which fires up an appropriate visual merge tool and walks you through the conflicts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc3 codecompare vimdiff emerge
+Merging:
+index.html
+
+Normal merge conflict for 'index.html':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (opendiff):</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to use a merge tool other than the default (Git chose <code>opendiff</code> in this case because the command was run on macOS), you can see all the supported tools listed at the top after &#8220;one of the following tools.&#8221;
+Just type the name of the tool you&#8217;d rather use.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you need more advanced tools for resolving tricky merge conflicts, we cover more on merging in <a href="/book/advanced_merging/#_advanced_merging">Ch 5, Git Toolkit</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After you exit the merge tool, Git asks you if the merge was successful.
+If you tell the script that it was, it stages the file to mark it as resolved for you.
+You can run <code>git status</code> again to verify that all conflicts have been resolved:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+    modified:   index.html</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re happy with that, and you verify that everything that had conflicts has been staged, you can type <code>git commit</code> to finalize the merge commit.
+The commit message by default looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">Merge branch 'iss53'
+
+Conflicts:
+    index.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   index.html
+#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you think it would be helpful to others looking at this merge in the future, you can modify this commit message with details about how you resolved the merge and explain why you did the changes you made if these are not obvious.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/git_branches_overview/" data-astro-cid-kgypjjoh>← Branches in a Nutshell</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/branch_management/" data-astro-cid-kgypjjoh>Branch Management →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

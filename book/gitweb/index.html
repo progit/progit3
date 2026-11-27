@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Servers: GitWeb"><meta property="og:title" content="GitWeb · Pro Git"><meta property="og:description" content="Pro Git — Git Servers: GitWeb"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>GitWeb · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>The Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_git_on_a_server/" data-astro-cid-kqdwmlpp>Getting Git on a Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/generate_ssh_key/" data-astro-cid-kqdwmlpp>Generating Your SSH Public Key</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/setting_up_server/" data-astro-cid-kqdwmlpp>Setting Up the Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_daemon/" data-astro-cid-kqdwmlpp>Git Daemon</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/smart_http_2/" data-astro-cid-kqdwmlpp>Smart HTTP</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/gitweb/" data-astro-cid-kqdwmlpp>GitWeb</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitlab/" data-astro-cid-kqdwmlpp>GitLab</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/third_party_hosted_options/" data-astro-cid-kqdwmlpp>Third Party Hosted Options</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_10/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/smart_http_2/" data-astro-cid-kgypjjoh>← Smart HTTP</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/gitlab/" data-astro-cid-kgypjjoh>GitLab →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/the_protocols/" data-astro-cid-kgypjjoh>Git Servers</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:GitWeb" data-pagefind-filter="chapter:Git Servers" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_gitweb">GitWeb</h3>
+<div class="paragraph">
+<p>
+Now that you have basic read/write and read-only access to your project, you may want to set up a simple web-based visualizer.
+Git comes with a CGI script called GitWeb that is sometimes used for this.</p>
+</div>
+<div id="gitweb" class="imageblock">
+<div class="content">
+<img src="/images/git-instaweb.png" alt="The GitWeb web-based user interface">
+</div>
+<div class="title">Figure 112. The GitWeb web-based user interface</div>
+</div>
+<div class="paragraph">
+<p>If you want to check out what GitWeb would look like for your project, Git comes with a command to fire up a temporary instance if you have a lightweight web server on your system like <code>lighttpd</code> or <code>webrick</code>.
+On Linux machines, <code>lighttpd</code> is often installed, so you may be able to get it to run by typing <code>git instaweb</code> in your project directory.
+If you&#8217;re running macOS, Leopard comes preinstalled with Ruby, so <code>webrick</code> may be your best bet.
+To start <code>instaweb</code> with a non-lighttpd handler, you can run it with the <code>--httpd</code> option.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git instaweb --httpd=webrick
+[2009-02-21 10:02:21] INFO  WEBrick 1.3.1
+[2009-02-21 10:02:21] INFO  ruby 1.8.6 (2008-03-03) [universal-darwin9.0]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That starts up an HTTPD server on port 1234 and then automatically starts a web browser that opens on that page.
+It&#8217;s pretty easy on your part.
+When you&#8217;re done and want to shut down the server, you can run the same command with the <code>--stop</code> option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git instaweb --httpd=webrick --stop</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to run the web interface on a server all the time for your team or for an open source project you&#8217;re hosting, you&#8217;ll need to set up the CGI script to be served by your normal web server.
+Some Linux distributions have a <code>gitweb</code> package that you may be able to install via <code>apt</code> or <code>dnf</code>, so you may want to try that first.
+We&#8217;ll walk through installing GitWeb manually very quickly.
+First, you need to get the Git source code, which GitWeb comes with, and generate the custom CGI script:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone https://git.kernel.org/pub/scm/git/git.git
+$ cd git/
+$ make GITWEB_PROJECTROOT="/srv/git" prefix=/usr gitweb
+    SUBDIR gitweb
+    SUBDIR ../
+make[2]: `GIT-VERSION-FILE' is up to date.
+    GEN gitweb.cgi
+    GEN static/gitweb.js
+$ sudo cp -Rf gitweb /var/www/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that you have to tell the command where to find your Git repositories with the <code>GITWEB_PROJECTROOT</code> variable.
+Now, you need to make Apache use CGI for that script, for which you can add a VirtualHost:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">&lt;VirtualHost *:80&gt;
+    ServerName gitserver
+    DocumentRoot /var/www/gitweb
+    &lt;Directory /var/www/gitweb&gt;
+        Options +ExecCGI +FollowSymLinks +SymLinksIfOwnerMatch
+        AllowOverride All
+        order allow,deny
+        Allow from all
+        AddHandler cgi-script cgi
+        DirectoryIndex gitweb.cgi
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, GitWeb can be served with any CGI or Perl capable web server; if you prefer to use something else, it shouldn&#8217;t be difficult to set up.
+At this point, you should be able to visit <code><a href="http://gitserver/" class="bare">http://gitserver/</a></code> to view your repositories online.</p>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/smart_http_2/" data-astro-cid-kgypjjoh>← Smart HTTP</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/gitlab/" data-astro-cid-kgypjjoh>GitLab →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

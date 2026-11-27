@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Distributed Git: Distributed Workflows"><meta property="og:title" content="Distributed Workflows · Pro Git"><meta property="og:description" content="Pro Git — Distributed Git: Distributed Workflows"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Distributed Workflows · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Workflows</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/contributing_project/" data-astro-cid-kqdwmlpp>Contributing to a Project</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/pull_requests_and_forges/" data-astro-cid-kqdwmlpp>Pull Requests and Forges</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/maintaining_a_project/" data-astro-cid-kqdwmlpp>Maintaining a Project</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_5/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_3/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/contributing_project/" data-astro-cid-kgypjjoh>Contributing to a Project →</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Distributed Workflows" data-pagefind-filter="chapter:Distributed Git" data-astro-cid-kgypjjoh><div class="sect1">
+<h2 id="ch04-distributed-git">Distributed Git</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>
+Now that you have a remote Git repository set up as a focal point for all the developers to share their code, and you&#8217;re familiar with basic Git commands in a local workflow, you&#8217;ll look at how to utilize some of the distributed workflows that Git affords you.</p>
+</div>
+<div class="paragraph">
+<p>In this chapter, you&#8217;ll see how to work with Git in a distributed environment as a contributor and an integrator.
+That is, you&#8217;ll learn how to contribute code successfully to a project and make it as easy on you and the project maintainer as possible, and also how to maintain a project successfully with a number of developers contributing.</p>
+</div>
+<div class="sect2">
+<h3 id="_distributed_workflows">Distributed Workflows</h3>
+<div class="paragraph">
+<p>
+In contrast with Centralized Version Control Systems (CVCSs), the distributed nature of Git allows you to be far more flexible in how developers collaborate on projects.
+In centralized systems, every developer is a node working more or less equally with a central hub.
+In Git, however, every developer is potentially both a node and a hub; that is, every developer can both contribute code to other repositories and maintain a public repository on which others can base their work and which they can contribute to.
+This presents a vast range of workflow possibilities for your project and/or your team, so we&#8217;ll cover a few common paradigms that take advantage of this flexibility.
+We&#8217;ll go over the strengths and possible weaknesses of each design; you can choose a single one to use, or you can mix and match features from each.</p>
+</div>
+<div class="sect3">
+<h4 id="_centralized_workflow">Centralized Workflow</h4>
+<div class="paragraph">
+<p>
+In centralized systems, there is generally a single collaboration model&#8201;&#8212;&#8201;the centralized workflow.
+One central hub, or <em>repository</em>, can accept code, and everyone synchronizes their work with it.
+A number of developers are nodes&#8201;&#8212;&#8201;consumers of that hub&#8201;&#8212;&#8201;and synchronize with that centralized location.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/centralized_workflow.png" alt="Centralized workflow">
+</div>
+<div class="title">Figure 49. Centralized workflow</div>
+</div>
+<div class="paragraph">
+<p>This means that if two developers clone from the hub and both make changes, the first developer to push their changes back up can do so with no problems.
+The second developer must merge in the first one&#8217;s work before pushing changes up, so as not to overwrite the first developer&#8217;s changes.
+This concept is as true in Git as it is in Subversion (or any CVCS), and this model works perfectly well in Git.</p>
+</div>
+<div class="paragraph">
+<p>If you are already comfortable with a centralized workflow in your company or team, you can easily continue using that workflow with Git.
+Simply set up a single repository, and give everyone on your team push access; Git won&#8217;t let users overwrite each other.</p>
+</div>
+<div class="paragraph">
+<p>Say John and Jessica both start working at the same time.
+John finishes his change and pushes it to the server.
+Then Jessica tries to push her changes, but the server rejects them.
+She is told that she&#8217;s trying to push non-fast-forward changes and that she won&#8217;t be able to do so until she fetches and merges.
+This workflow is attractive to a lot of people because it&#8217;s a paradigm that many are familiar and comfortable with.</p>
+</div>
+<div class="paragraph">
+<p>This is also not limited to small teams.
+With Git&#8217;s branching model, it&#8217;s possible for hundreds of developers to successfully work on a single project through dozens of branches simultaneously.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_integration_manager">Integration-Manager Workflow</h4>
+<div class="paragraph">
+<p>
+Because Git allows you to have multiple remote repositories, it&#8217;s possible to have a workflow where each developer has write access to their own public repository and read access to everyone else&#8217;s.
+This scenario often includes a canonical repository that represents the &#8220;official&#8221; project.
+To contribute to that project, you create your own public clone of the project and push your changes to it.
+Then, you can send a request to the maintainer of the main project to pull in your changes.
+The maintainer can then add your repository as a remote, test your changes locally, merge them into their branch, and push back to their repository.
+The process works as follows (see <a href="/book/distributed_workflows/#wfdiag_b">Integration-manager workflow</a>):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The project maintainer pushes to their public repository.</p>
+</li>
+<li>
+<p>A contributor clones that repository and makes changes.</p>
+</li>
+<li>
+<p>The contributor pushes to their own public copy.</p>
+</li>
+<li>
+<p>The contributor sends the maintainer an email asking them to pull changes.</p>
+</li>
+<li>
+<p>The maintainer adds the contributor&#8217;s repository as a remote and merges locally.</p>
+</li>
+<li>
+<p>The maintainer pushes merged changes to the main repository.</p>
+</li>
+</ol>
+</div>
+<div id="wfdiag_b" class="imageblock">
+<div class="content">
+<img src="/images/integration-manager.png" alt="Integration-manager workflow">
+</div>
+<div class="title">Figure 50. Integration-manager workflow</div>
+</div>
+<div class="paragraph">
+<p>
+This is a very common workflow with hub-based tools like GitHub or GitLab, where it&#8217;s easy to fork a project and push your changes into your fork for everyone to see.
+One of the main advantages of this approach is that you can continue to work, and the maintainer of the main repository can pull in your changes at any time.
+Contributors don&#8217;t have to wait for the project to incorporate their changes&#8201;&#8212;&#8201;each party can work at their own pace.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dictator_and_lieutenants_workflow">Dictator and Lieutenants Workflow</h4>
+<div class="paragraph">
+<p>
+This is a variant of a multiple-repository workflow.
+It&#8217;s generally used by huge projects with hundreds of collaborators; one famous example is the Linux kernel.
+Various integration managers are in charge of certain parts of the repository; they&#8217;re called <em>lieutenants</em>.
+All the lieutenants have one integration manager known as the benevolent dictator.
+The benevolent dictator pushes from their directory to a reference repository from which all the collaborators need to pull.
+The process works like this (see <a href="/book/distributed_workflows/#wfdiag_c">Benevolent dictator workflow</a>):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Regular developers work on their topic branch and rebase their work on top of <code>master</code>.
+The <code>master</code> branch is that of the reference repository to which the dictator pushes.</p>
+</li>
+<li>
+<p>Lieutenants merge the developers' topic branches into their <code>master</code> branch.</p>
+</li>
+<li>
+<p>The dictator merges the lieutenants' <code>master</code> branches into the dictator&#8217;s <code>master</code> branch.</p>
+</li>
+<li>
+<p>Finally, the dictator pushes that <code>master</code> branch to the reference repository so the other developers can rebase on it.</p>
+</li>
+</ol>
+</div>
+<div id="wfdiag_c" class="imageblock">
+<div class="content">
+<img src="/images/benevolent-dictator.png" alt="Benevolent dictator workflow">
+</div>
+<div class="title">Figure 51. Benevolent dictator workflow</div>
+</div>
+<div class="paragraph">
+<p>This kind of workflow isn&#8217;t common, but can be useful in very big projects, or in highly hierarchical environments.
+It allows the project leader (the dictator) to delegate much of the work and collect large subsets of code at multiple points before integrating them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_patterns_for_managing_source_code_branches">Patterns for Managing Source Code Branches</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Martin Fowler has made a guide "Patterns for Managing Source Code Branches".
+This guide covers all the common Git workflows, and explains how/when to use them.
+There&#8217;s also a section comparing high and low integration frequencies.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://martinfowler.com/articles/branching-patterns.html" class="bare" target="_blank" rel="noopener">https://martinfowler.com/articles/branching-patterns.html</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_workflows_summary">Workflows Summary</h4>
+<div class="paragraph">
+<p>These are some commonly used workflows that are possible with a distributed system like Git, but you can see that many variations are possible to suit your particular real-world workflow.
+Now that you can (hopefully) determine which workflow combination may work for you, we&#8217;ll cover some more specific examples of how to accomplish the main roles that make up the different flows.
+In the next section, you&#8217;ll learn about a few common patterns for contributing to a project.</p>
+</div>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/summary_3/" data-astro-cid-kgypjjoh>← Summary</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/contributing_project/" data-astro-cid-kgypjjoh>Contributing to a Project →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>

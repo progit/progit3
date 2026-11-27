@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Pro Git — Git Servers: Setting Up the Server"><meta property="og:title" content="Setting Up the Server · Pro Git"><meta property="og:description" content="Pro Git — Git Servers: Setting Up the Server"><meta property="og:image" content="/book-cover.png"><link rel="icon" href="/favicon.ico"><title>Setting Up the Server · Pro Git</title><link rel="stylesheet" href="/_astro/Base.BrTWN6g_.css"><style>.book-toc[data-astro-cid-kqdwmlpp]{background:var(--bg-inset);border-right:1px solid var(--border);align-self:flex-start;width:19rem;min-width:19rem;height:100vh;padding:1.2rem 1rem 3rem;font-size:14px;line-height:1.4;position:sticky;top:0;overflow-y:auto}.book-toc-title[data-astro-cid-kqdwmlpp]{font-family:var(--serif);color:var(--text);margin-bottom:.8rem;font-size:1.2rem;font-weight:700;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{margin:0;padding:0;list-style:none}.book-toc[data-astro-cid-kqdwmlpp]>ul[data-astro-cid-kqdwmlpp]>li[data-astro-cid-kqdwmlpp]{margin:.15rem 0}.book-toc[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp] ul[data-astro-cid-kqdwmlpp]{border-left:1px solid var(--border);margin:.1rem 0 .5rem .2rem;padding-left:.6rem}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]{color:var(--text);border-radius:5px;padding:.18rem .4rem;text-decoration:none;display:block}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].chap{font-weight:600}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].sec{color:var(--muted)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp]:hover{background:var(--border);color:var(--text)}.book-toc[data-astro-cid-kqdwmlpp] li[data-astro-cid-kqdwmlpp].open>a[data-astro-cid-kqdwmlpp].chap{color:var(--accent)}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current{background:var(--accent);color:#fff}.book-toc[data-astro-cid-kqdwmlpp] a[data-astro-cid-kqdwmlpp].current:hover{background:var(--accent-strong);color:#fff}@media (width<=900px){.book-toc[data-astro-cid-kqdwmlpp]{border-right:none;border-bottom:1px solid var(--border);width:100%;min-width:0;height:auto;max-height:45vh;position:static}}.book-layout[data-astro-cid-kgypjjoh]{align-items:flex-start;display:flex}.book-main[data-astro-cid-kgypjjoh]{flex:auto;min-width:0;max-width:47rem;margin:0 auto;padding:1.5rem 2rem 4rem}.breadcrumb[data-astro-cid-kgypjjoh]{text-transform:uppercase;letter-spacing:.05em;margin:.6rem 0;font-size:.82rem;font-weight:600}.breadcrumb[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh]{color:var(--accent);text-decoration:none}.pager[data-astro-cid-kgypjjoh]{align-items:center;gap:.5rem;margin:1rem 0;font-size:.9rem;display:flex}.pager[data-astro-cid-kgypjjoh] .prev[data-astro-cid-kgypjjoh]{margin-right:auto}.pager[data-astro-cid-kgypjjoh] .next[data-astro-cid-kgypjjoh]{text-align:right;margin-left:auto}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]{color:var(--muted);text-decoration:none}.pager[data-astro-cid-kgypjjoh] .home[data-astro-cid-kgypjjoh]:hover{color:var(--accent)}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next{color:var(--accent);border:1px solid var(--border);text-overflow:ellipsis;white-space:nowrap;background:var(--bg-raised);border-radius:7px;max-width:42%;padding:.35rem .6rem;text-decoration:none;overflow:hidden}.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].prev:hover,.pager[data-astro-cid-kgypjjoh] a[data-astro-cid-kgypjjoh].next:hover{border-color:var(--accent)}.pager[data-astro-cid-kgypjjoh] .spacer[data-astro-cid-kgypjjoh]{flex:none}.pager[data-astro-cid-kgypjjoh].top{border-bottom:1px solid var(--border);padding-bottom:1rem}.pager[data-astro-cid-kgypjjoh].bottom{border-top:1px solid var(--border);padding-top:1rem}@media (width<=900px){.book-layout[data-astro-cid-kgypjjoh]{flex-direction:column}.book-main[data-astro-cid-kgypjjoh]{padding:1rem 1.2rem 3rem}}
+</style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container header-inner" data-astro-cid-nen7h5rs><a class="wordmark" href="/" data-astro-cid-nen7h5rs><span class="wordmark-pro" data-astro-cid-nen7h5rs>Pro</span> Git<span class="wordmark-ed" data-astro-cid-nen7h5rs>3rd&nbsp;edition</span></a><nav aria-label="Site" data-astro-cid-nen7h5rs><a href="/book/" class="active" data-astro-cid-nen7h5rs>The Book</a><a href="/blog/" data-astro-cid-nen7h5rs>Blog</a><a href="/history/" data-astro-cid-nen7h5rs>History</a><a href="/search/" data-astro-cid-nen7h5rs>Search</a><a href="https://github.com/progit/progit3" rel="noopener" class="gh" data-astro-cid-nen7h5rs>GitHub</a></nav></div></header><div class="book-layout" data-astro-cid-kgypjjoh><nav class="book-toc" aria-label="Table of contents" data-astro-cid-kqdwmlpp><a class="book-toc-title" href="/book/" data-astro-cid-kqdwmlpp>Pro Git</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/license/" data-astro-cid-kqdwmlpp>License</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/preface_to_the_third_edition/" data-astro-cid-kqdwmlpp>Preface to the Third Edition</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/introduction/" data-astro-cid-kqdwmlpp>Introduction</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/about_version_control/" data-astro-cid-kqdwmlpp>Getting Started</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/getting_a_repo/" data-astro-cid-kqdwmlpp>Git Basics</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_branches_overview/" data-astro-cid-kqdwmlpp>Git Branching</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/distributed_workflows/" data-astro-cid-kqdwmlpp>Distributed Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/revision_selection/" data-astro-cid-kqdwmlpp>Git Toolkit</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/git_config/" data-astro-cid-kqdwmlpp>Customizing Git</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/workflows_for_agents/" data-astro-cid-kqdwmlpp>Git and Agents</a></li><li class="open" data-astro-cid-kqdwmlpp><a class="chap" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>Git Servers</a><ul data-astro-cid-kqdwmlpp><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/the_protocols/" data-astro-cid-kqdwmlpp>The Protocols</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/getting_git_on_a_server/" data-astro-cid-kqdwmlpp>Getting Git on a Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/generate_ssh_key/" data-astro-cid-kqdwmlpp>Generating Your SSH Public Key</a></li><li data-astro-cid-kqdwmlpp><a class="sec current" href="/book/setting_up_server/" data-astro-cid-kqdwmlpp>Setting Up the Server</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/git_daemon/" data-astro-cid-kqdwmlpp>Git Daemon</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/smart_http_2/" data-astro-cid-kqdwmlpp>Smart HTTP</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitweb/" data-astro-cid-kqdwmlpp>GitWeb</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/gitlab/" data-astro-cid-kqdwmlpp>GitLab</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/third_party_hosted_options/" data-astro-cid-kqdwmlpp>Third Party Hosted Options</a></li><li data-astro-cid-kqdwmlpp><a class="sec" href="/book/summary_10/" data-astro-cid-kqdwmlpp>Summary</a></li></ul></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/shallow_clones/" data-astro-cid-kqdwmlpp>Git at Scale</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/plumbing_porcelain/" data-astro-cid-kqdwmlpp>Git Internals</a></li><li data-astro-cid-kqdwmlpp><a class="chap" href="/book/setup_and_config/" data-astro-cid-kqdwmlpp>Appendix A: Git Commands</a></li></ul></nav><main class="book-main" data-astro-cid-kgypjjoh><div class="pager top" data-astro-cid-kgypjjoh><a class="prev" href="/book/generate_ssh_key/" data-astro-cid-kgypjjoh>← Generating Your SSH Public Key</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="home" href="/search/" data-astro-cid-kgypjjoh>Search</a><a class="next" href="/book/git_daemon/" data-astro-cid-kgypjjoh>Git Daemon →</a></div><div class="breadcrumb" data-astro-cid-kgypjjoh><a href="/book/the_protocols/" data-astro-cid-kgypjjoh>Git Servers</a></div><article class="book-content" data-pagefind-body data-pagefind-meta="title:Setting Up the Server" data-pagefind-filter="chapter:Git Servers" data-astro-cid-kgypjjoh><div class="sect1">
+<div class="sectionbody"><div class="sect2">
+<h3 id="_setting_up_server">Setting Up the Server</h3>
+<div class="paragraph">
+<p>Let&#8217;s walk through setting up SSH access on the server side.
+In this example, you&#8217;ll use the <code>authorized_keys</code> method for authenticating your users.
+We also assume you&#8217;re running a standard Linux distribution like Ubuntu.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A good deal of what is described here can be automated by using the <code>ssh-copy-id</code> command, rather than manually copying and installing public keys.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First, you create a <code>git</code> user account and a <code>.ssh</code> directory for that user.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ sudo adduser git
+$ su git
+$ cd
+$ mkdir .ssh &amp;&amp; chmod 700 .ssh
+$ touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, you need to add some developer SSH public keys to the <code>authorized_keys</code> file for the <code>git</code> user.
+Let&#8217;s assume you have some trusted public keys and have saved them to temporary files.
+Again, the public keys look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cat /tmp/id_rsa.john.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L
+ojG6rs6hPB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4k
+Yjh6541NYsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9Ez
+Sdfd8AcCIicTDWbqLAcU4UpkaX8KyGlLwsNuuGztobF8m72ALC/nLF6JLtPofwFBlgc+myiv
+O7TCUSBdLQlgMVOFq1I2uPWQOkOWQAHukEOmfjy2jctxSDBQ220ymjaNsHT4kgtZg2AYYgPq
+dAv8JggJICUvax2T9va5 gsg-keypair</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You just append them to the <code>git</code> user&#8217;s <code>authorized_keys</code> file in its <code>.ssh</code> directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cat /tmp/id_rsa.john.pub &gt;&gt; ~/.ssh/authorized_keys
+$ cat /tmp/id_rsa.josie.pub &gt;&gt; ~/.ssh/authorized_keys
+$ cat /tmp/id_rsa.jessica.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, you can set up an empty repository for them by running <code>git init</code> with the <code>--bare</code> option, which initializes the repository without a working directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cd /srv/git
+$ mkdir project.git
+$ cd project.git
+$ git init --bare
+Initialized empty Git repository in /srv/git/project.git/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, John, Josie, or Jessica can push the first version of their project into that repository by adding it as a remote and pushing up a branch.
+Note that someone must shell onto the machine and create a bare repository every time you want to add a project.
+Let&#8217;s use <code>gitserver</code> as the hostname of the server on which you&#8217;ve set up your <code>git</code> user and repository.
+If you&#8217;re running it internally, and you set up DNS for <code>gitserver</code> to point to that server, then you can use the commands pretty much as is (assuming that <code>myproject</code> is an existing project with files in it):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console"># on John's computer
+$ cd myproject
+$ git init
+$ git add .
+$ git commit -m 'Initial commit'
+$ git remote add origin git@gitserver:/srv/git/project.git
+$ git push origin master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, the others can clone it down and push changes back up just as easily:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git clone git@gitserver:/srv/git/project.git
+$ cd project
+$ vim README
+$ git commit -am 'Fix for README file'
+$ git push origin master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With this method, you can quickly get a read/write Git server up and running for a handful of developers.</p>
+</div>
+<div class="paragraph">
+<p>You should note that currently all these users can also log into the server and get a shell as the <code>git</code> user.
+If you want to restrict that, you will have to change the shell to something else in the <code>/etc/passwd</code> file.</p>
+</div>
+<div class="paragraph">
+<p>You can easily restrict the <code>git</code> user account to only Git-related activities with a limited shell tool called <code>git-shell</code> that comes with Git.
+If you set this as the <code>git</code> user account&#8217;s login shell, then that account can&#8217;t have normal shell access to your server.
+To use this, specify <code>git-shell</code> instead of <code>bash</code> or <code>csh</code> for that account&#8217;s login shell.
+To do so, you must first add the full pathname of the <code>git-shell</code> command to <code>/etc/shells</code> if it&#8217;s not already there:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cat /etc/shells   # see if git-shell is already in there. If not...
+$ which git-shell   # make sure git-shell is installed on your system.
+$ sudo -e /etc/shells  # and add the path to git-shell from last command</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can edit the shell for a user using <code>chsh &lt;username&gt; -s &lt;shell&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ sudo chsh git -s $(which git-shell)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, the <code>git</code> user can still use the SSH connection to push and pull Git repositories but can&#8217;t shell onto the machine.
+If you try, you&#8217;ll see a login rejection like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ ssh git@gitserver
+fatal: Interactive git shell is not enabled.
+hint: ~/git-shell-commands should exist and have read and execute access.
+Connection to gitserver closed.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, users are still able to use SSH port forwarding to access any host the git server is able to reach.
+If you want to prevent that, you can edit the <code>authorized_keys</code> file and prepend the following options to each key you&#8217;d like to restrict:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result should look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cat ~/.ssh/authorized_keys
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
+AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4LojG6rs6h
+PB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4kYjh6541N
+YsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9EzSdfd8AcC
+IicTDWbqLAcU4UpkaX8KyGlLwsNuuGztobF8m72ALC/nLF6JLtPofwFBlgc+myivO7TCUSBd
+LQlgMVOFq1I2uPWQOkOWQAHukEOmfjy2jctxSDBQ220ymjaNsHT4kgtZg2AYYgPqdAv8JggJ
+ICUvax2T9va5 gsg-keypair
+
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
+AAAAB3NzaC1yc2EAAAADAQABAAABAQDEwENNMomTboYI+LJieaAY16qiXiH3wuvENhBG...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now Git network commands will still work just fine but the users won&#8217;t be able to get a shell.
+As the output states, you can also set up a directory in the <code>git</code> user&#8217;s home directory that customizes the <code>git-shell</code> command a bit.
+For instance, you can restrict the Git commands that the server will accept or you can customize the message that users see if they try to SSH in like that.
+Run <code>git help shell</code> for more information on customizing the shell.</p>
+</div>
+</div></div>
+</div></article><div class="pager bottom" data-astro-cid-kgypjjoh><a class="prev" href="/book/generate_ssh_key/" data-astro-cid-kgypjjoh>← Generating Your SSH Public Key</a><a class="home" href="/book/" data-astro-cid-kgypjjoh>Contents</a><a class="next" href="/book/git_daemon/" data-astro-cid-kgypjjoh>Git Daemon →</a></div></main></div><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="container footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk><em data-astro-cid-jo6i4kqk>Pro Git</em> by Scott Chacon and Ben Straub, licensed under<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="noopener" data-astro-cid-jo6i4kqk>CC BY-NC-SA 3.0</a>.</p><p data-astro-cid-jo6i4kqk><a href="/book/" data-astro-cid-jo6i4kqk>Read the book</a> ·<a href="/history/" data-astro-cid-jo6i4kqk>History</a> ·<a href="https://github.com/progit/progit3" rel="noopener" data-astro-cid-jo6i4kqk>Source on GitHub</a> ·<a href="https://git-scm.com/book" rel="noopener" data-astro-cid-jo6i4kqk>git-scm.com/book</a></p></div></footer></body></html>
